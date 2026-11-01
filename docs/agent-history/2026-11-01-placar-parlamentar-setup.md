@@ -324,3 +324,21 @@
 - **Changes made:** `docs/plans/phase-b-data-model-and-metrics.md` (proposed); Phase A plan marked signed off; data issues 10 and 11.
 - **Implementation authorized:** no (Phase B plan awaiting approval).
 - **Remaining work:** owner approval of the Phase B plan and answers to Choices 1–4 (to become decision 0014).
+
+## 2026-11-01 — Phase B approved; decision 0014; B1 implemented
+
+- **Agent:** Main Claude Code session
+- **Task:** Owner approved the Phase B plan and the recommendations on Choices 1–4 ("approve").
+- **Implementation authorized:** yes (Phase B; B2 after B1 passes).
+- **Changes made:**
+  - Decision 0014 (methodology choices) accepted; rules section 16; plan status updated.
+  - Started PostgreSQL 18.6 in Docker (127.0.0.1 only); added `hypothesis`.
+  - `legislators` app (models, 3 migrations, services, selectors); `sources/normalize/` (Câmara status map, Câmara and Senado normalizers); `normalize_current` command; cache-only fetcher mode; `metrics/coverage.py` and selector; tests.
+  - Docs: data issues 4 (explained), 12–15; B1 outcome in the plan; `docs/testing/phase-b1.md`; `docs/security/phase-b1.md`.
+- **Analysis:**
+  - Câmara repeated exits while out are leave/absence renewals (26), not errors.
+  - Mesa decisions (recount, re-total, restoration) appear only as DIVERSO notes; 4 texts added to the status map after checking every occurrence (data issue 14) — flagged for owner review.
+  - Câmara exit date treated as last day in office (data issue 12).
+  - Senado incomplete mandates 5718, 6358 (data issue 13); one period end without reason (data issue 15).
+- **Validation (actually run):** `normalize_current` on the full cache twice (Câmara 0 unknown, 0 inconsistencies; Senado 1 unknown, 2 incomplete mandates); `uv run pytest` 196 passed; coverage 94%; ruff clean; pip-audit clean; gitleaks hook passed.
+- **Remaining work:** owner review of B1 (especially the four Mesa-decision mappings); then B2.0 checks and B2.

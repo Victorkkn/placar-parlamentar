@@ -188,3 +188,22 @@ Every metric value returns its numerator, denominator, window, coverage and the 
 | B2.3 | Metrics and tests | backend engineer, QA |
 | B2.4 | Decision 0014 and methodology drafts (pt-BR) | architect, technical writer |
 | B2.5 | Test and security notes for B2; live fetch | QA, security engineer, owner approval |
+
+## B1 outcome (2026-11-01)
+
+| Criterion | Result |
+| --- | --- |
+| 1. `normalize_current` loads the cache into PostgreSQL offline | Met: Câmara 648 officials, 1,421 mandates, 1,990 periods, 7 leaves, 1,440 affiliations, 6,865 events; Senado 245 officials, 273 mandates, 231 periods, 5,174 leaves, 301 affiliations; about 1.5 s; no network |
+| 2. Every period, leave, affiliation and mandate has a `SourceRef` | Met (model fields; DB test checks every stored period) |
+| 3. `coverage()` passes required, real and property cases | Met: 5 required cases; real cases 4545 = 1 day, 5917 = 1,370 days, 5918 = 0, 220593 = 701 days in legislature 57 up to 2026-11-01; 4 property tests |
+| 4. Report lists counts and every `UNKNOWN` | Met: Câmara 0 unknown, 0 inconsistencies, 26 renewals; Senado 1 unknown (data issue 15), 2 incomplete mandates (data issue 13) |
+| 5. Cause of data issue 4 | Found (see `docs/data-issues.md`, issue 4) |
+
+**Changes from the plan, for review:**
+- The status map has four more texts than the plan's "64 texts": Mesa decisions on recount, re-total or restoration, read as exits (`RECOUNT`) or entries (`MESA_DECISION`). Without them, 9 deputies would keep a period open after losing the seat (data issue 14).
+- Repeated exits while already out (leave renewals) do not change periods; they are counted in the report.
+- A `Saída` date is the last day in office (data issue 12).
+
+Tests: 196 passed (PostgreSQL test database, network blocked); coverage 94% overall, `metrics/` 94%. `pip-audit`: no known vulnerabilities (with `hypothesis` added).
+
+**Status:** B1 waiting for the owner's review (especially the four Mesa-decision mappings) before B2 starts.
