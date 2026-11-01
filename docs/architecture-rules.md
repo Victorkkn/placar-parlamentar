@@ -3,7 +3,7 @@
 These rules are binding for every session and every agent. Each rule comes from an accepted decision in `docs/decisions/` or from the project's non-negotiable rules.
 A rule changes only through a new decision that supersedes the old one and is approved by the project owner.
 
-Stage 2 (architecture) decisions will add technical rules here as each one is accepted.
+Stage 2 (architecture) was completed on 2026-11-01. This file summarizes decisions 0001–0013. When rules conflict, the decision record is the authority, and the conflict must be reported to the project owner.
 
 ## 1. Non-negotiable rules
 
@@ -158,3 +158,11 @@ Small, descriptive local commits are allowed.
 - Outside development: `DEBUG = False`, `ALLOWED_HOSTS` set, security middleware on; CSP `default-src 'self'` without inline scripts, `nosniff`, `Referrer-Policy: no-referrer`, `frame-ancestors 'none'`.
 - ruff with security rules (`S`) on the backend; strict TypeScript and a lint ban on `dangerouslySetInnerHTML` on the frontend.
 - A security review note per phase in `docs/security/`.
+
+## 15. Deployment (decision 0013)
+
+- No deployment in the MVP. Everything runs on the owner's machine: PostgreSQL in Docker on `127.0.0.1`, Django on `127.0.0.1:8000`, Vite dev server proxying `/api`.
+- No hosting accounts, domains, public URLs, CI services or remote repositories for the MVP.
+- "Done" means working locally with all tests passing, never "published".
+- Settings come from environment variables; `asgi.py` and `wsgi.py` are kept.
+- Publishing later needs a new decision that supersedes 0013 and the owner's explicit approval.

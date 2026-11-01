@@ -17,9 +17,11 @@ An accepted decision is changed only by a new decision that supersedes it, after
 | [0010](0010-summaries.md) | Summaries: isolated LLM adapter, fact sheets, validator, template fallback | accepted | 2026-11-01 |
 | [0011](0011-testing.md) | Testing: offline pytest/Vitest/Playwright, hand-recorded fixtures without personal fields | accepted | 2026-11-01 |
 | [0012](0012-security-baseline.md) | Security baseline: secrets, dependencies, input, upstream limits, untrusted content, logging | accepted | 2026-11-01 |
-| [0013](0013-deployment.md) | Deployment: none in the MVP, local only; deferred items listed | proposed | 2026-11-01 |
+| [0013](0013-deployment.md) | Deployment: none in the MVP, local only; deferred items listed | accepted | 2026-11-01 |
 
 ## Stage 2 topics
+
+Stage 2 completed on 2026-11-01: all ten topics accepted.
 
 | Topic | Decision | State |
 |---|---|---|
@@ -32,4 +34,4 @@ An accepted decision is changed only by a new decision that supersedes it, after
 | 7. Isolating the summary feature, enforcing source links | 0010 | accepted |
 | 8. Testing strategy and offline fixtures | 0011 | accepted |
 | 9. Security baseline | 0012 | accepted |
-| 10. Deployment target (out of MVP scope unless decided) | 0013 | proposed |
+| 10. Deployment target (out of MVP scope unless decided) | 0013 | accepted |

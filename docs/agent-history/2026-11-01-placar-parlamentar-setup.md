@@ -258,3 +258,9 @@
   - Full-history gitleaks scan: 20 commits scanned, no leaks found.
   - Hook test in a throwaway scratchpad repo: a fake `ghp_` token was detected and the commit was blocked (exit 1). The project repo was not used for this test.
 - **Remaining work:** owner approval of 0013. `core.hooksPath` is a local git setting; a fresh clone must run `git config core.hooksPath scripts/git-hooks`. To document in the README setup section later.
+
+## 2026-11-01 — Decision 0013 accepted; Stage 2 complete
+
+- **Agent:** Main Claude Code session
+- **Changes made:** 0013 accepted; index marks Stage 2 complete; rules file intro updated and section 15 added; root `CLAUDE.md` rewritten with a rules summary, plan-approval rule and hook setup note.
+- **Remaining work:** Stage 3, starting with the Phase A plan.
