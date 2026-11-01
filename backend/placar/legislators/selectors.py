@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from placar.core.types import Period, SourceRef
 
-from .models import Official, ServicePeriod
+from .models import Leave, Official, ServicePeriod
 
 
 def get_official(house: str, house_id: int) -> Official:
@@ -14,3 +14,7 @@ def get_official(house: str, house_id: int) -> Official:
 def service_periods_for(official_id: int) -> list[tuple[Period, SourceRef]]:
     rows = ServicePeriod.objects.filter(official_id=official_id).order_by("start")
     return [(Period(row.start, row.end), row.source) for row in rows]
+
+
+def leaves_for(official_id: int) -> list[Period]:
+    return [Period(r.start, r.end) for r in Leave.objects.filter(official_id=official_id)]

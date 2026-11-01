@@ -47,6 +47,7 @@ ALLOWED_HOSTS: list[str] = []
 INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "placar.legislators",
+    "placar.activity",
     "placar.sources",
 ]
 
