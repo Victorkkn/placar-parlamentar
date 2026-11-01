@@ -165,7 +165,7 @@ def _event(day, text, situation="Exercício", party="P1"):
 def _synthetic(events):
     ref = SourceRef(api_url="https://dadosabertos.camara.leg.br/api/v2/x", cache_key="0" * 64)
     leg = camara.CamaraLegislature(57, date(2023, 2, 1), date(2027, 1, 31), ref)
-    row = camara.CamaraDeputyRow(1, "X", "P1", "SP", 57, None, ref)
+    row = camara.CamaraDeputyRow(1, "X", "P1", "SP", 57, ref)
     return camara_norm.normalize(leg, [row], {1: events})
 
 

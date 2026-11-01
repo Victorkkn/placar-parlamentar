@@ -185,7 +185,6 @@ def _summary(official, cov, affiliations, threshold) -> s.OfficialSummary:
         name=official.parliamentary_name,
         state=official.state,
         party=_party_in_window(affiliations, cov.window),
-        photo_url=official.photo_url or None,
         page_url=official.page_url or None,
         coverage=_coverage_out(cov),
         sufficient=_sufficient(cov, threshold),

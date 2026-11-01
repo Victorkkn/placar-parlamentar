@@ -60,9 +60,7 @@ class SenadoListedMandate:
 class SenadoListedSenator:
     code: int
     parliamentary_name: str | None
-    civil_name: str | None
     party: str | None
-    photo_url: str | None
     page_url: str | None
     mandates: tuple[SenadoListedMandate, ...]
     source: SourceRef
@@ -165,17 +163,16 @@ def parse_senator_list(
             notes.add("senado list item without CodigoParlamentar")
             continue
         mandates = as_list(dig(item, "Mandatos", "Mandato")) or as_list(item.get("Mandato"))
-        photo_raw, page_raw = ident.get("UrlFotoParlamentar"), ident.get("UrlPaginaParlamentar")
-        photo, page = to_official_https(photo_raw), to_official_https(page_raw)
-        if (photo_raw and not photo) or (page_raw and not page):
+        # Decision 0019: no civil name or photo; only the official page link is kept.
+        page_raw = ident.get("UrlPaginaParlamentar")
+        page = to_official_https(page_raw)
+        if page_raw and not page:
             notes.add(f"senado senator {code}: link not on an official domain, dropped")
         result.append(
             SenadoListedSenator(
                 code=code,
                 parliamentary_name=text(ident.get("NomeParlamentar")),
-                civil_name=text(ident.get("NomeCompletoParlamentar")),
                 party=text(ident.get("SiglaPartidoParlamentar")),
-                photo_url=photo,
                 page_url=page,
                 mandates=tuple(_listed_mandate(m) for m in mandates if isinstance(m, dict)),
                 source=source,

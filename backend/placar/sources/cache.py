@@ -28,6 +28,7 @@ import httpx
 from placar.core.types import SourceRef
 
 from .http import HttpResponse, OfficialApiClient, UpstreamError
+from .personal import strip_personal
 
 ENVELOPE_SCHEMA = 1
 _UNSAFE = re.compile(r"[^A-Za-z0-9._-]+")
@@ -92,6 +93,19 @@ class CacheEntry:
         return canonical_url(self.envelope["url"], self.envelope["params"])
 
 
+def _write_envelope(path: Path, envelope: dict[str, Any]) -> None:
+    """Atomic write: a crash never leaves a half-written cache file."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp = tempfile.mkstemp(dir=path.parent, suffix=".tmp")
+    try:
+        with os.fdopen(fd, "wb") as raw, gzip.GzipFile(fileobj=raw, mode="wb", mtime=0) as gz:
+            gz.write(json.dumps(envelope, ensure_ascii=False, sort_keys=True).encode("utf-8"))
+        os.replace(tmp, path)
+    except BaseException:
+        Path(tmp).unlink(missing_ok=True)
+        raise
+
+
 class RawCache:
     def __init__(
         self,
@@ -122,6 +136,7 @@ class RawCache:
     ) -> CacheEntry:
         key = make_key("GET", url, params)
         path = self.path_for(source, url, key)
+        body, removed = strip_personal(response.body)  # decision 0019: never cached
         envelope = {
             "schema": ENVELOPE_SCHEMA,
             "source": source,
@@ -133,18 +148,27 @@ class RawCache:
             "content_type": response.content_type,
             "api_version": _api_version(response.body),
             "deprecation": response.deprecation,
-            "body": response.body,
+            "removed_personal_fields": len(removed),
+            "body": body,
         }
-        path.parent.mkdir(parents=True, exist_ok=True)
-        fd, tmp = tempfile.mkstemp(dir=path.parent, suffix=".tmp")
-        try:
-            with os.fdopen(fd, "wb") as raw, gzip.GzipFile(fileobj=raw, mode="wb", mtime=0) as gz:
-                gz.write(json.dumps(envelope, ensure_ascii=False, sort_keys=True).encode("utf-8"))
-            os.replace(tmp, path)
-        except BaseException:
-            Path(tmp).unlink(missing_ok=True)
-            raise
+        _write_envelope(path, envelope)
         return CacheEntry(key=key, path=path, envelope=envelope)
+
+    def scrub(self, path: Path) -> int:
+        """Remove personal fields from one cached file written before decision 0019.
+
+        Everything else (fetch time, URL, status) stays as it was. Returns the number of
+        fields removed; the file is rewritten only if there were any.
+        """
+        envelope = json.loads(gzip.decompress(Path(path).read_bytes()))
+        body, removed = strip_personal(envelope.get("body"))
+        if removed:
+            envelope["body"] = body
+            envelope["removed_personal_fields"] = envelope.get("removed_personal_fields", 0) + len(
+                removed
+            )
+            _write_envelope(Path(path), envelope)
+        return len(removed)
 
     def is_fresh(self, entry: CacheEntry, freshness: Freshness) -> bool:
         if freshness is Freshness.IMMUTABLE:

@@ -73,7 +73,7 @@ Small, descriptive local commits are allowed.
 - PostgreSQL 18 with `psycopg` 3 for all normalized data. Locally it runs in Docker (`compose.yaml`, database service only), bound to `127.0.0.1`.
 - Database credentials only in the git-ignored `.env`; `.env.example` lists names without values.
 - Tests run against PostgreSQL too.
-- Raw API responses are cached as gzip JSON files in `data/raw/<source>/<endpoint-path>/<sha256 key>.json.gz` (git-ignored), with an envelope: URL, parameters, fetch time (UTC), status, content type, API version if reported, unchanged body. No cookies or unneeded headers.
+- Raw API responses are cached as gzip JSON files in `data/raw/<source>/<endpoint-path>/<sha256 key>.json.gz` (git-ignored), with an envelope: URL, parameters, fetch time (UTC), status, content type, API version if reported, and the body unchanged except that personal and contact fields are removed before writing (decision 0019; the count is kept in the envelope). No cookies or unneeded headers.
 - Every normalized record stores its official source URL and the cache key of its raw response.
 - Freshness per endpoint: data that no longer changes never expires; changing data refreshes after 24 hours by default; `--refresh` forces download; on API failure the cached copy is used and shown with its fetch date.
 - Deleting or pruning the cache, or removing the database volume, needs the owner's approval.
@@ -105,7 +105,7 @@ Small, descriptive local commits are allowed.
 - Dates are calendar days in `America/Sao_Paulo`, inclusive at both ends. Overlapping or touching periods of the same official are merged for counting; originals are kept.
 - Never guess: unmapped values become `UNKNOWN` and are logged in `docs/data-issues.md`; disagreements between sources keep both values and are logged.
 - No linking of the same person across houses, and no inferred party renames or mergers, without an official source.
-- Personal fields allowlist: house id, parliamentary name, civil name, state, party, official photo URL, institutional page URL. Never CPF, birth date or place, social media, personal email or address.
+- Personal fields allowlist: house id, parliamentary name, state, party, institutional page URL (decision 0019 removed civil name and photo URL). Never CPF, birth date or place, education, social media, email, phone, address or gender.
 - Source links show the official public page when one exists, otherwise the API URL.
 
 ## 11. Frontend (decision 0009)
@@ -153,7 +153,7 @@ Small, descriptive local commits are allowed.
 - New dependencies: security review, then owner approval. Lockfiles committed. `pip-audit` and `npm audit` before each phase is reported done. No automatic update tools.
 - Public API is read-only (`GET`/`HEAD`). All parameters validated by schemas (dates 1988-10-05 to today, start before end, threshold as share 0–1 or days 0–window, positive integer ids, 2–6 officials per comparison, bounded page size). Errors return 4xx without stack traces.
 - Official APIs: ≤ 2 requests/s and one at a time per API, random jitter, no batch runs at exact round times; honor `Retry-After`, otherwise exponential backoff with a retry limit; project `User-Agent` without personal email; log `Deprecation`/`Sunset` headers as data issues.
-- API text is untrusted: no `dangerouslySetInnerHTML`; URLs only if `https` on `camara.leg.br` or `senado.leg.br` (and subdomains); official photos downloaded at ingestion and served by our server.
+- API text is untrusted: no `dangerouslySetInnerHTML`; URLs only if `https` on `camara.leg.br` or `senado.leg.br` (and subdomains); no official photos in the MVP (decision 0019); if added later by a new decision, they are downloaded at ingestion and served by our server.
 - Logs never contain visitor IPs, user agents, cookies or full headers. The public site sets no cookies. No analytics or tracking.
 - Outside development: `DEBUG = False`, `ALLOWED_HOSTS` set, security middleware on; CSP `default-src 'self'` without inline scripts, `nosniff`, `Referrer-Policy: no-referrer`, `frame-ancestors 'none'`.
 - ruff with security rules (`S`) on the backend; strict TypeScript and a lint ban on `dangerouslySetInnerHTML` on the frontend.

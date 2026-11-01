@@ -58,9 +58,7 @@ class OfficialRecord:
     house_id: int
     parliamentary_name: str
     source: SourceRef
-    civil_name: str = ""
     state: str = ""
-    photo_url: str = ""
     page_url: str = ""
 
 
@@ -193,9 +191,7 @@ def replace_house(bundle: HouseBundle) -> dict[str, int]:
             house=house,
             house_id=rec.house_id,
             parliamentary_name=rec.parliamentary_name,
-            civil_name=rec.civil_name,
             state=rec.state,
-            photo_url=rec.photo_url,
             page_url=rec.page_url,
             **_source_fields(rec.source),
         )

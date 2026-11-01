@@ -1,6 +1,6 @@
 # 0008 — Normalizing Câmara and Senado data into one model
 
-- **Status:** accepted (2026-11-01)
+- **Status:** accepted (2026-11-01); item 10 (civil name and photo URL) partly superseded by decision 0019
 - **Date:** 2026-11-01
 - **Stage:** 2 (topic 5 of 10)
 

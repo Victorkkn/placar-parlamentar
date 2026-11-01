@@ -37,7 +37,7 @@ The MVP is phases A–D of `CLAUDE_CODE_PROMPT.md`. Phase E (rankings) comes aft
 
 | Phase | What | State |
 | --- | --- | --- |
-| Stages 0–2 | Team, agents, decisions, binding rules | accepted (decisions 0001–0020; 0019 proposed) |
+| Stages 0–2 | Team, agents, decisions, binding rules | accepted (decisions 0001–0020) |
 | A | Official API clients, raw cache, polite HTTP, recorded fixtures, drift check | signed off, tag `phase-a` |
 | B1 | People, periods in office, leaves, party affiliations; `coverage(official, window)` | signed off, tag `phase-b1` |
 | B2 | Activity data and the first four metrics, real snapshot loaded and checked | merged and pushed, tag `phase-b2` |
@@ -59,7 +59,7 @@ The MVP is phases A–D of `CLAUDE_CODE_PROMPT.md`. Phase E (rankings) comes aft
 - **Câmara committee attendance** (decision 0014, item 4). Committee memberships are loaded but not shown; there is no committee attendance in the app.
 - **Senado plenary attendance**: the Senado APIs used do not publish attendance per senator (decision 0014). The app says so.
 - **Deployment**: local only (decision 0013).
-- **Official photos**: not shown. Decision 0012 requires local serving, which is not built; proposed decision 0019 would stop storing the photo URL.
+- **Official photos**: not stored or shown (decision 0019).
 - **Earlier legislatures**: the snapshot covers legislature 57.
 
 ## Related

@@ -22,7 +22,7 @@ from typing import Any
 from placar.core.types import SourceRef
 
 from ..cache import CachedFetcher, Freshness
-from ..http import NotOfficialURLError, is_official_url, to_official_https
+from ..http import NotOfficialURLError, is_official_url
 from ._parse import dig, text, to_brazil_date, to_date, to_int
 
 BASE_URL = "https://dadosabertos.camara.leg.br/api/v2"
@@ -47,7 +47,6 @@ class CamaraDeputyRow:
     party: str | None
     state: str | None
     legislature: int | None
-    photo_url: str | None
     source: SourceRef
 
 
@@ -99,9 +98,6 @@ def parse_deputy_rows(body: Any, source: SourceRef, notes: ParseNotes) -> list[C
         if deputy_id is None or name is None:
             notes.add(f"camara deputy row without id or name: {item.get('id')!r}")
             continue
-        photo = to_official_https(item.get("urlFoto"))
-        if item.get("urlFoto") and photo is None:
-            notes.add(f"camara deputy {deputy_id}: photo URL not on an official domain, dropped")
         rows.append(
             CamaraDeputyRow(
                 deputy_id=deputy_id,
@@ -109,7 +105,6 @@ def parse_deputy_rows(body: Any, source: SourceRef, notes: ParseNotes) -> list[C
                 party=text(item.get("siglaPartido")),
                 state=text(item.get("siglaUf")),
                 legislature=to_int(item.get("idLegislatura")),
-                photo_url=photo,
                 source=source,
             )
         )

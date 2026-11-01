@@ -500,17 +500,6 @@
             ],
             "title": "Party"
           },
-          "photo_url": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Photo Url"
-          },
           "sources": {
             "items": {
               "$ref": "#/components/schemas/Source"
@@ -534,7 +523,6 @@
           "name",
           "state",
           "party",
-          "photo_url",
           "page_url",
           "coverage",
           "sufficient",

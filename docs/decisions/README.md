@@ -10,9 +10,9 @@ An accepted decision is changed only by a new decision that supersedes it, after
 | [0003](0003-languages.md) | Languages: pt-BR interface, English code and docs | accepted | 2026-11-01 |
 | [0004](0004-repository-layout.md) | Repository layout: monorepo with `backend/` and `frontend/` | accepted | 2026-11-01 |
 | [0005](0005-backend-framework.md) | Backend: Django 6.1 + Django Ninja, sync by default, local read-only admin | accepted | 2026-11-01 |
-| [0006](0006-database-and-raw-cache.md) | PostgreSQL 18 in Docker; raw API responses cached as files | accepted | 2026-11-01 |
+| [0006](0006-database-and-raw-cache.md) | PostgreSQL 18 in Docker; raw API responses cached as files | accepted (item 6 partly superseded by 0019) | 2026-11-01 |
 | [0007](0007-module-boundaries.md) | Backend module boundaries, allowed imports, `core` app | accepted | 2026-11-01 |
-| [0008](0008-source-normalization.md) | Normalizing Câmara and Senado into one model (service periods, leaves, affiliations) | accepted | 2026-11-01 |
+| [0008](0008-source-normalization.md) | Normalizing Câmara and Senado into one model (service periods, leaves, affiliations) | accepted (item 10 partly superseded by 0019) | 2026-11-01 |
 | [0009](0009-frontend.md) | Frontend: React + TypeScript + Vite SPA, OpenAPI contract file, no third-party requests | accepted | 2026-11-01 |
 | [0010](0010-summaries.md) | Summaries: isolated LLM adapter, fact sheets, validator, template fallback | accepted (list location in item 7 superseded by 0018) | 2026-11-01 |
 | [0011](0011-testing.md) | Testing: offline pytest/Vitest/Playwright, hand-recorded fixtures without personal fields | accepted | 2026-11-01 |
@@ -23,7 +23,7 @@ An accepted decision is changed only by a new decision that supersedes it, after
 | [0016](0016-git-workflow-and-ci.md) | Git workflow (branches, local checks) and GitHub Actions CI; supersedes part of 0013 | accepted | 2026-11-01 |
 | [0017](0017-typescript-version.md) | TypeScript 5.9.3 for the frontend; supersedes the version clause of 0009 | accepted | 2026-11-01 |
 | [0018](0018-single-banned-wording-list.md) | One banned-wording list (`docs/wording/banned-pt-BR.txt`) for app and summaries; supersedes the list location in 0010 | accepted | 2026-11-01 |
-| [0019](0019-data-minimization.md) | Data minimization: strip contact and gender fields before caching; drop civil name and photo URL | proposed | 2026-11-01 |
+| [0019](0019-data-minimization.md) | Data minimization: strip contact and gender fields before caching; drop civil name and photo URL | accepted | 2026-11-01 |
 | [0020](0020-mvp-without-rankings.md) | The MVP is phases A–D; Phase E (rankings) moves after the MVP | accepted | 2026-11-01 |
 
 ## Stage 2 topics
