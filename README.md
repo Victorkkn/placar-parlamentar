@@ -50,9 +50,25 @@ Endpoints and field names should be verified against the current API documentati
 3. Paste or reference the contents of `CLAUDE_CODE_PROMPT.md` to begin Stage 0 (team and roles). Later stages follow in order, with approval at each step.
 4. Never paste API keys or secrets into the session. Store them in a `.env` file that is git-ignored.
 
+## Local setup (development)
+
+Requirements: [uv](https://docs.astral.sh/uv/) (Python 3.14 is installed by uv if needed), Docker, and `gitleaks` (`brew install gitleaks`).
+
+1. Copy `.env.example` to `.env` and fill in the values. Never commit `.env`.
+2. Turn on the secret-scanning hook: `git config core.hooksPath scripts/git-hooks`
+3. Install the backend: `cd backend && uv sync`
+4. Run the tests (offline): `uv run pytest`
+5. Fetch the current legislature into the local cache (live requests to the official APIs, a few minutes on the first run): `uv run python manage.py fetch_current`
+   - `--limit N` fetches details for only the first N people; `--refresh` downloads again even if the cache is fresh.
+6. Optional, by hand:
+   - record test fixtures from the cache: `python3 scripts/record_fixtures.py` (add `--fetch` to download missing cases);
+   - compare the live APIs with the fixtures: `python3 scripts/check_upstream.py`.
+
+The PostgreSQL database (`docker compose up -d db`) is needed from Phase B on.
+
 ## Status
 
-Early planning. No code yet.
+Phase A (data access) in progress. See `docs/plans/` and `docs/decisions/`.
 
 ## License
 
