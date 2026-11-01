@@ -61,7 +61,7 @@ Small, descriptive local commits are allowed.
 ## 7. Backend framework (decision 0005)
 
 - Django 6.1 with Django Ninja for the HTTP API. Python 3.14, managed with `uv`.
-- Backend layout: `backend/config/` (settings), `backend/placar/{sources,legislators,activity,metrics,summaries,api}/`, `backend/tests/`.
+- Backend layout: `backend/config/` (settings), `backend/placar/{core,sources,legislators,activity,metrics,summaries,api}/`, `backend/tests/` (`core` added by decision 0007).
 - Views are sync by default. Async only when a view waits on something other than the database.
 - Database writes are sync and run inside transactions.
 - Fetching official data runs only as management commands, never inside a web request.
@@ -77,3 +77,21 @@ Small, descriptive local commits are allowed.
 - Every normalized record stores its official source URL and the cache key of its raw response.
 - Freshness per endpoint: data that no longer changes never expires; changing data refreshes after 24 hours by default; `--refresh` forces download; on API failure the cached copy is used and shown with its fetch date.
 - Deleting or pruning the cache, or removing the database volume, needs the owner's approval.
+
+## 9. Module boundaries (decision 0007)
+
+- Style: modular monolith, layered, with services/selectors; `metrics` is a pure functional core with a thin selector shell. Not hexagonal.
+- Allowed imports (nothing else):
+  - `core` → nothing
+  - `legislators` → core
+  - `activity` → core, legislators
+  - `sources` → core, legislators, activity
+  - `metrics` → core, legislators, activity
+  - `summaries` → core, legislators, activity, metrics
+  - `api` → core, legislators, activity, metrics, summaries
+- Nothing imports `api`. Only `sources` contacts the official APIs. No import cycles.
+- Apps use other apps' `selectors.py` (reads) and `services.py` (writes), not their models' queries directly. Foreign keys are allowed.
+- Official records are written only by `sources`, through services. `api` and the admin never write official data.
+- Every value leaving `metrics` or `summaries` carries its `SourceRef`s.
+- `metrics` never imports `django.http`, `ninja` or `sources`.
+- An `ast`-based test in `backend/tests/` enforces these rules. A new dependency between apps needs a new decision.

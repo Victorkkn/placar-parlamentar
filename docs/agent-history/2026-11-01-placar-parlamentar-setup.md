@@ -180,3 +180,9 @@
 - **Changes made:** `docs/decisions/0007-module-boundaries.md` (proposed); index updated.
 - **Decisions:** Proposes adding a `core` app to the 0005 layout; flagged to the owner as an addition to an accepted decision.
 - **Remaining work:** owner approval of 0007.
+
+## 2026-11-01 — Decision 0007 accepted
+
+- **Agent:** Main Claude Code session
+- **Task:** Owner asked whether the module structure has a name; explained it is a layered modular monolith with services/selectors and a functional core in metrics, not hexagonal. Owner approved adding an "Architecture style" section and accepted 0007.
+- **Changes made:** 0007 gained "Architecture style" and a hexagonal alternative entry, plus markdown lint fixes; status accepted. Index updated. Rules: section 7 layout now includes `core`; section 9 added.

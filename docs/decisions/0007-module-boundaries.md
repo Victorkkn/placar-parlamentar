@@ -1,12 +1,13 @@
 # 0007 — Backend module boundaries
 
-- **Status:** proposed
+- **Status:** accepted (2026-11-01)
 - **Date:** 2026-11-01
 - **Stage:** 2 (topic 4 of 10)
 
 ## Context
 
 Decision 0005 set the backend apps: `sources`, `legislators`, `activity`, `metrics`, `summaries`, `api`. This decision sets what each one does, what it may use, and how the rules are checked. Clear boundaries matter because:
+
 - different agents own different apps (data engineer vs backend engineer);
 - metrics must be testable without a database or web code;
 - the summary feature must only see structured records with source links;
@@ -14,10 +15,18 @@ Decision 0005 set the backend apps: `sources`, `legislators`, `activity`, `metri
 
 ## Decision
 
+### Architecture style
+
+- **Modular monolith:** one deployable backend, split into apps with enforced dependency rules.
+- **Layered:** dependencies point one way: `core` → data apps (`legislators`, `activity`) → logic (`metrics`, `summaries`) → `api`. `sources` feeds the data apps.
+- **Services and selectors** (from the HackSoft Django Styleguide): each data app exposes `services.py` for writes and `selectors.py` for reads.
+- **Functional core, imperative shell** in `metrics`: pure functions on plain `core` types, with a thin selector layer that loads data.
+- **Not hexagonal or Clean Architecture:** Django models are the domain models (no separate domain objects or repositories). Only two parts are adapter-style: the official API clients in `sources` and the language model adapter in `summaries`.
+
 ### Apps and responsibilities
 
 | App | Does | Does not |
-|---|---|---|
+| --- | --- | --- |
 | `core` (new) | Shared plain-Python types used everywhere: `SourceRef` (official URL, cache key, label), `DateWindow`, `Period`, and shared errors. No Django models, no imports from other apps. | Hold data or logic specific to one area. |
 | `sources` | Clients for the Câmara and Senado APIs, the raw file cache (decision 0006), rate limiting, normalizers that turn raw responses into records, and the fetch management commands. | Serve HTTP, compute metrics, or write to the database directly; it writes only through `legislators` and `activity` services. |
 | `legislators` | Models and logic for officials, parties, mandates, exercise periods (including substitutes and leaves) and party affiliations. | Know where data came from beyond the stored `SourceRef`. |
@@ -30,7 +39,7 @@ Decision 0005 set the backend apps: `sources`, `legislators`, `activity`, `metri
 
 An app may import only the apps listed for it:
 
-```
+```text
 core          → (nothing)
 legislators   → core
 activity      → core, legislators
@@ -61,6 +70,7 @@ api           → core, legislators, activity, metrics, summaries
 ## Alternatives considered
 
 - **No shared `core` app; put `SourceRef` and `DateWindow` in `legislators`.** Fewer apps, but metrics and summaries would depend on `legislators` just for basic types, and the types would end up mixed with models.
+- **Hexagonal / Clean Architecture** (separate domain objects, repositories, ports and adapters for persistence). Keeps business logic independent of Django, but needs two copies of every model plus mapping code, and gives up much of the ORM, admin and migrations that motivated choosing Django (0005). The hard logic (metrics) already gets the main benefit through the pure core.
 - **Free imports between apps, rules only in docs.** Less code, but boundaries erode quickly when several agents work in parallel.
 - **`import-linter` package to check the rules.** Mature and expressive, but it is one more dependency; the `ast` test covers what we need. Can be adopted later by a new decision.
 - **A separate `ingestion` app for normalizers, apart from `sources`.** Cleaner split between fetching and mapping, but both belong to the data engineer and change together; kept in `sources` as sub-packages (`clients/`, `cache/`, `normalize/`).
