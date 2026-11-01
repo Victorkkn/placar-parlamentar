@@ -199,3 +199,10 @@
 - **Agent:** Main Claude Code session
 - **Changes made:** 0008 accepted; index updated; rules section 10 added.
 - **Decisions:** Owner answered "yes" to the 0008 approval and to the suggestion that short leave days without a substitute count as time in office, with leave days shown separately. To be written into the Phase B methodology plan for final confirmation.
+
+## 2026-11-01 — Decision 0009 proposed (frontend)
+
+- **Agent:** Main Claude Code session (acting as architect)
+- **Analysis:** Local Node 24.12 / npm 11.6; checked latest npm versions of react, vite, typescript, react-router, TanStack Query, openapi-typescript, openapi-fetch; Node release lines from endoflife.date.
+- **Changes made:** `docs/decisions/0009-frontend.md` (proposed); index updated.
+- **Remaining work:** owner approval of 0009.
