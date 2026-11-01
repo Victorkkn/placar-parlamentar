@@ -1,0 +1,264 @@
+{
+  "_fixture": {
+    "cache_file_id": "a15b4d613786044cf9de24bc1940722e92f680375df057da60e09f2ba399dda0",
+    "case": "senado_leaves_5917",
+    "recorded_at": "2026-11-01T16:10:21.744217+00:00",
+    "removed_personal_fields": [],
+    "spec": "https://legis.senado.leg.br/dadosabertos/v3/api-docs (4.1.3.108)",
+    "trimmed": "not trimmed"
+  },
+  "api_version": "6",
+  "body": {
+    "LicencaParlamentar": {
+      "Metadados": {
+        "DataVersaoServico": "2021-09-09",
+        "DescricaoDataSet": "Retorna a relação de Licenças do Senador informado no parâmetro.",
+        "Versao": "01/11/2026 13:06:51",
+        "VersaoServico": "6"
+      },
+      "Parlamentar": {
+        "Codigo": "5917",
+        "Licencas": {
+          "Licenca": [
+            {
+              "Codigo": "26285",
+              "DataFim": "2026-04-28",
+              "DataFimPrevista": "2026-04-28",
+              "DataInicio": "2026-04-28",
+              "DataInicioPrevista": "2026-04-28",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "26247",
+              "DataFim": "2026-04-15",
+              "DataFimPrevista": "2026-04-15",
+              "DataInicio": "2026-04-14",
+              "DataInicioPrevista": "2026-04-14",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "26168",
+              "DataFim": "2026-04-08",
+              "DataFimPrevista": "2026-04-08",
+              "DataInicio": "2026-04-07",
+              "DataInicioPrevista": "2026-04-07",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "25278",
+              "DataFim": "2025-11-26",
+              "DataFimPrevista": "2025-11-26",
+              "DataInicio": "2025-11-25",
+              "DataInicioPrevista": "2025-11-25",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "25125",
+              "DataFim": "2025-11-11",
+              "DataFimPrevista": "2025-11-11",
+              "DataInicio": "2025-11-11",
+              "DataInicioPrevista": "2025-11-11",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "24778",
+              "DataFim": "2025-10-07",
+              "DataFimPrevista": "2025-10-07",
+              "DataInicio": "2025-10-07",
+              "DataInicioPrevista": "2025-10-07",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "24658",
+              "DataFim": "2025-09-16",
+              "DataFimPrevista": "2025-09-16",
+              "DataInicio": "2025-09-16",
+              "DataInicioPrevista": "2025-09-16",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "24318",
+              "DataFim": "2025-08-05",
+              "DataFimPrevista": "2025-08-05",
+              "DataInicio": "2025-08-05",
+              "DataInicioPrevista": "2025-08-05",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "23957",
+              "DataFim": "2025-06-18",
+              "DataFimPrevista": "2025-06-18",
+              "DataInicio": "2025-06-17",
+              "DataInicioPrevista": "2025-06-17",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "23578",
+              "DataFim": "2025-05-22",
+              "DataFimPrevista": "2025-05-22",
+              "DataInicio": "2025-05-20",
+              "DataInicioPrevista": "2025-05-20",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "23466",
+              "DataFim": "2025-05-15",
+              "DataFimPrevista": "2025-05-15",
+              "DataInicio": "2025-05-13",
+              "DataInicioPrevista": "2025-05-13",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "23201",
+              "DataFim": "2025-04-24",
+              "DataFimPrevista": "2025-04-24",
+              "DataInicio": "2025-04-22",
+              "DataInicioPrevista": "2025-04-22",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "23035",
+              "DataFim": "2025-03-27",
+              "DataFimPrevista": "2025-03-27",
+              "DataInicio": "2025-03-25",
+              "DataInicioPrevista": "2025-03-25",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "22336",
+              "DataFim": "2024-11-21",
+              "DataFimPrevista": "2024-11-21",
+              "DataInicio": "2024-11-21",
+              "DataInicioPrevista": "2024-11-21",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "21015",
+              "DataFim": "2024-07-11",
+              "DataFimPrevista": "2024-07-11",
+              "DataInicio": "2024-07-10",
+              "DataInicioPrevista": "2024-07-10",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "20953",
+              "DataFim": "2024-07-04",
+              "DataFimPrevista": "2024-07-04",
+              "DataInicio": "2024-07-03",
+              "DataInicioPrevista": "2024-07-03",
+              "DescricaoTipoAfastamento": "Licença Saúde (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_SAUDE_ATE_120D"
+            },
+            {
+              "Codigo": "20765",
+              "DataFim": "2024-06-20",
+              "DataFimPrevista": "2024-06-20",
+              "DataInicio": "2024-06-20",
+              "DataInicioPrevista": "2024-06-20",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "19670",
+              "DataFim": "2024-03-26",
+              "DataFimPrevista": "2024-03-26",
+              "DataInicio": "2024-03-26",
+              "DataInicioPrevista": "2024-03-26",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "19193",
+              "DataFim": "2024-03-07",
+              "DataFimPrevista": "2024-03-07",
+              "DataInicio": "2024-03-05",
+              "DataInicioPrevista": "2024-03-05",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "18802",
+              "DataFim": "2024-02-08",
+              "DataFimPrevista": "2024-02-08",
+              "DataInicio": "2024-02-06",
+              "DataInicioPrevista": "2024-02-06",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "15773",
+              "DataFim": "2023-11-30",
+              "DataFimPrevista": "2023-11-30",
+              "DataInicio": "2023-11-28",
+              "DataInicioPrevista": "2023-11-28",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "15772",
+              "DataFim": "2023-11-09",
+              "DataFimPrevista": "2023-11-09",
+              "DataInicio": "2023-11-09",
+              "DataInicioPrevista": "2023-11-09",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "15771",
+              "DataFim": "2023-08-31",
+              "DataFimPrevista": "2023-08-31",
+              "DataInicio": "2023-08-29",
+              "DataInicioPrevista": "2023-08-29",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "15770",
+              "DataFim": "2023-06-29",
+              "DataFimPrevista": "2023-06-29",
+              "DataInicio": "2023-06-27",
+              "DataInicioPrevista": "2023-06-27",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "15769",
+              "DataFim": "2023-04-27",
+              "DataFimPrevista": "2023-04-27",
+              "DataInicio": "2023-04-24",
+              "DataInicioPrevista": "2023-04-24",
+              "DescricaoTipoAfastamento": "Licença Saúde (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_SAUDE_ATE_120D"
+            }
+          ]
+        },
+        "Nome": "Fernando Dueire"
+      },
+      "noNamespaceSchemaLocation": "https://legis.senado.leg.br/dadosabertos/dados/LicencaParlamentarv6.xsd"
+    }
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T16:06:51.526180+00:00",
+  "method": "GET",
+  "params": {},
+  "schema": 1,
+  "source": "senado",
+  "status": 200,
+  "url": "https://legis.senado.leg.br/dadosabertos/senador/5917/licencas"
+}

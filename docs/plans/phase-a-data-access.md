@@ -107,3 +107,26 @@ Not needed yet: `django-ninja` (Phase C), `hypothesis` (Phase B), `anthropic` (P
 1. Approve this plan and the dependency list?
 2. The live run (A13) makes about 1,240 requests to public official APIs, spaced out. Should the session run it, or will you run it yourself?
 3. Skipping `/deputados/{id}` means no civil name for deputies for now. OK? (It can be added later with the allowlist filter.)
+
+## Outcome (2026-11-01)
+
+All tasks A0–A13 done. Evidence: `docs/testing/phase-a.md`, `docs/security/phase-a.md`, `docs/data-issues.md`.
+
+| Criterion | Result |
+| --- | --- |
+| 1. `fetch_current` fetches both houses and prints a report | Met: live run fetched 648 deputies (6,865 history events) and 126 senators' details |
+| 2. ≤ 2 requests/s, `Retry-After` honored | Met: throttle capped at 2/s (tested); 19 live retries after HTTP 504 with backoff |
+| 3. Second run makes no requests for unchanged data | Met: 2nd run sent 1 request, only for the history that failed in the 1st run |
+| 4. Every parsed record has a `SourceRef` | Met (tests) |
+| 5. No non-allowlisted personal field in records or fixtures | Met: parsers use allowlists; 17 fixtures checked by test and grep |
+| 6. Offline test suite passes | Met: 119 passed, 0 skipped, network blocked |
+| 7. Endpoints cited with spec version; no deprecated Senado service | Met: module docstrings in `clients/camara.py` and `clients/senado.py`; no deprecation headers seen in the live run |
+| 8. Data issues logged | Met: issues 1, 4, 8, 9 added or updated; cause of issue 4 left for Phase B |
+| 9. Security review written; `pip-audit` clean | Met |
+
+**Differences from the plan:**
+- The first run took 21 minutes, not 7–8, because of Câmara timeouts (data issue 1).
+- There were 648 deputies, not about 860, so there were fewer history requests than estimated.
+- The fixture recorder is a management command with a thin wrapper in `scripts/`, so it reuses the cache code.
+
+**Status:** waiting for the owner to sign off on Phase A.

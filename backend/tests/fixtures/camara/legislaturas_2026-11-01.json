@@ -1,0 +1,46 @@
+{
+  "_fixture": {
+    "cache_file_id": "96cc21e2c16ecf7d8e76cdb418b5ace8550c94e298e4ca34e713cecd417cc113",
+    "case": "camara_legislature_on_2026_11_01",
+    "recorded_at": "2026-11-01T16:10:21.733824+00:00",
+    "removed_personal_fields": [],
+    "spec": "https://dadosabertos.camara.leg.br/api/v2/api-docs (0.4.347, 2026-10-26)",
+    "trimmed": "not trimmed"
+  },
+  "api_version": null,
+  "body": {
+    "dados": [
+      {
+        "dataFim": "2027-01-31",
+        "dataInicio": "2023-02-01",
+        "id": 57,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/legislaturas/57"
+      }
+    ],
+    "links": [
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/legislaturas?data=2026-11-01",
+        "rel": "self"
+      },
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/legislaturas?data=2026-11-01&pagina=1&itens=15",
+        "rel": "first"
+      },
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/legislaturas?data=2026-11-01&pagina=1&itens=15",
+        "rel": "last"
+      }
+    ]
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T15:48:29.590413+00:00",
+  "method": "GET",
+  "params": {
+    "data": "2026-11-01"
+  },
+  "schema": 1,
+  "source": "camara",
+  "status": 200,
+  "url": "https://dadosabertos.camara.leg.br/api/v2/legislaturas"
+}

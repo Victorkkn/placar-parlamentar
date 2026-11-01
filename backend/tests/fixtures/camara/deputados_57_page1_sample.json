@@ -1,0 +1,82 @@
+{
+  "_fixture": {
+    "cache_file_id": "a09ce396ad2b05483684cd24f882d2d6405d3a08b8153902dd34434729f4844d",
+    "case": "camara_deputies_legislature_57_page_1",
+    "recorded_at": "2026-11-01T16:10:21.734586+00:00",
+    "removed_personal_fields": [
+      "dados[0].email",
+      "dados[1].email",
+      "dados[2].email"
+    ],
+    "spec": "https://dadosabertos.camara.leg.br/api/v2/api-docs (0.4.347, 2026-10-26)",
+    "trimmed": "dados: kept items with id in ['220593', '220714'] of 100"
+  },
+  "api_version": null,
+  "body": {
+    "dados": [
+      {
+        "id": 220593,
+        "idLegislatura": 57,
+        "nome": "Abilio Brunini",
+        "siglaPartido": "PL",
+        "siglaUf": "MT",
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220593",
+        "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37906",
+        "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220593.jpg"
+      },
+      {
+        "id": 220714,
+        "idLegislatura": 57,
+        "nome": "Adail Filho",
+        "siglaPartido": "REPUBLICANOS",
+        "siglaUf": "AM",
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220714",
+        "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36899",
+        "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220714.jpg"
+      },
+      {
+        "id": 220714,
+        "idLegislatura": 57,
+        "nome": "Adail Filho",
+        "siglaPartido": "MDB",
+        "siglaUf": "AM",
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220714",
+        "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36899",
+        "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220714.jpg"
+      }
+    ],
+    "links": [
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/deputados?idLegislatura=57&itens=100&pagina=1&ordem=ASC&ordenarPor=nome",
+        "rel": "self"
+      },
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/deputados?idLegislatura=57&ordem=ASC&ordenarPor=nome&pagina=2&itens=100",
+        "rel": "next"
+      },
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/deputados?idLegislatura=57&ordem=ASC&ordenarPor=nome&pagina=1&itens=100",
+        "rel": "first"
+      },
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/deputados?idLegislatura=57&ordem=ASC&ordenarPor=nome&pagina=9&itens=100",
+        "rel": "last"
+      }
+    ]
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T15:48:29.661991+00:00",
+  "method": "GET",
+  "params": {
+    "idLegislatura": "57",
+    "itens": "100",
+    "ordem": "ASC",
+    "ordenarPor": "nome",
+    "pagina": "1"
+  },
+  "schema": 1,
+  "source": "camara",
+  "status": 200,
+  "url": "https://dadosabertos.camara.leg.br/api/v2/deputados"
+}

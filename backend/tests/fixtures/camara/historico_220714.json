@@ -1,0 +1,95 @@
+{
+  "_fixture": {
+    "cache_file_id": "841f475272b79723e6c934dfcf76e817146045a87773500c3fe33d399feb3490",
+    "case": "camara_history_220714_party_change",
+    "recorded_at": "2026-11-01T16:10:21.735035+00:00",
+    "removed_personal_fields": [
+      "dados[0].email",
+      "dados[1].email",
+      "dados[2].email",
+      "dados[3].email"
+    ],
+    "spec": "https://dadosabertos.camara.leg.br/api/v2/api-docs (0.4.347, 2026-10-26)",
+    "trimmed": "not trimmed"
+  },
+  "api_version": null,
+  "body": {
+    "dados": [
+      {
+        "condicaoEleitoral": null,
+        "dataHora": "2023-02-01T00:00",
+        "descricaoStatus": "Nome no início da legislatura / Partido no início da legislatura",
+        "id": 220714,
+        "idLegislatura": 58,
+        "nome": "Adail Filho",
+        "nomeEleitoral": "ADAIL FILHO",
+        "siglaPartido": "MDB",
+        "siglaUf": "AM",
+        "situacao": null,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220714",
+        "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36899",
+        "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220714.jpg"
+      },
+      {
+        "condicaoEleitoral": null,
+        "dataHora": "2023-02-01T00:00",
+        "descricaoStatus": "Nome no início da legislatura / Partido no início da legislatura",
+        "id": 220714,
+        "idLegislatura": 57,
+        "nome": "Adail Filho",
+        "nomeEleitoral": "ADAIL FILHO",
+        "siglaPartido": "REPUBLICANOS",
+        "siglaUf": "AM",
+        "situacao": null,
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220714",
+        "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37908",
+        "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220714.jpg"
+      },
+      {
+        "condicaoEleitoral": "Titular",
+        "dataHora": "2023-02-01T12:05",
+        "descricaoStatus": "Entrada - Posse de Eleito Titular - Posse na Sessão Preparatória",
+        "id": 220714,
+        "idLegislatura": 57,
+        "nome": "Adail Filho",
+        "nomeEleitoral": "ADAIL FILHO",
+        "siglaPartido": "REPUBLICANOS",
+        "siglaUf": "AM",
+        "situacao": "Exercício",
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220714",
+        "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37908",
+        "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220714.jpg"
+      },
+      {
+        "condicaoEleitoral": "Titular",
+        "dataHora": "2026-04-01T14:00",
+        "descricaoStatus": "Alteração de partido",
+        "id": 220714,
+        "idLegislatura": 57,
+        "nome": "Adail Filho",
+        "nomeEleitoral": "ADAIL FILHO",
+        "siglaPartido": "MDB",
+        "siglaUf": "AM",
+        "situacao": "Exercício",
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220714",
+        "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36899",
+        "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220714.jpg"
+      }
+    ],
+    "links": [
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/deputados/220714/historico",
+        "rel": "self"
+      }
+    ]
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T16:03:51.265340+00:00",
+  "method": "GET",
+  "params": {},
+  "schema": 1,
+  "source": "camara",
+  "status": 200,
+  "url": "https://dadosabertos.camara.leg.br/api/v2/deputados/220714/historico"
+}

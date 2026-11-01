@@ -295,3 +295,20 @@
   - Not yet done: live `fetch_current` run (A13), fixture recording (A8), real-case tests.
 - **Decisions:** `ruff format` rewrote `except (A, B)` to the Python 3.14 unparenthesized form (PEP 758), valid for the pinned Python 3.14. Fixture recorder is a management command with a thin wrapper in `scripts/` so it reuses the cache key logic.
 - **Remaining work:** owner runs (or approves the session running) `fetch_current` and `record_fixtures`; then run the full suite with real-case tests and close Phase A.
+
+## 2026-11-01 — Phase A live steps and results
+
+- **Agent:** Main Claude Code session
+- **Task:** Owner answered "yes" to: creating `.env`, recording fixtures and running the live fetch in the session.
+- **Changes made:**
+  - `.env` created with generated `DJANGO_SECRET_KEY` and database password written directly to the file (mode 600, git-ignored, never displayed).
+  - Live `fetch_current` run twice; fixtures recorded with `--fetch` (3 downloads for senator 5918).
+  - `runner.py`: each failure now reported once.
+  - Docs: data issue 1 updated; testing and security notes; plan outcome section.
+- **Validation (actually run):**
+  - 1st run: 677 Câmara requests (657 downloads, 19 retries after HTTP 504, 1 final failure for deputy 74299) and 382 Senado requests; 21 minutes.
+  - 2nd run: 1 Câmara request (74299, succeeded), 0 Senado requests; under 1 second.
+  - Raw cache: 1,043 files, 4.1 MB.
+  - `uv run pytest`: 119 passed, 0 skipped; coverage 94%; ruff clean; grep found no `@` or `"cpf"` in fixtures; gitleaks hook passed.
+- **Hook finding:** the gitleaks pre-commit hook blocked the first two commit attempts (17 `generic-api-key` matches on the fixture field `cache_key`, a SHA-256 of a public URL). Renamed to `cache_file_id`, re-recorded fixtures from cache (no network), tests still 119 passed, rescan clean. Scanner rules unchanged.
+- **Remaining work:** owner sign-off on Phase A; then the Phase B plan (data model and metrics), including the leave-days methodology confirmation and the cause of data issue 4.

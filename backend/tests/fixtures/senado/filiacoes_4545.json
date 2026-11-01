@@ -1,0 +1,56 @@
+{
+  "_fixture": {
+    "cache_file_id": "8530037ace56b8f8dd8edfa24ccfe9c0dc73994c9598eea4b05dfa322c903239",
+    "case": "senado_affiliations_4545",
+    "recorded_at": "2026-11-01T16:10:21.744537+00:00",
+    "removed_personal_fields": [],
+    "spec": "https://legis.senado.leg.br/dadosabertos/v3/api-docs (4.1.3.108)",
+    "trimmed": "not trimmed"
+  },
+  "api_version": "5",
+  "body": {
+    "FiliacaoParlamentar": {
+      "Metadados": {
+        "DataVersaoServico": "2021-09-09",
+        "DescricaoDataSet": "Retorna a relação de Filiações Partidárias do Senador informado no parâmetro.",
+        "Versao": "01/11/2026 13:05:24",
+        "VersaoServico": "5"
+      },
+      "Parlamentar": {
+        "Codigo": "4545",
+        "Filiacoes": {
+          "Filiacao": [
+            {
+              "DataFiliacao": "2018-05-21",
+              "Partido": {
+                "CodigoPartido": "33",
+                "NomePartido": "Movimento Democrático Brasileiro",
+                "SiglaPartido": "MDB"
+              }
+            },
+            {
+              "DataDesfiliacao": "2018-05-20",
+              "DataFiliacao": "2007-02-01",
+              "Partido": {
+                "CodigoPartido": "33",
+                "NomePartido": "Movimento Democrático Brasileiro",
+                "SiglaPartido": "MDB"
+              }
+            }
+          ]
+        },
+        "Nome": "Jarbas Vasconcelos"
+      },
+      "noNamespaceSchemaLocation": "https://legis.senado.leg.br/dadosabertos/dados/FiliacaoParlamentarv5.xsd"
+    }
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T16:05:24.890467+00:00",
+  "method": "GET",
+  "params": {},
+  "schema": 1,
+  "source": "senado",
+  "status": 200,
+  "url": "https://legis.senado.leg.br/dadosabertos/senador/4545/filiacoes"
+}

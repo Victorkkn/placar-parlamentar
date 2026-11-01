@@ -1,0 +1,678 @@
+{
+  "_fixture": {
+    "cache_file_id": "829251627c3835301601d7eb233c051f6b03cd72b9fc8263e7d0bbd639f9ea20",
+    "case": "senado_leaves_4545",
+    "recorded_at": "2026-11-01T16:10:21.743926+00:00",
+    "removed_personal_fields": [],
+    "spec": "https://legis.senado.leg.br/dadosabertos/v3/api-docs (4.1.3.108)",
+    "trimmed": "not trimmed"
+  },
+  "api_version": "6",
+  "body": {
+    "LicencaParlamentar": {
+      "Metadados": {
+        "DataVersaoServico": "2021-09-09",
+        "DescricaoDataSet": "Retorna a relação de Licenças do Senador informado no parâmetro.",
+        "Versao": "01/11/2026 13:05:24",
+        "VersaoServico": "6"
+      },
+      "Parlamentar": {
+        "Codigo": "4545",
+        "Licencas": {
+          "Licenca": [
+            {
+              "Codigo": "12896",
+              "DataFim": "2023-10-07",
+              "DataFimPrevista": "2023-10-07",
+              "DataInicio": "2023-08-09",
+              "DataInicioPrevista": "2023-08-09",
+              "DescricaoTipoAfastamento": "Licença Interesse Particular (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_INTER_PARTIC_ATE_120D"
+            },
+            {
+              "Codigo": "12895",
+              "DataFim": "2023-08-08",
+              "DataFimPrevista": "2023-08-08",
+              "DataInicio": "2023-04-19",
+              "DataInicioPrevista": "2023-04-19",
+              "DescricaoTipoAfastamento": "Licença Saúde (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_SAUDE_ATE_120D"
+            },
+            {
+              "Codigo": "12894",
+              "DataFim": "2023-04-25",
+              "DataFimPrevista": "2023-04-25",
+              "DataInicio": "2023-03-31",
+              "DataInicioPrevista": "2023-03-31",
+              "DescricaoTipoAfastamento": "Licença Saúde (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_SAUDE_ATE_120D"
+            },
+            {
+              "Codigo": "12893",
+              "DataFim": "2023-03-30",
+              "DataFimPrevista": "2023-03-30",
+              "DataInicio": "2022-11-21",
+              "DataInicioPrevista": "2022-11-21",
+              "DescricaoTipoAfastamento": "Licença Saúde (superior a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_SAUDE_SUP_120D"
+            },
+            {
+              "Codigo": "12892",
+              "DataFim": "2022-06-05",
+              "DataFimPrevista": "2022-06-05",
+              "DataInicio": "2022-05-30",
+              "DataInicioPrevista": "2022-05-30",
+              "DescricaoTipoAfastamento": "Licença Saúde (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_SAUDE_ATE_120D"
+            },
+            {
+              "Codigo": "12891",
+              "DataFim": "2022-05-12",
+              "DataFimPrevista": "2022-05-12",
+              "DataInicio": "2022-05-09",
+              "DataInicioPrevista": "2022-05-09",
+              "DescricaoTipoAfastamento": "Licença Saúde (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_SAUDE_ATE_120D"
+            },
+            {
+              "Codigo": "12890",
+              "DataFim": "2022-04-11",
+              "DataFimPrevista": "2022-04-11",
+              "DataInicio": "2022-04-05",
+              "DataInicioPrevista": "2022-04-05",
+              "DescricaoTipoAfastamento": "Licença Saúde (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_SAUDE_ATE_120D"
+            },
+            {
+              "Codigo": "12889",
+              "DataFim": "2021-10-09",
+              "DataFimPrevista": "2021-10-09",
+              "DataInicio": "2021-08-17",
+              "DataInicioPrevista": "2021-08-17",
+              "DescricaoTipoAfastamento": "Licença Saúde (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_SAUDE_ATE_120D"
+            },
+            {
+              "Codigo": "12888",
+              "DataFim": "2020-02-19",
+              "DataFimPrevista": "2020-02-19",
+              "DataInicio": "2020-02-19",
+              "DataInicioPrevista": "2020-02-19",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12887",
+              "DataFim": "2019-12-17",
+              "DataFimPrevista": "2019-12-17",
+              "DataInicio": "2019-11-18",
+              "DataInicioPrevista": "2019-11-18",
+              "DescricaoTipoAfastamento": "Licença Saúde (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_SAUDE_ATE_120D"
+            },
+            {
+              "Codigo": "12886",
+              "DataFim": "2019-10-18",
+              "DataFimPrevista": "2019-10-18",
+              "DataInicio": "2019-10-16",
+              "DataInicioPrevista": "2019-10-16",
+              "DescricaoTipoAfastamento": "Licença Saúde (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_SAUDE_ATE_120D"
+            },
+            {
+              "Codigo": "12885",
+              "DataFim": "2019-10-15",
+              "DataFimPrevista": "2019-10-15",
+              "DataInicio": "2019-10-14",
+              "DataInicioPrevista": "2019-10-14",
+              "DescricaoTipoAfastamento": "Licença Saúde (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_SAUDE_ATE_120D"
+            },
+            {
+              "Codigo": "12884",
+              "DataFim": "2019-09-20",
+              "DataFimPrevista": "2019-09-20",
+              "DataInicio": "2019-09-16",
+              "DataInicioPrevista": "2019-09-16",
+              "DescricaoTipoAfastamento": "Licença Saúde (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_SAUDE_ATE_120D"
+            },
+            {
+              "Codigo": "12883",
+              "DataFim": "2019-09-13",
+              "DataFimPrevista": "2019-09-13",
+              "DataInicio": "2019-09-09",
+              "DataInicioPrevista": "2019-09-09",
+              "DescricaoTipoAfastamento": "Licença Saúde (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_SAUDE_ATE_120D"
+            },
+            {
+              "Codigo": "12882",
+              "DataFim": "2019-04-17",
+              "DataFimPrevista": "2019-04-17",
+              "DataInicio": "2019-04-17",
+              "DataInicioPrevista": "2019-04-17",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12881",
+              "DataFim": "2019-04-16",
+              "DataFimPrevista": "2019-04-16",
+              "DataInicio": "2019-04-16",
+              "DataInicioPrevista": "2019-04-16",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12880",
+              "DataFim": "2019-03-07",
+              "DataFimPrevista": "2019-03-07",
+              "DataInicio": "2019-03-07",
+              "DataInicioPrevista": "2019-03-07",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12879",
+              "DataFim": "2014-03-27",
+              "DataFimPrevista": "2014-03-27",
+              "DataInicio": "2014-03-27",
+              "DataInicioPrevista": "2014-03-27",
+              "DescricaoTipoAfastamento": "Licença Saúde (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_SAUDE_ATE_120D"
+            },
+            {
+              "Codigo": "12878",
+              "DataFim": "2014-02-27",
+              "DataFimPrevista": "2014-02-27",
+              "DataInicio": "2014-02-27",
+              "DataInicioPrevista": "2014-02-27",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12877",
+              "DataFim": "2013-10-11",
+              "DataFimPrevista": "2013-10-11",
+              "DataInicio": "2013-10-10",
+              "DataInicioPrevista": "2013-10-10",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12876",
+              "DataFim": "2013-10-04",
+              "DataFimPrevista": "2013-10-04",
+              "DataInicio": "2013-10-03",
+              "DataInicioPrevista": "2013-10-03",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12875",
+              "DataFim": "2013-09-16",
+              "DataFimPrevista": "2013-09-16",
+              "DataInicio": "2013-09-16",
+              "DataInicioPrevista": "2013-09-16",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12874",
+              "DataFim": "2013-08-29",
+              "DataFimPrevista": "2013-08-29",
+              "DataInicio": "2013-08-28",
+              "DataInicioPrevista": "2013-08-28",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12873",
+              "DataFim": "2013-07-05",
+              "DataFimPrevista": "2013-07-05",
+              "DataInicio": "2013-07-03",
+              "DataInicioPrevista": "2013-07-03",
+              "DescricaoTipoAfastamento": "Licença Saúde (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_SAUDE_ATE_120D"
+            },
+            {
+              "Codigo": "12872",
+              "DataFim": "2013-06-27",
+              "DataFimPrevista": "2013-06-27",
+              "DataInicio": "2013-06-25",
+              "DataInicioPrevista": "2013-06-25",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12871",
+              "DataFim": "2013-03-07",
+              "DataFimPrevista": "2013-03-07",
+              "DataInicio": "2013-03-07",
+              "DataInicioPrevista": "2013-03-07",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12870",
+              "DataFim": "2013-02-07",
+              "DataFimPrevista": "2013-02-07",
+              "DataInicio": "2013-02-07",
+              "DataInicioPrevista": "2013-02-07",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12869",
+              "DataFim": "2012-12-20",
+              "DataFimPrevista": "2012-12-20",
+              "DataInicio": "2012-12-20",
+              "DataInicioPrevista": "2012-12-20",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12868",
+              "DataFim": "2012-07-31",
+              "DataFimPrevista": "2012-07-31",
+              "DataInicio": "2012-07-14",
+              "DataInicioPrevista": "2012-07-14",
+              "DescricaoTipoAfastamento": "Licença Saúde (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_SAUDE_ATE_120D"
+            },
+            {
+              "Codigo": "12867",
+              "DataFim": "2012-07-13",
+              "DataFimPrevista": "2012-07-13",
+              "DataInicio": "2012-06-11",
+              "DataInicioPrevista": "2012-06-11",
+              "DescricaoTipoAfastamento": "Licença Saúde (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_SAUDE_ATE_120D"
+            },
+            {
+              "Codigo": "12866",
+              "DataFim": "2012-04-10",
+              "DataFimPrevista": "2012-04-10",
+              "DataInicio": "2012-04-10",
+              "DataInicioPrevista": "2012-04-10",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12865",
+              "DataFim": "2012-03-01",
+              "DataFimPrevista": "2012-03-01",
+              "DataInicio": "2012-03-01",
+              "DataInicioPrevista": "2012-03-01",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12864",
+              "DataFim": "2011-12-22",
+              "DataFimPrevista": "2011-12-22",
+              "DataInicio": "2011-12-21",
+              "DataInicioPrevista": "2011-12-21",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12863",
+              "DataFim": "2011-12-05",
+              "DataFimPrevista": "2011-12-05",
+              "DataInicio": "2011-12-02",
+              "DataInicioPrevista": "2011-12-02",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12862",
+              "DataFim": "2011-10-21",
+              "DataFimPrevista": "2011-10-21",
+              "DataInicio": "2011-10-13",
+              "DataInicioPrevista": "2011-10-13",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12861",
+              "DataFim": "2011-04-20",
+              "DataFimPrevista": "2011-04-20",
+              "DataInicio": "2011-04-13",
+              "DataInicioPrevista": "2011-04-13",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12860",
+              "DataFim": "2011-03-03",
+              "DataFimPrevista": "2011-03-03",
+              "DataInicio": "2011-03-03",
+              "DataInicioPrevista": "2011-03-03",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12859",
+              "DataFim": "2010-12-04",
+              "DataFimPrevista": "2010-12-04",
+              "DataInicio": "2010-12-01",
+              "DataInicioPrevista": "2010-12-01",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12858",
+              "DataFim": "2010-11-11",
+              "DataFimPrevista": "2010-11-11",
+              "DataInicio": "2010-11-09",
+              "DataInicioPrevista": "2010-11-09",
+              "DescricaoTipoAfastamento": "Licença Interesse Particular (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_INTER_PARTIC_ATE_120D"
+            },
+            {
+              "Codigo": "12857",
+              "DataFim": "2010-07-01",
+              "DataFimPrevista": "2010-07-01",
+              "DataInicio": "2010-06-30",
+              "DataInicioPrevista": "2010-06-30",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12856",
+              "DataFim": "2010-06-24",
+              "DataFimPrevista": "2010-06-24",
+              "DataInicio": "2010-06-23",
+              "DataInicioPrevista": "2010-06-23",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12855",
+              "DataFim": "2010-05-13",
+              "DataFimPrevista": "2010-05-13",
+              "DataInicio": "2010-05-13",
+              "DataInicioPrevista": "2010-05-13",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12854",
+              "DataFim": "2010-05-06",
+              "DataFimPrevista": "2010-05-06",
+              "DataInicio": "2010-05-05",
+              "DataInicioPrevista": "2010-05-05",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12853",
+              "DataFim": "2010-04-22",
+              "DataFimPrevista": "2010-04-22",
+              "DataInicio": "2010-04-22",
+              "DataInicioPrevista": "2010-04-22",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12852",
+              "DataFim": "2010-04-15",
+              "DataFimPrevista": "2010-04-15",
+              "DataInicio": "2010-04-15",
+              "DataInicioPrevista": "2010-04-15",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12851",
+              "DataFim": "2010-04-02",
+              "DataFimPrevista": "2010-04-02",
+              "DataInicio": "2010-03-24",
+              "DataInicioPrevista": "2010-03-24",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12850",
+              "DataFim": "2010-02-18",
+              "DataFimPrevista": "2010-02-18",
+              "DataInicio": "2010-02-17",
+              "DataInicioPrevista": "2010-02-17",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12849",
+              "DataFim": "2009-12-22",
+              "DataFimPrevista": "2009-12-22",
+              "DataInicio": "2009-12-22",
+              "DataInicioPrevista": "2009-12-22",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12848",
+              "DataFim": "2009-12-08",
+              "DataFimPrevista": "2009-12-08",
+              "DataInicio": "2009-12-08",
+              "DataInicioPrevista": "2009-12-08",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12847",
+              "DataFim": "2009-11-26",
+              "DataFimPrevista": "2009-11-26",
+              "DataInicio": "2009-11-26",
+              "DataInicioPrevista": "2009-11-26",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12846",
+              "DataFim": "2009-11-20",
+              "DataFimPrevista": "2009-11-20",
+              "DataInicio": "2009-11-16",
+              "DataInicioPrevista": "2009-11-16",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12845",
+              "DataFim": "2009-10-23",
+              "DataFimPrevista": "2009-10-23",
+              "DataInicio": "2009-10-16",
+              "DataInicioPrevista": "2009-10-16",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12844",
+              "DataFim": "2009-08-06",
+              "DataFimPrevista": "2009-08-06",
+              "DataInicio": "2009-08-06",
+              "DataInicioPrevista": "2009-08-06",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12843",
+              "DataFim": "2009-06-30",
+              "DataFimPrevista": "2009-06-30",
+              "DataInicio": "2009-06-23",
+              "DataInicioPrevista": "2009-06-23",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12842",
+              "DataFim": "2009-04-23",
+              "DataFimPrevista": "2009-04-23",
+              "DataInicio": "2009-04-23",
+              "DataInicioPrevista": "2009-04-23",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12841",
+              "DataFim": "2009-04-08",
+              "DataFimPrevista": "2009-04-08",
+              "DataInicio": "2009-04-08",
+              "DataInicioPrevista": "2009-04-08",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12840",
+              "DataFim": "2009-03-05",
+              "DataFimPrevista": "2009-03-05",
+              "DataInicio": "2009-03-05",
+              "DataInicioPrevista": "2009-03-05",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12839",
+              "DataFim": "2009-02-19",
+              "DataFimPrevista": "2009-02-19",
+              "DataInicio": "2009-02-19",
+              "DataInicioPrevista": "2009-02-19",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12838",
+              "DataFim": "2008-11-21",
+              "DataFimPrevista": "2008-11-21",
+              "DataInicio": "2008-11-18",
+              "DataInicioPrevista": "2008-11-18",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12837",
+              "DataFim": "2008-08-14",
+              "DataFimPrevista": "2008-08-14",
+              "DataInicio": "2008-08-14",
+              "DataInicioPrevista": "2008-08-14",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12836",
+              "DataFim": "2008-06-12",
+              "DataFimPrevista": "2008-06-12",
+              "DataInicio": "2008-06-12",
+              "DataInicioPrevista": "2008-06-12",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12835",
+              "DataFim": "2008-05-21",
+              "DataFimPrevista": "2008-05-21",
+              "DataInicio": "2008-05-21",
+              "DataInicioPrevista": "2008-05-21",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12834",
+              "DataFim": "2008-04-17",
+              "DataFimPrevista": "2008-04-17",
+              "DataInicio": "2008-04-11",
+              "DataInicioPrevista": "2008-04-11",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12833",
+              "DataFim": "2008-03-19",
+              "DataFimPrevista": "2008-03-19",
+              "DataInicio": "2008-03-17",
+              "DataInicioPrevista": "2008-03-17",
+              "DescricaoTipoAfastamento": "Licença Interesse Particular (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_INTER_PARTIC_ATE_120D"
+            },
+            {
+              "Codigo": "12832",
+              "DataFim": "2007-11-30",
+              "DataFimPrevista": "2007-11-30",
+              "DataInicio": "2007-11-30",
+              "DataInicioPrevista": "2007-11-30",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12831",
+              "DataFim": "2007-11-23",
+              "DataFimPrevista": "2007-11-23",
+              "DataInicio": "2007-11-19",
+              "DataInicioPrevista": "2007-11-19",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12830",
+              "DataFim": "2007-11-01",
+              "DataFimPrevista": "2007-11-01",
+              "DataInicio": "2007-11-01",
+              "DataInicioPrevista": "2007-11-01",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12829",
+              "DataFim": "2007-10-14",
+              "DataFimPrevista": "2007-10-14",
+              "DataInicio": "2007-10-11",
+              "DataInicioPrevista": "2007-10-11",
+              "DescricaoTipoAfastamento": "Licença Interesse Particular (até a 120 dias)",
+              "SiglaTipoAfastamento": "LICENCA_INTER_PARTIC_ATE_120D"
+            },
+            {
+              "Codigo": "12828",
+              "DataFim": "2007-09-21",
+              "DataFimPrevista": "2007-09-21",
+              "DataInicio": "2007-09-20",
+              "DataInicioPrevista": "2007-09-20",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12827",
+              "DataFim": "2007-05-03",
+              "DataFimPrevista": "2007-05-03",
+              "DataInicio": "2007-05-02",
+              "DataInicioPrevista": "2007-05-02",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            },
+            {
+              "Codigo": "12826",
+              "DataFim": "2007-04-04",
+              "DataFimPrevista": "2007-04-04",
+              "DataInicio": "2007-04-03",
+              "DataInicioPrevista": "2007-04-03",
+              "DescricaoTipoAfastamento": "Missão política ou cultural de interesse parlamentar",
+              "SiglaTipoAfastamento": "LICENCA_ATIVIDADE_PARLAMENTAR"
+            }
+          ]
+        },
+        "Nome": "Jarbas Vasconcelos"
+      },
+      "noNamespaceSchemaLocation": "https://legis.senado.leg.br/dadosabertos/dados/LicencaParlamentarv6.xsd"
+    }
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T16:05:24.461942+00:00",
+  "method": "GET",
+  "params": {},
+  "schema": 1,
+  "source": "senado",
+  "status": 200,
+  "url": "https://legis.senado.leg.br/dadosabertos/senador/4545/licencas"
+}

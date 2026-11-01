@@ -1,0 +1,100 @@
+{
+  "_fixture": {
+    "cache_file_id": "e59459d370e5119049332ed0c1be510929770ae338aa3c46bad0be334805d0fc",
+    "case": "senado_mandates_5917",
+    "recorded_at": "2026-11-01T16:10:21.743446+00:00",
+    "removed_personal_fields": [],
+    "spec": "https://legis.senado.leg.br/dadosabertos/v3/api-docs (4.1.3.108)",
+    "trimmed": "not trimmed"
+  },
+  "api_version": "5",
+  "body": {
+    "MandatoParlamentar": {
+      "Metadados": {
+        "DataVersaoServico": "2021-09-09",
+        "DescricaoDataSet": "Retorna a relação dos Mandatos do Senador informado no parâmetro.",
+        "Versao": "01/11/2026 12:48:18",
+        "VersaoServico": "5"
+      },
+      "Parlamentar": {
+        "Codigo": "5917",
+        "Mandatos": {
+          "Mandato": [
+            {
+              "CodigoMandato": "526",
+              "DescricaoParticipacao": "1º Suplente",
+              "Exercicios": {
+                "Exercicio": [
+                  {
+                    "CodigoExercicio": "3058",
+                    "DataInicio": "2023-09-04"
+                  },
+                  {
+                    "CodigoExercicio": "3000",
+                    "DataFim": "2023-09-04",
+                    "DataInicio": "2022-12-07",
+                    "DescricaoCausaAfastamento": "Retorno do titular",
+                    "SiglaCausaAfastamento": "RET"
+                  }
+                ]
+              },
+              "Partidos": {
+                "Partido": [
+                  {
+                    "CodigoPartido": "557",
+                    "DataFiliacao": "2026-04-02",
+                    "Nome": "Partido Social Democrático",
+                    "Sigla": "PSD"
+                  },
+                  {
+                    "CodigoPartido": "33",
+                    "DataDesfiliacao": "2026-04-01",
+                    "DataFiliacao": "2018-10-07",
+                    "Nome": "Movimento Democrático Brasileiro",
+                    "Sigla": "MDB"
+                  }
+                ]
+              },
+              "PrimeiraLegislaturaDoMandato": {
+                "DataFim": "2023-01-31",
+                "DataInicio": "2019-02-01",
+                "NumeroLegislatura": "56"
+              },
+              "SegundaLegislaturaDoMandato": {
+                "DataFim": "2027-01-31",
+                "DataInicio": "2023-02-01",
+                "NumeroLegislatura": "57"
+              },
+              "Suplentes": {
+                "Suplente": [
+                  {
+                    "CodigoParlamentar": "5918",
+                    "DescricaoParticipacao": "2º Suplente",
+                    "NomeParlamentar": "Adilson Gomes"
+                  }
+                ]
+              },
+              "Titular": {
+                "CodigoParlamentar": "4545",
+                "DescricaoParticipacao": "Titular",
+                "NomeParlamentar": "Jarbas Vasconcelos"
+              },
+              "UfParlamentar": "PE"
+            }
+          ]
+        },
+        "Nome": "Fernando Dueire"
+      },
+      "noNamespaceSchemaLocation": "https://legis.senado.leg.br/dadosabertos/dados/MandatoParlamentarv5.xsd"
+    }
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T16:06:50.898179+00:00",
+  "method": "GET",
+  "params": {},
+  "schema": 1,
+  "source": "senado",
+  "status": 200,
+  "url": "https://legis.senado.leg.br/dadosabertos/senador/5917/mandatos"
+}

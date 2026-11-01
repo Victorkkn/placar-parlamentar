@@ -4,7 +4,7 @@ Gaps, inconsistencies and quirks found in the official Câmara and Senado data. 
 
 | # | Date found | Source | What was seen | Handling | Status |
 | --- | --- | --- | --- | --- | --- |
-| 1 | 2026-11-01 | Câmara `/deputados?idLegislatura=57` | One request failed with "upstream request timeout" and `retry-after: 30`; a later identical request worked. | Clients retry and honor `Retry-After` (decision 0006 and security baseline). | open |
+| 1 | 2026-11-01 | Câmara API (all endpoints used) | Frequent HTTP 504 "upstream request timeout". In the first full run (2026-11-01), 19 retries were needed and the run took 21 minutes instead of about 8; the history of deputy 74299 failed after 5 attempts and succeeded on the next run. | Clients retry with backoff and honor `Retry-After`; failures are reported, and the next run fetches only what is missing. | open |
 | 2 | 2026-11-01 | Câmara API description | The API states the v2 version is "still incomplete, subject to change". | Pin and cite the spec version in code; re-check endpoints before each phase. | open |
 | 3 | 2026-11-01 | Senado API | Many services are deprecated (for example `/senador/{codigo}/autorias`, `/senador/{codigo}/votacoes`, most `/materia/*`). Deprecated services return `Deprecation` and `Sunset` headers. | Use only replacements (`/processo`, `/votacao`, …). | open |
 | 4 | 2026-11-01 | Senado `/senador/lista/legislatura/57` | 82 people listed as `Titular` for 81 seats; counting mandates, the list holds 83 titular mandates (a person can be listed with more than one mandate). | The fetch report shows both counts. Cause to be identified in Phase B when mandates are modeled; do not merge or drop records. | open |

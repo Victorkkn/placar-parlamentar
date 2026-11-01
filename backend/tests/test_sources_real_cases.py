@@ -25,7 +25,8 @@ def load(relative: str):
     from placar.sources.cache import canonical_url
 
     ref = SourceRef(
-        api_url=canonical_url(data["url"], data["params"]), cache_key=data["_fixture"]["cache_key"]
+        api_url=canonical_url(data["url"], data["params"]),
+        cache_key=data["_fixture"]["cache_file_id"],
     )
     return data["body"], ref
 

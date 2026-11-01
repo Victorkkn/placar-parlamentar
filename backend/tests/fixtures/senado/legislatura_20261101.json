@@ -1,0 +1,87 @@
+{
+  "_fixture": {
+    "cache_file_id": "61b50df4481e95a64ccf41e6cefd2058e0ae41465bd15231ab02303660a55e22",
+    "case": "senado_legislature_on_2026_11_01",
+    "recorded_at": "2026-11-01T16:10:21.735223+00:00",
+    "removed_personal_fields": [],
+    "spec": "https://legis.senado.leg.br/dadosabertos/v3/api-docs (4.1.3.108)",
+    "trimmed": "not trimmed"
+  },
+  "api_version": "3",
+  "body": {
+    "ListaLegislatura": {
+      "Legislaturas": {
+        "Legislatura": [
+          {
+            "DataEleicao": "2022-10-02",
+            "DataFim": "2027-01-31",
+            "DataInicio": "2023-02-01",
+            "NumeroLegislatura": "57",
+            "SessoesLegislativas": {
+              "SessaoLegislativa": [
+                {
+                  "DataFim": "2023-02-01",
+                  "DataInicio": "2023-02-01",
+                  "NumeroSessaoLegislativa": "1",
+                  "TipoSessaoLegislativa": "Preparatória"
+                },
+                {
+                  "DataFim": "2023-12-22",
+                  "DataInicio": "2023-02-02",
+                  "NumeroSessaoLegislativa": "1",
+                  "TipoSessaoLegislativa": "Ordinária"
+                },
+                {
+                  "DataFim": "2024-12-23",
+                  "DataInicio": "2024-02-02",
+                  "NumeroSessaoLegislativa": "2",
+                  "TipoSessaoLegislativa": "Ordinária"
+                },
+                {
+                  "DataFim": "2025-02-01",
+                  "DataInicio": "2025-02-01",
+                  "NumeroSessaoLegislativa": "3",
+                  "TipoSessaoLegislativa": "Preparatória"
+                },
+                {
+                  "DataFim": "2025-12-22",
+                  "DataInicio": "2025-02-03",
+                  "NumeroSessaoLegislativa": "3",
+                  "TipoSessaoLegislativa": "Ordinária"
+                },
+                {
+                  "DataFim": "2026-12-22",
+                  "DataInicio": "2026-02-02",
+                  "NumeroSessaoLegislativa": "4",
+                  "TipoSessaoLegislativa": "Ordinária"
+                },
+                {
+                  "DataFim": "2027-01-05",
+                  "DataInicio": "2027-01-05",
+                  "NumeroSessaoLegislativa": "1",
+                  "TipoSessaoLegislativa": "Extraordinária"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "Metadados": {
+        "DataVersaoServico": "2019-08-27",
+        "DescricaoDataSet": "Retorna a Legislatura na data informada no parâmetro e suas Sessões Legislativas.",
+        "Versao": "01/11/2026 13:04:41",
+        "VersaoServico": "3"
+      },
+      "noNamespaceSchemaLocation": "https://legis.senado.leg.br/dadosabertos/dados/ListaLegislaturav3.xsd"
+    }
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T16:04:41.174305+00:00",
+  "method": "GET",
+  "params": {},
+  "schema": 1,
+  "source": "senado",
+  "status": 200,
+  "url": "https://legis.senado.leg.br/dadosabertos/plenario/legislatura/20261101"
+}

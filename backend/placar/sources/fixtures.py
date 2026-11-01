@@ -141,7 +141,9 @@ def record_case(
             "spec": spec.get(case["source"]),
             "trimmed": trimmed,
             "removed_personal_fields": removed,
-            "cache_key": entry.key,
+            # Named "cache_file_id" (not "...key") so secret scanners do not mistake this
+            # SHA-256 of a public URL for a credential.
+            "cache_file_id": entry.key,
         },
         **envelope,
         "body": body,

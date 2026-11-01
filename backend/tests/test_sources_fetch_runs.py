@@ -150,7 +150,7 @@ def test_limit_restricts_details(offline_runner):
 def test_one_failure_does_not_stop_the_run(offline_runner):
     mock_apis(history_status=503)
     out = run()
-    assert "failures" in out and "camara history 2" in out
+    assert "failures (1):" in out and "/deputados/2/historico" in out
     assert "took_office: 2" in out  # the Senado part still ran
 
 

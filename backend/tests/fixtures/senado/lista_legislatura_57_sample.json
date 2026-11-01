@@ -1,0 +1,206 @@
+{
+  "_fixture": {
+    "cache_file_id": "763d0884a3b74cff2d832ae73e24345814e6ea1045aad61d4e37d7d7d80278d7",
+    "case": "senado_list_legislature_57_mandate_526",
+    "recorded_at": "2026-11-01T16:10:21.739463+00:00",
+    "removed_personal_fields": [
+      "ListaParlamentarLegislatura.Parlamentares.Parlamentar[0].IdentificacaoParlamentar.SexoParlamentar",
+      "ListaParlamentarLegislatura.Parlamentares.Parlamentar[1].IdentificacaoParlamentar.EmailParlamentar",
+      "ListaParlamentarLegislatura.Parlamentares.Parlamentar[1].IdentificacaoParlamentar.SexoParlamentar",
+      "ListaParlamentarLegislatura.Parlamentares.Parlamentar[2].IdentificacaoParlamentar.EmailParlamentar",
+      "ListaParlamentarLegislatura.Parlamentares.Parlamentar[2].IdentificacaoParlamentar.SexoParlamentar"
+    ],
+    "spec": "https://legis.senado.leg.br/dadosabertos/v3/api-docs (4.1.3.108)",
+    "trimmed": "ListaParlamentarLegislatura.Parlamentares.Parlamentar: kept items with IdentificacaoParlamentar.CodigoParlamentar in ['4545', '5917', '5918'] of 245"
+  },
+  "api_version": "4",
+  "body": {
+    "ListaParlamentarLegislatura": {
+      "Metadados": {
+        "DataVersaoServico": "2021-09-09",
+        "DescricaoDataSet": "Retorna a lista de Senadores de uma Legislatura.",
+        "Versao": "01/11/2026 13:03:19",
+        "VersaoServico": "4"
+      },
+      "Parlamentares": {
+        "Parlamentar": [
+          {
+            "IdentificacaoParlamentar": {
+              "CodigoParlamentar": "5918",
+              "FormaTratamento": "Senador ",
+              "NomeCompletoParlamentar": "Adilson Gomes Silva",
+              "NomeParlamentar": "Adilson Gomes"
+            },
+            "Mandatos": {
+              "Mandato": [
+                {
+                  "CodigoMandato": "526",
+                  "DescricaoParticipacao": "2º Suplente",
+                  "PrimeiraLegislaturaDoMandato": {
+                    "DataFim": "2023-01-31",
+                    "DataInicio": "2019-02-01",
+                    "NumeroLegislatura": "56"
+                  },
+                  "SegundaLegislaturaDoMandato": {
+                    "DataFim": "2027-01-31",
+                    "DataInicio": "2023-02-01",
+                    "NumeroLegislatura": "57"
+                  },
+                  "Suplentes": {
+                    "Suplente": [
+                      {
+                        "CodigoParlamentar": "5917",
+                        "DescricaoParticipacao": "1º Suplente",
+                        "NomeParlamentar": "Fernando Dueire"
+                      }
+                    ]
+                  },
+                  "Titular": {
+                    "CodigoParlamentar": "4545",
+                    "DescricaoParticipacao": "Titular",
+                    "NomeParlamentar": "Jarbas Vasconcelos"
+                  },
+                  "UfParlamentar": "PE"
+                }
+              ]
+            }
+          },
+          {
+            "IdentificacaoParlamentar": {
+              "CodigoParlamentar": "5917",
+              "CodigoPublicoNaLegAtual": "923",
+              "FormaTratamento": "Senador ",
+              "NomeCompletoParlamentar": "Fernando Antonio Caminha Dueire",
+              "NomeParlamentar": "Fernando Dueire",
+              "SiglaPartidoParlamentar": "PSD",
+              "UfParlamentar": "PE",
+              "UrlFotoParlamentar": "http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5917.jpg",
+              "UrlPaginaParlamentar": "http://www25.senado.leg.br/web/senadores/senador/-/perfil/5917"
+            },
+            "Mandatos": {
+              "Mandato": [
+                {
+                  "CodigoMandato": "526",
+                  "DescricaoParticipacao": "1º Suplente",
+                  "Exercicios": {
+                    "Exercicio": [
+                      {
+                        "CodigoExercicio": "3058",
+                        "DataInicio": "2023-09-04"
+                      },
+                      {
+                        "CodigoExercicio": "3000",
+                        "DataFim": "2023-09-04",
+                        "DataInicio": "2022-12-07",
+                        "DescricaoCausaAfastamento": "Retorno do titular",
+                        "SiglaCausaAfastamento": "RET"
+                      }
+                    ]
+                  },
+                  "PrimeiraLegislaturaDoMandato": {
+                    "DataFim": "2023-01-31",
+                    "DataInicio": "2019-02-01",
+                    "NumeroLegislatura": "56"
+                  },
+                  "SegundaLegislaturaDoMandato": {
+                    "DataFim": "2027-01-31",
+                    "DataInicio": "2023-02-01",
+                    "NumeroLegislatura": "57"
+                  },
+                  "Suplentes": {
+                    "Suplente": [
+                      {
+                        "CodigoParlamentar": "5918",
+                        "DescricaoParticipacao": "2º Suplente",
+                        "NomeParlamentar": "Adilson Gomes"
+                      }
+                    ]
+                  },
+                  "Titular": {
+                    "CodigoParlamentar": "4545",
+                    "DescricaoParticipacao": "Titular",
+                    "NomeParlamentar": "Jarbas Vasconcelos"
+                  },
+                  "UfParlamentar": "PE"
+                }
+              ]
+            }
+          },
+          {
+            "IdentificacaoParlamentar": {
+              "CodigoParlamentar": "4545",
+              "CodigoPublicoNaLegAtual": "823",
+              "FormaTratamento": "Senador ",
+              "NomeCompletoParlamentar": "Jarbas de Andrade Vasconcelos",
+              "NomeParlamentar": "Jarbas Vasconcelos",
+              "SiglaPartidoParlamentar": "MDB",
+              "UrlFotoParlamentar": "http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4545.jpg",
+              "UrlPaginaParlamentar": "http://www25.senado.leg.br/web/senadores/senador/-/perfil/4545"
+            },
+            "Mandatos": {
+              "Mandato": [
+                {
+                  "CodigoMandato": "526",
+                  "DescricaoParticipacao": "Titular",
+                  "Exercicios": {
+                    "Exercicio": [
+                      {
+                        "CodigoExercicio": "3044",
+                        "DataFim": "2023-09-04",
+                        "DataInicio": "2023-09-04",
+                        "DescricaoCausaAfastamento": "Renúncia",
+                        "SiglaCausaAfastamento": "REN"
+                      },
+                      {
+                        "CodigoExercicio": "2912",
+                        "DataFim": "2022-11-21",
+                        "DataInicio": "2019-02-01",
+                        "DescricaoCausaAfastamento": "Licença com convocação de suplente (sup 120 dias)",
+                        "SiglaCausaAfastamento": "LCS"
+                      }
+                    ]
+                  },
+                  "PrimeiraLegislaturaDoMandato": {
+                    "DataFim": "2023-01-31",
+                    "DataInicio": "2019-02-01",
+                    "NumeroLegislatura": "56"
+                  },
+                  "SegundaLegislaturaDoMandato": {
+                    "DataFim": "2027-01-31",
+                    "DataInicio": "2023-02-01",
+                    "NumeroLegislatura": "57"
+                  },
+                  "Suplentes": {
+                    "Suplente": [
+                      {
+                        "CodigoParlamentar": "5917",
+                        "DescricaoParticipacao": "1º Suplente",
+                        "NomeParlamentar": "Fernando Dueire"
+                      },
+                      {
+                        "CodigoParlamentar": "5918",
+                        "DescricaoParticipacao": "2º Suplente",
+                        "NomeParlamentar": "Adilson Gomes"
+                      }
+                    ]
+                  },
+                  "UfParlamentar": "PE"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "noNamespaceSchemaLocation": "https://legis.senado.leg.br/dadosabertos/dados/ListaParlamentarLegislaturav4.xsd"
+    }
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T16:04:41.645022+00:00",
+  "method": "GET",
+  "params": {},
+  "schema": 1,
+  "source": "senado",
+  "status": 200,
+  "url": "https://legis.senado.leg.br/dadosabertos/senador/lista/legislatura/57"
+}

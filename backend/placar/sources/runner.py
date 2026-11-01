@@ -92,8 +92,8 @@ def fetch_camara(
         for index, deputy_id in enumerate(selected, start=1):
             try:
                 events += len(client.history(deputy_id, freshness))
-            except UpstreamError as exc:
-                report.failures.append(f"camara history {deputy_id}: {exc}")
+            except UpstreamError:
+                pass  # already recorded by the fetcher (with the URL); the run continues
             if index % PROGRESS_EVERY == 0:
                 progress(f"camara: {index}/{len(selected)} deputies")
         report.counts.update(histories=len(selected), history_events=events)
@@ -141,8 +141,8 @@ def fetch_senado(
                 totals["exercises"] += sum(len(m.exercises) for m in mandates)
                 totals["leaves"] += len(client.leaves(code, freshness))
                 totals["affiliations"] += len(client.affiliations(code, freshness))
-            except UpstreamError as exc:
-                report.failures.append(f"senado senator {code}: {exc}")
+            except UpstreamError:
+                pass  # already recorded by the fetcher (with the URL); the run continues
             if index % PROGRESS_EVERY == 0:
                 progress(f"senado: {index}/{len(selected)} senators")
         report.counts.update(details_fetched=len(selected), **totals)
