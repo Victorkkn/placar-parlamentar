@@ -224,7 +224,7 @@ Done with the downloaded specs and about 25 small live requests.
 | Senado vote code table | Official list at `/plenario/lista/tiposComparecimento` (redirects to `/dadosabertos/dados/ListaTiposComparecimento.json`), e.g. AP = "Atividade parlamentar", L2 = "Licença saúde" |
 | Committee lists | Senado `/senador/{codigo}/comissoes` mixes committees with "Frentes Parlamentares" (CN); Câmara `/deputados/{id}/orgaos` mixes committees with other bodies. A committee count needs the official body type, not name matching |
 
-### Adjustments for B2 (for owner review)
+### Adjustments for B2 (approved by the owner on 2026-11-01)
 
 1. **Nominal-vote participation, both houses.**
    - **Counts as taking part:** a recorded vote option: Sim, Não, Abstenção, Obstrução.
