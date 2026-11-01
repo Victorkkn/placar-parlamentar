@@ -1,4 +1,4 @@
-# Mandato Aberto
+# Placar Parlamentar
 
 A civic-transparency tool that summarizes the public activity of Brazilian federal legislators (deputados and senadores) and their parties, using only official open-data sources. Every summary links back to the official record so each claim can be checked.
 

@@ -12,6 +12,7 @@ Civic-transparency tool for Brazilian federal legislators, built only from offic
 ## Where things are
 
 - `README.md`: scope and principles.
+- `CLAUDE_CODE_PROMPT.md`: original project prompt (stages and phases), for reference.
 - `docs/decisions/`: decision records and index.
 - `docs/architecture-rules.md`: binding rules.
 - `.claude/agents/`: role agent definitions.

@@ -40,7 +40,7 @@ Small, descriptive local commits are allowed.
 ## 4. Team (decision 0001)
 
 - The project owner is the project manager and the only approver.
-- Agents: scrum master, architect, backend engineer, frontend engineer, data engineer, QA engineer, security engineer, technical writer. Definitions are in `.claude/agents/`.
+- Agents: scrum master, architect, backend engineer, frontend engineer, data engineer, QA engineer, security engineer, technical writer. Definitions are in `.claude/agents/` (approved by the project owner on 2026-11-01). Changing an agent's rules, tools or owned files needs the owner's approval.
 - The main session coordinates. Agents do not start other agents.
 - Each agent changes only the files its definition says it owns. It reports changes needed elsewhere instead of making them.
 
