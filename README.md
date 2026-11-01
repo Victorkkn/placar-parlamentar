@@ -73,6 +73,10 @@ Requirements: Node 24 (24.15 or later recommended; see `frontend/.nvmrc`).
 1. `cd frontend && npm ci`
 2. Development server: `npm run dev` → http://127.0.0.1:5173 (requests to `/api` go to Django on 127.0.0.1:8000).
 3. Checks: `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`.
+4. End-to-end tests (real browser, offline, with accessibility checks). They use their own database, so the development data is never replaced:
+   - once: `docker compose exec db createdb -U <DATABASE_USER> placar_e2e` and `npx playwright install chromium`;
+   - load the recorded fixtures: `cd backend && DATABASE_NAME=placar_e2e uv run python manage.py load_fixture_snapshot`;
+   - run: `cd frontend && npm run e2e`.
 
 ## Workflow (contributing)
 

@@ -156,3 +156,23 @@ def record_case(
 
 def load_fixture(path: Path) -> dict[str, Any]:
     return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def cache_from_fixtures(fixtures_dir: Path, cache: RawCache) -> int:
+    """Write every recorded fixture into a raw cache (used by tests and end-to-end runs).
+
+    Trimmed lists keep their "next page" links; those are removed in this copy only, so the
+    one recorded page is read as the whole list.
+    """
+    from .http import HttpResponse
+
+    count = 0
+    for path in sorted(Path(fixtures_dir).rglob("*.json")):
+        data = load_fixture(path)
+        body = copy.deepcopy(data["body"])
+        if isinstance(body, dict) and isinstance(body.get("links"), list):
+            body["links"] = [link for link in body["links"] if link.get("rel") != "next"]
+        response = HttpResponse(data["url"], data["status"], data["content_type"], body)
+        cache.write(data["source"], data["url"], data["params"], response)
+        count += 1
+    return count
