@@ -167,3 +167,9 @@
 - **Analysis:** PostgreSQL not installed locally; Docker installed. endoflife.date reports PostgreSQL 18.6 as latest; PyPI reports psycopg 3.3.6.
 - **Changes made:** `docs/decisions/0006-database-and-raw-cache.md` (proposed); index updated.
 - **Remaining work:** owner approval of 0006.
+
+## 2026-11-01 — Decision 0006 accepted
+
+- **Agent:** Main Claude Code session
+- **Changes made:** 0006 status accepted; index and topic tracker updated; `docs/architecture-rules.md` section 8 added.
+- **Decisions:** Owner's "i approve all" read as approval of every point in 0006 (not of future, unwritten decisions).

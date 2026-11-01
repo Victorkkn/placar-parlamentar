@@ -67,3 +67,13 @@ Small, descriptive local commits are allowed.
 - Fetching official data runs only as management commands, never inside a web request.
 - `metrics/` is plain Python with no web code.
 - Django admin: development settings only, read-only for official data, account created locally by the owner, password never stored in the repo. No accounts or logins on the public site.
+
+## 8. Database and raw cache (decision 0006)
+
+- PostgreSQL 18 with `psycopg` 3 for all normalized data. Locally it runs in Docker (`compose.yaml`, database service only), bound to `127.0.0.1`.
+- Database credentials only in the git-ignored `.env`; `.env.example` lists names without values.
+- Tests run against PostgreSQL too.
+- Raw API responses are cached as gzip JSON files in `data/raw/<source>/<endpoint-path>/<sha256 key>.json.gz` (git-ignored), with an envelope: URL, parameters, fetch time (UTC), status, content type, API version if reported, unchanged body. No cookies or unneeded headers.
+- Every normalized record stores its official source URL and the cache key of its raw response.
+- Freshness per endpoint: data that no longer changes never expires; changing data refreshes after 24 hours by default; `--refresh` forces download; on API failure the cached copy is used and shown with its fetch date.
+- Deleting or pruning the cache, or removing the database volume, needs the owner's approval.
