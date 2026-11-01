@@ -224,3 +224,10 @@
 
 - **Agent:** Main Claude Code session
 - **Changes made:** 0010 accepted (default model unchanged: `claude-opus-5-5`); index updated; rules section 12 added.
+
+## 2026-11-01 — Decision 0011 proposed (testing)
+
+- **Agent:** Main Claude Code session (acting as architect)
+- **Analysis:** Checked current PyPI and npm versions of test tools.
+- **Changes made:** `docs/decisions/0011-testing.md` (proposed); index updated.
+- **Remaining work:** owner approval of 0011.

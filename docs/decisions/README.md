@@ -15,6 +15,7 @@ An accepted decision is changed only by a new decision that supersedes it, after
 | [0008](0008-source-normalization.md) | Normalizing Câmara and Senado into one model (service periods, leaves, affiliations) | accepted | 2026-11-01 |
 | [0009](0009-frontend.md) | Frontend: React + TypeScript + Vite SPA, OpenAPI contract file, no third-party requests | accepted | 2026-11-01 |
 | [0010](0010-summaries.md) | Summaries: isolated LLM adapter, fact sheets, validator, template fallback | accepted | 2026-11-01 |
+| [0011](0011-testing.md) | Testing: offline pytest/Vitest/Playwright, hand-recorded fixtures without personal fields | proposed | 2026-11-01 |
 
 ## Stage 2 topics
 
@@ -27,6 +28,6 @@ An accepted decision is changed only by a new decision that supersedes it, after
 | 5. Normalizing Câmara and Senado data | 0008 | accepted |
 | 6. Frontend framework, build tooling, link to backend | 0009 | accepted |
 | 7. Isolating the summary feature, enforcing source links | 0010 | accepted |
-| 8. Testing strategy and offline fixtures | — | not started |
+| 8. Testing strategy and offline fixtures | 0011 | proposed |
 | 9. Security baseline | — | not started |
 | 10. Deployment target (out of MVP scope unless decided) | — | not started |
