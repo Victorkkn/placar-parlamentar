@@ -33,6 +33,10 @@ ENVELOPE_SCHEMA = 1
 _UNSAFE = re.compile(r"[^A-Za-z0-9._-]+")
 
 
+class CacheMissError(LookupError):
+    """An offline read found nothing in the cache."""
+
+
 class Freshness(Enum):
     """How long a cached response stays valid."""
 
@@ -169,15 +173,25 @@ class FetchStats:
 class CachedFetcher:
     """Reads from the cache when fresh; otherwise downloads and stores the response."""
 
-    def __init__(self, source: str, client: OfficialApiClient, cache: RawCache) -> None:
+    def __init__(
+        self,
+        source: str,
+        client: OfficialApiClient | None,
+        cache: RawCache,
+        *,
+        offline: bool = False,
+    ) -> None:
+        if client is None and not offline:
+            raise ValueError("a client is required unless offline=True")
         self.source = source
         self.client = client
         self.cache = cache
+        self.offline = offline
         self.stats = FetchStats()
 
     @property
     def requests_sent(self) -> int:
-        return self.client.requests_sent
+        return self.client.requests_sent if self.client else 0
 
     def get(
         self,
@@ -189,6 +203,12 @@ class CachedFetcher:
     ) -> FetchResult:
         base_url, merged = split_url(url, params)
         entry = self.cache.read(self.source, base_url, merged)
+        if self.offline:
+            # Offline reads use whatever is cached, however old, and never download (Phase B).
+            if entry is None:
+                raise CacheMissError(canonical_url(base_url, merged))
+            self.stats.cache_hits += 1
+            return self._result(entry, from_cache=True)
         if entry and not refresh and self.cache.is_fresh(entry, freshness):
             self.stats.cache_hits += 1
             return self._result(entry, from_cache=True)

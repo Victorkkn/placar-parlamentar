@@ -18,6 +18,7 @@ dev = [
     "coverage>=7.17,<7.18",
     "ruff>=0.17,<0.18",
     "pip-audit>=2.10,<2.11",
+    "hypothesis>=6.170,<6.171",
 ]
 
 [tool.uv]
@@ -43,4 +44,5 @@ line-length = 100
 select = ["E", "F", "W", "I", "B", "UP", "S"]
 
 [tool.ruff.lint.per-file-ignores]
-"tests/**" = ["S101"]
+# Tests quote official texts word for word, so long lines are allowed there.
+"tests/**" = ["S101", "E501"]
