@@ -1,6 +1,6 @@
 # 0015 — MVP runs on a snapshot of official data
 
-- **Status:** proposed
+- **Status:** accepted (2026-11-01)
 - **Date:** 2026-11-01
 - **Stage:** 3
 

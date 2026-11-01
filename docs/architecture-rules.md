@@ -3,7 +3,7 @@
 These rules are binding for every session and every agent. Each rule comes from an accepted decision in `docs/decisions/` or from the project's non-negotiable rules.
 A rule changes only through a new decision that supersedes the old one and is approved by the project owner.
 
-Stage 2 (architecture) was completed on 2026-11-01. This file summarizes decisions 0001–0014. When rules conflict, the decision record is the authority, and the conflict must be reported to the project owner.
+Stage 2 (architecture) was completed on 2026-11-01. This file summarizes decisions 0001–0016. When rules conflict, the decision record is the authority, and the conflict must be reported to the project owner.
 
 ## 1. Non-negotiable rules
 
@@ -162,7 +162,7 @@ Small, descriptive local commits are allowed.
 ## 15. Deployment (decision 0013)
 
 - No deployment in the MVP. Everything runs on the owner's machine: PostgreSQL in Docker on `127.0.0.1`, Django on `127.0.0.1:8000`, Vite dev server proxying `/api`.
-- No hosting accounts, domains, public URLs, CI services or remote repositories for the MVP.
+- No hosting accounts, domains or public URLs for the MVP. A private GitHub repository and GitHub Actions CI are allowed (decision 0016).
 - "Done" means working locally with all tests passing, never "published".
 - Settings come from environment variables; `asgi.py` and `wsgi.py` are kept.
 - Publishing later needs a new decision that supersedes 0013 and the owner's explicit approval.
@@ -173,3 +173,20 @@ Small, descriptive local commits are allowed.
 - Bills authored: Câmara `PL`, `PLP`, `PEC`, `PDL` and the matching Senado types (fixed in task B2.0); any listed author counts, co-authors included.
 - No Senado attendance metric in the MVP; the app states it is not available in the official sources. Nominal-vote participation is a separate metric for both houses and is never labeled attendance.
 - Câmara committee attendance is deferred until after the MVP; committee memberships are included.
+
+## 17. MVP data snapshot (decision 0015)
+
+- The MVP serves pages only from the official data already in the raw cache and database; it never calls the official APIs while serving pages.
+- The interface shows the snapshot date; every number keeps its official source link.
+- Features or data not built yet show "Ainda não disponível". No made-up or sample numbers are ever shown.
+- Refreshing the snapshot is manual, run by or approved by the owner. Data sources left out of the MVP are listed in the README.
+
+## 18. Git workflow and CI (decision 0016)
+
+- `main` always passes all checks; no direct commits to it. Work on `feat/<phase>-<topic>`, `fix/…`, `docs/…`, `chore/…` branches.
+- Merge with `git merge --no-ff` only after `scripts/check.sh` passes and the owner approves; delete the branch after merging.
+- Annotated tag on `main` when the owner signs off a phase (`phase-a`, `phase-b1`, …).
+- Commit messages: short imperative summary with the phase or area first, blank line, what and why.
+- Pre-commit hook: gitleaks on staged changes, `ruff check`, `ruff format --check`. `scripts/check.sh` before merges: lint, full tests, `pip-audit`, gitleaks on the branch.
+- One private GitHub repository. Pushes, remote changes and pull requests still need the owner's approval (decision 0002).
+- GitHub Actions CI on every push and pull request: lint, offline tests with a PostgreSQL service, `pip-audit`, gitleaks over the full history. No secrets in CI; actions pinned to commit SHAs; read-only `contents` permission.

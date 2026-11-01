@@ -1,6 +1,6 @@
 # 0013 — Deployment target
 
-- **Status:** accepted (2026-11-01)
+- **Status:** accepted (2026-11-01); item 2 partly superseded by [0016](0016-git-workflow-and-ci.md) (a private GitHub repository and CI are allowed; still no deployment)
 - **Date:** 2026-11-01
 - **Stage:** 2 (topic 10 of 10)
 
