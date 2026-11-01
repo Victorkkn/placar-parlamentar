@@ -113,3 +113,28 @@ def test_freshness_rule():
     pick = freshness_for(date(2026, 11, 1))
     assert pick(date(2025, 12, 31)).value == "immutable"
     assert pick(date(2026, 10, 20)).value == "daily"
+
+
+@respx.mock
+def test_failed_list_request_is_reported_and_run_continues(offline):
+    mock_camara()
+    respx.get(f"{CAMARA}/votacoes").mock(
+        return_value=httpx.Response(
+            400, json={"detail": "A diferença entre as datas não pode ser maior que 3 meses"}
+        )
+    )
+    out = run("--house", "camara")
+    assert "camara plenary votings: HTTP 400" in out
+    assert "deputies: 2" in out and "bills: 2" in out
+
+
+def test_quarter_ranges_cover_the_window_without_gaps():
+    from datetime import date, timedelta
+
+    from placar.sources.clients.camara_activity import _quarter_ranges
+
+    pieces = _quarter_ranges(date(2023, 2, 1), date(2026, 11, 1))
+    assert pieces[0][0] == date(2023, 2, 1) and pieces[-1][1] == date(2026, 11, 1)
+    for (_, end), (start, _) in zip(pieces, pieces[1:], strict=False):
+        assert start == end + timedelta(days=1)
+    assert all((b - a).days < 92 for a, b in pieces)

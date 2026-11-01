@@ -7,7 +7,7 @@ checked 2026-11-01 (B2.0 table in docs/plans/phase-b-data-model-and-metrics.md).
 Endpoints:
 - GET /eventos?idOrgao=180&codTipoEvento=110&dataInicio&dataFim   plenary deliberative sessions
 - GET /eventos/{id}/deputados                                      presence (who registered)
-- GET /votacoes?idOrgao=180&dataInicio&dataFim                    plenary votes (per year)
+- GET /votacoes?idOrgao=180&dataInicio&dataFim                    plenary votes (per quarter)
 - GET /votacoes/{id}/votos                                         individual votes (nominal only)
 - GET /proposicoes?idDeputadoAutor&siglaTipo&ano                   bills (data issue 16)
 - GET /deputados/{id}/orgaos?dataInicio&dataFim                    body memberships
@@ -233,6 +233,21 @@ def parse_speeches(deputy_id: int, body: Any, source: SourceRef, notes: ParseNot
     return result
 
 
+def _quarter_ranges(start: date, end: date) -> list[tuple[date, date]]:
+    """Split [start, end] into calendar quarters. `/votacoes` rejects ranges over 3 months
+    (data issue 16), although the spec only says "same calendar year"."""
+    pieces = []
+    for year in range(start.year, end.year + 1):
+        for first_month in (1, 4, 7, 10):
+            q_start = date(year, first_month, 1)
+            q_end = date(year + 1, 1, 1) if first_month == 10 else date(year, first_month + 3, 1)
+            q_end = date.fromordinal(q_end.toordinal() - 1)
+            a, b = max(start, q_start), min(end, q_end)
+            if a <= b:
+                pieces.append((a, b))
+    return pieces
+
+
 def _year_ranges(start: date, end: date) -> list[tuple[date, date]]:
     """Split [start, end] into calendar-year pieces (Câmara `/votacoes` rule)."""
     return [
@@ -282,7 +297,7 @@ class CamaraActivityClient:
 
     def plenary_votings(self, start: date, end: date, freshness_for) -> list[CamaraVoting]:
         votings = []
-        for a, b in _year_ranges(start, end):
+        for a, b in _quarter_ranges(start, end):
             params = {"idOrgao": PLENARY_ID, "dataInicio": a.isoformat(),
                       "dataFim": b.isoformat(), "itens": PAGE_SIZE, "ordem": "ASC",
                       "ordenarPor": "dataHoraRegistro"}  # fmt: skip

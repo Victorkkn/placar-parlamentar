@@ -1,0 +1,1434 @@
+{
+  "components": {
+    "schemas": {
+      "AffiliationOut": {
+        "properties": {
+          "end": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End"
+          },
+          "party": {
+            "title": "Party",
+            "type": "string"
+          },
+          "precision": {
+            "title": "Precision",
+            "type": "string"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            },
+            "title": "Sources",
+            "type": "array"
+          },
+          "start": {
+            "format": "date",
+            "title": "Start",
+            "type": "string"
+          }
+        },
+        "required": [
+          "party",
+          "start",
+          "end",
+          "precision",
+          "sources"
+        ],
+        "title": "AffiliationOut",
+        "type": "object"
+      },
+      "Aggregate": {
+        "properties": {
+          "available": {
+            "title": "Available",
+            "type": "boolean"
+          },
+          "key": {
+            "title": "Key",
+            "type": "string"
+          },
+          "maximum": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Maximum"
+          },
+          "median": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Median"
+          },
+          "members_counted": {
+            "title": "Members Counted",
+            "type": "integer"
+          },
+          "minimum": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Minimum"
+          }
+        },
+        "required": [
+          "key",
+          "available",
+          "members_counted"
+        ],
+        "title": "Aggregate",
+        "type": "object"
+      },
+      "CompareOut": {
+        "properties": {
+          "officials": {
+            "items": {
+              "$ref": "#/components/schemas/OfficialDetail"
+            },
+            "title": "Officials",
+            "type": "array"
+          },
+          "threshold": {
+            "$ref": "#/components/schemas/Threshold"
+          },
+          "window": {
+            "$ref": "#/components/schemas/Window"
+          }
+        },
+        "required": [
+          "window",
+          "threshold",
+          "officials"
+        ],
+        "title": "CompareOut",
+        "type": "object"
+      },
+      "CoverageOut": {
+        "properties": {
+          "days_in_office": {
+            "title": "Days In Office",
+            "type": "integer"
+          },
+          "periods": {
+            "items": {
+              "$ref": "#/components/schemas/PeriodOut"
+            },
+            "title": "Periods",
+            "type": "array"
+          },
+          "share": {
+            "title": "Share",
+            "type": "number"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            },
+            "title": "Sources",
+            "type": "array"
+          },
+          "window_days": {
+            "title": "Window Days",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "days_in_office",
+          "window_days",
+          "share",
+          "periods",
+          "sources"
+        ],
+        "title": "CoverageOut",
+        "type": "object"
+      },
+      "ErrorOut": {
+        "properties": {
+          "detail": {
+            "title": "Detail",
+            "type": "string"
+          }
+        },
+        "required": [
+          "detail"
+        ],
+        "title": "ErrorOut",
+        "type": "object"
+      },
+      "HouseMeta": {
+        "properties": {
+          "activity_loaded_on": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Activity Loaded On"
+          },
+          "data_fetched_until": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Data Fetched Until"
+          },
+          "house": {
+            "title": "House",
+            "type": "string"
+          },
+          "metrics": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Metrics",
+            "type": "array"
+          },
+          "people_loaded_on": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "People Loaded On"
+          }
+        },
+        "required": [
+          "house",
+          "people_loaded_on",
+          "activity_loaded_on",
+          "data_fetched_until",
+          "metrics"
+        ],
+        "title": "HouseMeta",
+        "type": "object"
+      },
+      "MetaOut": {
+        "properties": {
+          "default_min_share": {
+            "title": "Default Min Share",
+            "type": "number"
+          },
+          "earliest_date": {
+            "format": "date",
+            "title": "Earliest Date",
+            "type": "string"
+          },
+          "houses": {
+            "items": {
+              "$ref": "#/components/schemas/HouseMeta"
+            },
+            "title": "Houses",
+            "type": "array"
+          },
+          "legislature": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Legislature"
+          },
+          "legislature_end": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Legislature End"
+          },
+          "legislature_start": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Legislature Start"
+          },
+          "snapshot_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Snapshot Date"
+          }
+        },
+        "required": [
+          "snapshot_date",
+          "legislature",
+          "legislature_start",
+          "legislature_end",
+          "earliest_date",
+          "houses",
+          "default_min_share"
+        ],
+        "title": "MetaOut",
+        "type": "object"
+      },
+      "MetricOut": {
+        "properties": {
+          "available": {
+            "title": "Available",
+            "type": "boolean"
+          },
+          "denominator": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Denominator"
+          },
+          "details": {
+            "additionalProperties": true,
+            "default": {},
+            "title": "Details",
+            "type": "object"
+          },
+          "key": {
+            "title": "Key",
+            "type": "string"
+          },
+          "numerator": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Numerator"
+          },
+          "per_365_days_in_office": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Per 365 Days In Office"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          },
+          "sources": {
+            "default": [],
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            },
+            "title": "Sources",
+            "type": "array"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "required": [
+          "key",
+          "available"
+        ],
+        "title": "MetricOut",
+        "type": "object"
+      },
+      "OfficialDetail": {
+        "properties": {
+          "affiliations": {
+            "items": {
+              "$ref": "#/components/schemas/AffiliationOut"
+            },
+            "title": "Affiliations",
+            "type": "array"
+          },
+          "metrics": {
+            "items": {
+              "$ref": "#/components/schemas/MetricOut"
+            },
+            "title": "Metrics",
+            "type": "array"
+          },
+          "official": {
+            "$ref": "#/components/schemas/OfficialSummary"
+          },
+          "periods": {
+            "items": {
+              "$ref": "#/components/schemas/ServicePeriodOut"
+            },
+            "title": "Periods",
+            "type": "array"
+          },
+          "threshold": {
+            "$ref": "#/components/schemas/Threshold"
+          },
+          "window": {
+            "$ref": "#/components/schemas/Window"
+          }
+        },
+        "required": [
+          "window",
+          "threshold",
+          "official",
+          "periods",
+          "affiliations",
+          "metrics"
+        ],
+        "title": "OfficialDetail",
+        "type": "object"
+      },
+      "OfficialSummary": {
+        "properties": {
+          "coverage": {
+            "$ref": "#/components/schemas/CoverageOut"
+          },
+          "house": {
+            "title": "House",
+            "type": "string"
+          },
+          "house_id": {
+            "title": "House Id",
+            "type": "integer"
+          },
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "page_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Page Url"
+          },
+          "party": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Party"
+          },
+          "photo_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Photo Url"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            },
+            "title": "Sources",
+            "type": "array"
+          },
+          "state": {
+            "title": "State",
+            "type": "string"
+          },
+          "sufficient": {
+            "title": "Sufficient",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "house",
+          "house_id",
+          "name",
+          "state",
+          "party",
+          "photo_url",
+          "page_url",
+          "coverage",
+          "sufficient",
+          "sources"
+        ],
+        "title": "OfficialSummary",
+        "type": "object"
+      },
+      "OfficialsPageOut": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/OfficialSummary"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "not_in_office": {
+            "title": "Not In Office",
+            "type": "integer"
+          },
+          "page": {
+            "title": "Page",
+            "type": "integer"
+          },
+          "page_size": {
+            "title": "Page Size",
+            "type": "integer"
+          },
+          "threshold": {
+            "$ref": "#/components/schemas/Threshold"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          },
+          "window": {
+            "$ref": "#/components/schemas/Window"
+          }
+        },
+        "required": [
+          "window",
+          "threshold",
+          "total",
+          "page",
+          "page_size",
+          "items",
+          "not_in_office"
+        ],
+        "title": "OfficialsPageOut",
+        "type": "object"
+      },
+      "OfficialsQuery": {
+        "properties": {
+          "end": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End"
+          },
+          "house": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "House"
+          },
+          "include_not_in_office": {
+            "default": false,
+            "title": "Include Not In Office",
+            "type": "boolean"
+          },
+          "min_days": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Min Days"
+          },
+          "min_share": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Min Share"
+          },
+          "page": {
+            "default": 1,
+            "title": "Page",
+            "type": "integer"
+          },
+          "page_size": {
+            "default": 50,
+            "title": "Page Size",
+            "type": "integer"
+          },
+          "party": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Party"
+          },
+          "q": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Q"
+          },
+          "start": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Start"
+          },
+          "state": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "State"
+          }
+        },
+        "title": "OfficialsQuery",
+        "type": "object"
+      },
+      "PartiesOut": {
+        "properties": {
+          "house": {
+            "title": "House",
+            "type": "string"
+          },
+          "parties": {
+            "items": {
+              "$ref": "#/components/schemas/PartyRow"
+            },
+            "title": "Parties",
+            "type": "array"
+          },
+          "threshold": {
+            "$ref": "#/components/schemas/Threshold"
+          },
+          "window": {
+            "$ref": "#/components/schemas/Window"
+          }
+        },
+        "required": [
+          "window",
+          "threshold",
+          "house",
+          "parties"
+        ],
+        "title": "PartiesOut",
+        "type": "object"
+      },
+      "PartyRow": {
+        "description": "Counts and aggregates are derived from the listed members; each member's own records\ncarry their sources (see /officials/{id}).",
+        "properties": {
+          "aggregates": {
+            "items": {
+              "$ref": "#/components/schemas/Aggregate"
+            },
+            "title": "Aggregates",
+            "type": "array"
+          },
+          "member_ids": {
+            "items": {
+              "type": "integer"
+            },
+            "title": "Member Ids",
+            "type": "array"
+          },
+          "members_at_end": {
+            "title": "Members At End",
+            "type": "integer"
+          },
+          "members_at_start": {
+            "title": "Members At Start",
+            "type": "integer"
+          },
+          "members_in_window": {
+            "title": "Members In Window",
+            "type": "integer"
+          },
+          "members_with_sufficient_data": {
+            "title": "Members With Sufficient Data",
+            "type": "integer"
+          },
+          "membership_changed": {
+            "title": "Membership Changed",
+            "type": "boolean"
+          },
+          "party": {
+            "title": "Party",
+            "type": "string"
+          }
+        },
+        "required": [
+          "party",
+          "member_ids",
+          "members_in_window",
+          "members_at_start",
+          "members_at_end",
+          "membership_changed",
+          "members_with_sufficient_data",
+          "aggregates"
+        ],
+        "title": "PartyRow",
+        "type": "object"
+      },
+      "PeriodOut": {
+        "properties": {
+          "end": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End"
+          },
+          "start": {
+            "format": "date",
+            "title": "Start",
+            "type": "string"
+          }
+        },
+        "required": [
+          "start",
+          "end"
+        ],
+        "title": "PeriodOut",
+        "type": "object"
+      },
+      "ServicePeriodOut": {
+        "properties": {
+          "end": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End"
+          },
+          "end_reason": {
+            "title": "End Reason",
+            "type": "string"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            },
+            "title": "Sources",
+            "type": "array"
+          },
+          "start": {
+            "format": "date",
+            "title": "Start",
+            "type": "string"
+          },
+          "start_reason": {
+            "title": "Start Reason",
+            "type": "string"
+          }
+        },
+        "required": [
+          "start",
+          "end",
+          "start_reason",
+          "end_reason",
+          "sources"
+        ],
+        "title": "ServicePeriodOut",
+        "type": "object"
+      },
+      "Source": {
+        "properties": {
+          "api_url": {
+            "title": "Api Url",
+            "type": "string"
+          },
+          "label": {
+            "default": "",
+            "title": "Label",
+            "type": "string"
+          },
+          "public_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Public Url"
+          }
+        },
+        "required": [
+          "api_url"
+        ],
+        "title": "Source",
+        "type": "object"
+      },
+      "Threshold": {
+        "properties": {
+          "min_days": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Min Days"
+          },
+          "min_share": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Min Share"
+          }
+        },
+        "title": "Threshold",
+        "type": "object"
+      },
+      "Window": {
+        "properties": {
+          "days": {
+            "title": "Days",
+            "type": "integer"
+          },
+          "end": {
+            "format": "date",
+            "title": "End",
+            "type": "string"
+          },
+          "start": {
+            "format": "date",
+            "title": "Start",
+            "type": "string"
+          }
+        },
+        "required": [
+          "start",
+          "end",
+          "days"
+        ],
+        "title": "Window",
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "description": "Dados públicos de deputados e senadores federais, com fonte oficial para cada número.",
+    "title": "Placar Parlamentar API",
+    "version": "1"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/api/compare": {
+      "get": {
+        "operationId": "placar_api_api_compare",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "schema": {
+              "title": "Ids",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Start"
+            }
+          },
+          {
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "End"
+            }
+          },
+          {
+            "in": "query",
+            "name": "min_days",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Min Days"
+            }
+          },
+          {
+            "in": "query",
+            "name": "min_share",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Min Share"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompareOut"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "summary": "Compare"
+      }
+    },
+    "/api/meta": {
+      "get": {
+        "operationId": "placar_api_api_meta",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetaOut"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "summary": "Meta"
+      }
+    },
+    "/api/officials": {
+      "get": {
+        "operationId": "placar_api_api_list_officials",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "house",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "House"
+            }
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "State"
+            }
+          },
+          {
+            "in": "query",
+            "name": "party",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Party"
+            }
+          },
+          {
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Q"
+            }
+          },
+          {
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Start"
+            }
+          },
+          {
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "End"
+            }
+          },
+          {
+            "in": "query",
+            "name": "min_days",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Min Days"
+            }
+          },
+          {
+            "in": "query",
+            "name": "min_share",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Min Share"
+            }
+          },
+          {
+            "in": "query",
+            "name": "include_not_in_office",
+            "required": false,
+            "schema": {
+              "default": false,
+              "title": "Include Not In Office",
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "default": 1,
+              "title": "Page",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "schema": {
+              "default": 50,
+              "title": "Page Size",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OfficialsPageOut"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "summary": "List Officials"
+      }
+    },
+    "/api/officials/{official_id}": {
+      "get": {
+        "operationId": "placar_api_api_official_detail",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "official_id",
+            "required": true,
+            "schema": {
+              "title": "Official Id",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Start"
+            }
+          },
+          {
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "End"
+            }
+          },
+          {
+            "in": "query",
+            "name": "min_days",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Min Days"
+            }
+          },
+          {
+            "in": "query",
+            "name": "min_share",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Min Share"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OfficialDetail"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Not Found"
+          }
+        },
+        "summary": "Official Detail"
+      }
+    },
+    "/api/parties": {
+      "get": {
+        "operationId": "placar_api_api_parties",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "house",
+            "required": true,
+            "schema": {
+              "title": "House",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "start",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Start"
+            }
+          },
+          {
+            "in": "query",
+            "name": "end",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "End"
+            }
+          },
+          {
+            "in": "query",
+            "name": "min_days",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Min Days"
+            }
+          },
+          {
+            "in": "query",
+            "name": "min_share",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Min Share"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PartiesOut"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "summary": "Parties"
+      }
+    }
+  },
+  "servers": []
+}
