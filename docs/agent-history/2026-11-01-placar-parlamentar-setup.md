@@ -351,3 +351,29 @@
 - **Changes made:** plan B2.0 section with adjustments for review (vote participation rules; committee count waits for official body types); `clients/camara_activity.py`, `clients/senado_activity.py`, `activity_runner.py`, `fetch_activity` command; tests.
 - **Validation:** parsers checked against live samples (scratchpad, not committed); `uv run pytest` 203 passed; ruff clean; gitleaks hook passed.
 - **Remaining work:** owner go-ahead for the live `fetch_activity` run (≈ 8,000 requests); activity models, normalizers and metrics; record activity fixtures; B2 notes.
+
+## 2026-11-01 — Decisions 0015 and 0016; git workflow, CI and private GitHub repository
+
+- **Agent:** Main Claude Code session
+- **Task:**
+  - Owner said the MVP may use partial data and asked for git workflows.
+  - After a question, the owner chose: real data snapshot; a branching process, local pre-commit checks and GitHub Actions CI.
+  - The owner approved 0015 and 0016 ("all approve") and asked for a private repository to be created.
+- **Changes made:**
+  - Decision 0015 (MVP on a snapshot of official data, no mocked numbers) and 0016 (workflow and CI; supersedes part of 0013) accepted; rules sections 17–18; 0013 status note.
+  - Branch `chore/git-workflow`:
+    - `.github/workflows/ci.yml`: actions pinned to SHAs; gitleaks 8.30.1 binary checksum-verified;
+    - `scripts/check.sh`;
+    - pre-commit hook now also runs ruff;
+    - README workflow section.
+    - Merged into `main` with `--no-ff`; branch deleted.
+  - Annotated tags: `phase-a` (697fcc5) and `phase-b1` (b63c5a2).
+  - Created the private GitHub repository `Victorkkn/placar-parlamentar` (via `gh`); added remote `origin` (SSH); pushed `main` and both tags.
+- **Validation (actually run):**
+  - `scripts/check.sh`: lint ok, 203 tests passed, no known vulnerabilities, no leaks.
+  - Full-history gitleaks scan before the push: no leaks.
+  - No tracked `.env`, keys or `data/raw`.
+  - Repository visibility checked: PRIVATE.
+  - CI run 41329428087: `backend` and `secrets` succeeded.
+- **Failed attempt:** branch protection on `main` refused (HTTP 403: needs GitHub Pro or a public repository). Recorded in 0016.
+- **Remaining work:** owner to decide whether later pushes after each approved merge are pre-approved; B2 continues on `feat/b2-activity` once the live download finishes.
