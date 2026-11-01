@@ -1,0 +1,84 @@
+{
+  "spec": {
+    "camara": "https://dadosabertos.camara.leg.br/api/v2/api-docs (0.4.347, 2026-10-26)",
+    "senado": "https://legis.senado.leg.br/dadosabertos/v3/api-docs (4.1.3.108)"
+  },
+  "cases": [
+    {
+      "name": "camara_legislature_on_2026_11_01",
+      "source": "camara",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/legislaturas",
+      "params": {"data": "2026-11-01"},
+      "file": "camara/legislaturas_2026-11-01.json"
+    },
+    {
+      "name": "camara_deputies_legislature_57_page_1",
+      "source": "camara",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/deputados",
+      "params": {"idLegislatura": "57", "itens": "100", "pagina": "1", "ordem": "ASC", "ordenarPor": "nome"},
+      "file": "camara/deputados_57_page1_sample.json",
+      "trim": {"list_path": "dados", "keep_key": "id", "keep_values": [220593, 220714]}
+    },
+    {
+      "name": "camara_history_220593_vacancy",
+      "source": "camara",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/deputados/220593/historico",
+      "file": "camara/historico_220593.json"
+    },
+    {
+      "name": "camara_history_220714_party_change",
+      "source": "camara",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/deputados/220714/historico",
+      "file": "camara/historico_220714.json"
+    },
+    {
+      "name": "senado_legislature_on_2026_11_01",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/plenario/legislatura/20261101",
+      "file": "senado/legislatura_20261101.json"
+    },
+    {
+      "name": "senado_list_legislature_57_mandate_526",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/senador/lista/legislatura/57",
+      "file": "senado/lista_legislatura_57_sample.json",
+      "trim": {
+        "list_path": "ListaParlamentarLegislatura.Parlamentares.Parlamentar",
+        "keep_key": "IdentificacaoParlamentar.CodigoParlamentar",
+        "keep_values": [4545, 5917, 5918]
+      }
+    },
+    {
+      "name": "senado_list_legislature_57_took_office_mandate_526",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/senador/lista/legislatura/57",
+      "params": {"exercicio": "S"},
+      "file": "senado/lista_legislatura_57_exercicio_sample.json",
+      "trim": {
+        "list_path": "ListaParlamentarLegislatura.Parlamentares.Parlamentar",
+        "keep_key": "IdentificacaoParlamentar.CodigoParlamentar",
+        "keep_values": [4545, 5917]
+      }
+    },
+    {
+      "name": "senado_current_list_5917",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/senador/lista/atual",
+      "file": "senado/lista_atual_sample.json",
+      "trim": {
+        "list_path": "ListaParlamentarEmExercicio.Parlamentares.Parlamentar",
+        "keep_key": "IdentificacaoParlamentar.CodigoParlamentar",
+        "keep_values": [5917]
+      }
+    },
+    {"name": "senado_mandates_4545", "source": "senado", "url": "https://legis.senado.leg.br/dadosabertos/senador/4545/mandatos", "file": "senado/mandatos_4545.json"},
+    {"name": "senado_mandates_5917", "source": "senado", "url": "https://legis.senado.leg.br/dadosabertos/senador/5917/mandatos", "file": "senado/mandatos_5917.json"},
+    {"name": "senado_mandates_5918", "source": "senado", "url": "https://legis.senado.leg.br/dadosabertos/senador/5918/mandatos", "file": "senado/mandatos_5918.json"},
+    {"name": "senado_leaves_4545", "source": "senado", "url": "https://legis.senado.leg.br/dadosabertos/senador/4545/licencas", "file": "senado/licencas_4545.json"},
+    {"name": "senado_leaves_5917", "source": "senado", "url": "https://legis.senado.leg.br/dadosabertos/senador/5917/licencas", "file": "senado/licencas_5917.json"},
+    {"name": "senado_leaves_5918", "source": "senado", "url": "https://legis.senado.leg.br/dadosabertos/senador/5918/licencas", "file": "senado/licencas_5918.json"},
+    {"name": "senado_affiliations_4545", "source": "senado", "url": "https://legis.senado.leg.br/dadosabertos/senador/4545/filiacoes", "file": "senado/filiacoes_4545.json"},
+    {"name": "senado_affiliations_5917", "source": "senado", "url": "https://legis.senado.leg.br/dadosabertos/senador/5917/filiacoes", "file": "senado/filiacoes_5917.json"},
+    {"name": "senado_affiliations_5918", "source": "senado", "url": "https://legis.senado.leg.br/dadosabertos/senador/5918/filiacoes", "file": "senado/filiacoes_5918.json"}
+  ]
+}
