@@ -211,3 +211,11 @@
 
 - **Agent:** Main Claude Code session
 - **Changes made:** 0009 accepted; index updated; rules section 11 added.
+
+## 2026-11-01 — Decision 0010 proposed (summaries)
+
+- **Agent:** Main Claude Code session (acting as architect)
+- **Analysis:** Loaded the Claude API reference skill for current model ids, prices and structured outputs; no API calls made, no code written.
+- **Changes made:** `docs/decisions/0010-summaries.md` (proposed); index updated.
+- **Decisions:** Proposed default model `claude-opus-5-5`, configurable; model choice for cost is the owner's call.
+- **Remaining work:** owner approval of 0010.
