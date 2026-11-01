@@ -10,7 +10,7 @@
 | `.env` ignored, `.env.example` names only | read `.gitignore` and `.env.example` | OK: all values empty |
 | Django refuses to start without `DJANGO_SECRET_KEY` | ran `django.setup()` with an empty key | `ImproperlyConfigured` raised |
 | Python dependency vulnerabilities | `uv run pip-audit` | No known vulnerabilities found |
-| Security lint | `uv run ruff check` with the `S` rules | All checks passed (two `S603` uses in `scripts/` are fixed commands without a shell, marked inline) |
+| Security lint | `uv run ruff check` with the `S` rules, on `backend/` | All checks passed. `scripts/` is outside this lint scope; its two `subprocess.call` uses were reviewed by reading: fixed `uv` commands, no shell, user arguments passed as list items |
 | Requests only to official https hosts | `is_official_url` allowlist; redirects followed only to official hosts; tests | OK |
 | Polite request rate | throttle capped at 2 req/s; one request at a time; retries honor `Retry-After` with capped backoff; tests | OK |
 | Personal data | parsers keep only allowlisted fields; `/deputados/{id}` not called; fixture recorder strips personal keys; rule test checks fixtures | OK (fixture check runs once fixtures exist) |

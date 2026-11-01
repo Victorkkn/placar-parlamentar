@@ -272,3 +272,26 @@
 - **Validation:** Endpoint list is based on the spec downloads and live samples taken earlier today; httpx 0.28.1 and psycopg 3.3.6 checked on PyPI; uv 0.9.26 installed locally.
 - **Implementation authorized:** no. No code written.
 - **Remaining work:** owner approval of the Phase A plan, dependency list, live-run choice, and the decision to skip deputy details.
+
+## 2026-11-01 — Phase A implementation (A0–A12)
+
+- **Agent:** Main Claude Code session (acting as backend, data, QA, security and writer roles)
+- **Task:** Owner approved the Phase A plan and dependency list ("approve"). Deputy details skipped as planned; live run to be confirmed with the owner.
+- **Implementation authorized:** yes (Phase A only).
+- **Analysis during implementation:**
+  - Câmara deputies list has one row per deputy and party (data issue 8).
+  - Senado `lista/atual` gives `http://` photo/page links; `https` versions checked and working (data issue 9).
+  - Senado legislature list: 83 titular mandates among 245 people (data issue 4 updated).
+  - Senado `plenario/legislatura/{AAAAMMDD}` and `lista/atual` shapes sampled live (2 requests) before writing parsers.
+- **Changes made (commits 6b25415 … 811fd52):**
+  - `backend/`: uv project (Python 3.14, Django 6.1, httpx, psycopg; dev tools), settings from env, `core/types.py`, `sources/http.py`, `sources/cache.py`, `sources/clients/{camara,senado,_parse}.py`, `sources/runner.py`, `sources/fixtures.py`, `sources/drift.py`, commands `fetch_camara`, `fetch_senado`, `fetch_current`, `record_fixtures`, `check_upstream`; tests.
+  - Repo root: `compose.yaml`, `.env.example`, `scripts/record_fixtures.py`, `scripts/check_upstream.py`, `scripts/fixture_cases.json` (17 cases).
+  - Docs: README setup section and status; `docs/data-issues.md` (4 updated, 8, 9 added); `docs/testing/phase-a.md`; `docs/security/phase-a.md`.
+- **Validation (actually run):**
+  - `uv run pytest`: 94 passed, 9 skipped (skips need recorded fixtures).
+  - Coverage of `placar/`: 93%.
+  - `uv run ruff check`: clean. `uv run pip-audit`: no known vulnerabilities. `gitleaks dir` on backend: no leaks; pre-commit hook passed on every commit.
+  - Parsers checked by hand against live samples saved in the session scratchpad (not committed): Senado mandate 526 sequence and Câmara 220593 events parsed as expected.
+  - Not yet done: live `fetch_current` run (A13), fixture recording (A8), real-case tests.
+- **Decisions:** `ruff format` rewrote `except (A, B)` to the Python 3.14 unparenthesized form (PEP 758), valid for the pinned Python 3.14. Fixture recorder is a management command with a thin wrapper in `scripts/` so it reuses the cache key logic.
+- **Remaining work:** owner runs (or approves the session running) `fetch_current` and `record_fixtures`; then run the full suite with real-case tests and close Phase A.
