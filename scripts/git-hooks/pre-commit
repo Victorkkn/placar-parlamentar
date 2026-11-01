@@ -1,8 +1,18 @@
 #!/bin/sh
-# Blocks commits that contain secrets (decision 0012).
+# Fast checks before every commit (decisions 0012 and 0016).
 # Enabled with: git config core.hooksPath scripts/git-hooks
+set -e
 if ! command -v gitleaks >/dev/null 2>&1; then
   echo "pre-commit: gitleaks is not installed (brew install gitleaks). Commit blocked." >&2
   exit 1
 fi
-exec gitleaks git --pre-commit --staged --redact --no-banner .
+gitleaks git --pre-commit --staged --redact --no-banner .
+
+# Lint the backend only if Python files are staged.
+if git diff --cached --name-only --diff-filter=ACMR | grep -q '^backend/.*\.py$'; then
+  root=$(git rev-parse --show-toplevel)
+  (cd "$root/backend" && uv run --quiet ruff check . && uv run --quiet ruff format --check .) || {
+    echo "pre-commit: ruff found problems (run: cd backend && uv run ruff format . && uv run ruff check .)" >&2
+    exit 1
+  }
+fi
