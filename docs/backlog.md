@@ -4,13 +4,9 @@ Work after the current MVP steps (`docs/mvp-status.md`). Each item needs an appr
 
 ## Waiting for the owner
 
-- Merge the branch stack into `main`; tag `phase-b2`, then `phase-c` and `phase-d` after sign-off.
+- Merge `fix/mvp-walkthrough`; sign off the MVP; tags `phase-c` and `phase-d`.
 - Decision 0019 (data minimization): approve or reject.
 - Optional: one real `generate_summaries` run with your key, outside any recorded session.
-
-## MVP
-
-- Final MVP check on the real snapshot.
 
 ## After the MVP
 

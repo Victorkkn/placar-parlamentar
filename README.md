@@ -52,15 +52,14 @@ Requirements: [uv](https://docs.astral.sh/uv/) (Python 3.14 is installed by uv i
 
 1. Copy `.env.example` to `.env` and fill in the values. Never commit `.env`.
 2. Turn on the secret-scanning hook: `git config core.hooksPath scripts/git-hooks`
-3. Install the backend: `cd backend && uv sync`
-4. Run the tests (offline): `uv run pytest`
-5. Fetch the current legislature into the local cache (live requests to the official APIs, a few minutes on the first run): `uv run python manage.py fetch_current`
+3. Start the database (PostgreSQL in Docker, needed by the tests and the app): `docker compose up -d db`
+4. Install the backend: `cd backend && uv sync`
+5. Run the tests (offline): `uv run pytest`
+6. Fetch the current legislature into the local cache (live requests to the official APIs, a few minutes on the first run): `uv run python manage.py fetch_current`
    - `--limit N` fetches details for only the first N people; `--refresh` downloads again even if the cache is fresh.
-6. Optional, by hand:
+7. Optional, by hand:
    - record test fixtures from the cache: `python3 scripts/record_fixtures.py` (add `--fetch` to download missing cases);
    - compare the live APIs with the fixtures: `python3 scripts/check_upstream.py`.
-
-The PostgreSQL database (`docker compose up -d db`) is needed from Phase B on.
 
 ### Frontend (React)
 
@@ -100,7 +99,7 @@ Decision 0016 defines the workflow:
 
 ## Status
 
-Phases A and B1 are on `main`; B2 (activity) and Phase C (API, pages, end-to-end tests) are built on branches waiting for review. Phase D (summaries) is built on a branch. The MVP is phases A–D; rankings (Phase E) come after it (decision 0020). Details and the remaining steps: [`docs/mvp-status.md`](docs/mvp-status.md).
+The MVP (phases A–D) is on `main`: real data for legislature 57, metrics, filters, comparison, parties and summaries. Phase E (rankings) comes after it (decision 0020). Phases C and D wait for the owner's sign-off. Details and the remaining steps: [`docs/mvp-status.md`](docs/mvp-status.md).
 
 ## Data held
 
