@@ -83,7 +83,7 @@ export function PartiesPage() {
                   <td>{formatInteger(p.members_with_sufficient_data)}</td>
                   {p.aggregates.map((a) => (
                     <td key={a.key}>
-                      {a.available ? `${show(a.key, a.median)} (${show(a.key, a.minimum)}–${show(a.key, a.maximum)})` : <NotAvailable reason="not_loaded_yet" />}
+                      {!a.available ? <NotAvailable reason="not_loaded_yet" /> : a.members_counted === 0 ? "—" : `${show(a.key, a.median)} (${show(a.key, a.minimum)}–${show(a.key, a.maximum)})`}
                     </td>
                   ))}
                 </tr>

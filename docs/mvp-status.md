@@ -25,12 +25,12 @@ Branches stack in this order: `feat/b2-activity` → `feat/c1-api` → `feat/c3-
 | # | Item | Needs | Owner action |
 | --- | --- | --- | --- |
 | 1 | Finish the B2 download, run `normalize_activity`, check unknown vote options, add activity fixture cases, write the B2 outcome | done 2026-11-01 (`fix/b2-real-data`) | review the B2 outcome |
-| 2 | Merge the branch stack into `main`, tag `phase-b2` | 1 | **approve the merges** |
+| 2 | Merge the branch stack into `main`, tag `phase-b2` | done 2026-11-01 (merge `424c20f`, pushed; GitHub CI green, including the first e2e run) | done |
 | 3 | C4: neutral-wording review of the pt-BR texts, methodology pages and summary template | approved by the owner on 2026-11-01 | done |
 | 4 | C6: test and security notes, README "how to run" | — | done in `docs/mvp-readiness` (see `docs/testing/phase-c.md`, `docs/security/phase-c.md`) |
 | 5 | Sign off Phase C, tag `phase-c` | 2–4 | **sign off** |
 | 6 | Phase D: summaries | plan approved; built on `feat/d-summaries` (templates on, model off) | summary wording and the two deviations approved | done |
-| 7 | Final MVP check: full `scripts/check.sh`, e2e, a manual walk through the app on the real snapshot | 1–6 | sign off the MVP |
+| 7 | Final MVP check: full `scripts/check.sh`, e2e, a walk through the app on the real snapshot | walk done 2026-11-01: all pages load on the real data, no browser errors, no outside requests; 3 display fixes on `fix/mvp-walkthrough` | **approve merging the fixes and sign off the MVP** |
 
 ## Left out of the MVP (listed as decision 0015 requires)
 

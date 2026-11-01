@@ -15,7 +15,7 @@ export const text = {
   notInOfficialData: "Não disponível nos dados oficiais",
   insufficientData: "Dados insuficientes",
   sourceShort: "Fonte",
-  moreSources: (n: number) => `mais ${n} ${n === 1 ? "fonte" : "fontes"}`,
+  moreSources: (n: number) => `mais ${n.toLocaleString("pt-BR")} ${n === 1 ? "fonte" : "fontes"}`,
   notFoundTitle: "Página não encontrada",
   backHome: "Voltar ao início",
 
@@ -61,6 +61,7 @@ export const text = {
     from: "Início",
     to: "Fim",
     ongoing: "em exercício",
+    noEndDate: "sem data de fim no registro",
     startReason: "Motivo do início",
     endReason: "Motivo do fim",
     precisionAtEvent: "data conhecida apenas pelo registro do evento",

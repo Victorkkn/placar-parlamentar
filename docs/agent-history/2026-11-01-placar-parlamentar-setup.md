@@ -648,3 +648,30 @@
 - **Remaining work:**
   - Owner approval to merge the 8 branches into `main`.
   - Final MVP check and sign-off.
+
+## 2026-11-01 — MVP branches merged and pushed; final walk-through (branch fix/mvp-walkthrough)
+
+- **Agent:** Main Claude Code session
+- **Task:**
+  - The owner approved merging the 8 branches and the secret-votes wording.
+  - Then the final MVP check.
+- **Changes made:**
+  - `fix/b2-real-data`, which carries all 8 branches, merged into `main` with `--no-ff` (`424c20f`).
+  - Tag `phase-b2`.
+  - `main` and the tag pushed under the standing approval, after `scripts/check.sh` and a full-history gitleaks scan (68 commits, no leaks).
+  - Walk-through fixes on `fix/mvp-walkthrough`:
+    - source links separated by " · " (they ran together);
+    - an open party affiliation now reads "sem data de fim no registro" instead of "em exercício";
+    - party aggregates with no counted members show "—" instead of "— (———)";
+    - "mais N fontes" uses pt-BR thousands separators.
+- **Validation (actually run):**
+  - GitHub Actions on `main`: backend, frontend, e2e (first run on GitHub) and secrets all succeeded.
+  - Walk-through with Playwright on the real snapshot (officials, official page, comparison, parties, methodology):
+    - every page loaded;
+    - 0 console errors;
+    - 0 requests outside 127.0.0.1.
+    - Screenshots were reviewed and kept in the session scratchpad only.
+  - After the fixes: `scripts/check.sh` passed and e2e 4 passed.
+- **Remaining work:**
+  - Owner approval to merge `fix/mvp-walkthrough`.
+  - MVP sign-off; tags `phase-c` and `phase-d` after sign-off.

@@ -93,7 +93,7 @@ export function OfficialPage() {
         {affiliations.map((a) => (
           <li key={`${a.party}-${a.start}`}>
             <SourceValue sources={a.sources}>
-              {a.party}: {formatDate(a.start)} – {a.end ? formatDate(a.end) : text.official.ongoing}
+              {a.party}: {formatDate(a.start)} – {a.end ? formatDate(a.end) : text.official.noEndDate}
             </SourceValue>
             {a.precision === "AT_EVENT" && <small> ({text.official.precisionAtEvent})</small>}
           </li>
