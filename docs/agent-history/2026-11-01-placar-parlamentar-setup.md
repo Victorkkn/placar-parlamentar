@@ -394,3 +394,20 @@
   - decision 0017 accepted;
   - rules section 11 updated.
 - **Remaining work:** C0 frontend setup (branch `feat/c0-frontend-setup`); B2 download still running.
+
+## 2026-11-01 — Phase C0: frontend setup (branch feat/c0-frontend-setup)
+
+- **Agent:** Main Claude Code session (frontend and security roles)
+- **Changes made:**
+  - `frontend/`: React 19 + Vite 8 + TypeScript 5.9.3 placeholder app (pt-BR) with routes, pt-BR text file, Vitest + Testing Library setup, and ESLint 10 config.
+  - Lint bans `dangerouslySetInnerHTML` and visitor storage, with tests that prove both bans.
+  - Exact pins: `.npmrc` sets `save-exact` and `strict-peer-deps`; `package-lock.json` committed.
+  - CI `frontend` job; `scripts/check.sh` and the pre-commit hook extended to the frontend; README frontend section; `docs/security/phase-c0.md`.
+- **Deviations from the approved list (flagged to the owner):**
+  - `eslint-plugin-react` dropped: it supports only ESLint ≤ 9, which is end-of-life. The ban is done with a built-in ESLint rule instead.
+  - Added required companions: `@testing-library/dom` 10.4.2 (peer of Testing Library), `@types/react` 19.3.0 and `@types/react-dom` 19.3.0 (types for TypeScript).
+- **Problems met:**
+  - `npm install` failed with EACCES on root-owned files in `~/.npm`; a session-local cache was used and the owner's files were not changed.
+  - Local Node 24.12 is below one test dependency's declared minimum (24.15); tests pass anyway.
+- **Validation (actually run):** `npm run lint`, `npm run typecheck`, `npm test` (4 passed), `npm run build`, `npm audit --omit=dev` (0 vulnerabilities), full `npm audit` (one dev-only advisory, documented), workflow YAML parsed, `scripts/check.sh` all passed.
+- **Remaining work:** owner approval to merge C0; C1 (API) next; B2 download still running.
