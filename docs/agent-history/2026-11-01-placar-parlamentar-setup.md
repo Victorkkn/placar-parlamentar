@@ -342,3 +342,12 @@
   - Senado incomplete mandates 5718, 6358 (data issue 13); one period end without reason (data issue 15).
 - **Validation (actually run):** `normalize_current` on the full cache twice (Câmara 0 unknown, 0 inconsistencies; Senado 1 unknown, 2 incomplete mandates); `uv run pytest` 196 passed; coverage 94%; ruff clean; pip-audit clean; gitleaks hook passed.
 - **Remaining work:** owner review of B1 (especially the four Mesa-decision mappings); then B2.0 checks and B2.
+
+## 2026-11-01 — B1 approved; B2.0 checks; B2.1 clients and fetch command
+
+- **Agent:** Main Claude Code session
+- **Task:** Owner approved B1 including the four Mesa-decision mappings; start B2.
+- **Analysis (B2.0, about 25 small live requests):** plenary id 180; deliberative sessions type 110; `/votacoes` per calendar year; undocumented 3-month limit on `/proposicoes` dates (data issue 16, solved with `ano` list); Senado bill types PL/PLP/PEC/PDL; Senado vote code table at `tiposComparecimento`; committee lists mix other bodies; `.gov.br` document links (data issue 17).
+- **Changes made:** plan B2.0 section with adjustments for review (vote participation rules; committee count waits for official body types); `clients/camara_activity.py`, `clients/senado_activity.py`, `activity_runner.py`, `fetch_activity` command; tests.
+- **Validation:** parsers checked against live samples (scratchpad, not committed); `uv run pytest` 203 passed; ruff clean; gitleaks hook passed.
+- **Remaining work:** owner go-ahead for the live `fetch_activity` run (≈ 8,000 requests); activity models, normalizers and metrics; record activity fixtures; B2 notes.
