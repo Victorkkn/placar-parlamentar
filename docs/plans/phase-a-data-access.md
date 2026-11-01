@@ -1,6 +1,6 @@
 # Phase A — Data access (plan)
 
-- **Status:** proposed (waiting for the project owner's approval; no code before approval)
+- **Status:** approved by the project owner on 2026-11-01, including the dependency list. Deputy details (`/deputados/{id}`) are skipped as planned; the live run (A13) will be confirmed with the owner when reached.
 - **Date:** 2026-11-01
 - **Decisions applied:** 0004–0013 (see `docs/architecture-rules.md`)
 
