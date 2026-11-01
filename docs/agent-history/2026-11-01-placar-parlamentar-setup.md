@@ -529,3 +529,30 @@
   - Phase E next;
   - B2 data load still running;
   - merges still need approval.
+
+## 2026-11-01 — Documentation and data review against an external program's eligibility terms (branch docs/data-and-backlog)
+
+- **Agent:** Main Claude Code session (technical writer, security and project manager roles)
+- **Task:** Owner asked to check that nothing is missing in the documentation and plans, and that the project fits the terms of a remote "build your own project with an AI assistant" contract program.
+- **Analysis (verified):**
+  - The README says MIT, but there was no `LICENSE` file.
+  - Commits are authored only by the owner's personal GitHub no-reply address; the repo is private.
+  - The only employer or university mentions are the project's own "personal project" statements.
+  - Raw cache scan (9,433 files): no CPF, birth data or education. It does contain office email, office phones and gender.
+  - The database stores the civil name (Senado) and the photo URL, which are not shown.
+  - Official photos are not shown, and the local photo serving required by decision 0012 is not built.
+  - The Claude permissions in `.claude/settings.json` do not block reading `.env`.
+- **Changes made:**
+  - `LICENSE` (MIT, owner's name).
+  - `docs/data-inventory.md`.
+  - `docs/backlog.md`.
+  - Proposed decision `0019-data-minimization.md`, added to the index as **proposed**; no code changed.
+  - Phase C plan outcome.
+  - CLAUDE.md "Where things are".
+  - README: data-held section and license link.
+  - MVP status: photos left out, related links.
+- **Validation:** the claims in the data inventory were checked against the models, `PERSONAL_KEYS` and the cache scan.
+- **Remaining work:**
+  - Owner decision on 0019.
+  - Optional deny rule for reading `.env` in the Claude settings.
+  - The owner should confirm with the program whether data about public officials is eligible.

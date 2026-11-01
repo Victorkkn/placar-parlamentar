@@ -23,6 +23,7 @@ An accepted decision is changed only by a new decision that supersedes it, after
 | [0016](0016-git-workflow-and-ci.md) | Git workflow (branches, local checks) and GitHub Actions CI; supersedes part of 0013 | accepted | 2026-11-01 |
 | [0017](0017-typescript-version.md) | TypeScript 5.9.3 for the frontend; supersedes the version clause of 0009 | accepted | 2026-11-01 |
 | [0018](0018-single-banned-wording-list.md) | One banned-wording list (`docs/wording/banned-pt-BR.txt`) for app and summaries; supersedes the list location in 0010 | accepted | 2026-11-01 |
+| [0019](0019-data-minimization.md) | Data minimization: strip contact and gender fields before caching; drop civil name and photo URL | proposed | 2026-11-01 |
 
 ## Stage 2 topics
 

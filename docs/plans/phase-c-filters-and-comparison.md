@@ -68,3 +68,10 @@ All endpoints are `GET`, read-only, and validated. Windows are limited to 1988-1
 
 - **Large votes and attendance tables** (hundreds of thousands of rows) may make comparisons slow. Indexes are added in C1, and computed results can be stored later if needed.
 - **Charts** are left out of Phase C. Tables come first (decision 0009, item 13).
+
+## Outcome (2026-11-01)
+
+- C0 merged to `main`. C1, C2–C3 and C5 built on `feat/c1-api`, `feat/c3-pages` and `chore/ci-and-tests`, waiting for merge approval.
+- C6 notes: `docs/testing/phase-c.md`, `docs/security/phase-c.md`. README updated.
+- C4 (wording review) waits for the owner.
+

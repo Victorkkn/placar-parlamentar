@@ -34,4 +34,9 @@ Civic-transparency tool for Brazilian federal legislators, built only from offic
 - `docs/architecture-rules.md`: binding rules.
 - `docs/plans/`: phase plans (Stage 3).
 - `docs/data-issues.md`: gaps and inconsistencies in official data.
+- `docs/mvp-status.md`: what is done and left for the MVP; `docs/backlog.md`: work after it.
+- `docs/data-inventory.md`: what data is held about officials, where, and what is never collected.
+- `docs/methodology/`: pt-BR methodology pages; `docs/wording/banned-pt-BR.txt`: banned wording.
+- `docs/testing/` and `docs/security/`: test and security notes per phase.
+- `docs/api/openapi.json`: API contract between backend and frontend.
 - `.claude/agents/`: role agent definitions.

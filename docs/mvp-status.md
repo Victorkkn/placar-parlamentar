@@ -38,7 +38,13 @@ Branches stack in this order: `feat/b2-activity` → `feat/c1-api` → `feat/c3-
 - **Câmara committee attendance** (decision 0014, item 4). Memberships are loaded; attendance is shown as not available.
 - **Senado plenary attendance**: the Senado APIs used do not publish attendance per senator (decision 0014). The app says so.
 - **Deployment**: local only (decision 0013).
+- **Official photos**: not shown. Decision 0012 requires local serving, which is not built; proposed decision 0019 would stop storing the photo URL.
 - **Earlier legislatures**: the snapshot covers legislature 57.
+
+## Related
+
+- What data is held and why: `docs/data-inventory.md`.
+- Work after the MVP: `docs/backlog.md`.
 
 ## Owner to-dos outside the code
 

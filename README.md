@@ -102,6 +102,10 @@ Decision 0016 defines the workflow:
 
 Phases A and B1 are on `main`; B2 (activity) and Phase C (API, pages, end-to-end tests) are built on branches waiting for review. Phase D (summaries) is built on a branch; Phase E (rankings) has an approved plan. Details and the remaining steps: [`docs/mvp-status.md`](docs/mvp-status.md).
 
+## Data held
+
+Only public records of elected officials in their public role; nothing about visitors. Details: [`docs/data-inventory.md`](docs/data-inventory.md).
+
 ## License
 
-MIT. Personal project, owned solely by its author. Not developed under any employer, client, university or company resources.
+MIT (see [`LICENSE`](LICENSE)). Personal project, owned solely by its author. Not developed under any employer, client, university or company resources.
