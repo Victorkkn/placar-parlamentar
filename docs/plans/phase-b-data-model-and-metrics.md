@@ -206,4 +206,29 @@ Every metric value returns its numerator, denominator, window, coverage and the 
 
 Tests: 196 passed (PostgreSQL test database, network blocked); coverage 94% overall, `metrics/` 94%. `pip-audit`: no known vulnerabilities (with `hypothesis` added).
 
-**Status:** B1 waiting for the owner's review (especially the four Mesa-decision mappings) before B2 starts.
+**Status:** B1 approved by the owner on 2026-11-01, including the four Mesa-decision mappings. B2 started.
+
+## B2.0 checks (2026-11-01)
+
+Done with the downloaded specs and about 25 small live requests.
+
+| Check | Result |
+| --- | --- |
+| Câmara plenary `idOrgao` | `180` (`/orgaos?sigla=PLEN`) |
+| Câmara plenary deliberative sessions | event type `110` "Sessão Deliberativa" (code `204` has the same name but returned no plenary events in Oct 2026). Attendance base: plenary events of type 110 that took place |
+| Câmara `/votacoes` date range | Spec: both dates must be in the same calendar year → fetch per year |
+| Câmara `/proposicoes` date range | **Not in the spec:** presentation-date ranges over 3 months return HTTP 400 ("A diferença entre as datas não pode ser maior que 3 meses"; data issue 16). Using `ano=2023,2024,2025,2026` with `idDeputadoAutor` and `siglaTipo=PL,PLP,PEC,PDL` works (one request per deputy, ~3 s); presentation dates are then filtered locally |
+| Câmara speeches | `/deputados/{id}/discursos?idLegislatura=57` works (paged); free-text keywords are not stored (decision 0010) |
+| Senado bill types | `/processo/siglas`: current `PL`, `PLP`, `PEC`, `PDL` (older `PLS`/`PDS` ended 2018). `/processo?codigoParlamentarAutor={codigo}` returns all processes with that senator among the authors, all years; type taken from `identificacao` (e.g. "PL 123/2023") |
+| Senado votes | `/votacao?dataInicio&dataFim` (≤ 1 year per request) includes individual votes for nominal votes; option codes include Sim, Não, P-NRV, NCom, AP, LS and "Presidente (art. 51 RISF)" |
+| Senado vote code table | Official list at `/plenario/lista/tiposComparecimento` (redirects to `/dadosabertos/dados/ListaTiposComparecimento.json`), e.g. AP = "Atividade parlamentar", L2 = "Licença saúde" |
+| Committee lists | Senado `/senador/{codigo}/comissoes` mixes committees with "Frentes Parlamentares" (CN); Câmara `/deputados/{id}/orgaos` mixes committees with other bodies. A committee count needs the official body type, not name matching |
+
+### Adjustments for B2 (for owner review)
+
+1. **Nominal-vote participation, both houses.**
+   - **Counts as taking part:** a recorded vote option: Sim, Não, Abstenção, Obstrução.
+   - **Excluded from both numerator and denominator:** the presiding officer's non-vote (Câmara "Artigo 17", Senado "Presidente (art. 51 RISF)").
+   - **Justified absences** (official codes such as AP, L1–L7) are shown separately with their official description. They are not counted as taking part.
+   - Every option is stored as given; any option not in the table is reported, not guessed.
+2. **Committee memberships** are fetched and stored with the official body ids and names. The *committee count* metric waits until official body types are loaded (Câmara `/orgaos` types; Senado committee lists); until then it is not shown. This replaces "committee memberships" in the first-metrics list.
