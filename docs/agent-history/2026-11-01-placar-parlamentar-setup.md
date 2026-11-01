@@ -748,3 +748,21 @@
   - `scripts/check.sh` passed (365 backend tests, 18 frontend tests).
   - e2e: 4 passed.
 - **Remaining work:** Owner approval to merge `feat/0019-data-minimization` into `main`.
+
+## 2026-11-01 — Protected main and pull-request workflow (decision 0021, branch chore/0021-protected-main)
+
+- **Agent:** Main Claude Code session (security and scrum master roles)
+- **Task:** The owner asked for branch protection: no direct pushes, every change through a pull request.
+- **Changes made:**
+  - GitHub branch protection on `main`, set through the REST API and confirmed in the response:
+    - PR required, 0 approving reviews (single maintainer);
+    - required checks `backend`, `frontend`, `e2e` and `secrets`, on an up-to-date branch;
+    - enforced for admins;
+    - no force pushes or deletion;
+    - conversations must be resolved.
+  - Decision 0021 (accepted at the owner's request). It supersedes the local-merge and push-`main` parts of 0016; the standing approval now covers pushing the approved branch, opening the PR, merging it after CI and pushing signed-off phase tags.
+  - Updated the decision index, the 0016 status, rules section 18, CLAUDE.md, the README workflow and the definition of done.
+- **Validation:** protection settings read back from the API.
+- **Remaining work:**
+  - This change itself goes through the first pull request; merging it needs the owner's approval.
+  - The rejection of a direct push to `main` has not been tested; it is enforced by GitHub.

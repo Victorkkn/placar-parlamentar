@@ -20,11 +20,12 @@ An accepted decision is changed only by a new decision that supersedes it, after
 | [0013](0013-deployment.md) | Deployment: none in the MVP, local only; deferred items listed | accepted (item 2 partly superseded by 0016) | 2026-11-01 |
 | [0014](0014-metric-methodology-choices.md) | Methodology: leave days, bills authored, no Senado attendance, committee attendance deferred | accepted | 2026-11-01 |
 | [0015](0015-mvp-data-snapshot.md) | MVP runs on a snapshot of official data; no mocked numbers | accepted | 2026-11-01 |
-| [0016](0016-git-workflow-and-ci.md) | Git workflow (branches, local checks) and GitHub Actions CI; supersedes part of 0013 | accepted | 2026-11-01 |
+| [0016](0016-git-workflow-and-ci.md) | Git workflow (branches, local checks) and GitHub Actions CI; supersedes part of 0013 | accepted (merge and push parts superseded by 0021) | 2026-11-01 |
 | [0017](0017-typescript-version.md) | TypeScript 5.9.3 for the frontend; supersedes the version clause of 0009 | accepted | 2026-11-01 |
 | [0018](0018-single-banned-wording-list.md) | One banned-wording list (`docs/wording/banned-pt-BR.txt`) for app and summaries; supersedes the list location in 0010 | accepted | 2026-11-01 |
 | [0019](0019-data-minimization.md) | Data minimization: strip contact and gender fields before caching; drop civil name and photo URL | accepted | 2026-11-01 |
 | [0020](0020-mvp-without-rankings.md) | The MVP is phases A–D; Phase E (rankings) moves after the MVP | accepted | 2026-11-01 |
+| [0021](0021-protected-main-and-pull-requests.md) | Protected `main`: every change through a pull request with passing CI; supersedes the merge and push parts of 0016 | accepted | 2026-11-01 |
 
 ## Stage 2 topics
 

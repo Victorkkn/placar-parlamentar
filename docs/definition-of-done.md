@@ -13,9 +13,11 @@ A task or phase is done only when every item below is true. Owned by the scrum m
 
 ## Before a merge into `main`
 
+- The change is in a pull request; nobody pushes to `main` directly (decision 0021).
 - `scripts/check.sh` passes: lint, migrations check, full test suite with the `metrics/` coverage floor (90%), `pip-audit`, frontend checks and contract check, and a secret scan of the branch.
 - `npm run e2e` passes when pages, the API or the fixtures changed.
-- The owner approved the merge. Merges use `git merge --no-ff`.
+- The CI checks `backend`, `frontend`, `e2e` and `secrets` pass on the pull request.
+- The owner approved the merge. Pull requests are merged with a merge commit, and the branch is deleted.
 
 ## Before a phase is reported done
 
