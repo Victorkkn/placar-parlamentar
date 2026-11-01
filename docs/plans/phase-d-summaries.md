@@ -1,6 +1,6 @@
 # Phase D — Summaries (plan)
 
-- **Status:** proposed (2026-11-01), waiting for the owner's approval. Nothing in this plan is implemented.
+- **Status:** approved by the owner on 2026-11-01 with the recommended choices: 1A (templates in the MVP, model summaries built but off until the owner adds a key and approves a run), decision 0018 (one banned-wording list), 3–6 sentences of at most 200 characters, and the `anthropic` dependency.
 - **Decisions it follows:** 0010 (summaries), 0007 (module boundaries), 0011 (testing), 0012 (security), 0015 (snapshot).
 
 ## Goal

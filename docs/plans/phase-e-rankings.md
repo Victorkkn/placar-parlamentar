@@ -1,6 +1,6 @@
 # Phase E — Rankings (plan)
 
-- **Status:** proposed (2026-11-01), waiting for the owner's approval. Nothing in this plan is implemented.
+- **Status:** approved by the owner on 2026-11-01 with the recommended choices: bills per 365 days in office (raw count shown), houses ranked separately, highest first with a reverse button, page named "Classificação por métrica", same threshold as the rest of the app.
 - **Decisions it follows:** 0007, 0009, 0014, 0015, and the Phase C window and threshold rules.
 
 ## Goal

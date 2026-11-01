@@ -14,7 +14,7 @@ An accepted decision is changed only by a new decision that supersedes it, after
 | [0007](0007-module-boundaries.md) | Backend module boundaries, allowed imports, `core` app | accepted | 2026-11-01 |
 | [0008](0008-source-normalization.md) | Normalizing Câmara and Senado into one model (service periods, leaves, affiliations) | accepted | 2026-11-01 |
 | [0009](0009-frontend.md) | Frontend: React + TypeScript + Vite SPA, OpenAPI contract file, no third-party requests | accepted | 2026-11-01 |
-| [0010](0010-summaries.md) | Summaries: isolated LLM adapter, fact sheets, validator, template fallback | accepted | 2026-11-01 |
+| [0010](0010-summaries.md) | Summaries: isolated LLM adapter, fact sheets, validator, template fallback | accepted (list location in item 7 superseded by 0018) | 2026-11-01 |
 | [0011](0011-testing.md) | Testing: offline pytest/Vitest/Playwright, hand-recorded fixtures without personal fields | accepted | 2026-11-01 |
 | [0012](0012-security-baseline.md) | Security baseline: secrets, dependencies, input, upstream limits, untrusted content, logging | accepted | 2026-11-01 |
 | [0013](0013-deployment.md) | Deployment: none in the MVP, local only; deferred items listed | accepted (item 2 partly superseded by 0016) | 2026-11-01 |
@@ -22,6 +22,7 @@ An accepted decision is changed only by a new decision that supersedes it, after
 | [0015](0015-mvp-data-snapshot.md) | MVP runs on a snapshot of official data; no mocked numbers | accepted | 2026-11-01 |
 | [0016](0016-git-workflow-and-ci.md) | Git workflow (branches, local checks) and GitHub Actions CI; supersedes part of 0013 | accepted | 2026-11-01 |
 | [0017](0017-typescript-version.md) | TypeScript 5.9.3 for the frontend; supersedes the version clause of 0009 | accepted | 2026-11-01 |
+| [0018](0018-single-banned-wording-list.md) | One banned-wording list (`docs/wording/banned-pt-BR.txt`) for app and summaries; supersedes the list location in 0010 | accepted | 2026-11-01 |
 
 ## Stage 2 topics
 
