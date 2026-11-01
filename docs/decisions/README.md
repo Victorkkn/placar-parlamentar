@@ -10,6 +10,7 @@ An accepted decision is changed only by a new decision that supersedes it, after
 | [0003](0003-languages.md) | Languages: pt-BR interface, English code and docs | accepted | 2026-11-01 |
 | [0004](0004-repository-layout.md) | Repository layout: monorepo with `backend/` and `frontend/` | accepted | 2026-11-01 |
 | [0005](0005-backend-framework.md) | Backend: Django 6.1 + Django Ninja, sync by default, local read-only admin | accepted | 2026-11-01 |
+| [0006](0006-database-and-raw-cache.md) | PostgreSQL 18 in Docker; raw API responses cached as files | proposed | 2026-11-01 |
 
 ## Stage 2 topics
 
@@ -17,7 +18,7 @@ An accepted decision is changed only by a new decision that supersedes it, after
 |---|---|---|
 | 1. Repository layout | 0004 | accepted |
 | 2. Backend framework and project layout | 0005 | accepted |
-| 3. Database and raw response cache | — | not started |
+| 3. Database and raw response cache | 0006 | proposed |
 | 4. Module boundaries | — | not started |
 | 5. Normalizing Câmara and Senado data | — | not started |
 | 6. Frontend framework, build tooling, link to backend | — | not started |

@@ -160,3 +160,10 @@
 - **Agent:** Main Claude Code session
 - **Changes made:** 0005 status accepted; index and topic tracker updated; `docs/architecture-rules.md` section 7 added.
 - **Remaining work:** topic 3 (database and raw cache) next.
+
+## 2026-11-01 — Decision 0006 proposed (database and raw cache)
+
+- **Agent:** Main Claude Code session (acting as architect)
+- **Analysis:** PostgreSQL not installed locally; Docker installed. endoflife.date reports PostgreSQL 18.6 as latest; PyPI reports psycopg 3.3.6.
+- **Changes made:** `docs/decisions/0006-database-and-raw-cache.md` (proposed); index updated.
+- **Remaining work:** owner approval of 0006.
