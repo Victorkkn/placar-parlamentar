@@ -312,3 +312,15 @@
   - `uv run pytest`: 119 passed, 0 skipped; coverage 94%; ruff clean; grep found no `@` or `"cpf"` in fixtures; gitleaks hook passed.
 - **Hook finding:** the gitleaks pre-commit hook blocked the first two commit attempts (17 `generic-api-key` matches on the fixture field `cache_key`, a SHA-256 of a public URL). Renamed to `cache_file_id`, re-recorded fixtures from cache (no network), tests still 119 passed, rescan clean. Scanner rules unchanged.
 - **Remaining work:** owner sign-off on Phase A; then the Phase B plan (data model and metrics), including the leave-days methodology confirmation and the cause of data issue 4.
+
+## 2026-11-01 — Phase A signed off; Phase B plan proposed
+
+- **Agent:** Main Claude Code session
+- **Task:** Owner signed off Phase A ("ok"); write the Phase B plan.
+- **Analysis:**
+  - Read activity endpoints in the downloaded specs (Câmara proposições, votações, eventos, órgãos, discursos; Senado processo, votacao, comissoes, discursos).
+  - 4 live sample requests (Senado plenary agenda and committee agenda for 2026-10-28, session 593614, meeting 14998): no per-senator presence list (data issue 10).
+  - From the cache only: 64 distinct Câmara history texts; 311 start-of-legislature events tagged legislature 58 (data issue 11).
+- **Changes made:** `docs/plans/phase-b-data-model-and-metrics.md` (proposed); Phase A plan marked signed off; data issues 10 and 11.
+- **Implementation authorized:** no (Phase B plan awaiting approval).
+- **Remaining work:** owner approval of the Phase B plan and answers to Choices 1–4 (to become decision 0014).

@@ -129,4 +129,4 @@ All tasks A0–A13 done. Evidence: `docs/testing/phase-a.md`, `docs/security/pha
 - There were 648 deputies, not about 860, so there were fewer history requests than estimated.
 - The fixture recorder is a management command with a thin wrapper in `scripts/`, so it reuses the cache code.
 
-**Status:** waiting for the owner to sign off on Phase A.
+**Status:** signed off by the project owner on 2026-11-01.
