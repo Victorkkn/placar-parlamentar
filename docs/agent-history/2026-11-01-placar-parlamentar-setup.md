@@ -264,3 +264,11 @@
 - **Agent:** Main Claude Code session
 - **Changes made:** 0013 accepted; index marks Stage 2 complete; rules file intro updated and section 15 added; root `CLAUDE.md` rewritten with a rules summary, plan-approval rule and hook setup note.
 - **Remaining work:** Stage 3, starting with the Phase A plan.
+
+## 2026-11-01 — Stage 3: Phase A plan proposed
+
+- **Agent:** Main Claude Code session
+- **Changes made:** `docs/plans/phase-a-data-access.md` (proposed): scope, endpoints with spec versions, tasks A0–A13 with owners, acceptance criteria, dependency list, risks, open questions.
+- **Validation:** Endpoint list is based on the spec downloads and live samples taken earlier today; httpx 0.28.1 and psycopg 3.3.6 checked on PyPI; uv 0.9.26 installed locally.
+- **Implementation authorized:** no. No code written.
+- **Remaining work:** owner approval of the Phase A plan, dependency list, live-run choice, and the decision to skip deputy details.
