@@ -1,6 +1,6 @@
 # 0004 — Repository layout
 
-- **Status:** proposed
+- **Status:** accepted (2026-11-01)
 - **Date:** 2026-11-01
 - **Stage:** 2 (topic 1 of 10)
 

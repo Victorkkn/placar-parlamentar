@@ -49,3 +49,11 @@ Small, descriptive local commits are allowed.
 - User interface in Brazilian Portuguese (pt-BR).
 - Code, comments, commits, decisions and internal docs in English.
 - Official API field names and terms keep their original spelling.
+
+## 6. Repository layout (decision 0004)
+
+- One repository. Top-level folders: `backend/` (Python), `frontend/` (React), `docs/`, `scripts/`, `.claude/`.
+- `backend/` and `frontend/` are self-contained: each has its own dependencies, tests and run commands, and neither imports code from the other.
+- They connect only through the HTTP API contract.
+- Local data (API cache, database files) is never committed to git.
+- No monorepo build tool unless a new decision adds one.

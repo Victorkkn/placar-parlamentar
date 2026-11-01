@@ -113,3 +113,21 @@
 
 ### Remaining work
 - Owner approval of decision 0004, then decisions on topics 2–10 one at a time.
+
+## 2026-11-01 — Decision 0004 accepted; topic 2 deferred
+
+- **Date:** 2026-11-01
+- **Agent:** Main Claude Code session
+- **Task:** Owner approved decision 0004 and said the backend architecture (Stage 2 topic 2) will be decided later.
+
+### Changes made
+- `docs/decisions/0004-repository-layout.md`: status accepted.
+- `docs/decisions/README.md`: index updated; added a Stage 2 topic tracker with topic 2 marked deferred.
+- `docs/architecture-rules.md`: added section 6 (repository layout rules).
+- No folders or code created.
+
+### Validation
+- None needed; documentation only.
+
+### Remaining work
+- Owner to choose which Stage 2 topic comes next. Topic 2 stays open; Stage 3 cannot start until all Stage 2 topics are accepted.

@@ -8,4 +8,19 @@ An accepted decision is changed only by a new decision that supersedes it, after
 | [0001](0001-team-and-roles.md) | Team and roles | accepted | 2026-11-01 |
 | [0002](0002-git-and-approval-gates.md) | Git workflow and approval gates (no push without approval) | accepted | 2026-11-01 |
 | [0003](0003-languages.md) | Languages: pt-BR interface, English code and docs | accepted | 2026-11-01 |
-| [0004](0004-repository-layout.md) | Repository layout: monorepo with `backend/` and `frontend/` | proposed | 2026-11-01 |
+| [0004](0004-repository-layout.md) | Repository layout: monorepo with `backend/` and `frontend/` | accepted | 2026-11-01 |
+
+## Stage 2 topics
+
+| Topic | Decision | State |
+|---|---|---|
+| 1. Repository layout | 0004 | accepted |
+| 2. Backend framework and project layout | — | deferred by the project owner (2026-11-01) |
+| 3. Database and raw response cache | — | not started |
+| 4. Module boundaries | — | not started |
+| 5. Normalizing Câmara and Senado data | — | not started |
+| 6. Frontend framework, build tooling, link to backend | — | not started |
+| 7. Isolating the summary feature, enforcing source links | — | not started |
+| 8. Testing strategy and offline fixtures | — | not started |
+| 9. Security baseline | — | not started |
+| 10. Deployment target (out of MVP scope unless decided) | — | not started |
