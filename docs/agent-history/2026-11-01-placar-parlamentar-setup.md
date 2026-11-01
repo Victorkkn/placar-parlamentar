@@ -377,3 +377,9 @@
   - CI run 41329428087: `backend` and `secrets` succeeded.
 - **Failed attempt:** branch protection on `main` refused (HTTP 403: needs GitHub Pro or a public repository). Recorded in 0016.
 - **Remaining work:** owner to decide whether later pushes after each approved merge are pre-approved; B2 continues on `feat/b2-activity` once the live download finishes.
+
+## 2026-11-01 — Standing push approval
+
+- **Agent:** Main Claude Code session
+- **Task:** Owner approved pushing to GitHub after each approved merge without asking separately ("yes, you can").
+- **Changes made:** recorded in 0016 notes, rules section 18 and root `CLAUDE.md` (scope: `main` and phase tags only, right after an approved merge); then pushed `main`.
