@@ -134,3 +134,14 @@ Small, descriptive local commits are allowed.
 - Model summaries are generated ahead of time by a management command for preset windows only, never during a visitor request. Each stores model id, prompt version, fact-sheet hash, creation time and validation result.
 - Each sentence is shown with its source links; the page states the text is automatic and whether it is a model or template summary.
 - Tests use a fake adapter, never the real API. No evaluation, training or benchmarking pipeline.
+
+## 13. Testing (decision 0011)
+
+- All test suites run offline. Backend: pytest + pytest-django on a PostgreSQL test database; `pytest-socket` allows only `127.0.0.1`; `respx` replays recorded responses; `hypothesis` for coverage and period-merging properties; coverage.py with a 90% floor for `metrics/` and the summary validator.
+- Fixtures come only from `scripts/record_fixtures.py`, run by hand by the owner, copied from the raw cache to `backend/tests/fixtures/<source>/<endpoint>/<case>.json` with a `_fixture` note (date, spec version, what was trimmed).
+- Personal fields are removed at recording time (0008 allowlist). Fixtures are never edited by hand; deleting them needs approval.
+- Real cases get named fixture sets and test modules. Synthetic test data comes from `backend/tests/builders.py`, is labeled, and is never shown in the app.
+- Required checks: every API number has a `SourceRef`; import boundaries; OpenAPI contract up to date; no personal fields in fixtures; every rendered number uses the source-link component; no banned wording in UI text or templates.
+- Frontend: Vitest + Testing Library + MSW. End-to-end: Playwright (Chromium) with axe, offline against fixture-loaded backend, run before a phase is reported done.
+- Commands: `uv run pytest`, `npm test`, `npm run e2e`. No CI until the deployment decision.
+- `scripts/check_upstream.py` (run by hand) compares live response structure with fixtures; findings go to `docs/data-issues.md`.

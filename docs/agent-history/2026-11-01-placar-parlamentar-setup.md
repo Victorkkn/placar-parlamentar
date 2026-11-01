@@ -231,3 +231,8 @@
 - **Analysis:** Checked current PyPI and npm versions of test tools.
 - **Changes made:** `docs/decisions/0011-testing.md` (proposed); index updated.
 - **Remaining work:** owner approval of 0011.
+
+## 2026-11-01 — Decision 0011 accepted
+
+- **Agent:** Main Claude Code session
+- **Changes made:** 0011 accepted; index updated; rules section 13 added.
