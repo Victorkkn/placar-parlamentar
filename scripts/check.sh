@@ -14,6 +14,11 @@ uv run pytest -q
 echo "== dependency audit"
 uv run pip-audit --progress-spinner off
 cd "$root"
+if [ -f frontend/package.json ]; then
+  echo "== frontend"
+  (cd frontend && npm run -s lint && npm run -s typecheck && npm test --silent && npm run -s build >/dev/null \
+    && npm audit --omit=dev --audit-level=moderate)
+fi
 echo "== secrets (commits on this branch not yet in main)"
 if git rev-parse --verify -q main >/dev/null && [ "$(git rev-parse --abbrev-ref HEAD)" != "main" ]; then
   gitleaks git --redact --no-banner --log-opts="main..HEAD" .

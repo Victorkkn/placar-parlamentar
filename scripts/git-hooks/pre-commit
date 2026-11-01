@@ -16,3 +16,12 @@ if git diff --cached --name-only --diff-filter=ACMR | grep -q '^backend/.*\.py$'
     exit 1
   }
 fi
+
+# Lint and type-check the frontend only if frontend source files are staged.
+if git diff --cached --name-only --diff-filter=ACMR | grep -q '^frontend/.*\.\(ts\|tsx\|js\)$'; then
+  root=$(git rev-parse --show-toplevel)
+  (cd "$root/frontend" && npm run -s lint && npm run -s typecheck) || {
+    echo "pre-commit: frontend lint or type check failed" >&2
+    exit 1
+  }
+fi

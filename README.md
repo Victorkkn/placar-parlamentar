@@ -66,6 +66,14 @@ Requirements: [uv](https://docs.astral.sh/uv/) (Python 3.14 is installed by uv i
 
 The PostgreSQL database (`docker compose up -d db`) is needed from Phase B on.
 
+### Frontend (React)
+
+Requirements: Node 24 (24.15 or later recommended; see `frontend/.nvmrc`).
+
+1. `cd frontend && npm ci`
+2. Development server: `npm run dev` → http://127.0.0.1:5173 (requests to `/api` go to Django on 127.0.0.1:8000).
+3. Checks: `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`.
+
 ## Workflow (contributing)
 
 Decision 0016 defines the workflow:
