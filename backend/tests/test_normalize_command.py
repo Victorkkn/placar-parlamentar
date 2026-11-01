@@ -50,3 +50,21 @@ def test_normalize_current_fails_clearly_without_cache(settings, tmp_path):
 def test_fixture_snapshot_refuses_non_e2e_database():
     with pytest.raises(CommandError, match="must end with _e2e"):
         call_command("load_fixture_snapshot", stdout=io.StringIO())
+
+
+def test_scrub_cache_command_cleans_old_files(settings, tmp_path):
+    import gzip
+    import json
+
+    from placar.sources.fixtures import find_personal_keys
+
+    settings.PLACAR = {**settings.PLACAR, "RAW_CACHE_DIR": tmp_path}
+    path = tmp_path / "senado" / "x" / "old.json.gz"
+    path.parent.mkdir(parents=True)
+    old = {"url": "https://legis.senado.leg.br/dadosabertos/x", "fetched_at": "2026-11-01",
+           "body": {"Parlamentar": {"Nome": "A", "EmailParlamentar": "a@senado.leg.br"}}}  # fmt: skip
+    path.write_bytes(gzip.compress(json.dumps(old).encode()))
+    out = io.StringIO()
+    call_command("scrub_cache", stdout=out)
+    assert "cleaned 1; removed 1 personal fields" in out.getvalue()
+    assert find_personal_keys(json.loads(gzip.decompress(path.read_bytes()))["body"]) == []

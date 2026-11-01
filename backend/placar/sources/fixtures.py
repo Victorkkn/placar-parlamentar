@@ -15,60 +15,11 @@ from pathlib import Path
 from typing import Any
 
 from .cache import CachedFetcher, RawCache, split_url
-
-# Keys removed anywhere in a response (compared case-insensitively). These are personal or
-# contact fields outside the project's scope (decision 0008).
-PERSONAL_KEYS = frozenset(
-    key.lower()
-    for key in (
-        "cpf",
-        "dataNascimento",
-        "dataFalecimento",
-        "municipioNascimento",
-        "ufNascimento",
-        "escolaridade",
-        "redeSocial",
-        "email",
-        "EmailParlamentar",
-        "sexo",
-        "SexoParlamentar",
-        "Telefones",
-        "telefone",
-        "EnderecoParlamentar",
-        "endereco",
-    )
-)
+from .personal import PERSONAL_KEYS, find_personal_keys, strip_personal  # noqa: F401 - re-exported
 
 
 class FixtureError(Exception):
     pass
-
-
-def strip_personal(data: Any, path: str = "") -> tuple[Any, list[str]]:
-    """Return a copy without personal keys, and the paths that were removed."""
-    removed: list[str] = []
-    if isinstance(data, dict):
-        clean = {}
-        for key, value in data.items():
-            here = f"{path}.{key}" if path else key
-            if key.lower() in PERSONAL_KEYS:
-                removed.append(here)
-                continue
-            clean[key], inner = strip_personal(value, here)
-            removed.extend(inner)
-        return clean, removed
-    if isinstance(data, list):
-        clean_list = []
-        for index, value in enumerate(data):
-            item, inner = strip_personal(value, f"{path}[{index}]")
-            clean_list.append(item)
-            removed.extend(inner)
-        return clean_list, removed
-    return data, removed
-
-
-def find_personal_keys(data: Any, path: str = "") -> list[str]:
-    return strip_personal(data, path)[1]
 
 
 def _get_path(data: Any, dotted: str) -> Any:

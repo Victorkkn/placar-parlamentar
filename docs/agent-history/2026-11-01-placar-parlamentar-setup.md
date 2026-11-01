@@ -730,3 +730,21 @@
   - Decision 0019 (proposed).
   - Eligibility confirmation with the program.
   - The backlog.
+
+## 2026-11-01 — Repository made public; decision 0019 implemented (branch feat/0019-data-minimization)
+
+- **Agent:** Main Claude Code session (security, data and backend roles)
+- **Task:** The owner asked to (1) make the GitHub repository public and (2) implement decision 0019.
+- **Changes made:**
+  - **Visibility:** `gh repo edit --visibility public` on `Victorkkn/placar-parlamentar`. GitHub now shows it as public and detects the MIT license.
+  - **Field list:** `placar/sources/personal.py` holds the personal-field list and the strip function; fixtures re-export them.
+  - **Cache:** `RawCache.write` strips those fields before writing and records the count in `removed_personal_fields`. New `RawCache.scrub` and `scrub_cache` command.
+  - **Database:** the civil name and photo URL were removed from the parsers, normalizers, `OfficialRecord`, `Official` (migration `legislators` 0005), the API schema and the frontend test data. Contract and types regenerated.
+  - **Tests:** cache write strips; scrub cleans old files, keeps `fetched_at` and runs safely twice; the command reports counts; parser tests check that the fields are gone.
+  - **Docs:** 0019 accepted, with an implementation section. Index, status notes on 0006 and 0008, rules sections 8, 10 and 14, data inventory, MVP status and backlog updated.
+- **Validation (actually run):**
+  - `scrub_cache` on the real cache: 11,191 files checked, 2,689 cleaned, 686,635 fields removed. A scan afterwards found 0 files with personal fields.
+  - `normalize_current` and `normalize_activity` from the cleaned cache gave the same counts as before (officials 648 + 245; ballots 456,837 + 34,506; presences 185,708; speeches 52,006 + 14,586).
+  - `scripts/check.sh` passed (365 backend tests, 18 frontend tests).
+  - e2e: 4 passed.
+- **Remaining work:** Owner approval to merge `feat/0019-data-minimization` into `main`.

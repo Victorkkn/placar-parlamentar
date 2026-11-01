@@ -27,7 +27,7 @@ def test_brazil_date_converts_offsets_and_keeps_local_times():
     assert to_brazil_date("not a date") is None
 
 
-def test_camara_rows_keep_one_row_per_party_and_drop_unofficial_photos():
+def test_camara_rows_keep_one_row_per_party_and_store_no_photo():
     body = {
         "dados": [
             {"id": 1, "nome": "Pessoa A", "siglaPartido": "P1", "siglaUf": "AM",
@@ -41,9 +41,9 @@ def test_camara_rows_keep_one_row_per_party_and_drop_unofficial_photos():
     notes = ParseNotes()
     rows = camara.parse_deputy_rows(body, REF, notes)
     assert [(r.deputy_id, r.party) for r in rows] == [(1, "P1"), (1, "P2")]
-    assert rows[1].photo_url is None
-    assert not hasattr(rows[0], "email")
-    assert len(notes.items) == 2
+    fields = set(camara.CamaraDeputyRow.__dataclass_fields__)
+    assert not {"photo_url", "email"} & fields  # decision 0019
+    assert len(notes.items) == 1  # the row without id
 
 
 def test_camara_history_event_without_date_is_noted_not_guessed():
@@ -141,11 +141,10 @@ def test_senado_list_drops_personal_fields_and_upgrades_official_links():
     }
     notes = ParseNotes()
     [senator] = senado.parse_senator_list(body, REF, notes)
-    assert senator.photo_url == "https://www.senado.leg.br/f/7.jpg"
-    assert senator.page_url is None
+    assert senator.page_url is None  # not on an official domain
     assert senator.mandates[0].mandate_code == 5
     fields = set(senado.SenadoListedSenator.__dataclass_fields__)
-    assert not {"sex", "email", "phones"} & fields
+    assert not {"sex", "email", "phones", "civil_name", "photo_url"} & fields  # decision 0019
     assert notes.items == ["senado senator 7: link not on an official domain, dropped"]
 
 

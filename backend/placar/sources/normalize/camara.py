@@ -48,7 +48,6 @@ def _official(rows: list[CamaraDeputyRow], events: list[CamaraHistoryEvent]) -> 
         house_id=row.deputy_id,
         parliamentary_name=row.name,
         state=state,
-        photo_url=row.photo_url or "",
         source=row.source,
     )
 

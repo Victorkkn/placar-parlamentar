@@ -1,6 +1,6 @@
 # 0006 — Database and raw API response cache
 
-- **Status:** accepted (2026-11-01)
+- **Status:** accepted (2026-11-01); item 6 (unchanged body) partly superseded by decision 0019
 - **Date:** 2026-11-01
 - **Stage:** 2 (topic 3 of 10)
 

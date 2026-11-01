@@ -4,14 +4,13 @@ Work after the current MVP steps (`docs/mvp-status.md`). Each item needs an appr
 
 ## Waiting for the owner
 
-- Decision 0019 (data minimization): approve or reject.
 - Optional: one real `generate_summaries` run with your key, outside any recorded session.
 
 ## After the MVP
 
 - Phase E: rankings (plan approved; deferred by decision 0020).
 - Câmara committee attendance (deferred by decision 0014).
-- Official photos served locally (decision 0012), if wanted.
+- Official photos, if wanted: needs a new decision (0019 removed them), with local serving as decision 0012 requires.
 - Earlier legislatures (only legislature 57 is in the snapshot).
 - Performance: the first Câmara party view per period takes about 9 s (then cached in memory). Storing computed metrics after each load would make every view fast.
 - A documented, repeatable snapshot refresh (fetch, normalize, regenerate summaries).

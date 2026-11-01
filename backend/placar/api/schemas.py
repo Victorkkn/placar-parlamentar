@@ -56,7 +56,6 @@ class OfficialSummary(Schema):
     name: str
     state: str
     party: str | None
-    photo_url: str | None
     page_url: str | None
     coverage: CoverageOut
     sufficient: bool

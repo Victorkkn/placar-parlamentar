@@ -106,9 +106,7 @@ def normalize(data: SenadoInput) -> tuple[HouseBundle, Notes]:
             OfficialRecord(
                 house_id=code,
                 parliamentary_name=senator.parliamentary_name or str(code),
-                civil_name=senator.civil_name or "",
                 state=state,
-                photo_url=(now.photo_url if now else senator.photo_url) or "",
                 page_url=(now.page_url if now else senator.page_url) or "",
                 source=senator.source,
             )

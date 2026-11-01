@@ -1,5 +1,7 @@
 """Fixture recording on SYNTHETIC cache entries (decision 0011, item 6)."""
 
+import gzip
+import json
 from datetime import UTC, datetime
 
 import pytest
@@ -82,7 +84,9 @@ def test_record_case_writes_clean_fixture_with_note(tmp_path):
     assert fixture["_fixture"]["spec"] == "spec 4.1.3.108"
     assert fixture["_fixture"]["recorded_at"].startswith("2026-11-02")
     assert "kept items" in fixture["_fixture"]["trimmed"]
-    assert len(fixture["_fixture"]["removed_personal_fields"]) == 3
+    # Decision 0019: the cache never held them, so recording finds nothing more to remove.
+    assert fixture["_fixture"]["removed_personal_fields"] == []
+    assert fixture["removed_personal_fields"] == 3  # counted when the cache was written
     assert fixture["url"] == URL and fixture["fetched_at"].startswith("2026-11-01")
     assert find_personal_keys(fixture["body"]) == []
     assert not result.fetched_live
@@ -92,3 +96,25 @@ def test_record_case_without_cache_and_without_fetch_fails(tmp_path):
     case = {"name": "missing", "source": "senado", "url": URL + "?x=1", "file": "x.json"}
     with pytest.raises(FixtureError, match="not in the cache"):
         record_case(case, cache=RawCache(tmp_path), out_dir=tmp_path, spec=SPEC)
+
+
+def test_cache_write_removes_personal_fields(tmp_path):
+    # Decision 0019: contact and gender fields never reach the cache file.
+    cache = cache_with_body(tmp_path)
+    entry = cache.read("senado", URL, {})
+    assert find_personal_keys(entry.body) == []
+    assert entry.envelope["removed_personal_fields"] == 3
+    assert "a@senado.leg.br" not in gzip.decompress(entry.path.read_bytes()).decode()
+
+
+def test_scrub_cleans_a_file_written_before_decision_0019(tmp_path):
+    cache = cache_with_body(tmp_path)
+    path = cache.read("senado", URL, {}).path
+    old = json.loads(gzip.decompress(path.read_bytes()))
+    old["body"], old["removed_personal_fields"] = BODY, 0  # as an old file looked
+    path.write_bytes(gzip.compress(json.dumps(old).encode()))
+    assert cache.scrub(path) == 3
+    entry = cache.read("senado", URL, {})
+    assert find_personal_keys(entry.body) == []
+    assert entry.envelope["fetched_at"] == old["fetched_at"]  # freshness unchanged
+    assert cache.scrub(path) == 0  # idempotent

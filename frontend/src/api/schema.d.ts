@@ -239,8 +239,6 @@ export interface components {
             page_url: string | null;
             /** Party */
             party: string | null;
-            /** Photo Url */
-            photo_url: string | null;
             /** Sources */
             sources: components["schemas"]["Source"][];
             /** State */

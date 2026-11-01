@@ -73,9 +73,7 @@ class Official(SourcedModel):
     house = models.CharField(max_length=6, choices=House.choices)
     house_id = models.PositiveIntegerField()
     parliamentary_name = models.CharField(max_length=200)
-    civil_name = models.CharField(max_length=300, blank=True)
     state = models.CharField(max_length=2, blank=True)
-    photo_url = models.URLField(max_length=500, blank=True)
     page_url = models.URLField(max_length=500, blank=True)
 
     class Meta:

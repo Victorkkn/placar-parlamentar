@@ -27,7 +27,7 @@ const coverage = (days: number, share: number): Schemas["CoverageOut"] => ({
 });
 
 export const summaryA: Schemas["OfficialSummary"] = {
-  id: 1, house: "CAMARA", house_id: 101, name: "Pessoa A", state: "SP", party: "P1", photo_url: null, page_url: null,
+  id: 1, house: "CAMARA", house_id: 101, name: "Pessoa A", state: "SP", party: "P1", page_url: null,
   coverage: coverage(701, 0.511679), sufficient: true, sources: [src("deputados?idLegislatura=57")],
 };
 export const summaryB: Schemas["OfficialSummary"] = {
