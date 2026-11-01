@@ -3,7 +3,7 @@
 These rules are binding for every session and every agent. Each rule comes from an accepted decision in `docs/decisions/` or from the project's non-negotiable rules.
 A rule changes only through a new decision that supersedes the old one and is approved by the project owner.
 
-Stage 2 (architecture) was completed on 2026-11-01. This file summarizes decisions 0001–0016. When rules conflict, the decision record is the authority, and the conflict must be reported to the project owner.
+Stage 2 (architecture) was completed on 2026-11-01. This file summarizes decisions 0001–0017. When rules conflict, the decision record is the authority, and the conflict must be reported to the project owner.
 
 ## 1. Non-negotiable rules
 
@@ -111,7 +111,7 @@ Small, descriptive local commits are allowed.
 ## 11. Frontend (decision 0009)
 
 - React 19 + TypeScript + Vite single-page app in `frontend/`. Node 24 LTS and npm, lockfile committed, Node version pinned.
-- TypeScript: latest version supported by the chosen lint and test tools (7.x, else 6.x).
+- TypeScript 5.9.3, pinned exactly (decision 0017 supersedes the "7.x, else 6.x" clause); a newer major needs a new decision.
 - React Router for pages; TanStack Query for server data.
 - Filters live in the URL. No cookies, `localStorage` or other storage of visitor choices.
 - API contract: `docs/api/openapi.json`, exported by the backend (a backend test fails if it is stale). Frontend types are generated from it with `openapi-typescript`; calls use `openapi-fetch`. A frontend check fails if types and contract differ.

@@ -21,6 +21,7 @@ An accepted decision is changed only by a new decision that supersedes it, after
 | [0014](0014-metric-methodology-choices.md) | Methodology: leave days, bills authored, no Senado attendance, committee attendance deferred | accepted | 2026-11-01 |
 | [0015](0015-mvp-data-snapshot.md) | MVP runs on a snapshot of official data; no mocked numbers | accepted | 2026-11-01 |
 | [0016](0016-git-workflow-and-ci.md) | Git workflow (branches, local checks) and GitHub Actions CI; supersedes part of 0013 | accepted | 2026-11-01 |
+| [0017](0017-typescript-version.md) | TypeScript 5.9.3 for the frontend; supersedes the version clause of 0009 | accepted | 2026-11-01 |
 
 ## Stage 2 topics
 
