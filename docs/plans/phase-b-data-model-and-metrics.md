@@ -1,6 +1,6 @@
 # Phase B — Data model and metrics (plan)
 
-- **Status:** proposed (waiting for the project owner's approval; no code before approval)
+- **Status:** approved by the project owner on 2026-11-01, with the recommendations on Choices 1–4 (recorded as decision 0014) and the `hypothesis` dependency.
 - **Date:** 2026-11-01
 - **Decisions applied:** 0005–0013, especially 0007 (module boundaries) and 0008 (normalization)
 

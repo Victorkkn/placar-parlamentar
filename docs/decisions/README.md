@@ -18,6 +18,7 @@ An accepted decision is changed only by a new decision that supersedes it, after
 | [0011](0011-testing.md) | Testing: offline pytest/Vitest/Playwright, hand-recorded fixtures without personal fields | accepted | 2026-11-01 |
 | [0012](0012-security-baseline.md) | Security baseline: secrets, dependencies, input, upstream limits, untrusted content, logging | accepted | 2026-11-01 |
 | [0013](0013-deployment.md) | Deployment: none in the MVP, local only; deferred items listed | accepted | 2026-11-01 |
+| [0014](0014-metric-methodology-choices.md) | Methodology: leave days, bills authored, no Senado attendance, committee attendance deferred | accepted | 2026-11-01 |
 
 ## Stage 2 topics
 

@@ -3,7 +3,7 @@
 These rules are binding for every session and every agent. Each rule comes from an accepted decision in `docs/decisions/` or from the project's non-negotiable rules.
 A rule changes only through a new decision that supersedes the old one and is approved by the project owner.
 
-Stage 2 (architecture) was completed on 2026-11-01. This file summarizes decisions 0001–0013. When rules conflict, the decision record is the authority, and the conflict must be reported to the project owner.
+Stage 2 (architecture) was completed on 2026-11-01. This file summarizes decisions 0001–0014. When rules conflict, the decision record is the authority, and the conflict must be reported to the project owner.
 
 ## 1. Non-negotiable rules
 
@@ -166,3 +166,10 @@ Small, descriptive local commits are allowed.
 - "Done" means working locally with all tests passing, never "published".
 - Settings come from environment variables; `asgi.py` and `wsgi.py` are kept.
 - Publishing later needs a new decision that supersedes 0013 and the owner's explicit approval.
+
+## 16. Metric methodology choices (decision 0014)
+
+- Time in office: Senado follows `Exercicio` records (short leaves without an alternate count as time in office); Câmara follows `historico` events (a `Saída` for leave ends the period). Leave days are shown separately next to attendance metrics.
+- Bills authored: Câmara `PL`, `PLP`, `PEC`, `PDL` and the matching Senado types (fixed in task B2.0); any listed author counts, co-authors included.
+- No Senado attendance metric in the MVP; the app states it is not available in the official sources. Nominal-vote participation is a separate metric for both houses and is never labeled attendance.
+- Câmara committee attendance is deferred until after the MVP; committee memberships are included.
