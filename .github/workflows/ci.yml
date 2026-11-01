@@ -45,14 +45,24 @@ jobs:
       - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
           python-version: "3.14"
+          enable-cache: true
+          cache-dependency-glob: backend/uv.lock
       - name: Install
         run: uv sync --locked
       - name: Lint
         run: |
           uv run ruff check .
           uv run ruff format --check .
-      - name: Tests (offline)
-        run: uv run pytest -q
+      - name: Migrations are complete
+        run: uv run python manage.py makemigrations --check --dry-run
+        env:
+          DJANGO_SECRET_KEY: ci-only-not-a-secret
+      - name: Tests (offline) with coverage
+        run: uv run coverage run -m pytest -q
+      - name: Coverage minimum for metrics (decision 0011)
+        run: uv run coverage report --include="placar/metrics/*" --fail-under=90
+      - name: Coverage summary
+        run: uv run coverage report --skip-covered --sort=cover | tail -15
       - name: Dependency audit
         run: uv run pip-audit --progress-spinner off
 
@@ -77,6 +87,8 @@ jobs:
         run: npm run lint
       - name: Type check
         run: npm run typecheck
+      - name: API types match the contract (decision 0009)
+        run: mkdir -p node_modules/.cache && npm run check:api
       - name: Tests
         run: npm test
       - name: Build
