@@ -121,3 +121,16 @@ Small, descriptive local commits are allowed.
 - No third-party requests at runtime: no analytics, trackers, external fonts or CDNs.
 - Every number is rendered through the shared source-link component. External links use `rel="noopener noreferrer"`.
 - Accessibility: semantic HTML, keyboard use, labels, contrast; tables as the base form of comparisons and leaderboards.
+
+## 12. Summaries (decision 0010)
+
+- All summary code is in `backend/placar/summaries/`. Only `summaries/llm/` may import the model provider's SDK (`anthropic`).
+- Model set by `SUMMARY_MODEL` (default `claude-opus-5-5`); key only in `ANTHROPIC_API_KEY` in `.env`. Without a key, template summaries only.
+- Only public official data goes to the model. Never visitor data or visitor-typed text.
+- Input is a fact sheet of structured facts with ids and `SourceRef`s. No free text from the APIs in the MVP.
+- Output is structured JSON: pt-BR sentences, each with the fact ids it relies on.
+- A plain-Python validator rejects the whole draft unless: every sentence cites existing fact ids; every number, date and name appears in its cited facts; no banned wording (`summaries/wording/`); count and length limits hold.
+- On rejection, refusal, error or timeout: one retry, then the template summary. Templates are the only summaries for custom windows.
+- Model summaries are generated ahead of time by a management command for preset windows only, never during a visitor request. Each stores model id, prompt version, fact-sheet hash, creation time and validation result.
+- Each sentence is shown with its source links; the page states the text is automatic and whether it is a model or template summary.
+- Tests use a fake adapter, never the real API. No evaluation, training or benchmarking pipeline.

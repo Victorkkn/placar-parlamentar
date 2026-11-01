@@ -219,3 +219,8 @@
 - **Changes made:** `docs/decisions/0010-summaries.md` (proposed); index updated.
 - **Decisions:** Proposed default model `claude-opus-5-5`, configurable; model choice for cost is the owner's call.
 - **Remaining work:** owner approval of 0010.
+
+## 2026-11-01 — Decision 0010 accepted
+
+- **Agent:** Main Claude Code session
+- **Changes made:** 0010 accepted (default model unchanged: `claude-opus-5-5`); index updated; rules section 12 added.

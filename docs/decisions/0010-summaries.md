@@ -1,6 +1,6 @@
 # 0010 — Isolating the summary feature and enforcing source links
 
-- **Status:** proposed
+- **Status:** accepted (2026-11-01)
 - **Date:** 2026-11-01
 - **Stage:** 2 (topic 7 of 10)
 
