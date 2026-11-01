@@ -700,3 +700,33 @@
   - MVP sign-off.
   - Decision 0019.
   - The owner should ask the program to confirm eligibility.
+
+## 2026-11-01 — README rewrite; MVP signed off; merge and tags
+
+- **Agent:** Main Claude Code session (technical writer role)
+- **Task:**
+  - The owner approved both pending items: merging `fix/mvp-walkthrough` and the MVP sign-off.
+  - The owner asked for a descriptive README that explains how to run the project before the repository's visibility is changed.
+- **Changes made:**
+  - README rewritten:
+    - what the MVP does, page by page;
+    - how it works (pipeline diagram);
+    - a 10-minute quick start on the sample fixtures, with no download;
+    - a full run on real data, with timings and the load order;
+    - tests and checks;
+    - project layout;
+    - a documentation map;
+    - status and roadmap.
+    - The owner's goals, principles and license sections are kept.
+  - Status lines record the sign-off in MVP status, the backlog, and the Phase C and D plans.
+- **Validation:**
+  - README commands checked against the code (command options, compose file, `.env.example`, npm scripts).
+  - The quick-start path (fixture snapshot in `placar_e2e`) is the same one the e2e tests run.
+  - Links and anchors resolve.
+  - Scan for private references (personal email, local paths, other work): none.
+- **Decisions:** none. Repository visibility was **not** changed; that waits for the owner.
+- **Remaining work:**
+  - Visibility change (owner).
+  - Decision 0019 (proposed).
+  - Eligibility confirmation with the program.
+  - The backlog.

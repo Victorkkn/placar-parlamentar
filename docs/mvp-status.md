@@ -41,8 +41,8 @@ The MVP is phases A–D of `CLAUDE_CODE_PROMPT.md`. Phase E (rankings) comes aft
 | A | Official API clients, raw cache, polite HTTP, recorded fixtures, drift check | signed off, tag `phase-a` |
 | B1 | People, periods in office, leaves, party affiliations; `coverage(official, window)` | signed off, tag `phase-b1` |
 | B2 | Activity data and the first four metrics, real snapshot loaded and checked | merged and pushed, tag `phase-b2` |
-| C | Read-only API, pages, filters, comparison, parties, end-to-end tests, CI | merged and pushed; **waiting for sign-off** |
-| D | Summaries (template on, model off) | merged and pushed; **waiting for sign-off** |
+| C | Read-only API, pages, filters, comparison, parties, end-to-end tests, CI | signed off 2026-11-01, tag `phase-c` |
+| D | Summaries (template on, model off) | signed off 2026-11-01, tag `phase-d` |
 | E | Rankings | after the MVP (decision 0020) |
 
 ## Left for the MVP
@@ -50,8 +50,8 @@ The MVP is phases A–D of `CLAUDE_CODE_PROMPT.md`. Phase E (rankings) comes aft
 | # | Item | State | Owner action |
 | --- | --- | --- | --- |
 | 1 | Final walk through the app on the real snapshot | done 2026-11-01: every page loads, no browser errors, no requests outside the machine | — |
-| 2 | Walk-through display fixes and this documentation update | on branch `fix/mvp-walkthrough`, all checks pass | **approve the merge** |
-| 3 | MVP sign-off; tags `phase-c` and `phase-d` | after item 2 | **sign off** |
+| 2 | Walk-through display fixes, documentation update and README rewrite | approved and merged 2026-11-01 | — |
+| 3 | MVP sign-off; tags `phase-c` and `phase-d` | signed off by the owner on 2026-11-01 | — |
 
 ## Left out of the MVP (listed as decision 0015 requires)
 
