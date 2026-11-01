@@ -1,0 +1,6 @@
+.layout { max-width: 72rem; margin: 0 auto; padding: 1rem; font-family: system-ui, sans-serif; line-height: 1.5; color: #1b1b1b; }
+.nav { display: flex; gap: 1rem; flex-wrap: wrap; align-items: baseline; border-bottom: 1px solid #ccc; padding-bottom: 0.5rem; }
+.nav a { color: #0b4f8a; }
+.brand { font-weight: 700; font-size: 1.25rem; margin-right: 1rem; color: inherit; text-decoration: none; }
+.snapshot { font-size: 0.9rem; color: #444; margin: 0.5rem 0 1rem; }
+.footer { margin-top: 2rem; border-top: 1px solid #ccc; padding-top: 0.5rem; font-size: 0.85rem; color: #444; }

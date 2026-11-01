@@ -12,7 +12,9 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "gen:api": "openapi-typescript ../docs/api/openapi.json -o src/api/schema.d.ts",
+    "check:api": "openapi-typescript ../docs/api/openapi.json -o node_modules/.cache/schema.check.d.ts && diff -q node_modules/.cache/schema.check.d.ts src/api/schema.d.ts"
   },
   "dependencies": {
     "@tanstack/react-query": "5.105.1",
