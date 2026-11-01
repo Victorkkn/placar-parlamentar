@@ -9,7 +9,7 @@
 - Backend: 279 passed (`uv run pytest`, PostgreSQL in Docker, network blocked except `127.0.0.1`). Coverage of `metrics/`: 98% (minimum 90%, now enforced in CI and `check.sh`).
 - Frontend: 18 passed (`npm test`); lint, type check, contract check and build passed.
 - End to end: 4 passed (`npm run e2e`, Chromium).
-- The CI `e2e` job has **not run on GitHub yet**; it runs on `main` and pull requests.
+- The CI `e2e` job runs on `main` and pull requests; its first GitHub run (2026-11-01, run 41357174180) passed.
 
 ## What is covered
 

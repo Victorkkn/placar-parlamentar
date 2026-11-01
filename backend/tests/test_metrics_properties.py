@@ -18,7 +18,7 @@ from placar.metrics.selectors import (
     coverage_bulk,
 )
 
-from .test_activity_db import camara_bundle
+from .builders import synthetic_camara_activity
 from .test_legislators_db import load_both
 
 REF = SourceRef(api_url="https://dadosabertos.camara.leg.br/api/v2/x", cache_key="0" * 64)
@@ -94,7 +94,7 @@ def test_nobody_in_office_counts_nothing(w, items):
 @pytest.mark.django_db
 def test_bulk_metrics_match_single_official_metrics():
     load_both()
-    replace_activity(camara_bundle())
+    replace_activity(synthetic_camara_activity())
     window_57 = DateWindow(date(2023, 2, 1), date(2026, 11, 1))
     today = date(2026, 11, 1)
     for house in ("CAMARA", "SENADO"):

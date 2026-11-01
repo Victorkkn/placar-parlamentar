@@ -35,6 +35,7 @@ Civic-transparency tool for Brazilian federal legislators, built only from offic
 - `docs/plans/`: phase plans (Stage 3).
 - `docs/data-issues.md`: gaps and inconsistencies in official data.
 - `docs/mvp-status.md`: what is done and left for the MVP; `docs/backlog.md`: work after it.
+- `docs/definition-of-done.md`: checks before a merge or a phase is reported done.
 - `docs/data-inventory.md`: what data is held about officials, where, and what is never collected.
 - `docs/methodology/`: pt-BR methodology pages; `docs/wording/banned-pt-BR.txt`: banned wording.
 - `docs/testing/` and `docs/security/`: test and security notes per phase.

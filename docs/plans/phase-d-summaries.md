@@ -46,7 +46,7 @@ The official page shows a short, neutral pt-BR summary of the official's public 
 
 ## Outcome (2026-11-01, branch `feat/d-summaries`)
 
-D0–D9 implemented on `feat/d-summaries`, built on top of the unmerged Phase B2/C branches.
+D0–D9 implemented on `feat/d-summaries` and merged to `main` on 2026-11-01 (merge `424c20f`). Signed off on 2026-11-01 (tag `phase-d`).
 
 - Tests and notes: `docs/testing/phase-d.md`, `docs/security/phase-d.md`.
 - Methodology page in the app and in `docs/methodology/resumos.md`; flagged for your wording review together with C4.

@@ -11,7 +11,7 @@ from placar.api.management.commands.export_openapi import CONTRACT, contract_tex
 from placar.legislators.selectors import get_official
 from placar.legislators.services import record_load
 
-from .test_activity_db import camara_bundle
+from .builders import synthetic_camara_activity
 from .test_legislators_db import load_both
 
 pytestmark = pytest.mark.django_db
@@ -29,7 +29,7 @@ DERIVED_CONTAINERS = {"parties"}
 @pytest.fixture
 def client():
     load_both()
-    replace_activity(camara_bundle())
+    replace_activity(synthetic_camara_activity())
     for house in ("CAMARA", "SENADO"):
         record_load(house, "people", SNAPSHOT)
     record_load("CAMARA", "activity", SNAPSHOT)

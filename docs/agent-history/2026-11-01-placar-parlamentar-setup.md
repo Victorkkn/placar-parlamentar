@@ -648,3 +648,85 @@
 - **Remaining work:**
   - Owner approval to merge the 8 branches into `main`.
   - Final MVP check and sign-off.
+
+## 2026-11-01 — MVP branches merged and pushed; final walk-through (branch fix/mvp-walkthrough)
+
+- **Agent:** Main Claude Code session
+- **Task:**
+  - The owner approved merging the 8 branches and the secret-votes wording.
+  - Then the final MVP check.
+- **Changes made:**
+  - `fix/b2-real-data`, which carries all 8 branches, merged into `main` with `--no-ff` (`424c20f`).
+  - Tag `phase-b2`.
+  - `main` and the tag pushed under the standing approval, after `scripts/check.sh` and a full-history gitleaks scan (68 commits, no leaks).
+  - Walk-through fixes on `fix/mvp-walkthrough`:
+    - source links separated by " · " (they ran together);
+    - an open party affiliation now reads "sem data de fim no registro" instead of "em exercício";
+    - party aggregates with no counted members show "—" instead of "— (———)";
+    - "mais N fontes" uses pt-BR thousands separators.
+- **Validation (actually run):**
+  - GitHub Actions on `main`: backend, frontend, e2e (first run on GitHub) and secrets all succeeded.
+  - Walk-through with Playwright on the real snapshot (officials, official page, comparison, parties, methodology):
+    - every page loaded;
+    - 0 console errors;
+    - 0 requests outside 127.0.0.1.
+    - Screenshots were reviewed and kept in the session scratchpad only.
+  - After the fixes: `scripts/check.sh` passed and e2e 4 passed.
+- **Remaining work:**
+  - Owner approval to merge `fix/mvp-walkthrough`.
+  - MVP sign-off; tags `phase-c` and `phase-d` after sign-off.
+
+## 2026-11-01 — MVP and documentation audit; eligibility re-check (branch fix/mvp-walkthrough)
+
+- **Agent:** Main Claude Code session (technical writer, QA and project manager roles)
+- **Task:** Owner asked to check the MVP and that all documents are well written, then re-check fit with an external "build your own project with an AI assistant" program.
+- **Analysis (verified):**
+  - Status text was out of date after the merge: README status, MVP status (including a broken table row), Phase C and D outcomes, the Phase C test note about CI e2e, the backlog.
+  - Link check of 52 Markdown files found references to three missing files: `backend/tests/builders.py` (required by decision 0011 and the rules), `docs/definition-of-done.md` and `docs/sprints/` (outputs listed in decision 0001).
+  - The MVP status said committee attendance is shown as not available; the app does not show it at all.
+  - README setup listed running tests before starting the database.
+  - Re-scan of the full cache (11,191 files) by field name: no CPF, birth or education fields; office email, office phones and gender present. A text search had first matched "escolaridade" and "telefone" as words inside bill and speech summaries; those were not fields.
+- **Changes made:**
+  - `docs/mvp-status.md` rewritten: what the MVP includes, with numbers, phases and what is left.
+  - Outdated lines fixed in README, Phase C and D plans, `docs/testing/phase-c.md`, `docs/backlog.md` and `docs/data-inventory.md`.
+  - `backend/tests/builders.py` holds the shared synthetic activity; four test modules import it.
+  - New `docs/definition-of-done.md` and `docs/sprints/README.md`.
+  - CLAUDE.md links the definition of done.
+- **Validation:**
+  - `uv run pytest`: 359 passed.
+  - Link check: the only remaining hit is a historical mention of the superseded path in decision 0018.
+- **Remaining work:**
+  - Owner approval to merge `fix/mvp-walkthrough`.
+  - MVP sign-off.
+  - Decision 0019.
+  - The owner should ask the program to confirm eligibility.
+
+## 2026-11-01 — README rewrite; MVP signed off; merge and tags
+
+- **Agent:** Main Claude Code session (technical writer role)
+- **Task:**
+  - The owner approved both pending items: merging `fix/mvp-walkthrough` and the MVP sign-off.
+  - The owner asked for a descriptive README that explains how to run the project before the repository's visibility is changed.
+- **Changes made:**
+  - README rewritten:
+    - what the MVP does, page by page;
+    - how it works (pipeline diagram);
+    - a 10-minute quick start on the sample fixtures, with no download;
+    - a full run on real data, with timings and the load order;
+    - tests and checks;
+    - project layout;
+    - a documentation map;
+    - status and roadmap.
+    - The owner's goals, principles and license sections are kept.
+  - Status lines record the sign-off in MVP status, the backlog, and the Phase C and D plans.
+- **Validation:**
+  - README commands checked against the code (command options, compose file, `.env.example`, npm scripts).
+  - The quick-start path (fixture snapshot in `placar_e2e`) is the same one the e2e tests run.
+  - Links and anchors resolve.
+  - Scan for private references (personal email, local paths, other work): none.
+- **Decisions:** none. Repository visibility was **not** changed; that waits for the owner.
+- **Remaining work:**
+  - Visibility change (owner).
+  - Decision 0019 (proposed).
+  - Eligibility confirmation with the program.
+  - The backlog.

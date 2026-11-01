@@ -26,7 +26,7 @@ from placar.summaries.template import template_summary
 from placar.summaries.validator import MAX_CHARS, Sentence, validate
 from placar.summaries.wording import banned_terms_in
 
-from .test_activity_db import camara_bundle
+from .builders import synthetic_camara_activity
 from .test_legislators_db import load_both
 
 SNAPSHOT = date(2026, 11, 1)
@@ -39,7 +39,7 @@ REF = SourceRef(api_url="https://dadosabertos.camara.leg.br/api/v2/x", cache_key
 @pytest.fixture
 def snapshot(db):
     load_both()
-    replace_activity(camara_bundle())
+    replace_activity(synthetic_camara_activity())
     for house in ("CAMARA", "SENADO"):
         record_load(house, "people", SNAPSHOT)
     record_load("CAMARA", "activity", SNAPSHOT)

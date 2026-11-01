@@ -15,10 +15,13 @@ export function SourceLinks({ sources }: { sources: Source[] }) {
   return (
     <span className="sources">
       {first.map((source, index) => (
-        <a key={`${source.api_url}-${index}`} href={href(source)} target="_blank" rel="noopener noreferrer" title={source.label || source.api_url}>
-          {text.sourceShort}
-          {sources.length > 1 ? ` ${index + 1}` : ""}
-        </a>
+        <span key={`${source.api_url}-${index}`}>
+          {index > 0 && " · "}
+          <a href={href(source)} target="_blank" rel="noopener noreferrer" title={source.label || source.api_url}>
+            {text.sourceShort}
+            {sources.length > 1 ? ` ${index + 1}` : ""}
+          </a>
+        </span>
       ))}
       {rest.length > 0 && (
         <details>
