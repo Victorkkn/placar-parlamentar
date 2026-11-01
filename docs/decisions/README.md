@@ -9,13 +9,14 @@ An accepted decision is changed only by a new decision that supersedes it, after
 | [0002](0002-git-and-approval-gates.md) | Git workflow and approval gates (no push without approval) | accepted | 2026-11-01 |
 | [0003](0003-languages.md) | Languages: pt-BR interface, English code and docs | accepted | 2026-11-01 |
 | [0004](0004-repository-layout.md) | Repository layout: monorepo with `backend/` and `frontend/` | accepted | 2026-11-01 |
+| [0005](0005-backend-framework.md) | Backend: Django 6.1 + Django Ninja, sync by default, local read-only admin | proposed | 2026-11-01 |
 
 ## Stage 2 topics
 
 | Topic | Decision | State |
 |---|---|---|
 | 1. Repository layout | 0004 | accepted |
-| 2. Backend framework and project layout | — | deferred by the project owner (2026-11-01) |
+| 2. Backend framework and project layout | 0005 | proposed |
 | 3. Database and raw response cache | — | not started |
 | 4. Module boundaries | — | not started |
 | 5. Normalizing Câmara and Senado data | — | not started |

@@ -131,3 +131,26 @@
 
 ### Remaining work
 - Owner to choose which Stage 2 topic comes next. Topic 2 stays open; Stage 3 cannot start until all Stage 2 topics are accepted.
+
+## 2026-11-01 — Topic 2 resumed: decision 0005 proposed
+
+- **Date:** 2026-11-01
+- **Agent:** Main Claude Code session (acting as architect)
+- **Task:** Owner asked whether Django can be used and run async, and for layout options. Owner chose option A (Django + Django Ninja, one app per area) and wants the Django admin.
+
+### Analysis
+- Checked PyPI: Django 6.1.2 (Python 3.12–3.14 listed), Django Ninja 1.7.3, DRF 3.18.3, adrf 0.1.14, FastAPI 0.162.0.
+- Checked Django 6.1 docs: async views and async query methods exist; transactions do not work in async mode; built-in Tasks backends are dev/test only, no worker provided.
+- Python 3.15 is not listed by Django 6.1; Python 3.14 is installed locally.
+
+### Changes made
+- `docs/decisions/0005-backend-framework.md` (proposed); index and topic tracker updated.
+
+### Validation
+- Version and doc checks above were actually performed.
+
+### Decisions
+- Proposed: sync by default, async only where it helps; fetching via management commands; admin local-only and read-only for official data; Python 3.14.
+
+### Remaining work
+- Owner approval of 0005.
