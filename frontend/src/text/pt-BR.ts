@@ -140,7 +140,7 @@ export const text = {
       "Tempo no cargo: períodos de exercício informados pelo Senado e montados a partir do histórico oficial da Câmara; dias contados no horário de Brasília, incluindo o primeiro e o último dia.",
       "Presença (Câmara): sessões deliberativas do Plenário com presença registrada, divididas pelas sessões realizadas nos dias no cargo. O Senado não publica lista de presença por senador nas APIs consultadas.",
       "Proposições: PL, PLP, PEC e PDL com a pessoa entre os autores, inclusive coautoria; também por 365 dias no cargo.",
-      "Votações nominais: votações com voto registrado (Sim, Não, Abstenção, Obstrução), divididas pelas votações nominais realizadas nos dias no cargo, sem contar as que a pessoa presidiu.",
+      "Votações nominais: votações com voto registrado (Sim, Não, Abstenção, Obstrução), divididas pelas votações nominais realizadas nos dias no cargo, sem contar as secretas nem as que a pessoa presidiu.",
       "Discursos: pronunciamentos registrados nos dias no cargo; também por 365 dias no cargo.",
       "Dias de licença (Câmara): mostrados ao lado da presença, com a fonte oficial de cada licença.",
       "Quem fica abaixo do mínimo de tempo no cargo aparece como “Dados insuficientes”, com o período coberto.",

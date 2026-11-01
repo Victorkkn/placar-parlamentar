@@ -1,0 +1,81 @@
+{
+  "_fixture": {
+    "cache_file_id": "0953d8b9188ea05910cc3f0677d06bc0c6bfb90c2fac8b4c76921b5dd999a5e6",
+    "case": "camara_sessions_2023_page_2_in_office_absent",
+    "recorded_at": "2026-11-01T21:31:38.619107+00:00",
+    "removed_personal_fields": [],
+    "spec": "https://dadosabertos.camara.leg.br/api/v2/api-docs (0.4.347, 2026-10-26)",
+    "trimmed": "dados: kept items with id in ['71463'] of 16"
+  },
+  "api_version": null,
+  "body": {
+    "dados": [
+      {
+        "dataHoraFim": "2023-12-04T20:34",
+        "dataHoraInicio": "2023-12-04T18:47",
+        "descricao": "Sessão Deliberativa Extraordinária (virtual)",
+        "descricaoTipo": "Sessão Deliberativa",
+        "id": 71463,
+        "localCamara": {
+          "andar": null,
+          "nome": "Plenário da Câmara dos Deputados",
+          "predio": null,
+          "sala": null
+        },
+        "localExterno": null,
+        "orgaos": [
+          {
+            "apelido": "Plenário",
+            "codTipoOrgao": 26,
+            "id": 180,
+            "nome": "Plenário",
+            "nomePublicacao": "Plenário",
+            "nomeResumido": "Plenário",
+            "sigla": "PLEN",
+            "tipoOrgao": "Plenário Virtual",
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180"
+          }
+        ],
+        "situacao": "Encerrada",
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/71463",
+        "urlRegistro": "https://www.youtube.com/watch?v=hXiFR0NA9xk"
+      }
+    ],
+    "links": [
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/eventos?idOrgao=180&codTipoEvento=110&dataInicio=2023-02-01&dataFim=2023-12-31&ordem=ASC&ordenarPor=dataHoraInicio&pagina=2&itens=100",
+        "rel": "self"
+      },
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/eventos?idOrgao=180&codTipoEvento=110&dataInicio=2023-02-01&dataFim=2023-12-31&ordem=ASC&ordenarPor=dataHoraInicio&pagina=1&itens=100",
+        "rel": "first"
+      },
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/eventos?idOrgao=180&codTipoEvento=110&dataInicio=2023-02-01&dataFim=2023-12-31&ordem=ASC&ordenarPor=dataHoraInicio&pagina=2&itens=100",
+        "rel": "last"
+      },
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/eventos?idOrgao=180&codTipoEvento=110&dataInicio=2023-02-01&dataFim=2023-12-31&ordem=ASC&ordenarPor=dataHoraInicio&pagina=1&itens=100",
+        "rel": "previous"
+      }
+    ]
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T17:01:45.106324+00:00",
+  "method": "GET",
+  "params": {
+    "codTipoEvento": "110",
+    "dataFim": "2023-12-31",
+    "dataInicio": "2023-02-01",
+    "idOrgao": "180",
+    "itens": "100",
+    "ordem": "ASC",
+    "ordenarPor": "dataHoraInicio",
+    "pagina": "2"
+  },
+  "schema": 1,
+  "source": "camara",
+  "status": 200,
+  "url": "https://dadosabertos.camara.leg.br/api/v2/eventos"
+}

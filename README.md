@@ -82,9 +82,9 @@ The app serves a snapshot of official data (decision 0015); it never calls the o
 2. Download the official data into `data/raw/` (live, polite requests; the activity download takes hours on the first run and resumes from the cache):
    - people and time in office: `uv run python manage.py fetch_current`
    - activity (bills, sessions, votes, speeches): `uv run python manage.py fetch_activity --date YYYY-MM-DD`
-3. Load the snapshot into the database (offline, from the cache): `uv run python manage.py normalize_current --date YYYY-MM-DD`, then `uv run python manage.py normalize_activity --date YYYY-MM-DD` with the same date.
+3. Load the snapshot into the database (offline, from the cache): `uv run python manage.py normalize_current --date YYYY-MM-DD`, then `uv run python manage.py normalize_activity --date YYYY-MM-DD` with the same date. **Always in this order:** reloading people removes their activity, so `normalize_activity` must run again after every `normalize_current`.
 4. API: `uv run python manage.py runserver 127.0.0.1:8000` (read-only, under `/api/`).
-5. App: `cd frontend && npm run dev`, then open http://127.0.0.1:5173.
+5. App: `cd frontend && npm run dev`, then open http://127.0.0.1:5173. The first Câmara party view for a period takes about 10 seconds while the server computes it; later views are instant until the server restarts.
 
 To try the app without downloading anything, load the recorded fixtures (2 deputies, 3 senators) into the `placar_e2e` database as in step 4 of the frontend section, and start the API with `DATABASE_NAME=placar_e2e`.
 

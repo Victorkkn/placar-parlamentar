@@ -1,0 +1,80 @@
+{
+  "_fixture": {
+    "cache_file_id": "22304e05132719dc0da2030e32495e0870dfe8d5b5be289a4077ffce128f7b51",
+    "case": "camara_sessions_2025_out_of_office",
+    "recorded_at": "2026-11-01T21:31:38.630149+00:00",
+    "removed_personal_fields": [],
+    "spec": "https://dadosabertos.camara.leg.br/api/v2/api-docs (0.4.347, 2026-10-26)",
+    "trimmed": "dados: kept items with id in ['75466'] of 98"
+  },
+  "api_version": null,
+  "body": {
+    "dados": [
+      {
+        "dataHoraFim": "2025-03-11T21:58",
+        "dataHoraInicio": "2025-03-11T13:58",
+        "descricao": "Sessão Deliberativa Extraordinária Presencial (AM nº 123/2020)",
+        "descricaoTipo": "Sessão Deliberativa",
+        "id": 75466,
+        "localCamara": {
+          "andar": null,
+          "nome": "Plenário da Câmara dos Deputados",
+          "predio": null,
+          "sala": null
+        },
+        "localExterno": null,
+        "orgaos": [
+          {
+            "apelido": "Plenário",
+            "codTipoOrgao": 26,
+            "id": 180,
+            "nome": "Plenário",
+            "nomePublicacao": "Plenário",
+            "nomeResumido": "Plenário",
+            "sigla": "PLEN",
+            "tipoOrgao": "Plenário Virtual",
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180"
+          }
+        ],
+        "situacao": "Encerrada",
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/75466",
+        "urlRegistro": "https://www.youtube.com/watch?v=wDJPxzzw0Vk"
+      }
+    ],
+    "links": [
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/eventos?idOrgao=180&codTipoEvento=110&dataInicio=2025-01-01&dataFim=2025-12-31&itens=100&ordem=ASC&ordenarPor=dataHoraInicio",
+        "rel": "self"
+      },
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/eventos?idOrgao=180&codTipoEvento=110&dataInicio=2025-01-01&dataFim=2025-12-31&ordem=ASC&ordenarPor=dataHoraInicio&pagina=2&itens=100",
+        "rel": "next"
+      },
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/eventos?idOrgao=180&codTipoEvento=110&dataInicio=2025-01-01&dataFim=2025-12-31&ordem=ASC&ordenarPor=dataHoraInicio&pagina=1&itens=100",
+        "rel": "first"
+      },
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/eventos?idOrgao=180&codTipoEvento=110&dataInicio=2025-01-01&dataFim=2025-12-31&ordem=ASC&ordenarPor=dataHoraInicio&pagina=2&itens=100",
+        "rel": "last"
+      }
+    ]
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T17:01:51.812702+00:00",
+  "method": "GET",
+  "params": {
+    "codTipoEvento": "110",
+    "dataFim": "2025-12-31",
+    "dataInicio": "2025-01-01",
+    "idOrgao": "180",
+    "itens": "100",
+    "ordem": "ASC",
+    "ordenarPor": "dataHoraInicio"
+  },
+  "schema": 1,
+  "source": "camara",
+  "status": 200,
+  "url": "https://dadosabertos.camara.leg.br/api/v2/eventos"
+}

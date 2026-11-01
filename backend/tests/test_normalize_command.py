@@ -32,6 +32,7 @@ def test_normalize_current_offline_from_fixture_cache(settings, tmp_path):
     out = run(settings, tmp_path)
     assert "== camara" in out and "== senado" in out
     assert "unknown values: 0" in out
+    assert "Run normalize_activity" in out  # reloading people removes their activity
     assert Official.objects.filter(house="CAMARA").count() == 2
     assert Official.objects.filter(house="SENADO").count() == 3
     assert ServicePeriod.objects.filter(official__house_id=5917).count() == 2

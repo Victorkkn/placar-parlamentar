@@ -4,11 +4,12 @@ from datetime import date
 
 import pytest
 
-from placar.activity.models import Ballot, BallotCategory, Presence
+from placar.activity.models import Ballot, BallotCategory, Membership, Presence
 from placar.activity.services import (
     ActivityBundle,
     BallotRecord,
     BillRecord,
+    MembershipRecord,
     PresenceRecord,
     SessionRecord,
     SpeechRecord,
@@ -56,6 +57,18 @@ def test_replace_activity_skips_unknown_officials_and_is_idempotent():
     assert counts["skipped (presences: official not loaded)"] == 1
     replace_activity(camara_bundle())
     assert Presence.objects.count() == 1 and Ballot.objects.count() == 1
+
+
+def test_long_official_body_names_are_kept_whole():
+    # Data issue 18: a real Câmara committee name has 573 characters.
+    load_both()
+    bundle = camara_bundle()
+    name = "Comissão Especial " + "x" * 600
+    bundle.memberships.append(
+        MembershipRecord("CAMARA:membership:1", 220593, REF, "1", "CESP", name, "CD", "Titular")
+    )
+    replace_activity(bundle)
+    assert Membership.objects.get().body_name == name
 
 
 def test_activity_metrics_for_real_official():

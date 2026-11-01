@@ -5,10 +5,12 @@ is returned with its official sources (rule 3). Pages are served from the data s
 
 from __future__ import annotations
 
+import hashlib
 import statistics
 from datetime import date, timedelta
 from fractions import Fraction
 
+from django.core.cache import cache
 from ninja import NinjaAPI, Query, Schema, Status
 from ninja.errors import HttpError
 
@@ -114,9 +116,7 @@ def _metric_out(
     if result is None:
         return s.MetricOut(key=key, available=False, reason="not_in_official_data")
     value = result.value
-    per_year = None
-    if key in COUNT_METRICS and cov.days_in_office:
-        per_year = round(result.numerator * 365 / cov.days_in_office, 4)
+    per_year = _per_year(key, result, cov)
     return s.MetricOut(
         key=key,
         available=True,
@@ -127,6 +127,46 @@ def _metric_out(
         details=result.details,
         sources=[_src(r) for r in result.sources],
     )
+
+
+def _per_year(key: str, result: MetricResult, cov: CoverageResult) -> float | None:
+    if key in COUNT_METRICS and cov.days_in_office:
+        return round(result.numerator * 365 / cov.days_in_office, 4)
+    return None
+
+
+def _aggregate_value(key: str, result: MetricResult | None, cov: CoverageResult) -> float | None:
+    """The number a party aggregate uses, without building the member's full output
+    (sources included), which made the parties view slow on the full snapshot."""
+    if result is None:
+        return None
+    if key in COUNT_METRICS:
+        return _per_year(key, result, cov)
+    value = result.value
+    return None if value is None else round(float(value), 6)
+
+
+def _snapshot_stamp() -> str:
+    """Changes whenever any data load is recorded, so cached results never outlive their data."""
+    loads = sorted(
+        f"{x.house}:{x.kind}:{x.loaded_at.isoformat()}" for x in legislators.latest_loads()
+    )
+    return hashlib.sha256("|".join(loads).encode()).hexdigest()[:16]
+
+
+def _bulk_metrics(
+    house: str, window: DateWindow, coverages: dict[int, CoverageResult]
+) -> dict[int, dict[str, MetricResult | None]]:
+    """Metrics of every official in office in the window, computed once per house, window and
+    snapshot and kept in the process cache (about 15 s for the full Câmara; the threshold only
+    filters the result, so changing it is instant). Nothing about visitors is stored."""
+    key = f"bulk:{house}:{window.start}:{window.end}:{_snapshot_stamp()}"
+    result = cache.get(key)
+    if result is None:
+        in_office = {pk: cov for pk, cov in coverages.items() if cov.days_in_office}
+        result = metric_selectors.activity_metrics_bulk(house, window, window.end, in_office)
+        cache.set(key, result, timeout=None)
+    return result
 
 
 def _party_in_window(affiliations: list[legislators.Affiliation], window: DateWindow) -> str | None:
@@ -388,13 +428,7 @@ def parties(
         pk for pk, cov in coverages.items() if cov.days_in_office and _sufficient(cov, threshold)
     }
     loaded = _activity_loaded(house_code)
-    computed = (
-        metric_selectors.activity_metrics_bulk(
-            house_code, window, window.end, {pk: coverages[pk] for pk in sufficient}
-        )
-        if loaded
-        else {}
-    )
+    computed = _bulk_metrics(house_code, window, coverages) if loaded else {}
 
     rows = []
     for party, pks in sorted(members.items()):
@@ -408,8 +442,7 @@ def parties(
                 continue
             values = []
             for pk in counted:
-                out = _metric_out(key, computed[pk][key], coverages[pk])
-                value = out.per_365_days_in_office if key in COUNT_METRICS else out.value
+                value = _aggregate_value(key, computed[pk][key], coverages[pk])
                 if value is not None:
                     values.append(value)
             aggregates.append(

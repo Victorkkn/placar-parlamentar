@@ -1,0 +1,53 @@
+{
+  "_fixture": {
+    "cache_file_id": "85bfe8fb20a33cc4fcee3c6c08854facc9dfa101a27d7d9f8d9eeadd1bfd44a4",
+    "case": "camara_presence_71957",
+    "recorded_at": "2026-11-01T21:31:38.639443+00:00",
+    "removed_personal_fields": [
+      "dados[0].email",
+      "dados[1].email"
+    ],
+    "spec": "https://dadosabertos.camara.leg.br/api/v2/api-docs (0.4.347, 2026-10-26)",
+    "trimmed": "dados: kept items with id in ['220593', '220714'] of 466"
+  },
+  "api_version": null,
+  "body": {
+    "dados": [
+      {
+        "id": 220593,
+        "idLegislatura": 57,
+        "nome": "Abilio Brunini",
+        "siglaPartido": "PL",
+        "siglaUf": "MT",
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220593",
+        "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37906",
+        "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220593.jpg"
+      },
+      {
+        "id": 220714,
+        "idLegislatura": 57,
+        "nome": "Adail Filho",
+        "siglaPartido": "Republican",
+        "siglaUf": "AM",
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220714",
+        "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36899",
+        "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220714.jpg"
+      }
+    ],
+    "links": [
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/eventos/71957/deputados",
+        "rel": "self"
+      }
+    ]
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T17:04:12.386442+00:00",
+  "method": "GET",
+  "params": {},
+  "schema": 1,
+  "source": "camara",
+  "status": 200,
+  "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/71957/deputados"
+}

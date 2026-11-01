@@ -56,6 +56,11 @@ class Command(BaseCommand):
                 self.stdout.write(f"  {label}: {len(items)}")
                 for item in items:
                     self.stdout.write(f"    - {item}")
+        # Officials are replaced, and their activity rows go with them (database cascade).
+        self.stdout.write(
+            "Note: activity data for these houses was removed with the old records. "
+            "Run normalize_activity with the same --date to load it again."
+        )
 
     def _camara(self, day):
         client = CamaraClient(offline_fetcher("camara"))

@@ -1,0 +1,42 @@
+{
+  "_fixture": {
+    "cache_file_id": "24fe9a68b0d409f39a78ef1e98b0d9c686cbd87968d2d533aaa16769f0d905f8",
+    "case": "camara_presence_71463",
+    "recorded_at": "2026-11-01T21:31:38.650252+00:00",
+    "removed_personal_fields": [
+      "dados[0].email"
+    ],
+    "spec": "https://dadosabertos.camara.leg.br/api/v2/api-docs (0.4.347, 2026-10-26)",
+    "trimmed": "dados: kept items with id in ['220714'] of 459"
+  },
+  "api_version": null,
+  "body": {
+    "dados": [
+      {
+        "id": 220714,
+        "idLegislatura": 57,
+        "nome": "Adail Filho",
+        "siglaPartido": "Republican",
+        "siglaUf": "AM",
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220714",
+        "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36899",
+        "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220714.jpg"
+      }
+    ],
+    "links": [
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/eventos/71463/deputados",
+        "rel": "self"
+      }
+    ]
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T17:03:51.472267+00:00",
+  "method": "GET",
+  "params": {},
+  "schema": 1,
+  "source": "camara",
+  "status": 200,
+  "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/71463/deputados"
+}

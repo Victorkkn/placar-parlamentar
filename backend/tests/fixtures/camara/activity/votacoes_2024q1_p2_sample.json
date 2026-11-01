@@ -1,0 +1,76 @@
+{
+  "_fixture": {
+    "cache_file_id": "487215cae209d56ae16bf887c8d6d949ef30304539574f126aa08134b8af6eb6",
+    "case": "camara_votings_2024_q1_page_2",
+    "recorded_at": "2026-11-01T21:31:38.660866+00:00",
+    "removed_personal_fields": [],
+    "spec": "https://dadosabertos.camara.leg.br/api/v2/api-docs (0.4.347, 2026-10-26)",
+    "trimmed": "dados: kept items with id in ['2417025-55', '2420014-8'] of 92"
+  },
+  "api_version": null,
+  "body": {
+    "dados": [
+      {
+        "aprovacao": 1,
+        "data": "2024-03-12",
+        "dataHoraRegistro": "2024-03-12T17:56:56",
+        "descricao": "Aprovado o Requerimento de Urgência (Art. 155 do RICD). Sim: 270; não: 88; total: 358.",
+        "id": "2420014-8",
+        "proposicaoObjeto": "REQ 680/2024",
+        "siglaOrgao": "PLEN",
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2420014-8",
+        "uriEvento": "https://dadosabertos.camara.leg.br/api/v2/eventos/72067",
+        "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180",
+        "uriProposicaoObjeto": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2420014"
+      },
+      {
+        "aprovacao": 0,
+        "data": "2024-03-12",
+        "dataHoraRegistro": "2024-03-12T20:17:18",
+        "descricao": "Rejeitada a preferência. Sim: 130; não: 303; total: 433.",
+        "id": "2417025-55",
+        "proposicaoObjeto": null,
+        "siglaOrgao": "PLEN",
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2417025-55",
+        "uriEvento": "https://dadosabertos.camara.leg.br/api/v2/eventos/72067",
+        "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180",
+        "uriProposicaoObjeto": null
+      }
+    ],
+    "links": [
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/votacoes?idOrgao=180&dataInicio=2024-01-01&dataFim=2024-03-31&ordem=ASC&ordenarPor=dataHoraRegistro&pagina=2&itens=100",
+        "rel": "self"
+      },
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/votacoes?idOrgao=180&dataInicio=2024-01-01&dataFim=2024-03-31&ordem=ASC&ordenarPor=dataHoraRegistro&pagina=1&itens=100",
+        "rel": "first"
+      },
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/votacoes?idOrgao=180&dataInicio=2024-01-01&dataFim=2024-03-31&ordem=ASC&ordenarPor=dataHoraRegistro&pagina=2&itens=100",
+        "rel": "last"
+      },
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/votacoes?idOrgao=180&dataInicio=2024-01-01&dataFim=2024-03-31&ordem=ASC&ordenarPor=dataHoraRegistro&pagina=1&itens=100",
+        "rel": "previous"
+      }
+    ]
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T17:10:08.627174+00:00",
+  "method": "GET",
+  "params": {
+    "dataFim": "2024-03-31",
+    "dataInicio": "2024-01-01",
+    "idOrgao": "180",
+    "itens": "100",
+    "ordem": "ASC",
+    "ordenarPor": "dataHoraRegistro",
+    "pagina": "2"
+  },
+  "schema": 1,
+  "source": "camara",
+  "status": 200,
+  "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes"
+}

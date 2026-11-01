@@ -617,3 +617,34 @@
   - B2 data load (download running).
   - Merge approval.
   - Final MVP check and sign-off.
+
+## 2026-11-01 — B2 real data loaded and checked (branch fix/b2-real-data)
+
+- **Agent:** Main Claude Code session (data, backend, QA and security roles)
+- **Task:** Finish B2 after the download: load the real data, check it, add real-case fixtures, write the outcome.
+- **Analysis:**
+  - Download: 3 h 50 min with 92 failures. 9 speech lists were recovered on a retry; 83 votings return 404 for their votes (data issue 20).
+  - Loading stopped on a 573-character committee name (data issue 18).
+  - Unclassified options turned out to be secret ballots: Senado `Votou` (data issue 21) and Câmara all-empty votings (data issue 19).
+  - The development database had no people-load record, so the API answered 503. Reloading people cascades and deletes activity.
+  - The Câmara party view took 77 s. Profiling showed model-object creation for 450,000 ballots and per-member output building.
+  - B2 acceptance item 3 (a real case for each metric) was still open.
+- **Changes made:**
+  - `Membership.body_name` changed to a text field (migration `activity` 0002).
+  - Secret-ballot handling in `normalize/activity.py`.
+  - `values_list` bulk reads with shared `SourceRef`s in `activity/selectors.py`.
+  - Party aggregate values and a per-snapshot process cache in `api/api.py`.
+  - Reload reminder in `normalize_current`.
+  - Fixture tooling: root-list trim; next-page links kept on untrimmed pages.
+  - 21 activity fixture cases, recorded from the cache without new requests, and `tests/test_activity_real_cases.py`.
+  - Methodology and app text: secret votings are left out.
+  - Data issues 18–21, B2 outcome, `docs/testing/phase-b2.md`, `docs/security/phase-b2.md`, README, MVP status and backlog.
+- **Validation (actually run):**
+  - `normalize_activity` on the real cache: no unknown options left.
+  - API checked on the real snapshot (timings in the test notes).
+  - `scripts/check.sh` passed: 359 backend tests, 18 frontend tests, metrics coverage 98%.
+  - e2e: 4 passed.
+- **Decisions:** none new. The secret-ballot rule follows the approved definition ("nominal and not secret"). The two wording lines describing it are flagged for the owner.
+- **Remaining work:**
+  - Owner approval to merge the 8 branches into `main`.
+  - Final MVP check and sign-off.

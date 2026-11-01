@@ -82,8 +82,11 @@ def trim(body: Any, rule: dict[str, Any] | None) -> tuple[Any, str]:
     if not rule:
         return body, "not trimmed"
     body = copy.deepcopy(body)
-    *parents, leaf = rule["list_path"].split(".")
-    container = _get_path(body, ".".join(parents)) if parents else body
+    if rule["list_path"] == "$":  # the body itself is the list (e.g. Senado /votacao)
+        container, leaf = {"$": body}, "$"
+    else:
+        *parents, leaf = rule["list_path"].split(".")
+        container = _get_path(body, ".".join(parents)) if parents else body
     items = container.get(leaf) if isinstance(container, dict) else None
     if not isinstance(items, list):
         raise FixtureError(f"trim: {rule['list_path']} is not a list")
@@ -98,6 +101,8 @@ def trim(body: Any, rule: dict[str, Any] | None) -> tuple[Any, str]:
         kept = items[: int(rule["first"])]
         how = f"kept the first {len(kept)}"
     container[leaf] = kept
+    if rule["list_path"] == "$":
+        body = kept
     return body, f"{rule['list_path']}: {how} of {len(items)}"
 
 
@@ -162,7 +167,8 @@ def cache_from_fixtures(fixtures_dir: Path, cache: RawCache) -> int:
     """Write every recorded fixture into a raw cache (used by tests and end-to-end runs).
 
     Trimmed lists keep their "next page" links; those are removed in this copy only, so the
-    one recorded page is read as the whole list.
+    one recorded page is read as the whole list. Untrimmed pages keep their links, so a list
+    recorded page by page is read in full.
     """
     from .http import HttpResponse
 
@@ -170,7 +176,8 @@ def cache_from_fixtures(fixtures_dir: Path, cache: RawCache) -> int:
     for path in sorted(Path(fixtures_dir).rglob("*.json")):
         data = load_fixture(path)
         body = copy.deepcopy(data["body"])
-        if isinstance(body, dict) and isinstance(body.get("links"), list):
+        trimmed = data.get("_fixture", {}).get("trimmed", "not trimmed") != "not trimmed"
+        if trimmed and isinstance(body, dict) and isinstance(body.get("links"), list):
             body["links"] = [link for link in body["links"] if link.get("rel") != "next"]
         response = HttpResponse(data["url"], data["status"], data["content_type"], body)
         cache.write(data["source"], data["url"], data["params"], response)

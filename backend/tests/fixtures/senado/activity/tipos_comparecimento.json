@@ -1,0 +1,255 @@
+{
+  "_fixture": {
+    "cache_file_id": "543a95eeac808b67b161b7486ad2ca9f892a36ef31e6ad45f8b9d333c897f8cc",
+    "case": "senado_vote_codes",
+    "recorded_at": "2026-11-01T21:31:38.903479+00:00",
+    "removed_personal_fields": [],
+    "spec": "https://legis.senado.leg.br/dadosabertos/v3/api-docs (4.1.3.108)",
+    "trimmed": "not trimmed"
+  },
+  "api_version": "1",
+  "body": {
+    "ListaTiposComparecimento": {
+      "Metadados": {
+        "DataVersaoServico": "2017-02-01",
+        "DescricaoDataSet": "Retorna a lista de tipos de comparecimento em Votação.",
+        "Versao": "30/10/2026 16:19:38",
+        "VersaoServico": "1"
+      },
+      "TiposComparecimento": {
+        "TipoComparecimento": [
+          {
+            "Descricao": "Afastamento do exercício",
+            "Sigla": "AFO"
+          },
+          {
+            "Descricao": "Atividade parlamentar",
+            "Sigla": "AP"
+          },
+          {
+            "Descricao": "Comunicação de ausência",
+            "Sigla": "AUS"
+          },
+          {
+            "Descricao": "Cassação de registro/diploma pela Justiça Eleitoral",
+            "Sigla": "CAS"
+          },
+          {
+            "Descricao": "Dissolução da Câmara",
+            "Sigla": "DIS"
+          },
+          {
+            "Descricao": "Afastamento por decisão judicial",
+            "Sigla": "DJ"
+          },
+          {
+            "Descricao": "No exercício da Presidência da República",
+            "Sigla": "EP"
+          },
+          {
+            "Descricao": "No exercício da Presidência da República",
+            "Sigla": "EPR"
+          },
+          {
+            "Descricao": "Falecimento",
+            "Sigla": "FAL"
+          },
+          {
+            "Descricao": "Grupo de Risco",
+            "Sigla": "GR"
+          },
+          {
+            "Descricao": "Interrupção de licença",
+            "Sigla": "IL"
+          },
+          {
+            "Descricao": "Impugnação de Mandato",
+            "Sigla": "IMP"
+          },
+          {
+            "Descricao": "Missão política/cultural",
+            "Sigla": "L1"
+          },
+          {
+            "Descricao": "Licença saúde",
+            "Sigla": "L2"
+          },
+          {
+            "Descricao": "Licença particular",
+            "Sigla": "L3"
+          },
+          {
+            "Descricao": "Representação da Casa País/Exterior",
+            "Sigla": "L4"
+          },
+          {
+            "Descricao": "Candidatura Presidência/Vice-Presidência",
+            "Sigla": "L5"
+          },
+          {
+            "Descricao": "Solenidade Internacional/Nacional/Regional",
+            "Sigla": "L6"
+          },
+          {
+            "Descricao": "Dispositivo não citado",
+            "Sigla": "L7"
+          },
+          {
+            "Descricao": "Licença à adotante",
+            "Sigla": "LA"
+          },
+          {
+            "Descricao": "Licença por motivo de doença em pessoa da família",
+            "Sigla": "LAF"
+          },
+          {
+            "Descricao": "Licença paternidade ou ao adotante",
+            "Sigla": "LAP"
+          },
+          {
+            "Descricao": "Candidatura à Presidência/Vice-Presidência",
+            "Sigla": "LC"
+          },
+          {
+            "Descricao": "Licença com convocação de suplente (sup 120 dias)",
+            "Sigla": "LCS"
+          },
+          {
+            "Descricao": "Licença eleições gerais",
+            "Sigla": "LEG"
+          },
+          {
+            "Descricao": "Licença à gestante",
+            "Sigla": "LG"
+          },
+          {
+            "Descricao": "Licença para casamento",
+            "Sigla": "LGA"
+          },
+          {
+            "Descricao": "Privação de liberdade",
+            "Sigla": "LL"
+          },
+          {
+            "Descricao": "Licença Nojo",
+            "Sigla": "LN"
+          },
+          {
+            "Descricao": "Licença Particular",
+            "Sigla": "LP"
+          },
+          {
+            "Descricao": "Licença Particular",
+            "Sigla": "LPA"
+          },
+          {
+            "Descricao": "Licença saúde",
+            "Sigla": "LS"
+          },
+          {
+            "Descricao": "Licença Saúde-Particular",
+            "Sigla": "LSP"
+          },
+          {
+            "Descricao": "Presente no Parlamento do Mercosul",
+            "Sigla": "MER"
+          },
+          {
+            "Descricao": "Missão da Casa no País/exterior",
+            "Sigla": "MIS"
+          },
+          {
+            "Descricao": "Dispositivo não citado",
+            "Sigla": "NA"
+          },
+          {
+            "Descricao": "Não Compareceu",
+            "Sigla": "NCom"
+          },
+          {
+            "Descricao": "Não houve votação",
+            "Sigla": "NH"
+          },
+          {
+            "Descricao": "Não registrou voto",
+            "Sigla": "NR"
+          },
+          {
+            "Descricao": "Em obstrução declarada",
+            "Sigla": "OB"
+          },
+          {
+            "Descricao": "Presente – Não registrou voto",
+            "Sigla": "P-NRV"
+          },
+          {
+            "Descricao": "Presente – Obstrução Declarada",
+            "Sigla": "P-OD"
+          },
+          {
+            "Descricao": "Perda de mandato",
+            "Sigla": "PER"
+          },
+          {
+            "Descricao": "Presidiu votação",
+            "Sigla": "PR"
+          },
+          {
+            "Descricao": "Presidiu a sessão",
+            "Sigla": "PS"
+          },
+          {
+            "Descricao": "Presente no Senado Federal",
+            "Sigla": "PSF"
+          },
+          {
+            "Descricao": "Renúncia",
+            "Sigla": "REN"
+          },
+          {
+            "Descricao": "Representação em solenidade internac./nac./reg.",
+            "Sigla": "REP"
+          },
+          {
+            "Descricao": "Retorno do titular",
+            "Sigla": "RET"
+          },
+          {
+            "Descricao": "Requerimento de retirada",
+            "Sigla": "RR"
+          },
+          {
+            "Descricao": "Presente no Senado Federal",
+            "Sigla": "SF"
+          },
+          {
+            "Descricao": "Votação simbólica",
+            "Sigla": "SI"
+          },
+          {
+            "Descricao": "Término do mandato",
+            "Sigla": "TER"
+          },
+          {
+            "Descricao": "Votou",
+            "Sigla": "VO"
+          },
+          {
+            "Descricao": "Votação secreta",
+            "Sigla": "VS"
+          }
+        ]
+      },
+      "noNamespaceSchemaLocation": "https://legis.senado.leg.br/dadosabertos/dados/ListaTiposComparecimentov1.xsd"
+    }
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T16:53:18.101115+00:00",
+  "method": "GET",
+  "params": {},
+  "schema": 1,
+  "source": "senado",
+  "status": 200,
+  "url": "https://legis.senado.leg.br/dadosabertos/plenario/lista/tiposComparecimento"
+}

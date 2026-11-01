@@ -1,0 +1,519 @@
+{
+  "_fixture": {
+    "cache_file_id": "43cdae5fe7283dce27f99403e84a95a59f73e32cfe8635ae6548380b8d5d18a3",
+    "case": "senado_speeches_5917_2024",
+    "recorded_at": "2026-11-01T21:31:38.686747+00:00",
+    "removed_personal_fields": [
+      "DiscursosParlamentar.Parlamentar.IdentificacaoParlamentar.EmailParlamentar",
+      "DiscursosParlamentar.Parlamentar.IdentificacaoParlamentar.SexoParlamentar"
+    ],
+    "spec": "https://legis.senado.leg.br/dadosabertos/v3/api-docs (4.1.3.108)",
+    "trimmed": "not trimmed"
+  },
+  "api_version": "5",
+  "body": {
+    "DiscursosParlamentar": {
+      "Metadados": {
+        "DataVersaoServico": "2021-06-29",
+        "DescricaoDataSet": "Discursos do Parlamentar. Se não informar o período, serão retornados os discursos dos últimos 30 dias.",
+        "Versao": "01/11/2026 13:57:42",
+        "VersaoServico": "5"
+      },
+      "Parlamentar": {
+        "IdentificacaoParlamentar": {
+          "CodigoParlamentar": "5917",
+          "CodigoPublicoNaLegAtual": "923",
+          "FormaTratamento": "Senador ",
+          "NomeCompletoParlamentar": "Fernando Antonio Caminha Dueire",
+          "NomeParlamentar": "Fernando Dueire",
+          "SiglaPartidoParlamentar": "PSD",
+          "UfParlamentar": "PE",
+          "UrlFotoParlamentar": "http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5917.jpg",
+          "UrlPaginaParlamentar": "http://www25.senado.leg.br/web/senadores/senador/-/perfil/5917"
+        },
+        "Pronunciamentos": {
+          "Pronunciamento": [
+            {
+              "Aparteantes": {
+                "Aparteante": {
+                  "CodigoParlamentar": "22",
+                  "NomeAparteante": "Esperidião Amin"
+                }
+              },
+              "CodigoPronunciamento": "511090",
+              "DataPronunciamento": "2024-12-17",
+              "Indexacao": "DEFESA, REFORMA, PACTO FEDERATIVO, RECURSOS FINANCEIROS, MUNICIPIOS, PREFEITURA, DISTRIBUIÇÃO, FUNDO DE PARTICIPAÇÃO DOS MUNICIPIOS (FPM), COOPERAÇÃO, ESTADOS, UNIÃO FEDERAL, APOIO TECNICO.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2024-12-18",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "44",
+                    "NumeroPagInicioPublicacao": "43",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=18/12/2024&paginaDireta=43"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "430901",
+                "CodigoSessaoLegislativa": "871",
+                "DataSessao": "2024-12-17",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "185",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Apelo por uma reforma do pacto federativo que possibilite aos municípios brasileiros maior capacidade de investimentos e a modernização de suas gestões.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/511090",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/511090"
+            },
+            {
+              "CodigoPronunciamento": "510415",
+              "DataPronunciamento": "2024-11-27",
+              "Indexacao": "ORIENTAÇÃO, BANCADA, PROJETO DE LEI COMPLEMENTAR (PLP), CRIAÇÃO, LEI COMPLEMENTAR, AUTORIZAÇÃO, ESTADOS, DISTRITO FEDERAL (DF), MUNICIPIOS, TRANSPOSIÇÃO, TRANSFERENCIA, SALDO, EXERCICIO FINANCEIRO ANTERIOR, CONVENIO, REPASSE, FUNDO NACIONAL DE DESENVOLVIMENTO DA EDUCAÇÃO (FNDE), DESTINAÇÃO, ATIVIDADE, SERVIÇOS PUBLICOS, EDUCAÇÃO.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2024-11-28",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "43",
+                    "NumeroPagInicioPublicacao": "43",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=28/11/2024&paginaDireta=43"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "426503",
+                "CodigoSessaoLegislativa": "871",
+                "DataSessao": "2024-11-27",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "168",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Orientação à bancada, pelo Partido MDB, sobre o Projeto de Lei Complementar (PLP) n° 153, de 2024, que \"Dispõe sobre a transposição e a transferência de saldos financeiros de exercícios passados resultantes de repasses do Fundo Nacional de Desenvolvimento da Educação (FNDE) para os Estados, o Distrito Federal e os Municípios.\"",
+              "TipoUsoPalavra": {
+                "Codigo": "11338",
+                "Descricao": "Orientação à bancada",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "POB"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/510415",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/510415"
+            },
+            {
+              "CodigoPronunciamento": "510392",
+              "DataPronunciamento": "2024-11-27",
+              "Indexacao": "SOLICITAÇÃO, APOIO, APROVAÇÃO, PROJETO DE LEI COMPLEMENTAR (PLP), ALTERAÇÃO, LEI FEDERAL, RECURSOS FINANCEIROS, PERCENTAGEM, RECEITA OPERACIONAL, CONCESSIONARIA, ENERGIA ELETRICA, DESTINAÇÃO, PESQUISA, DESENVOLVIMENTO, PRIORIDADE, PROJETO, EMPRESA, STARTUP, SUSTENTABILIDADE, MEIO AMBIENTE, INSTRUMENTO, INCENTIVO, INOVAÇÃO, IMPLANTAÇÃO, SOLUÇÃO, ATIVIDADE, TECNOLOGIA, LEI COMPLEMENTAR, DEFINIÇÃO, REQUISITOS, ENQUADRAMENTO.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2024-11-28",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "16",
+                    "NumeroPagInicioPublicacao": "15",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=28/11/2024&paginaDireta=15"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "426503",
+                "CodigoSessaoLegislativa": "871",
+                "DataSessao": "2024-11-27",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "168",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Pedido de apoio ao Projeto de Lei Complementar nº 117/2024, de autoria de S. Exa., que define as chamadas startups verdes, para incluir o Brasil no movimento global crescente que busca inovações tecnológicas sustentáveis, que transformem a economia, mas que também contribuam decisivamente para a preservação do meio ambiente.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/510392",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/510392"
+            },
+            {
+              "CodigoPronunciamento": "507625",
+              "DataPronunciamento": "2024-07-09",
+              "Indexacao": "DISCURSO, DEFESA, APROVAÇÃO, PROJETO DE LEI, ALTERAÇÃO, LEI FEDERAL, OBJETIVO, DESTINAÇÃO, RECURSOS FINANCEIROS, MUNICIPIOS, REALIZAÇÃO, PROJETO, EFICIENCIA, ENERGIA ELETRICA, ILUMINAÇÃO PUBLICA.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2024-07-10",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "25",
+                    "NumeroPagInicioPublicacao": "23",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=10/07/2024&paginaDireta=23"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "416093",
+                "CodigoSessaoLegislativa": "871",
+                "DataSessao": "2024-07-09",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "99",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Apoio ao Projeto de Lei nº 6.035/2019, em tramitação na Câmara dos Deputados, que destina recursos aos municípios para a realização de projetos de eficiência energética nos sistemas de iluminação pública, em razão dos impactos positivos dessa medida para a qualidade de vida\ndos munícipes.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/507625",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/507625"
+            },
+            {
+              "CodigoPronunciamento": "507282",
+              "DataPronunciamento": "2024-07-02",
+              "Indexacao": "PROPOSTA DE EMENDA A CONSTITUIÇÃO (PEC), ALTERAÇÃO, CONSTITUIÇÃO FEDERAL, PRAZO, PARCELAMENTO, DEBITOS, MUNICIPIOS, PRECATORIO, REGIME GERAL DE PREVIDENCIA SOCIAL, REGIME PROPRIO DE PREVIDENCIA SOCIAL (RPPS).",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2024-07-03",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "53",
+                    "NumeroPagInicioPublicacao": "53",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=03/07/2024&paginaDireta=53"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "414379",
+                "CodigoSessaoLegislativa": "871",
+                "DataSessao": "2024-07-02",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "93",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Pela ordem sobre a Proposta de Emenda à Constituição (PEC) n° 66, de 2023, que \"Abre novo prazo de parcelamento especial de débitos dos municípios com seus Regimes Próprios de Previdência Social dos Servidores Públicos e com o Regime Geral de Previdência Social\".",
+              "TipoUsoPalavra": {
+                "Codigo": "4823",
+                "Descricao": "Pela ordem",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "POR"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/507282",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/507282"
+            },
+            {
+              "Aparteantes": {
+                "Aparteante": {
+                  "CodigoParlamentar": "22",
+                  "NomeAparteante": "Esperidião Amin"
+                }
+              },
+              "CodigoPronunciamento": "505740",
+              "DataPronunciamento": "2024-05-15",
+              "Indexacao": "COMEMORAÇÃO, APROVAÇÃO, PROJETO DE LEI, ALTERAÇÃO, LEI FEDERAL, CODIGO DE TRANSITO BRASILEIRO, FIXAÇÃO, DESCONTO, TAXAS, ADMINISTRAÇÃO, VALOR, RENOVAÇÃO, CARTEIRA NACIONAL DE HABILITAÇÃO, IDADE.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2024-05-16",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "38",
+                    "NumeroPagInicioPublicacao": "36",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=16/05/2024&paginaDireta=36"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "403045",
+                "CodigoSessaoLegislativa": "871",
+                "DataSessao": "2024-05-15",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "61",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Satisfação pela aprovação, na CCJ, do Projeto de Lei nº 5153/2023, de autoria de S. Exa., que altera o Código de Trânsito Brasileiro para estabelecer desconto no valor cobrado pela renovação das carteiras de habilitação para condutores com idade igual ou superior a 50 anos.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/505740",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/505740"
+            },
+            {
+              "CodigoPronunciamento": "505978",
+              "DataPronunciamento": "2024-05-14",
+              "Indexacao": "COMENTARIO, APROVAÇÃO, DESONERAÇÃO TRIBUTARIA, FOLHA DE PAGAMENTO, GRUPO, SETOR, ECONOMIA NACIONAL, DEFESA, EXTENSÃO, POLITICA, FAVORECIMENTO, MUNICIPIOS, QUANTIDADE, HABITANTE.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2024-05-15",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "36",
+                    "NumeroPagInicioPublicacao": "35",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=15/05/2024&paginaDireta=35"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "402244",
+                "CodigoSessaoLegislativa": "871",
+                "DataSessao": "2024-05-14",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "60",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Breve histórico da aprovação da desoneração da folha de pagamentos de setores econômicos e manifestação a favor da extensão dessa política aos municípios com até 156 mil habitantes.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/505978",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/505978"
+            },
+            {
+              "CodigoPronunciamento": "505946",
+              "DataPronunciamento": "2024-05-08",
+              "Indexacao": "DISCUSSÃO, PROJETO DE LEI, SUBSTITUTIVO, CAMARA DOS DEPUTADOS, CRIAÇÃO, LEI FEDERAL, DIRETRIZ, POLITICA TARIFARIA, ABASTECIMENTO DE AGUA, SERVIÇO DE ESGOTOS, DESCONTO, DESTINAÇÃO, ENTIDADE FAMILIAR, BAIXA RENDA, GRATUIDADE, TAXA, LIGAÇÃO, SERVIÇO.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2024-05-09",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "73",
+                    "NumeroPagInicioPublicacao": "73",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=09/05/2024&paginaDireta=73"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "399276",
+                "CodigoSessaoLegislativa": "871",
+                "DataSessao": "2024-05-08",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "57",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Discussão sobre o Projeto de Lei (PL) n° 795, de 2024 (Substitutivo da Câmara dos Deputados ao Projeto de Lei do Senado nº 505, de 2013), que \"Institui diretrizes para a Tarifa Social de Água e Esgoto em âmbito nacional.\"",
+              "TipoUsoPalavra": {
+                "Codigo": "11336",
+                "Descricao": "Discussão",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "PDI"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/505946",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/505946"
+            },
+            {
+              "CodigoPronunciamento": "505034",
+              "DataPronunciamento": "2024-04-10",
+              "Indexacao": "MEDIDA PROVISORIA (MPV), ALTERAÇÃO, LEI FEDERAL, COMPETENCIA, PODER PUBLICO, ENTE FEDERADO, AGENCIA NACIONAL DE ENERGIA ELETRICA (ANEEL), CONCESSÃO, ENERGIA ELETRICA, AUTORIZAÇÃO, PRORROGAÇÃO, PRAZO, INICIO, OPERAÇÃO, UNIDADE, SISTEMA DE GERAÇÃO, TERMO, ADESÃO, DESTINAÇÃO, RECURSOS FINANCEIROS, RECEITA, CONCESSIONARIA, PERMISSIONARIA, DISTRIBUIÇÃO, PESQUISA, DESENVOLVIMENTO, EFICIENCIA, HIPOTESE, AUSENCIA, EXECUÇÃO, REVERSÃO, CONTA DE DESENVOLVIMENTO ENERGETICO, REDUÇÃO, TARIFAS, OBRIGATORIEDADE, CENTRAIS ELETRICAS DO NORTE DO BRASIL S/A (ELETRONORTE), APLICAÇÃO, CUSTO DE PRODUÇÃO, Amazônia Legal, NAVEGABILIDADE, RIO MADEIRA, RIO TOCANTINS, POSSIBILIDADE, ABATIMENTO, CAMARA DE COMERCIO, COMERCIALIZAÇÃO, NEGOCIAÇÃO, ANTECIPAÇÃO, RECEBIMENTO.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2024-04-11",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "39",
+                    "NumeroPagInicioPublicacao": "39",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=11/04/2024&paginaDireta=39"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "393851",
+                "CodigoSessaoLegislativa": "871",
+                "DataSessao": "2024-04-10",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "36",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Pela ordem sobre a Medida Provisória (MPV) n° 1212, de 2024, Promoção do desenvolvimento de projetos de energia elétrica limpa e renovável e redução das tarifas de energia elétrica, que \"Altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.991, de 24 de julho de 2000, e a Lei nº 14.182, de 12 de julho de 2021, e dá outras providências\".",
+              "TipoUsoPalavra": {
+                "Codigo": "4823",
+                "Descricao": "Pela ordem",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "POR"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/505034",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/505034"
+            },
+            {
+              "Aparteantes": {
+                "Aparteante": [
+                  {
+                    "CodigoParlamentar": "22",
+                    "NomeAparteante": "Esperidião Amin"
+                  },
+                  {
+                    "CodigoParlamentar": "345",
+                    "NomeAparteante": "Flávio Arns"
+                  }
+                ]
+              },
+              "CodigoPronunciamento": "504663",
+              "DataPronunciamento": "2024-03-20",
+              "Indexacao": "DEFESA, PROJETO DE LEI DA CAMARA (PLC), NORMAS, TRATAMENTO MEDICO, DOENÇA GRAVE, PARALISIA, SAUDE PUBLICA, SISTEMA UNICO DE SAUDE (SUS), GARANTIA, SAQUE, FUNDO DE GARANTIA POR TEMPO DE SERVIÇO (FGTS).",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2024-03-21",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "40",
+                    "NumeroPagInicioPublicacao": "38",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=21/03/2024&paginaDireta=38"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "390726",
+                "CodigoSessaoLegislativa": "871",
+                "DataSessao": "2024-03-20",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "23",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Defesa do Projeto de Lei da Câmara nº 42/2017, que dispõe sobre o tratamento de doenças neuromusculares com paralisia motora.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/504663",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/504663"
+            },
+            {
+              "CodigoPronunciamento": "504797",
+              "DataPronunciamento": "2024-03-19",
+              "Indexacao": "DEFESA, RELEVANCIA, PROJETO DE LEI, CRIAÇÃO, LEI FEDERAL, REGULAMENTAÇÃO, EXERCICIO PROFISSIONAL, TERAPIA ALTERNATIVA, MUSICA, MELHORIA, APRENDIZAGEM, QUALIDADE DE VIDA.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2024-03-20",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "22",
+                    "NumeroPagInicioPublicacao": "22",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=20/03/2024&paginaDireta=22"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "390178",
+                "CodigoSessaoLegislativa": "871",
+                "DataSessao": "2024-03-19",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "22",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Manifestação sobre a relevância do Projeto de Lei nº 6379/2019, de autoria da Deputada Marília Arraes, que dispõe sobre a regulamentação da atividade profissional de musico terapeuta.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/504797",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/504797"
+            }
+          ]
+        },
+        "UrlGlossario": "http://legis.senado.leg.br/dadosabertos/senador/"
+      },
+      "noNamespaceSchemaLocation": "https://legis.senado.leg.br/dadosabertos/dados/DiscursosParlamentarv5.xsd"
+    }
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T16:57:42.233337+00:00",
+  "method": "GET",
+  "params": {
+    "dataFim": "20241231",
+    "dataInicio": "20240101"
+  },
+  "schema": 1,
+  "source": "senado",
+  "status": 200,
+  "url": "https://legis.senado.leg.br/dadosabertos/senador/5917/discursos"
+}

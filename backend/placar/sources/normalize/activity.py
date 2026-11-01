@@ -45,6 +45,8 @@ from ..clients.senado_activity import (
 )
 
 TAKES_PART = {"Sim", "Não", "Abstenção", "Obstrução"}
+# Senado secret ballots record only that the senator voted. Secret votings are not counted.
+SENADO_SECRET_VOTED = {"Votou"}
 PRESIDING = {"Artigo 17", "Presidente (art. 51 RISF)"}
 SENADO_PRESENT_NO_VOTE = {"P-NRV"}  # "Presente - não registrou voto"
 SENADO_ABSENT = {"NCom"}  # "Não compareceu"
@@ -60,6 +62,8 @@ def classify(option: str | None, official_codes: dict[str, str], notes: Notes) -
     """Return (category, official description) for a recorded option."""
     value = (option or "").strip()
     if value in TAKES_PART:
+        return BallotCategory.TAKES_PART, ""
+    if value in SENADO_SECRET_VOTED:
         return BallotCategory.TAKES_PART, ""
     if value in PRESIDING:
         return BallotCategory.PRESIDING, ""
@@ -97,6 +101,14 @@ def camara(
         )
     for p in presences:
         bundle.presences.append(PresenceRecord(f"CAMARA:event:{p.event_id}", p.deputy_id, p.source))
+    # The Câmara API has no secret flag. In a secret ballot it lists who voted but leaves every
+    # option empty (data issue 19), so a voting whose recorded options are all empty is secret.
+    options: dict[str, set[str]] = {}
+    for b in ballots:
+        options.setdefault(b.voting_id, set()).add((b.option or "").strip())
+    secret_ids = {vid for vid, found in options.items() if found == {""}}
+    if secret_ids:
+        notes.other.append(f"secret votings (all options empty): {sorted(secret_ids)}")
     for v in {v.voting_id: v for v in votings}.values():
         bundle.votings.append(
             VotingRecord(
@@ -106,10 +118,15 @@ def camara(
                 v.source,
                 body=v.body or "",
                 description=v.description or "",
+                secret=True if v.voting_id in secret_ids else None,
             )  # fmt: skip
         )
     for b in ballots:
-        category, text = classify(b.option, {}, notes)
+        if b.voting_id in secret_ids:
+            # A vote was registered; its content is secret. Secret votings are not counted.
+            category, text = BallotCategory.TAKES_PART, ""
+        else:
+            category, text = classify(b.option, {}, notes)
         bundle.ballots.append(
             BallotRecord(
                 f"CAMARA:voting:{b.voting_id}",

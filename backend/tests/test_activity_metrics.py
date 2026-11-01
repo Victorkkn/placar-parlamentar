@@ -9,7 +9,8 @@ from placar.activity.models import BallotCategory
 from placar.core.types import DateWindow, Period, SourceRef
 from placar.metrics import activity as m
 from placar.metrics.coverage import coverage_of
-from placar.sources.normalize.activity import Notes, classify
+from placar.sources.clients.camara_activity import CamaraBallot, CamaraVoting
+from placar.sources.normalize.activity import Notes, camara, classify
 
 REF = SourceRef(api_url="https://dadosabertos.camara.leg.br/api/v2/x", cache_key="0" * 64)
 TODAY = date(2024, 12, 31)
@@ -39,6 +40,7 @@ def d(key, day, kind=""):
         ("P-NRV", BallotCategory.PRESENT_NO_VOTE),
         ("NCom", BallotCategory.ABSENT),
         ("AP", BallotCategory.JUSTIFIED_ABSENCE),
+        ("Votou", BallotCategory.TAKES_PART),  # Senado secret ballot: voted, content secret
     ],
 )
 def test_classify_known_options(option, category):
@@ -55,6 +57,27 @@ def test_classify_unknown_option_is_reported_not_guessed():
     assert classify("XYZ", {}, notes)[0] == BallotCategory.UNKNOWN
     assert classify("XYZ", {}, notes)[0] == BallotCategory.UNKNOWN
     assert notes.unknown_options == {"XYZ": 2}
+
+
+def test_camara_voting_with_only_empty_options_is_secret():
+    # Data issue 19: Câmara secret ballots list who voted with every option empty.
+    votings = [
+        CamaraVoting("s-1", date(2025, 10, 29), "PLEN", None, "Indicação", REF),
+        CamaraVoting("n-1", date(2025, 10, 29), "PLEN", None, "PL 1/2025", REF),
+    ]
+    ballots = [
+        CamaraBallot("s-1", 1, "", REF),
+        CamaraBallot("s-1", 2, None, REF),
+        CamaraBallot("n-1", 1, "Sim", REF),
+        CamaraBallot("n-1", 2, "", REF),  # one empty option in an open vote stays unknown
+    ]
+    bundle, notes = camara([], [], votings, ballots, [], [], [])
+    secret = {v.external_id: v.secret for v in bundle.votings}
+    assert secret == {"s-1": True, "n-1": None}
+    by_voting = {(b.voting_key, b.official_id): b.category for b in bundle.ballots}
+    assert by_voting[("CAMARA:voting:s-1", 1)] == BallotCategory.TAKES_PART
+    assert by_voting[("CAMARA:voting:n-1", 2)] == BallotCategory.UNKNOWN
+    assert notes.unknown_options == {"": 1}
 
 
 # --- metrics only count days in office -------------------------------------------------------

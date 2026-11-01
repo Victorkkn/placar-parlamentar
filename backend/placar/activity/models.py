@@ -85,7 +85,7 @@ class Membership(SourcedModel):
     house = models.CharField(max_length=6, choices=House.choices)
     body_external_id = models.CharField(max_length=40, blank=True)
     body_acronym = models.CharField(max_length=60, blank=True)
-    body_name = models.CharField(max_length=300, blank=True)
+    body_name = models.TextField(blank=True)  # official names reach 573 characters (data issue 18)
     body_house = models.CharField(max_length=10, blank=True)
     role = models.CharField(max_length=120, blank=True)
     start = models.DateField(null=True, blank=True)
