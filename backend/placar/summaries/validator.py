@@ -25,7 +25,7 @@ VOCABULARY = frozenset(
     """A As O Os Em No Na Nos Nas Entre Durante Desde De Do Da Dos Das Para Segundo Sem Com
     Não Nenhuma Nenhum Houve Foi Foram Teve Esteve Apresentou Fez Participou Registrou
     Câmara Deputados Senado Federal Plenário Congresso Nacional Mesa
-    Partido Partidos Presença Proposições Participação Votações Discursos Registro Registros
+    Partido Partidos Presença Proposições Participação Sessões Votações Discursos Registro Registros
     Tempo Cargo Período Licença Dias""".split()
 )
 

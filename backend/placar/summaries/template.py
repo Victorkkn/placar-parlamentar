@@ -45,13 +45,11 @@ def template_summary(sheet: FactSheet) -> list[Sentence]:
 
     if ATTENDANCE in facts:
         v = facts[ATTENDANCE].values
-        if v["sessoes_nos_dias_no_cargo"] == "0":
-            text = "Nenhuma sessão deliberativa do Plenário nos dias no cargo"
-        else:
-            text = (
-                f"Presença em sessões deliberativas do Plenário: {v['sessoes_com_presenca']} de "
-                f"{v['sessoes_nos_dias_no_cargo']} sessões nos dias no cargo ({v['proporcao']})"
-            )
+        text = (
+            f"Sessões deliberativas do Plenário nos dias no cargo: {v['sessoes_nos_dias_no_cargo']}"
+        )
+        if v["sessoes_nos_dias_no_cargo"] != "0":
+            text += f"; com presença registrada: {v['sessoes_com_presenca']} ({v['proporcao']})"
         if v["dias_de_licenca"] != "0":
             text += f"; dias de licença no período: {v['dias_de_licenca']}"
         sentences.append(Sentence(text + ".", (ATTENDANCE, COVERAGE)))
@@ -66,15 +64,14 @@ def template_summary(sheet: FactSheet) -> list[Sentence]:
         )
     if VOTES in facts:
         v = facts[VOTES].values
-        if v["votacoes_nos_dias_no_cargo"] == "0":
-            text = "Nenhuma votação nominal nos dias no cargo"
-        else:
-            text = (
-                f"Participação em votações nominais: {v['votacoes_com_voto']} de "
-                f"{v['votacoes_nos_dias_no_cargo']} ({v['proporcao']})"
-            )
+        text = (
+            "Votações nominais nos dias no cargo, sem contar as presididas: "
+            f"{v['votacoes_nos_dias_no_cargo']}"
+        )
+        if v["votacoes_nos_dias_no_cargo"] != "0":
+            text += f"; com voto registrado: {v['votacoes_com_voto']} ({v['proporcao']})"
         if v["votacoes_presididas"] != "0":
-            text += f", sem contar {v['votacoes_presididas']} votações presididas"
+            text += f"; presididas: {v['votacoes_presididas']}"
         sentences.append(Sentence(text + ".", (VOTES, COVERAGE)))
     if SPEECHES in facts:
         v = facts[SPEECHES].values

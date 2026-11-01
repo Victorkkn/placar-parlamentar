@@ -14,7 +14,7 @@
 
 - No Senado, uma licença curta sem convocação de suplente não interrompe o exercício, e esses dias contam como tempo no cargo.
 - Na Câmara, uma "Saída" por licença encerra o período, porque o suplente assume a vaga.
-- Em ambos os casos, os dias de licença aparecem separados, ao lado da presença.
+- Na Câmara, os dias de licença no período aparecem ao lado da presença em Plenário. No Senado, como não há métrica de presença, os dias de licença ainda não são exibidos.
 
 **Limites conhecidos.**
 

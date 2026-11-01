@@ -26,7 +26,7 @@ Branches stack in this order: `feat/b2-activity` → `feat/c1-api` → `feat/c3-
 | --- | --- | --- | --- |
 | 1 | Finish the B2 download, run `normalize_activity`, check unknown vote options, add activity fixture cases, write the B2 outcome | download to finish | review the B2 outcome |
 | 2 | Merge the branch stack into `main`, tag `phase-b2` | 1 | **approve the merges** |
-| 3 | C4: neutral-wording review of the pt-BR texts and methodology pages (including the "per 365 days in office" rate) | — | **review the wording** |
+| 3 | C4: neutral-wording review of the pt-BR texts, methodology pages and summary template | review done 2026-11-01 (see history) | **approve the reviewed wording** |
 | 4 | C6: test and security notes, README "how to run" | — | done in `docs/mvp-readiness` (see `docs/testing/phase-c.md`, `docs/security/phase-c.md`) |
 | 5 | Sign off Phase C, tag `phase-c` | 2–4 | **sign off** |
 | 6 | Phase D: summaries | plan approved; built on `feat/d-summaries` (templates on, model off) | **review the two deviations and the summary wording** |

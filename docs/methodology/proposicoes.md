@@ -8,4 +8,6 @@
 
 **Data.** Usamos a data de apresentação informada pela fonte.
 
+**Por 365 dias no cargo.** O total também é mostrado dividido pelos dias no cargo e multiplicado por 365, para comparar pessoas que ficaram tempos diferentes no cargo.
+
 **Fontes.** Câmara: `/proposicoes?idDeputadoAutor=…`. Senado: `/processo?codigoParlamentarAutor=…`.

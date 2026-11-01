@@ -64,7 +64,7 @@ export const text = {
     startReason: "Motivo do início",
     endReason: "Motivo do fim",
     precisionAtEvent: "data conhecida apenas pelo registro do evento",
-    insufficientNote: "O tempo no cargo neste período está abaixo do mínimo escolhido; os números abaixo não devem ser comparados.",
+    insufficientNote: "O tempo no cargo neste período está abaixo do mínimo escolhido. Os números abaixo cobrem pouco tempo e podem não ser comparáveis aos de outras pessoas.",
   },
 
   metrics: {
@@ -78,8 +78,8 @@ export const text = {
     count: (n: string) => n,
     perYear: (v: string) => `${v} por 365 dias no cargo`,
     leaveDays: (n: string) => `Dias de licença no período: ${n}`,
-    noneInPeriod: "Sem ocorrências no período no cargo",
-    presidedExcluded: (n: string) => `Votações presididas, fora da conta: ${n}`,
+    noneInPeriod: "Nenhum registro nos dias no cargo",
+    presidedExcluded: (n: string) => `Votações presididas (não contadas): ${n}`,
   },
 
   summary: {
@@ -138,17 +138,18 @@ export const text = {
       "Todos os números vêm das APIs de Dados Abertos da Câmara dos Deputados e do Senado Federal e têm link para o registro oficial. As métricas contam apenas os dias em que a pessoa estava no cargo dentro do período escolhido.",
     items: [
       "Tempo no cargo: períodos de exercício informados pelo Senado e montados a partir do histórico oficial da Câmara; dias contados no horário de Brasília, incluindo o primeiro e o último dia.",
-      "Presença (Câmara): sessões deliberativas do Plenário com presença registrada, dividido pelas sessões realizadas nos dias no cargo. O Senado não publica lista de presença por senador nas APIs consultadas.",
+      "Presença (Câmara): sessões deliberativas do Plenário com presença registrada, divididas pelas sessões realizadas nos dias no cargo. O Senado não publica lista de presença por senador nas APIs consultadas.",
       "Proposições: PL, PLP, PEC e PDL com a pessoa entre os autores, inclusive coautoria; também por 365 dias no cargo.",
-      "Votações nominais: votações com voto registrado (Sim, Não, Abstenção, Obstrução), dividido pelas votações nominais realizadas nos dias no cargo, sem contar as que a pessoa presidiu.",
+      "Votações nominais: votações com voto registrado (Sim, Não, Abstenção, Obstrução), divididas pelas votações nominais realizadas nos dias no cargo, sem contar as que a pessoa presidiu.",
       "Discursos: pronunciamentos registrados nos dias no cargo; também por 365 dias no cargo.",
+      "Dias de licença (Câmara): mostrados ao lado da presença, com a fonte oficial de cada licença.",
       "Quem fica abaixo do mínimo de tempo no cargo aparece como “Dados insuficientes”, com o período coberto.",
       "Por 365 dias no cargo: o total dividido pelos dias no cargo dentro do período e multiplicado por 365, para comparar pessoas com tempos diferentes no cargo.",
     ],
     summariesTitle: "Resumos",
     summaries: [
       "O resumo de cada parlamentar é escrito automaticamente a partir de uma lista de fatos montada com os mesmos números desta página (tempo no cargo, partidos e métricas), cada fato com sua fonte oficial. Textos de proposições ou discursos não são usados.",
-      "Cada frase mostra as fontes dos fatos que usa. Antes de ser exibido, o texto passa por regras automáticas: toda frase cita fatos existentes; todo número, data, nome e partido aparece nesses fatos; nenhum termo de julgamento da lista de termos vetados; no máximo 6 frases de até 200 caracteres.",
+      "Cada frase mostra as fontes dos fatos que usa. Antes de ser exibido, o texto passa por regras automáticas: toda frase cita fatos existentes; todo número, data, nome e partido aparece nesses fatos; nenhum termo da lista de palavras de julgamento vetadas; no máximo 6 frases de até 200 caracteres.",
       "Resumo por frases fixas: modelo de texto preenchido pelos dados; é o padrão e o único para períodos personalizados.",
       "Resumo por modelo de linguagem: gerado com antecedência para os períodos pré-definidos, apenas quando passa nas mesmas regras. Se não passar, ou se os dados mudarem, o resumo por frases fixas é exibido.",
     ],

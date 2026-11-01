@@ -570,3 +570,28 @@
   - Merge approval.
   - C4 wording review.
   - MVP sign-off.
+
+## 2026-11-01 — `.env` deny rule; C4 Portuguese wording review
+
+- **Agent:** Main Claude Code session (technical writer and security roles)
+- **Task:** The owner approved the `.env` deny rule, asked which branches are waiting, and asked for the Portuguese review (MVP step 3).
+- **Changes made:**
+  - `.claude/settings.json`: deny `Read`, `Edit` and `Write` on `./.env`. This is a safety net only: shell commands are not covered.
+  - Interface text (`frontend/src/text/pt-BR.ts`):
+    - "Dados insuficientes" note made descriptive instead of prescriptive;
+    - "Nenhum registro nos dias no cargo";
+    - "Votações presididas (não contadas)";
+    - agreement fixed ("divididas");
+    - leave-days item added to the methodology list.
+  - Methodology pages:
+    - fixed a wrong statement that Senado leave days appear next to attendance (they are not shown);
+    - fixed a reference to a "table" that does not exist;
+    - added the "por 365 dias no cargo" explanation;
+    - status changed to "reviewed, waiting for the owner's approval".
+  - Summary template: attendance and vote sentences rephrased as "label: number" to avoid wrong plurals ("1 de 1 sessões"). "Sessões" added to the validator's vocabulary.
+  - Banned-wording list: added assíduo/a/os/as, omisso/a/os/as, produtivo and improdutivo (all forms), and preguiça.
+- **Validation:** `scripts/check.sh` passed (332 backend and 18 frontend tests); e2e 4 passed.
+- **Remaining work:**
+  - Owner approval of the reviewed wording.
+  - B2 data load.
+  - Merge approval.
