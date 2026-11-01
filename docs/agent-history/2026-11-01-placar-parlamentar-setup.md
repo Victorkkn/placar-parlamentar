@@ -236,3 +236,11 @@
 
 - **Agent:** Main Claude Code session
 - **Changes made:** 0011 accepted; index updated; rules section 13 added.
+
+## 2026-11-01 — Decision 0012 proposed (security baseline)
+
+- **Agent:** Main Claude Code session (acting as architect)
+- **Analysis:** Checked ruff, pip-audit, detect-secrets, bandit (PyPI) and gitleaks (GitHub releases) versions; gitleaks not installed locally, ruff is.
+- **Changes made:** `docs/decisions/0012-security-baseline.md` (proposed); index updated.
+- **Decisions:** Proposes serving official photos from our server to keep 0009's "no third-party requests" rule.
+- **Remaining work:** owner approval of 0012; gitleaks install needs approval.
