@@ -383,3 +383,14 @@
 - **Agent:** Main Claude Code session
 - **Task:** Owner approved pushing to GitHub after each approved merge without asking separately ("yes, you can").
 - **Changes made:** recorded in 0016 notes, rules section 18 and root `CLAUDE.md` (scope: `main` and phase tags only, right after an approved merge); then pushed `main`.
+
+## 2026-11-01 — Phase C plan approved; decision 0017
+
+- **Agent:** Main Claude Code session
+- **Task:** Owner asked to start the frontend in parallel with B2. A Phase C plan and decision 0017 were written first, as the process requires. The owner approved both ("ok") and asked whether the app will be React (yes: React, built with Vite, written in TypeScript).
+- **Analysis:** npm peer ranges checked: `typescript-eslint` 8.72.1 needs TS < 6.1; `openapi-typescript` 7.13.0 declares TS ^5.x → TypeScript 5.9.3.
+- **Changes made:**
+  - `docs/plans/phase-c-filters-and-comparison.md` (approved);
+  - decision 0017 accepted;
+  - rules section 11 updated.
+- **Remaining work:** C0 frontend setup (branch `feat/c0-frontend-setup`); B2 download still running.

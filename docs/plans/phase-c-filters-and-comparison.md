@@ -1,8 +1,8 @@
 # Phase C — Filters and comparison (plan)
 
-- **Status:** proposed (waiting for the project owner's approval; no code before approval)
+- **Status:** approved by the project owner on 2026-11-01, with decision 0017, the three defaults and the dependency list. C0 and C1 may run in parallel with the end of B2.
 - **Date:** 2026-11-01
-- **Decisions applied:** 0003, 0005, 0007, 0009, 0011, 0012, 0014, 0015, 0016, and 0017 (proposed)
+- **Decisions applied:** 0003, 0005, 0007, 0009, 0011, 0012, 0014, 0015, 0016, 0017
 
 ## Goal
 
