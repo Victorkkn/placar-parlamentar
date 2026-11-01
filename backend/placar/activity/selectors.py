@@ -5,6 +5,7 @@ Returns plain values with their `SourceRef`s, so `metrics` stays free of ORM det
 
 from __future__ import annotations
 
+from collections import defaultdict
 from dataclasses import dataclass
 from datetime import date
 
@@ -56,3 +57,35 @@ def bills_of(official_id: int) -> list[Item]:
 def speeches_of(official_id: int) -> list[Item]:
     rows = Speech.objects.filter(official_id=official_id)
     return [Item(r.natural_key, r.day, r.source, r.type_code) for r in rows]
+
+
+def presence_keys_by_official(house: str) -> dict[int, dict[str, SourceRef]]:
+    result: dict[int, dict[str, SourceRef]] = defaultdict(dict)
+    rows = Presence.objects.filter(session__house=house).select_related("session")
+    for r in rows:
+        result[r.official_id][r.session.natural_key] = r.source
+    return result
+
+
+def ballots_by_official(house: str) -> dict[int, dict[str, tuple[str, str, SourceRef]]]:
+    result: dict[int, dict[str, tuple[str, str, SourceRef]]] = defaultdict(dict)
+    rows = Ballot.objects.filter(voting__house=house).select_related("voting")
+    for r in rows:
+        result[r.official_id][r.voting.natural_key] = (r.category, r.option_raw, r.source)
+    return result
+
+
+def bills_by_official(house: str) -> dict[int, list[Item]]:
+    result: dict[int, list[Item]] = defaultdict(list)
+    through = Bill.authors.through.objects.filter(bill__house=house).select_related("bill")
+    for link in through:
+        b = link.bill
+        result[link.official_id].append(Item(b.natural_key, b.presented_on, b.source, b.type_code))
+    return result
+
+
+def speeches_by_official(house: str) -> dict[int, list[Item]]:
+    result: dict[int, list[Item]] = defaultdict(list)
+    for r in Speech.objects.filter(house=house):
+        result[r.official_id].append(Item(r.natural_key, r.day, r.source, r.type_code))
+    return result

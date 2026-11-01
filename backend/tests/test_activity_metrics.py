@@ -116,9 +116,24 @@ def test_party_switch_does_not_affect_activity_metrics():
 
 def test_leave_days_merges_overlaps_and_clips():
     coverage = cov(Period(date(2024, 1, 1), None))
-    leaves = [Period(date(2023, 12, 20), date(2024, 1, 10)), Period(date(2024, 1, 5), date(2024, 1, 15)),
-              Period(date(2024, 12, 30), None)]  # fmt: skip
-    assert m.leave_days(coverage, leaves, TODAY) == 15 + 2
+    leaves = [(Period(date(2023, 12, 20), date(2024, 1, 10)), REF),
+              (Period(date(2024, 1, 5), date(2024, 1, 15)), REF),
+              (Period(date(2024, 12, 30), None), REF)]  # fmt: skip
+    days_on_leave, refs = m.leave_days(coverage, leaves, TODAY)
+    assert days_on_leave == 15 + 2 and refs == (REF,)
+
+
+def test_leave_sources_join_attendance_sources():
+    leave_ref = SourceRef(
+        api_url="https://legis.senado.leg.br/dadosabertos/lic", cache_key="1" * 64
+    )
+    coverage = cov(Period(date(2024, 1, 1), None))
+    result = m.with_leave_days(
+        m.plenary_attendance(coverage, [d("s", date(2024, 2, 1))], {}),
+        [(Period(date(2024, 3, 1), date(2024, 3, 3)), leave_ref)],
+        TODAY,
+    )
+    assert result.details["leave_days"] == 3 and leave_ref in result.sources
 
 
 def test_sources_are_unique():

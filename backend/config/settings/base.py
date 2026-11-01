@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "placar.legislators",
     "placar.activity",
     "placar.sources",
+    "placar.api",
 ]
 
 MIDDLEWARE = [

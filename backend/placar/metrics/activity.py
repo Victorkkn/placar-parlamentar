@@ -120,13 +120,32 @@ def speeches(coverage: CoverageResult, items: Iterable[Dated]) -> MetricResult:
     )
 
 
-def leave_days(coverage: CoverageResult, leaves: Iterable[Period], today: date) -> int:
-    """Days on leave inside the window, overlapping leaves merged (decision 0014)."""
+def leave_days(
+    coverage: CoverageResult, leaves: Iterable[tuple[Period, SourceRef]], today: date
+) -> tuple[int, tuple[SourceRef, ...]]:
+    """Days on leave inside the window, overlapping leaves merged (decision 0014), and the
+    sources of the leaves used."""
     window = coverage.window
-    clipped = []
-    for leave in leaves:
+    clipped, refs = [], []
+    for leave, ref in leaves:
         end = min(leave.end or today, today, window.end)
         start = max(leave.start, window.start)
         if start <= end:
             clipped.append(Period(start, end))
-    return days(merge(clipped))
+            refs.append(ref)
+    return days(merge(clipped)), _unique(refs)
+
+
+def with_leave_days(
+    result: MetricResult, leaves: Iterable[tuple[Period, SourceRef]], today: date
+) -> MetricResult:
+    """Attach leave days to an attendance result; their records join the result's sources."""
+    count, refs = leave_days(result.coverage, leaves, today)
+    return MetricResult(
+        result.metric,
+        result.coverage,
+        result.numerator,
+        result.denominator,
+        _unique([*result.sources, *refs]),
+        {**result.details, "leave_days": count},
+    )

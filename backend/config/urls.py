@@ -1,3 +1,9 @@
-"""URL routes. The public API (Django Ninja) is added in Phase C."""
+"""URL routes: the read-only public API under /api/ (Phase C1)."""
 
-urlpatterns: list = []
+from django.urls import path
+
+from placar.api.api import api
+
+urlpatterns = [
+    path("api/", api.urls),
+]

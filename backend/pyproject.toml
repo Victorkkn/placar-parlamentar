@@ -5,6 +5,7 @@ description = "Placar Parlamentar backend (Django)"
 requires-python = ">=3.14,<3.15"
 dependencies = [
     "django>=6.1,<6.2",
+    "django-ninja>=1.7.3,<1.8",
     "httpx>=0.28,<0.29",
     "psycopg[binary]>=3.3,<3.4",
 ]

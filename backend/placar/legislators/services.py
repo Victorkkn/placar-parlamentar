@@ -15,6 +15,7 @@ from django.db import transaction
 from placar.core.types import SourceRef
 
 from .models import (
+    DataLoad,
     House,
     Leave,
     Legislature,
@@ -292,3 +293,9 @@ def replace_house(bundle: HouseBundle) -> dict[str, int]:
         "affiliations": len(bundle.affiliations),
         "events": len(bundle.events),
     }
+
+
+def record_load(house: str, kind: str, reference_date: date, fetched_until=None) -> DataLoad:
+    return DataLoad.objects.create(
+        house=house, kind=kind, reference_date=reference_date, data_fetched_until=fetched_until
+    )

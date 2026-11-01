@@ -3,6 +3,7 @@
 from django.core.management.base import BaseCommand, CommandError
 
 from placar.activity.services import replace_activity
+from placar.legislators.services import record_load
 from placar.sources.activity_runner import freshness_for
 from placar.sources.cache import CacheMissError, Freshness
 from placar.sources.clients.camara import CamaraClient
@@ -83,7 +84,9 @@ class Command(BaseCommand):
         bundle, notes = normalize.camara(
             list(held.values()), presences, votings, ballots, bills, memberships, speeches
         )
-        return "camara activity", replace_activity(bundle), notes, miss
+        counts = replace_activity(bundle)
+        record_load("CAMARA", "activity", day, fetcher.stats.latest_fetched_at)
+        return "camara activity", counts, notes, miss
 
     def _senado(self, day):
         fetcher = offline_fetcher("senado")
@@ -104,4 +107,6 @@ class Command(BaseCommand):
                 f"speeches {code}", lambda c=code: act.speeches(c, leg.start, end, pick), []
             )
         bundle, notes = normalize.senado(votings, ballots, codes, bills, memberships, speeches)
-        return "senado activity", replace_activity(bundle), notes, miss
+        counts = replace_activity(bundle)
+        record_load("SENADO", "activity", day, fetcher.stats.latest_fetched_at)
+        return "senado activity", counts, notes, miss
