@@ -1,6 +1,6 @@
 # Metodologia
 
-Páginas exibidas no aplicativo, em português do Brasil (decisão 0003). Revisão de redação e neutralidade feita em 2026-11-01; aguarda a aprovação final do responsável pelo projeto.
+Páginas exibidas no aplicativo, em português do Brasil (decisão 0003). Revisão de redação e neutralidade feita e aprovada pelo responsável pelo projeto em 2026-11-01.
 
 - [Tempo no cargo e cobertura](tempo-no-cargo.md)
 - [Presença em sessões deliberativas do Plenário (Câmara)](presenca-plenario.md)

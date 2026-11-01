@@ -595,3 +595,13 @@
   - Owner approval of the reviewed wording.
   - B2 data load.
   - Merge approval.
+
+## 2026-11-01 — C4 wording approved
+
+- **Agent:** Main Claude Code session
+- **Task:** The owner approved the reviewed pt-BR wording: interface text, methodology pages and summary template.
+- **Changes made:** Status lines updated in `docs/methodology/README.md`, `docs/mvp-status.md`, `docs/backlog.md` and the header of `pt-BR.ts`.
+- **Remaining work:**
+  - Merge approval for the 7 branches (not yet given).
+  - Confirmation of the two Phase D deviations.
+  - B2 data load (download still running).

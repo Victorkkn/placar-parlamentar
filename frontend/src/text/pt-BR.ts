@@ -1,5 +1,5 @@
 // All user-facing text, in Brazilian Portuguese (decision 0003). Owned by the technical writer;
-// wording is reviewed by the project owner for neutrality (Phase C, task C4).
+// wording reviewed and approved by the project owner for neutrality on 2026-11-01 (task C4).
 // A test checks this file against docs/wording/banned-pt-BR.txt.
 
 export const text = {
