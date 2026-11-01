@@ -90,3 +90,26 @@
 - Owner approval of the Stage 1 agent definitions.
 - README title and missing `CLAUDE_CODE_PROMPT.md` (owner's call).
 - Then Stage 2, decision by decision, led by the architect.
+
+## 2026-11-01 — Stage 1 approved; Stage 2 started
+
+- **Date:** 2026-11-01
+- **Agent:** Main Claude Code session (acting as architect; new agents load in a fresh session)
+- **Task:** Owner approved the 8 agents, asked to rename the README title, and to save the project prompt as a reference `.md`.
+
+### Changes made
+- `README.md`: title changed from "Mandato Aberto" to "Placar Parlamentar" (only occurrence).
+- `CLAUDE_CODE_PROMPT.md`: reference copy of the prompt, with the project name updated and a note that accepted decisions take precedence.
+- `docs/architecture-rules.md`: records agent approval; changing an agent needs owner approval.
+- Root `CLAUDE.md`: points to `CLAUDE_CODE_PROMPT.md`.
+- Commit `86361e7` (local only).
+- `docs/decisions/0004-repository-layout.md`: proposed (monorepo with `backend/` and `frontend/`); index updated.
+
+### Validation
+- Checked that "Mandato Aberto" no longer appears in `README.md`.
+
+### Decisions
+- Decision 0004 is proposed only; not used until accepted.
+
+### Remaining work
+- Owner approval of decision 0004, then decisions on topics 2–10 one at a time.
