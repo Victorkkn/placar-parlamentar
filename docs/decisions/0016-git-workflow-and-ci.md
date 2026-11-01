@@ -64,3 +64,4 @@ The owner wants proper git workflows: a branching process, local checks before c
 - Private repository created: `Victorkkn/placar-parlamentar`. `main` and the tags `phase-a` and `phase-b1` were pushed with the owner's approval.
 - First CI run on `main` (run 41329428087) passed both jobs: `backend` and `secrets`.
 - **Item 12 is not possible on the current plan.** GitHub refused branch protection with "Upgrade to GitHub Pro or make this repository public to enable this feature" (HTTP 403). Until then, item 3 (local checks plus owner approval before merging) is the only safeguard for `main`.
+- **Standing push approval (2026-11-01).** The owner approved, as a standing rule, pushing `main` (and phase tags) to `origin` right after a merge the owner has approved. Other pushes (other branches, force pushes, new remotes, repository settings) still need explicit approval each time (decision 0002).

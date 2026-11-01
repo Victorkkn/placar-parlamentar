@@ -188,5 +188,6 @@ Small, descriptive local commits are allowed.
 - Annotated tag on `main` when the owner signs off a phase (`phase-a`, `phase-b1`, …).
 - Commit messages: short imperative summary with the phase or area first, blank line, what and why.
 - Pre-commit hook: gitleaks on staged changes, `ruff check`, `ruff format --check`. `scripts/check.sh` before merges: lint, full tests, `pip-audit`, gitleaks on the branch.
-- One private GitHub repository. Pushes, remote changes and pull requests still need the owner's approval (decision 0002).
+- One private GitHub repository. Standing approval (2026-11-01): after a merge the owner approved, push `main` and phase tags to `origin`. Every other push, force push, remote change, pull request or repository setting still needs the owner's approval (decision 0002).
+- Branch protection is unavailable on the current GitHub plan; local checks plus owner approval guard `main`.
 - GitHub Actions CI on every push and pull request: lint, offline tests with a PostgreSQL service, `pip-audit`, gitleaks over the full history. No secrets in CI; actions pinned to commit SHAs; read-only `contents` permission.
