@@ -1,6 +1,6 @@
 # 0008 — Normalizing Câmara and Senado data into one model
 
-- **Status:** proposed
+- **Status:** accepted (2026-11-01)
 - **Date:** 2026-11-01
 - **Stage:** 2 (topic 5 of 10)
 

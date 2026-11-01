@@ -95,3 +95,15 @@ Small, descriptive local commits are allowed.
 - Every value leaving `metrics` or `summaries` carries its `SourceRef`s.
 - `metrics` never imports `django.http`, `ninja` or `sources`.
 - An `ast`-based test in `backend/tests/` enforces these rules. A new dependency between apps needs a new decision.
+
+## 10. Normalizing official data (decision 0008)
+
+- Shared entities: `Legislature`, `Official` (one person in one house), `Party`, `Mandate`, `ServicePeriod`, `Leave`, `PartyAffiliation`. Each stores raw official codes and text next to normalized values, and a `SourceRef`.
+- Coverage uses `ServicePeriod`s only. Leaves are stored separately and do not cut service periods.
+- Senado: periods from `mandatos` → `Exercicios`; affiliations from `filiacoes`; leaves from `licencas`.
+- Câmara: periods, affiliations and leaves are built from `historico` events (`Entrada` opens, `Saída` closes); affiliation dates have precision "known only at event".
+- Dates are calendar days in `America/Sao_Paulo`, inclusive at both ends. Overlapping or touching periods of the same official are merged for counting; originals are kept.
+- Never guess: unmapped values become `UNKNOWN` and are logged in `docs/data-issues.md`; disagreements between sources keep both values and are logged.
+- No linking of the same person across houses, and no inferred party renames or mergers, without an official source.
+- Personal fields allowlist: house id, parliamentary name, civil name, state, party, official photo URL, institutional page URL. Never CPF, birth date or place, social media, personal email or address.
+- Source links show the official public page when one exists, otherwise the API URL.

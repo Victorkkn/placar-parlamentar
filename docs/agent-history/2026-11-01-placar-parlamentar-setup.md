@@ -193,3 +193,9 @@
 - **Analysis:** Read Câmara `/deputados/{id}/historico` schema; fetched live samples: Senado mandatos/licencas/filiacoes for senators 5918, 4545, 5917; Senado legislature-57 list with and without `exercicio=S`; Câmara deputies list page 1 and historico for 220593. Findings recorded in 0008 context and `docs/data-issues.md` (7 entries). Samples kept in the session scratchpad only, not in the repo.
 - **Changes made:** `docs/decisions/0008-source-normalization.md` (proposed); `docs/data-issues.md` created; index updated.
 - **Remaining work:** owner approval of 0008; open methodology question on leave days without an alternate (Phase B).
+
+## 2026-11-01 — Decision 0008 accepted
+
+- **Agent:** Main Claude Code session
+- **Changes made:** 0008 accepted; index updated; rules section 10 added.
+- **Decisions:** Owner answered "yes" to the 0008 approval and to the suggestion that short leave days without a substitute count as time in office, with leave days shown separately. To be written into the Phase B methodology plan for final confirmation.
