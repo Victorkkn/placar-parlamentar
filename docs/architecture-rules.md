@@ -57,3 +57,13 @@ Small, descriptive local commits are allowed.
 - They connect only through the HTTP API contract.
 - Local data (API cache, database files) is never committed to git.
 - No monorepo build tool unless a new decision adds one.
+
+## 7. Backend framework (decision 0005)
+
+- Django 6.1 with Django Ninja for the HTTP API. Python 3.14, managed with `uv`.
+- Backend layout: `backend/config/` (settings), `backend/placar/{sources,legislators,activity,metrics,summaries,api}/`, `backend/tests/`.
+- Views are sync by default. Async only when a view waits on something other than the database.
+- Database writes are sync and run inside transactions.
+- Fetching official data runs only as management commands, never inside a web request.
+- `metrics/` is plain Python with no web code.
+- Django admin: development settings only, read-only for official data, account created locally by the owner, password never stored in the repo. No accounts or logins on the public site.

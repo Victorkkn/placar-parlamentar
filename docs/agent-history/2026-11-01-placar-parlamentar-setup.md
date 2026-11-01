@@ -154,3 +154,9 @@
 
 ### Remaining work
 - Owner approval of 0005.
+
+## 2026-11-01 — Decision 0005 accepted
+
+- **Agent:** Main Claude Code session
+- **Changes made:** 0005 status accepted; index and topic tracker updated; `docs/architecture-rules.md` section 7 added.
+- **Remaining work:** topic 3 (database and raw cache) next.
