@@ -411,3 +411,73 @@
   - Local Node 24.12 is below one test dependency's declared minimum (24.15); tests pass anyway.
 - **Validation (actually run):** `npm run lint`, `npm run typecheck`, `npm test` (4 passed), `npm run build`, `npm audit --omit=dev` (0 vulnerabilities), full `npm audit` (one dev-only advisory, documented), workflow YAML parsed, `scripts/check.sh` all passed.
 - **Remaining work:** owner approval to merge C0; C1 (API) next; B2 download still running.
+
+## 2026-11-01 — B2.2: activity models, normalizers and metrics (branch feat/b2-activity)
+
+- **Agent:** Main Claude Code session (backend, data and technical writer roles)
+- **Task:** Phase B2 as approved: store activity and compute the first metrics.
+- **Analysis:** `/proposicoes` and `/votacoes` reject date ranges over 3 months, which the spec does not say (data issue 16). The first live `fetch_activity` run stopped on it.
+- **Changes made:**
+  - Câmara votes are fetched by quarter and bills by `ano`. A failed list request is now reported instead of stopping the run.
+  - `activity` app with models Bill, Session, Presence, Voting, Ballot, Membership and Speech.
+  - `normalize/activity.py` classifies vote options. `normalize_activity` command added.
+  - Metrics in `metrics/activity.py`: plenary attendance (Câmara), bills authored, nominal-vote participation and speeches, counted only on days in office, plus leave days.
+  - pt-BR methodology drafts in `docs/methodology/`.
+- **Validation:** backend tests passed on the branch (fixtures and synthetic activity, offline).
+- **Remaining work:** live download still running; the B2 outcome is to be written after `normalize_activity` runs on real data.
+
+## 2026-11-01 — C1: read-only API (branch feat/c1-api)
+
+- **Agent:** Main Claude Code session (backend role)
+- **Changes made:**
+  - Django Ninja API under `/api/`: `meta`, `officials`, `officials/{id}`, `compare`, `parties`. GET only, inputs validated, rate per 365 days in office for count metrics, `not_loaded_yet` instead of zeros.
+  - `export_openapi` writes `docs/api/openapi.json`; a test fails when the file is stale.
+- **Problems met:**
+  - The boundary test caught `sources` importing `api`; the command was moved to the `api` app.
+  - The generic "every number has a source" test caught detail values without sources; leave sources are now joined into attendance.
+- **Validation:** backend tests passed, including the generic source check.
+
+## 2026-11-01 — C2–C3: typed client and pages (branch feat/c3-pages)
+
+- **Agent:** Main Claude Code session (frontend role)
+- **Changes made:**
+  - Types generated from the contract (`npm run check:api`) and calls through `openapi-fetch`.
+  - Pages: officials list with filters in the URL, official page, comparison, parties, methodology, not found. A `SourceValue` component is used for every number.
+- **Problems met:** MSW 3 renamed `onUnhandledRequest`, and `openapi-fetch` captured `fetch` at load time; fetch is now looked up at call time.
+- **Validation:** lint, type check, component tests and build passed.
+
+## 2026-11-01 — CI and tests; C5 end-to-end (branch chore/ci-and-tests)
+
+- **Agent:** Main Claude Code session (QA and security roles)
+- **Task:** Owner asked what could run in parallel: improve tests and CI.
+- **Changes made:**
+  - CI and `scripts/check.sh`: migrations check, `metrics/` coverage floor of 90%, contract check, uv cache. A pipe through `tail` that hid coverage failures in `check.sh` was removed.
+  - Hypothesis property tests for the metrics; a test that bulk and single-official metrics are equal; frontend helper tests.
+  - C5: `load_fixture_snapshot` (refuses databases not ending in `_e2e`); Playwright tests with axe and a check that no request leaves `127.0.0.1`; CI `e2e` job on `main` and pull requests.
+- **Validation (actually run):** 279 backend tests, 18 frontend tests and 4 end-to-end tests passed; `metrics/` coverage 98% (was 89% before the new test); `scripts/check.sh` passed. The CI `e2e` job has not run on GitHub yet.
+
+## 2026-11-01 — Documentation review and MVP status (branch docs/mvp-readiness)
+
+- **Agent:** Main Claude Code session (technical writer, QA, security and project manager roles)
+- **Task:** Owner asked to check that everything is documented, list what the MVP still needs, and apply it to the project.
+- **Analysis:**
+  - This history stopped at C0.
+  - The README still said "FastAPI is the default candidate" and "Phase A in progress", and its "Getting started" described the project bootstrap.
+  - There were no test or security notes for Phase C and no single MVP checklist.
+  - The Phase D and E plans had not been written.
+- **Changes made:**
+  - `docs/mvp-status.md`: done, left and left-out items.
+  - `docs/testing/phase-c.md` and `docs/security/phase-c.md` (C6 notes).
+  - README: stack as decided, how to run the app on the real snapshot, status, and pre-commit scope. The bootstrap "Getting started" section was replaced. The owner's "What it does", principles and license are kept.
+  - Draft plans `docs/plans/phase-d-summaries.md` and `docs/plans/phase-e-rankings.md`, both **proposed** with choices for the owner. Nothing in them is implemented.
+  - This history entry and the four above.
+- **Validation:**
+  - `uv run pip-audit`: no known vulnerabilities.
+  - `npm audit --omit=dev`: 0 vulnerabilities.
+  - Full `npm audit`: the same single dev-only `minimatch` advisory as in C0.
+  - Command flags in the README checked against the code.
+  - No session or cookie middleware (checked in settings).
+- **Decisions:** none new. Plan D proposes a decision 0018 (one banned-wording file) for approval.
+- **Remaining work:**
+  - The B2 data load.
+  - Owner approval of the merges, the C4 wording review, and the D and E plans.

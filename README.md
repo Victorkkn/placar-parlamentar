@@ -11,6 +11,8 @@ A civic-transparency tool that summarizes the public activity of Brazilian feder
 - Applies date filters and minimum-coverage thresholds so comparisons are fair (for example, only officials who held the seat for at least a set share of the window).
 - Publishes separate leaderboards per metric, with the full methodology shown next to each one.
 
+The MVP state of each item is in [`docs/mvp-status.md`](docs/mvp-status.md). Committee attendance is left out of the MVP (decision 0014); summaries (Phase D) and leaderboards (Phase E) are planned next.
+
 ## What it does not do
 
 - No social media, personal accounts, family information, or private life data.
@@ -31,24 +33,18 @@ A civic-transparency tool that summarizes the public activity of Brazilian feder
 - Câmara dos Deputados Dados Abertos API (`dadosabertos.camara.leg.br`)
 - Senado Federal Dados Abertos API (`legis.senado.leg.br/dadosabertos`)
 
-Endpoints and field names should be verified against the current API documentation before implementation.
+Every endpoint used was checked against the official API documentation in Phase A; gaps and inconsistencies found in the official data are listed in [`docs/data-issues.md`](docs/data-issues.md).
 
-## Suggested stack
+## Stack
 
-- Backend: Python (framework to be decided by the architect; FastAPI is the default candidate)
-- Storage: PostgreSQL for normalized records, with a local cache of raw API responses (to be confirmed in an architecture decision)
-- Frontend: React
-- Team and agents: defined in the first stage of the prompt (project manager, scrum master, architect, backend, frontend, data, QA, security, technical writer)
-- Architecture decisions: recorded in `docs/decisions/`; binding rules in `docs/architecture-rules.md`
-- Summaries: an LLM-based summarization feature inside the app, given only the structured records and their source links as input
-- Tests: pytest
+Decided in `docs/decisions/` (index in [`docs/decisions/README.md`](docs/decisions/README.md)); binding rules in [`docs/architecture-rules.md`](docs/architecture-rules.md).
 
-## Getting started
-
-1. Create the repository and copy this README and the project prompt into it.
-2. Open a terminal in the project folder and start Claude Code.
-3. Paste or reference the contents of `CLAUDE_CODE_PROMPT.md` to begin Stage 0 (team and roles). Later stages follow in order, with approval at each step.
-4. Never paste API keys or secrets into the session. Store them in a `.env` file that is git-ignored.
+- Backend: Django 6.1 + Django Ninja, Python 3.14 with uv (decision 0005).
+- Storage: PostgreSQL 18 in Docker for normalized records; raw official responses cached as files in `data/raw/` (decision 0006).
+- Frontend: React + TypeScript + Vite, linked to the backend only by the OpenAPI contract `docs/api/openapi.json` (decisions 0009, 0017).
+- Summaries (Phase D, planned): built from structured records only, every sentence tied to its sources, with a template fallback (decision 0010).
+- Tests: pytest, Vitest and Playwright, all offline on recorded fixtures (decision 0011).
+- Team and agents: `.claude/agents/` (decision 0001). Project prompt: `CLAUDE_CODE_PROMPT.md`.
 
 ## Local setup (development)
 
@@ -78,19 +74,33 @@ Requirements: Node 24 (24.15 or later recommended; see `frontend/.nvmrc`).
    - load the recorded fixtures: `cd backend && DATABASE_NAME=placar_e2e uv run python manage.py load_fixture_snapshot`;
    - run: `cd frontend && npm run e2e`.
 
+## Run the app on the real snapshot
+
+The app serves a snapshot of official data (decision 0015); it never calls the official APIs while serving pages. With `.env` filled in and Docker running:
+
+1. Database: `docker compose up -d db`, then `cd backend && uv run python manage.py migrate`.
+2. Download the official data into `data/raw/` (live, polite requests; the activity download takes hours on the first run and resumes from the cache):
+   - people and time in office: `uv run python manage.py fetch_current`
+   - activity (bills, sessions, votes, speeches): `uv run python manage.py fetch_activity --date YYYY-MM-DD`
+3. Load the snapshot into the database (offline, from the cache): `uv run python manage.py normalize_current --date YYYY-MM-DD`, then `uv run python manage.py normalize_activity --date YYYY-MM-DD` with the same date.
+4. API: `uv run python manage.py runserver 127.0.0.1:8000` (read-only, under `/api/`).
+5. App: `cd frontend && npm run dev`, then open http://127.0.0.1:5173.
+
+To try the app without downloading anything, load the recorded fixtures (2 deputies, 3 senators) into the `placar_e2e` database as in step 4 of the frontend section, and start the API with `DATABASE_NAME=placar_e2e`.
+
 ## Workflow (contributing)
 
 Decision 0016 defines the workflow:
 
 - `main` always passes all checks. Work happens on short branches: `feat/<phase>-<topic>`, `fix/<topic>`, `docs/<topic>`, `chore/<topic>`.
-- Every commit runs the pre-commit hook: secret scan (gitleaks) and backend lint (ruff).
+- Every commit runs the pre-commit hook: secret scan (gitleaks), backend lint (ruff) and, when frontend files change, frontend lint and type check.
 - Before merging into `main`, run `scripts/check.sh`. It runs lint, the full test suite (Docker must be running), the dependency audit and a secret scan of the branch. Merge with `git merge --no-ff` after the owner approves.
 - Each phase the owner signs off is tagged on `main` (`phase-a`, `phase-b1`, …).
 - GitHub Actions (`.github/workflows/ci.yml`) runs the same checks on every push and pull request. It uses no secrets.
 
 ## Status
 
-Phase A (data access) in progress. See `docs/plans/` and `docs/decisions/`.
+Phases A and B1 are on `main`; B2 (activity) and Phase C (API, pages, end-to-end tests) are built on branches waiting for review. Phases D (summaries) and E (rankings) have draft plans. Details and the remaining steps: [`docs/mvp-status.md`](docs/mvp-status.md).
 
 ## License
 
