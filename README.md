@@ -66,6 +66,16 @@ Requirements: [uv](https://docs.astral.sh/uv/) (Python 3.14 is installed by uv i
 
 The PostgreSQL database (`docker compose up -d db`) is needed from Phase B on.
 
+## Workflow (contributing)
+
+Decision 0016 defines the workflow:
+
+- `main` always passes all checks. Work happens on short branches: `feat/<phase>-<topic>`, `fix/<topic>`, `docs/<topic>`, `chore/<topic>`.
+- Every commit runs the pre-commit hook: secret scan (gitleaks) and backend lint (ruff).
+- Before merging into `main`, run `scripts/check.sh`. It runs lint, the full test suite (Docker must be running), the dependency audit and a secret scan of the branch. Merge with `git merge --no-ff` after the owner approves.
+- Each phase the owner signs off is tagged on `main` (`phase-a`, `phase-b1`, …).
+- GitHub Actions (`.github/workflows/ci.yml`) runs the same checks on every push and pull request. It uses no secrets.
+
 ## Status
 
 Phase A (data access) in progress. See `docs/plans/` and `docs/decisions/`.
