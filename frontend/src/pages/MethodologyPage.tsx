@@ -10,6 +10,10 @@ export function MethodologyPage() {
           <li key={item}>{item}</li>
         ))}
       </ul>
+      <h2 id="resumos">{text.methodology.summariesTitle}</h2>
+      {text.methodology.summaries.map((item) => (
+        <p key={item}>{item}</p>
+      ))}
     </main>
   );
 }

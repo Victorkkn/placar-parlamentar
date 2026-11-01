@@ -42,6 +42,11 @@ describe("official page", () => {
     expect(screen.getByText(text.metricValue.noneInPeriod)).toBeInTheDocument();
     expect(screen.getByText(text.notAvailableYet)).toBeInTheDocument();
     expect(screen.getByText(text.reasons.RESIGNATION!)).toBeInTheDocument();
+    const summary = screen.getByTestId("summary");
+    expect(within(summary).getByText(text.summary.template, { exact: false })).toBeInTheDocument();
+    expect(within(summary).getAllByRole("listitem")).toHaveLength(2);
+    expect(within(summary).getByRole("link", { name: text.summary.howItIsMade })).toHaveAttribute("href", "/metodologia#resumos");
+    expect(expectSourcedValuesLinked(summary)).toBe(2);
     expectSourcedValuesLinked(container);
   });
 });

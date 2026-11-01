@@ -429,6 +429,16 @@
             "title": "Periods",
             "type": "array"
           },
+          "summary": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SummaryOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "threshold": {
             "$ref": "#/components/schemas/Threshold"
           },
@@ -871,6 +881,49 @@
           "api_url"
         ],
         "title": "Source",
+        "type": "object"
+      },
+      "SummaryOut": {
+        "description": "Automatic text from official records (decision 0010): \"template\" or \"model\".",
+        "properties": {
+          "kind": {
+            "title": "Kind",
+            "type": "string"
+          },
+          "sentences": {
+            "items": {
+              "$ref": "#/components/schemas/SummarySentenceOut"
+            },
+            "title": "Sentences",
+            "type": "array"
+          }
+        },
+        "required": [
+          "kind",
+          "sentences"
+        ],
+        "title": "SummaryOut",
+        "type": "object"
+      },
+      "SummarySentenceOut": {
+        "properties": {
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            },
+            "title": "Sources",
+            "type": "array"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "sources"
+        ],
+        "title": "SummarySentenceOut",
         "type": "object"
       },
       "Threshold": {

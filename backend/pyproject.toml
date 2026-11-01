@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "Placar Parlamentar backend (Django)"
 requires-python = ">=3.14,<3.15"
 dependencies = [
+    "anthropic==2.3.0",
     "django>=6.1,<6.2",
     "django-ninja>=1.7.3,<1.8",
     "httpx>=0.28,<0.29",

@@ -82,6 +82,15 @@ export const text = {
     presidedExcluded: (n: string) => `Votações presididas, fora da conta: ${n}`,
   },
 
+  summary: {
+    title: "Resumo",
+    template:
+      "Texto gerado automaticamente a partir dos registros oficiais, com frases fixas preenchidas pelos dados.",
+    model:
+      "Texto gerado automaticamente por um modelo de linguagem a partir dos registros oficiais e conferido por regras antes de ser exibido.",
+    howItIsMade: "Como o resumo é feito",
+  },
+
   compare: {
     title: "Comparação",
     hint: "Escolha de 2 a 6 parlamentares na lista para comparar.",
@@ -134,6 +143,14 @@ export const text = {
       "Votações nominais: votações com voto registrado (Sim, Não, Abstenção, Obstrução), dividido pelas votações nominais realizadas nos dias no cargo, sem contar as que a pessoa presidiu.",
       "Discursos: pronunciamentos registrados nos dias no cargo; também por 365 dias no cargo.",
       "Quem fica abaixo do mínimo de tempo no cargo aparece como “Dados insuficientes”, com o período coberto.",
+      "Por 365 dias no cargo: o total dividido pelos dias no cargo dentro do período e multiplicado por 365, para comparar pessoas com tempos diferentes no cargo.",
+    ],
+    summariesTitle: "Resumos",
+    summaries: [
+      "O resumo de cada parlamentar é escrito automaticamente a partir de uma lista de fatos montada com os mesmos números desta página (tempo no cargo, partidos e métricas), cada fato com sua fonte oficial. Textos de proposições ou discursos não são usados.",
+      "Cada frase mostra as fontes dos fatos que usa. Antes de ser exibido, o texto passa por regras automáticas: toda frase cita fatos existentes; todo número, data, nome e partido aparece nesses fatos; nenhum termo de julgamento da lista de termos vetados; no máximo 6 frases de até 200 caracteres.",
+      "Resumo por frases fixas: modelo de texto preenchido pelos dados; é o padrão e o único para períodos personalizados.",
+      "Resumo por modelo de linguagem: gerado com antecedência para os períodos pré-definidos, apenas quando passa nas mesmas regras. Se não passar, ou se os dados mudarem, o resumo por frases fixas é exibido.",
     ],
   },
 } as const;

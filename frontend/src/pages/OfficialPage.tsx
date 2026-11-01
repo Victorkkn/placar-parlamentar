@@ -6,6 +6,7 @@ import { FiltersForm } from "../components/FiltersForm";
 import { MetricValue } from "../components/MetricValue";
 import { SourceLinks, SourceValue } from "../components/SourceLinks";
 import { LoadError, Loading } from "../components/Status";
+import { SummarySection } from "../components/SummarySection";
 import { WindowSummary } from "../components/WindowSummary";
 import { apiWindowParams, readFilters, useFilters } from "../lib/filters";
 import { formatDate, formatInteger, formatPercent } from "../lib/format";
@@ -27,7 +28,7 @@ export function OfficialPage() {
   if (detail.isLoading || meta.isLoading) return <Loading />;
   if (detail.isError) return <LoadError message={detail.error.message} />;
   if (!detail.data) return <LoadError />;
-  const { official, periods, affiliations, metrics, window, threshold } = detail.data;
+  const { official, periods, affiliations, metrics, window, threshold, summary } = detail.data;
 
   return (
     <main>
@@ -50,6 +51,7 @@ export function OfficialPage() {
           <strong>{text.insufficientData}.</strong> {text.official.insufficientNote}
         </p>
       )}
+      {summary && <SummarySection summary={summary} />}
       <h2>{text.official.metrics}</h2>
       <table>
         <tbody>

@@ -481,3 +481,51 @@
 - **Remaining work:**
   - The B2 data load.
   - Owner approval of the merges, the C4 wording review, and the D and E plans.
+
+## 2026-11-01 — Phase D and E plans approved; decision 0018; Phase D built (branch feat/d-summaries)
+
+- **Agent:** Main Claude Code session (backend, frontend, QA, security and technical writer roles)
+- **Task:** Owner replied "approved" to the Phase D and E plans with the recommended choices.
+  - Read as approval of both plans and of decision 0018.
+  - **Not** read as approval to merge branches; that is still to be asked.
+- **Changes made:**
+  - Decision 0018: one banned-wording file. Index, 0010 status and rules section 12 updated; plan statuses recorded.
+  - `backend/placar/summaries/`:
+    - pt-BR formatter;
+    - fact sheet;
+    - wording loader;
+    - validator;
+    - template;
+    - `Summary` model and migration;
+    - `llm/` adapter (Claude API, structured outputs, effort low);
+    - selectors (read path re-validates stored summaries);
+    - services (one retry, then template);
+    - `generate_summaries` command (needs a key and `--yes`).
+  - Settings: `BANNED_WORDING_FILE` and `SUMMARY_MODEL`; app registered.
+  - Dependency: `anthropic==2.3.0`.
+  - API: `summary` on `/officials/{id}`; contract regenerated.
+  - Frontend:
+    - `SummarySection` with the kind label and a methodology link;
+    - "Resumos" section on the methodology page;
+    - per-365-days text added to the methodology (for C4 review);
+    - test data, unit test and e2e check.
+  - Docs:
+    - `docs/methodology/resumos.md`;
+    - `docs/testing/phase-d.md` and `docs/security/phase-d.md`;
+    - plan outcome;
+    - MVP status;
+    - README.
+- **Problems met:** reading the real template output showed that allowing "PL" anywhere would let a model name a wrong party "PL". Bill types are now allowed only with the bills fact, and a test covers it.
+- **Validation (actually run):**
+  - backend: 332 tests passed;
+  - frontend: lint, type check, 18 tests, contract check and build passed;
+  - e2e: 4 passed (after migrating `placar_e2e`);
+  - `scripts/check.sh`: all passed;
+  - `pip-audit`: clean.
+  - No real model call was made.
+- **Decisions:** 0018 accepted. Two deviations from the plan are flagged for the owner: the 1–6 sentence count, and bill types tied to the bills fact.
+- **Remaining work:**
+  - owner review of the deviations and of the summary wording;
+  - Phase E next;
+  - B2 data load still running;
+  - merges still need approval.

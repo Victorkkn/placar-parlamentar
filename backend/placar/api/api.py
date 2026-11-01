@@ -17,6 +17,7 @@ from placar.legislators import selectors as legislators
 from placar.metrics import selectors as metric_selectors
 from placar.metrics.activity import MetricResult
 from placar.metrics.coverage import CoverageResult
+from placar.summaries import selectors as summaries
 
 from . import schemas as s
 
@@ -259,6 +260,17 @@ def list_officials(request, query: Query[OfficialsQuery]):
     )
 
 
+def _summary_out(official_id: int, window: DateWindow) -> s.SummaryOut:
+    shown = summaries.summary_for(official_id, window, window.end)
+    return s.SummaryOut(
+        kind=shown.kind,
+        sentences=[
+            s.SummarySentenceOut(text=x.text, sources=[_src(r) for r in x.sources])
+            for x in shown.sentences
+        ],
+    )
+
+
 def _detail(official, window: DateWindow, threshold: s.Threshold) -> s.OfficialDetail:
     cov = metric_selectors.coverage(official.pk, window, window.end)
     affiliations = legislators.affiliations_by_official(official.house).get(official.pk, [])
@@ -303,7 +315,9 @@ def official_detail(
     if official is None:
         return Status(404, {"detail": "Parlamentar não encontrado."})
     window = _window(start, end)
-    return _detail(official, window, _threshold(min_days, min_share, window))
+    detail = _detail(official, window, _threshold(min_days, min_share, window))
+    detail.summary = _summary_out(official.pk, window)
+    return detail
 
 
 @api.get("/compare", response=s.CompareOut)

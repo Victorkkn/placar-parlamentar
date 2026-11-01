@@ -45,6 +45,12 @@ test("profile: periods with reasons, metrics not loaded yet are not shown as num
   await expect(page.getByRole("heading", { level: 1, name: /Fernando Dueire/ })).toBeVisible();
   await expect(page.getByText("Retorno do titular")).toBeVisible();
   await expect(page.getByText("Ainda não disponível").first()).toBeVisible();
+  // Phase D: template summary, each sentence with an official source link.
+  const summary = page.getByTestId("summary");
+  await expect(summary.getByText("Texto gerado automaticamente", { exact: false })).toBeVisible();
+  for (const item of await summary.getByRole("listitem").all()) {
+    await expect(item.getByRole("link").first()).toBeVisible();
+  }
   await expectSourcesOfficial(page);
   await expectAccessible(page);
 });

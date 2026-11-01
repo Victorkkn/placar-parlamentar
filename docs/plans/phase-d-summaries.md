@@ -43,3 +43,20 @@ The official page shows a short, neutral pt-BR summary of the official's public 
 - **Model wording drifts or adds claims.** The validator rejects the draft and the template is shown; no unchecked sentence reaches a visitor.
 - **Numbers formatted differently** (for example "1.370" and "1370") make valid drafts fail. The validator compares after one shared pt-BR formatter, the same one the template uses.
 - **Cost.** Calls happen only in `generate_summaries`, run by the owner, never during a visitor's request.
+
+## Outcome (2026-11-01, branch `feat/d-summaries`)
+
+D0–D9 implemented on `feat/d-summaries`, built on top of the unmerged Phase B2/C branches.
+
+- Tests and notes: `docs/testing/phase-d.md`, `docs/security/phase-d.md`.
+- Methodology page in the app and in `docs/methodology/resumos.md`; flagged for your wording review together with C4.
+
+**Deviations to confirm:**
+
+1. **Sentence count.** The validator accepts **1–6** sentences, not 3–6. Someone with no time in office in the window gets one template sentence ("não esteve no exercício do cargo"). The model prompt still asks for 3–6.
+2. **Bill types.** "PL, PLP, PEC, PDL" are allowed in a sentence only when it cites the bills fact. Found while testing: "PL" is also a party name, and a global allowance would have let a wrong party pass.
+
+**Not done:**
+
+- No real model run. It needs your key and approval (choice 1A).
+

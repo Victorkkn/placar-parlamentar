@@ -136,6 +136,10 @@ def test_official_detail_with_metrics_and_sources(client):
     assert metrics["bills_authored"]["per_365_days_in_office"] == round(365 / 701, 4)
     assert data["periods"][-1]["end_reason"] == "RESIGNATION"
     assert numbers_without_sources(data) == []
+    # Phase D: template summary, every sentence with at least one official source.
+    assert data["summary"]["kind"] == "template"
+    assert data["summary"]["sentences"]
+    assert all(sentence["sources"] for sentence in data["summary"]["sentences"])
 
 
 def test_senator_metrics_are_marked_not_available(client):
@@ -155,6 +159,7 @@ def test_compare(client):
     a, b = get_official("SENADO", 4545), get_official("SENADO", 5917)
     data = get(client, f"/api/compare?ids={a.pk},{b.pk}&start=2023-01-01&end=2023-12-31")
     assert data["window"]["start"] == "2023-01-01" and len(data["officials"]) == 2
+    assert all(o["summary"] is None for o in data["officials"])  # summaries only on detail
     assert numbers_without_sources(data) == []
 
 

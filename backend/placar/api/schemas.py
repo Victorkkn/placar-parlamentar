@@ -88,6 +88,18 @@ class AffiliationOut(Schema):
     sources: list[Source]
 
 
+class SummarySentenceOut(Schema):
+    text: str
+    sources: list[Source]
+
+
+class SummaryOut(Schema):
+    """Automatic text from official records (decision 0010): "template" or "model"."""
+
+    kind: str
+    sentences: list[SummarySentenceOut]
+
+
 class OfficialDetail(Schema):
     window: Window
     threshold: Threshold
@@ -95,6 +107,7 @@ class OfficialDetail(Schema):
     periods: list[ServicePeriodOut]
     affiliations: list[AffiliationOut]
     metrics: list[MetricOut]
+    summary: SummaryOut | None = None  # only on /officials/{id}, not in comparisons
 
 
 class CompareOut(Schema):

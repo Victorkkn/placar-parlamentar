@@ -220,6 +220,7 @@ export interface components {
             official: components["schemas"]["OfficialSummary"];
             /** Periods */
             periods: components["schemas"]["ServicePeriodOut"][];
+            summary?: components["schemas"]["SummaryOut"] | null;
             threshold: components["schemas"]["Threshold"];
             window: components["schemas"]["Window"];
         };
@@ -365,6 +366,23 @@ export interface components {
             label: string;
             /** Public Url */
             public_url?: string | null;
+        };
+        /**
+         * SummaryOut
+         * @description Automatic text from official records (decision 0010): "template" or "model".
+         */
+        SummaryOut: {
+            /** Kind */
+            kind: string;
+            /** Sentences */
+            sentences: components["schemas"]["SummarySentenceOut"][];
+        };
+        /** SummarySentenceOut */
+        SummarySentenceOut: {
+            /** Sources */
+            sources: components["schemas"]["Source"][];
+            /** Text */
+            text: string;
         };
         /** Threshold */
         Threshold: {

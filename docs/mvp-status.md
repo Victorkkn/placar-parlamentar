@@ -18,7 +18,7 @@ The MVP is phases A–E of `CLAUDE_CODE_PROMPT.md`, running locally on a snapsho
 | C5 | End-to-end tests (Playwright, axe) and CI e2e job | done on `chore/ci-and-tests` |
 | CI | Migrations check, metrics coverage floor (90%), contract check | done on `chore/ci-and-tests` |
 
-Branches stack in this order: `feat/b2-activity` → `feat/c1-api` → `feat/c3-pages` → `chore/ci-and-tests` → `docs/mvp-readiness`. None is merged into `main` yet.
+Branches stack in this order: `feat/b2-activity` → `feat/c1-api` → `feat/c3-pages` → `chore/ci-and-tests` → `docs/mvp-readiness` → `feat/d-summaries`. None is merged into `main` yet.
 
 ## Left for the MVP
 
@@ -29,8 +29,8 @@ Branches stack in this order: `feat/b2-activity` → `feat/c1-api` → `feat/c3-
 | 3 | C4: neutral-wording review of the pt-BR texts and methodology pages (including the "per 365 days in office" rate) | — | **review the wording** |
 | 4 | C6: test and security notes, README "how to run" | — | done in `docs/mvp-readiness` (see `docs/testing/phase-c.md`, `docs/security/phase-c.md`) |
 | 5 | Sign off Phase C, tag `phase-c` | 2–4 | **sign off** |
-| 6 | Phase D: summaries | plan `docs/plans/phase-d-summaries.md` | **approve the plan and its choices** |
-| 7 | Phase E: rankings | plan `docs/plans/phase-e-rankings.md` | **approve the plan and its choices** |
+| 6 | Phase D: summaries | plan approved; built on `feat/d-summaries` (templates on, model off) | **review the two deviations and the summary wording** |
+| 7 | Phase E: rankings | plan approved; next to build | — |
 | 8 | Final MVP check: full `scripts/check.sh`, e2e, a manual walk through the app on the real snapshot | 1–7 | sign off the MVP |
 
 ## Left out of the MVP (listed as decision 0015 requires)

@@ -42,7 +42,7 @@ Decided in `docs/decisions/` (index in [`docs/decisions/README.md`](docs/decisio
 - Backend: Django 6.1 + Django Ninja, Python 3.14 with uv (decision 0005).
 - Storage: PostgreSQL 18 in Docker for normalized records; raw official responses cached as files in `data/raw/` (decision 0006).
 - Frontend: React + TypeScript + Vite, linked to the backend only by the OpenAPI contract `docs/api/openapi.json` (decisions 0009, 0017).
-- Summaries (Phase D, planned): built from structured records only, every sentence tied to its sources, with a template fallback (decision 0010).
+- Summaries (Phase D): built from structured records only, every sentence tied to its sources and checked by a validator; template summaries by default, model summaries (Claude API) only after `generate_summaries` is run with a key in `.env` (decisions 0010, 0018).
 - Tests: pytest, Vitest and Playwright, all offline on recorded fixtures (decision 0011).
 - Team and agents: `.claude/agents/` (decision 0001). Project prompt: `CLAUDE_CODE_PROMPT.md`.
 
@@ -100,7 +100,7 @@ Decision 0016 defines the workflow:
 
 ## Status
 
-Phases A and B1 are on `main`; B2 (activity) and Phase C (API, pages, end-to-end tests) are built on branches waiting for review. Phases D (summaries) and E (rankings) have draft plans. Details and the remaining steps: [`docs/mvp-status.md`](docs/mvp-status.md).
+Phases A and B1 are on `main`; B2 (activity) and Phase C (API, pages, end-to-end tests) are built on branches waiting for review. Phase D (summaries) is built on a branch; Phase E (rankings) has an approved plan. Details and the remaining steps: [`docs/mvp-status.md`](docs/mvp-status.md).
 
 ## License
 

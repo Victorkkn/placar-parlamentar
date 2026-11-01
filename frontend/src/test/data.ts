@@ -49,10 +49,17 @@ export const detailA: Schemas["OfficialDetail"] = {
   window, threshold, official: summaryA, metrics,
   periods: [{ start: "2023-02-01", end: "2025-01-01", start_reason: "ELECTED_OATH", end_reason: "RESIGNATION", sources: [src("deputados/101/historico")] }],
   affiliations: [{ party: "P1", start: "2023-02-01", end: null, precision: "AT_EVENT", sources: [src("deputados/101/historico")] }],
+  summary: {
+    kind: "template",
+    sentences: [
+      { text: "Entre 01/02/2023 e 01/11/2026, Pessoa A esteve no cargo em 700 de 1.370 dias (51,1%).", sources: [src("deputados/101/historico")] },
+      { text: "Partido no período: P1.", sources: [src("deputados/101/historico")] },
+    ],
+  },
 };
 
 export const compare: Schemas["CompareOut"] = {
-  window, threshold, officials: [detailA, { ...detailA, official: summaryB }],
+  window, threshold, officials: [{ ...detailA, summary: null }, { ...detailA, official: summaryB, summary: null }],
 };
 
 export const parties: Schemas["PartiesOut"] = {

@@ -7,6 +7,7 @@ Páginas exibidas no aplicativo, em português do Brasil (decisão 0003). Rascun
 - [Proposições apresentadas](proposicoes.md)
 - [Participação em votações nominais](votacoes-nominais.md)
 - [Discursos](discursos.md)
+- [Resumos](resumos.md)
 
 Regras comuns a todas as métricas:
 
