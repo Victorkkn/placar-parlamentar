@@ -186,3 +186,10 @@
 - **Agent:** Main Claude Code session
 - **Task:** Owner asked whether the module structure has a name; explained it is a layered modular monolith with services/selectors and a functional core in metrics, not hexagonal. Owner approved adding an "Architecture style" section and accepted 0007.
 - **Changes made:** 0007 gained "Architecture style" and a hexagonal alternative entry, plus markdown lint fixes; status accepted. Index updated. Rules: section 7 layout now includes `core`; section 9 added.
+
+## 2026-11-01 — Decision 0008 proposed (normalization); data-issues log started
+
+- **Agent:** Main Claude Code session (acting as architect)
+- **Analysis:** Read Câmara `/deputados/{id}/historico` schema; fetched live samples: Senado mandatos/licencas/filiacoes for senators 5918, 4545, 5917; Senado legislature-57 list with and without `exercicio=S`; Câmara deputies list page 1 and historico for 220593. Findings recorded in 0008 context and `docs/data-issues.md` (7 entries). Samples kept in the session scratchpad only, not in the repo.
+- **Changes made:** `docs/decisions/0008-source-normalization.md` (proposed); `docs/data-issues.md` created; index updated.
+- **Remaining work:** owner approval of 0008; open methodology question on leave days without an alternate (Phase B).

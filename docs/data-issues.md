@@ -1,0 +1,13 @@
+# Official data issues
+
+Gaps, inconsistencies and quirks found in the official Câmara and Senado data. Each entry says what was seen, where, and how the project handles it. Nothing here is filled in by guessing.
+
+| # | Date found | Source | What was seen | Handling | Status |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 2026-11-01 | Câmara `/deputados?idLegislatura=57` | One request failed with "upstream request timeout" and `retry-after: 30`; a later identical request worked. | Clients retry and honor `Retry-After` (decision 0006 and security baseline). | open |
+| 2 | 2026-11-01 | Câmara API description | The API states the v2 version is "still incomplete, subject to change". | Pin and cite the spec version in code; re-check endpoints before each phase. | open |
+| 3 | 2026-11-01 | Senado API | Many services are deprecated (for example `/senador/{codigo}/autorias`, `/senador/{codigo}/votacoes`, most `/materia/*`). Deprecated services return `Deprecation` and `Sunset` headers. | Use only replacements (`/processo`, `/votacao`, …). | open |
+| 4 | 2026-11-01 | Senado `/senador/lista/legislatura/57` | 82 people listed as `Titular` for 81 seats. | Find the cause in Phase A (for example a replaced titular); do not merge or drop either record. | open |
+| 5 | 2026-11-01 | Senado `/senador/{codigo}/mandatos` v5 | `?v=4` returns HTTP 400 "Serviço/versão indisponível"; only the current version works. | Use v5; watch for version changes. | open |
+| 6 | 2026-11-01 | Câmara `/deputados/{id}/historico` | Periods are not given; only events with free-text `descricaoStatus` (`Entrada - …`, `Saída - …`). Party is known only at event dates. | Build periods and affiliations from events (decision 0008); log unmapped text. | open |
+| 7 | 2026-11-01 | Senado, mandate 526 (PE) | Titular 4545 had a leave recorded until 2023-10-07, but an `Exercicio` on 2023-09-04 ending in resignation on the same day. | Keep both records as given; the resignation closes the mandate for 4545. | open |
