@@ -244,3 +244,17 @@
 - **Changes made:** `docs/decisions/0012-security-baseline.md` (proposed); index updated.
 - **Decisions:** Proposes serving official photos from our server to keep 0009's "no third-party requests" rule.
 - **Remaining work:** owner approval of 0012; gitleaks install needs approval.
+
+## 2026-11-01 — Decision 0012 accepted; gitleaks hook; 0013 proposed
+
+- **Agent:** Main Claude Code session
+- **Task:** Owner approved 0012 and the gitleaks install.
+- **Changes made:**
+  - 0012 accepted; rules section 14 added (commit beb7513).
+  - Installed gitleaks 8.30.1 with Homebrew (owner approved).
+  - Added `scripts/git-hooks/pre-commit` (runs `gitleaks git --pre-commit --staged --redact`) and set local `git config core.hooksPath scripts/git-hooks`.
+  - `docs/decisions/0013-deployment.md` (proposed): no deployment in the MVP, local only; index updated.
+- **Validation:**
+  - Full-history gitleaks scan: 20 commits scanned, no leaks found.
+  - Hook test in a throwaway scratchpad repo: a fake `ghp_` token was detected and the commit was blocked (exit 1). The project repo was not used for this test.
+- **Remaining work:** owner approval of 0013. `core.hooksPath` is a local git setting; a fresh clone must run `git config core.hooksPath scripts/git-hooks`. To document in the README setup section later.
