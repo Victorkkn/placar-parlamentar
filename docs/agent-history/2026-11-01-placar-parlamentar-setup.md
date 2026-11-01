@@ -556,3 +556,17 @@
   - Owner decision on 0019.
   - Optional deny rule for reading `.env` in the Claude settings.
   - The owner should confirm with the program whether data about public officials is eligible.
+
+## 2026-11-01 — Decision 0020: MVP without rankings
+
+- **Agent:** Main Claude Code session (project manager role)
+- **Task:** Owner said Phase E will not be built now, but an MVP is needed to show.
+- **Changes made:**
+  - Decision 0020 (accepted): the MVP is phases A–D, and Phase E stays approved for after the MVP.
+  - Updated the index, rules section 17, Phase E plan status, MVP status, backlog and README.
+- **Decisions:** 0019 (data minimization) stays proposed. The owner considers open data acceptable and has not approved or rejected 0019.
+- **Remaining work:**
+  - B2 data load (download still running).
+  - Merge approval.
+  - C4 wording review.
+  - MVP sign-off.

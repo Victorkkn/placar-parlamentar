@@ -24,6 +24,7 @@ An accepted decision is changed only by a new decision that supersedes it, after
 | [0017](0017-typescript-version.md) | TypeScript 5.9.3 for the frontend; supersedes the version clause of 0009 | accepted | 2026-11-01 |
 | [0018](0018-single-banned-wording-list.md) | One banned-wording list (`docs/wording/banned-pt-BR.txt`) for app and summaries; supersedes the list location in 0010 | accepted | 2026-11-01 |
 | [0019](0019-data-minimization.md) | Data minimization: strip contact and gender fields before caching; drop civil name and photo URL | proposed | 2026-11-01 |
+| [0020](0020-mvp-without-rankings.md) | The MVP is phases A–D; Phase E (rankings) moves after the MVP | accepted | 2026-11-01 |
 
 ## Stage 2 topics
 

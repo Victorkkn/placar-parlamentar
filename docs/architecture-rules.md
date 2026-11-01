@@ -174,12 +174,13 @@ Small, descriptive local commits are allowed.
 - No Senado attendance metric in the MVP; the app states it is not available in the official sources. Nominal-vote participation is a separate metric for both houses and is never labeled attendance.
 - Câmara committee attendance is deferred until after the MVP; committee memberships are included.
 
-## 17. MVP data snapshot (decision 0015)
+## 17. MVP data snapshot and scope (decisions 0015, 0020)
 
 - The MVP serves pages only from the official data already in the raw cache and database; it never calls the official APIs while serving pages.
 - The interface shows the snapshot date; every number keeps its official source link.
 - Features or data not built yet show "Ainda não disponível". No made-up or sample numbers are ever shown.
 - Refreshing the snapshot is manual, run by or approved by the owner. Data sources left out of the MVP are listed in the README.
+- The MVP is phases A–D. Rankings (Phase E) come after the MVP; the app shows no rankings page until then.
 
 ## 18. Git workflow and CI (decision 0016)
 

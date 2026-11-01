@@ -11,7 +11,7 @@ A civic-transparency tool that summarizes the public activity of Brazilian feder
 - Applies date filters and minimum-coverage thresholds so comparisons are fair (for example, only officials who held the seat for at least a set share of the window).
 - Publishes separate leaderboards per metric, with the full methodology shown next to each one.
 
-The MVP state of each item is in [`docs/mvp-status.md`](docs/mvp-status.md). Committee attendance is left out of the MVP (decision 0014); summaries (Phase D) and leaderboards (Phase E) are planned next.
+The MVP state of each item is in [`docs/mvp-status.md`](docs/mvp-status.md). Committee attendance (decision 0014) and leaderboards (Phase E, decision 0020) are left out of the MVP.
 
 ## What it does not do
 
@@ -100,7 +100,7 @@ Decision 0016 defines the workflow:
 
 ## Status
 
-Phases A and B1 are on `main`; B2 (activity) and Phase C (API, pages, end-to-end tests) are built on branches waiting for review. Phase D (summaries) is built on a branch; Phase E (rankings) has an approved plan. Details and the remaining steps: [`docs/mvp-status.md`](docs/mvp-status.md).
+Phases A and B1 are on `main`; B2 (activity) and Phase C (API, pages, end-to-end tests) are built on branches waiting for review. Phase D (summaries) is built on a branch. The MVP is phases A–D; rankings (Phase E) come after it (decision 0020). Details and the remaining steps: [`docs/mvp-status.md`](docs/mvp-status.md).
 
 ## Data held
 

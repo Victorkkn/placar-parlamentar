@@ -13,11 +13,11 @@ Work after the current MVP steps (`docs/mvp-status.md`). Each item needs an appr
 ## MVP
 
 - B2 wrap-up after the download: `normalize_activity`, unknown vote options, activity fixture cases, B2 outcome and test/security notes.
-- Phase E: rankings (plan approved).
 - Final MVP check on the real snapshot.
 
 ## After the MVP
 
+- Phase E: rankings (plan approved; deferred by decision 0020).
 - Câmara committee attendance (deferred by decision 0014).
 - Official photos served locally (decision 0012), if wanted.
 - Earlier legislatures (only legislature 57 is in the snapshot).

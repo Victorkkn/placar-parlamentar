@@ -2,7 +2,7 @@
 
 What the MVP needs, what is done, and what is left. Updated 2026-11-01.
 
-The MVP is phases A–E of `CLAUDE_CODE_PROMPT.md`, running locally on a snapshot of official data (decisions 0013 and 0015). Every number links to its official record; parts not built yet show "Ainda não disponível".
+The MVP is phases A–D of `CLAUDE_CODE_PROMPT.md` (decision 0020: Phase E, rankings, comes after the MVP), running locally on a snapshot of official data (decisions 0013 and 0015). Every number links to its official record; parts not built yet show "Ainda não disponível".
 
 ## Done
 
@@ -30,10 +30,11 @@ Branches stack in this order: `feat/b2-activity` → `feat/c1-api` → `feat/c3-
 | 4 | C6: test and security notes, README "how to run" | — | done in `docs/mvp-readiness` (see `docs/testing/phase-c.md`, `docs/security/phase-c.md`) |
 | 5 | Sign off Phase C, tag `phase-c` | 2–4 | **sign off** |
 | 6 | Phase D: summaries | plan approved; built on `feat/d-summaries` (templates on, model off) | **review the two deviations and the summary wording** |
-| 7 | Phase E: rankings | plan approved; next to build | — |
-| 8 | Final MVP check: full `scripts/check.sh`, e2e, a manual walk through the app on the real snapshot | 1–7 | sign off the MVP |
+| 7 | Final MVP check: full `scripts/check.sh`, e2e, a manual walk through the app on the real snapshot | 1–6 | sign off the MVP |
 
 ## Left out of the MVP (listed as decision 0015 requires)
+
+- **Rankings (Phase E)**: plan approved, built after the MVP (decision 0020).
 
 - **Câmara committee attendance** (decision 0014, item 4). Memberships are loaded; attendance is shown as not available.
 - **Senado plenary attendance**: the Senado APIs used do not publish attendance per senator (decision 0014). The app says so.
