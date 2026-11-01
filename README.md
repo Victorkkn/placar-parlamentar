@@ -172,7 +172,7 @@ cd backend && DATABASE_NAME=placar_e2e uv run python manage.py load_fixture_snap
 cd frontend && npm run e2e
 ```
 
-GitHub Actions (`.github/workflows/ci.yml`) runs the same checks on every push and pull request, without any secrets.
+GitHub Actions (`.github/workflows/ci.yml`) runs the same checks once on every pull request and again on `main` after each merge, without any secrets.
 
 ## Project layout
 

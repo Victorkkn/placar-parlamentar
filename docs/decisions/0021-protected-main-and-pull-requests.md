@@ -26,7 +26,8 @@ The owner wants no direct pushes to `main`: every change must arrive through a p
    5. The owner approves.
    6. The pull request is merged with a **merge commit** (keeps the `--no-ff` history), and the branch is deleted.
 3. **Standing approval (replaces the one in decision 0016):** once the owner has approved a change, the assistant may push its branch, open the pull request, merge it after CI passes, delete the branch, and push the phase tag the owner signed off. Any other push, a force push, a remote change or a repository setting still needs the owner's approval (decision 0002).
-4. Tags are not protected. Phase tags are still created only after the owner signs off a phase.
+4. **CI runs once per pull request.** The workflow triggers on `pull_request` and on pushes to `main` only, so a branch push does not start a second, duplicate run. A branch without a pull request gets no CI run, which is fine because every change goes through a pull request.
+5. Tags are not protected. Phase tags are still created only after the owner signs off a phase.
 
 ## Alternatives considered
 

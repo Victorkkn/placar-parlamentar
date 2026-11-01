@@ -195,4 +195,4 @@ Small, descriptive local commits are allowed.
 - Commit messages: short imperative summary with the phase or area first, blank line, what and why.
 - Pre-commit hook: gitleaks on staged changes, `ruff check`, `ruff format --check`. `scripts/check.sh` before merges: lint, full tests, `pip-audit`, gitleaks on the branch.
 - One public GitHub repository. Standing approval (decision 0021): once the owner has approved a change, push its branch, open the PR, merge it after CI passes, delete the branch, and push the phase tag the owner signed off. Any other push, force push, remote change or repository setting still needs the owner's approval (decision 0002).
-- GitHub Actions CI on every push and pull request: lint, offline tests with a PostgreSQL service, `pip-audit`, gitleaks over the full history. No secrets in CI; actions pinned to commit SHAs; read-only `contents` permission.
+- GitHub Actions CI on every pull request and on `main` after each merge (once per pull request, decision 0021): lint, offline tests with a PostgreSQL service, `pip-audit`, gitleaks over the full history. No secrets in CI; actions pinned to commit SHAs; read-only `contents` permission.

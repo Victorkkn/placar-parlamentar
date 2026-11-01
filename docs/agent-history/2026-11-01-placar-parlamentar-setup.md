@@ -766,3 +766,4 @@
 - **Remaining work:**
   - This change itself goes through the first pull request; merging it needs the owner's approval.
   - The rejection of a direct push to `main` has not been tested; it is enforced by GitHub.
+- **Follow-up (same PR #1):** the owner asked that CI run once per pull request. `ci.yml` now triggers on `pull_request` and on pushes to `main` only, which removes the duplicate branch-push run. Decision 0021 item 4, rules section 18 and the README were updated. The workflow YAML was parsed locally; the PR run shows the result.

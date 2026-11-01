@@ -2,7 +2,10 @@
 name: CI
 
 on:
+  # Decision 0021: once per pull request, and once on main after a merge. Branch pushes
+  # without a pull request do not run CI; every change reaches main through a pull request.
   push:
+    branches: [main]
   pull_request:
 
 permissions:
