@@ -51,7 +51,7 @@ D0–D9 implemented on `feat/d-summaries`, built on top of the unmerged Phase B2
 - Tests and notes: `docs/testing/phase-d.md`, `docs/security/phase-d.md`.
 - Methodology page in the app and in `docs/methodology/resumos.md`; flagged for your wording review together with C4.
 
-**Deviations to confirm:**
+**Deviations (confirmed by the owner on 2026-11-01):**
 
 1. **Sentence count.** The validator accepts **1–6** sentences, not 3–6. Someone with no time in office in the window gets one template sentence ("não esteve no exercício do cargo"). The model prompt still asks for 3–6.
 2. **Bill types.** "PL, PLP, PEC, PDL" are allowed in a sentence only when it cites the bills fact. Found while testing: "PL" is also a party name, and a global allowance would have let a wrong party pass.

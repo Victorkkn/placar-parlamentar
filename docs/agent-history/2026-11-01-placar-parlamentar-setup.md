@@ -605,3 +605,15 @@
   - Merge approval for the 7 branches (not yet given).
   - Confirmation of the two Phase D deviations.
   - B2 data load (download still running).
+
+## 2026-11-01 — Phase D deviations confirmed
+
+- **Agent:** Main Claude Code session
+- **Task:** The owner confirmed both Phase D deviations:
+  - summaries have 1–6 sentences;
+  - bill-type acronyms are allowed only with the bills fact.
+- **Changes made:** Status lines in the Phase D plan, `docs/mvp-status.md` and `docs/backlog.md`.
+- **Remaining work:**
+  - B2 data load (download running).
+  - Merge approval.
+  - Final MVP check and sign-off.
