@@ -173,3 +173,10 @@
 - **Agent:** Main Claude Code session
 - **Changes made:** 0006 status accepted; index and topic tracker updated; `docs/architecture-rules.md` section 8 added.
 - **Decisions:** Owner's "i approve all" read as approval of every point in 0006 (not of future, unwritten decisions).
+
+## 2026-11-01 — Decision 0007 proposed (module boundaries)
+
+- **Agent:** Main Claude Code session (acting as architect)
+- **Changes made:** `docs/decisions/0007-module-boundaries.md` (proposed); index updated.
+- **Decisions:** Proposes adding a `core` app to the 0005 layout; flagged to the owner as an addition to an accepted decision.
+- **Remaining work:** owner approval of 0007.
