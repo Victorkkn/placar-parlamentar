@@ -27,6 +27,15 @@ def freshness_for(today: date) -> Callable[[date], Freshness]:
     return pick
 
 
+def _section(report: SourceReport, label: str, work, default):
+    """Run one part of the fetch; if a list request fails, report it and go on."""
+    try:
+        return work()
+    except UpstreamError as exc:
+        report.failures.append(f"{label}: {exc}")
+        return default
+
+
 def _each(items, label: str, progress: Progress, work) -> None:
     for index, item in enumerate(items, start=1):
         try:
@@ -56,7 +65,15 @@ def fetch_camara_activity(
         )
         end = min(today, leg.end)
         sessions = list(
-            {s.event_id: s for s in activity.plenary_sessions(leg.start, end, pick)}.values()
+            {
+                s.event_id: s
+                for s in _section(
+                    report,
+                    "camara plenary sessions",
+                    lambda: activity.plenary_sessions(leg.start, end, pick),
+                    [],
+                )
+            }.values()
         )
         held = [s for s in sessions if (s.situation or "") == "Encerrada"]
         presences = 0
@@ -68,7 +85,15 @@ def fetch_camara_activity(
         _each(held[:limit] if limit else held, "camara presence", progress, presence)
 
         votings = list(
-            {v.voting_id: v for v in activity.plenary_votings(leg.start, end, pick)}.values()
+            {
+                v.voting_id: v
+                for v in _section(
+                    report,
+                    "camara plenary votings",
+                    lambda: activity.plenary_votings(leg.start, end, pick),
+                    [],
+                )
+            }.values()
         )
         ballots = 0
 
@@ -123,8 +148,10 @@ def fetch_senado_activity(
             leg.end,
         )
         end = min(today, leg.end)
-        codes, _ = activity.vote_codes()
-        votings, ballots = activity.votings(leg.start, end, pick)
+        codes, _ = _section(report, "senado vote codes", activity.vote_codes, ({}, None))
+        votings, ballots = _section(
+            report, "senado votings", lambda: activity.votings(leg.start, end, pick), ([], [])
+        )
         votings = list({v.voting_code: v for v in votings}.values())
         ballots = list({(b.voting_code, b.senator_code): b for b in ballots}.values())
         took = people.senators_in_legislature(leg.number, Freshness.DAILY, took_office_only=True)
