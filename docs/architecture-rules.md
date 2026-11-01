@@ -145,3 +145,16 @@ Small, descriptive local commits are allowed.
 - Frontend: Vitest + Testing Library + MSW. End-to-end: Playwright (Chromium) with axe, offline against fixture-loaded backend, run before a phase is reported done.
 - Commands: `uv run pytest`, `npm test`, `npm run e2e`. No CI until the deployment decision.
 - `scripts/check_upstream.py` (run by hand) compares live response structure with fixtures; findings go to `docs/data-issues.md`.
+
+## 14. Security baseline (decision 0012)
+
+- Secrets only in `.env`; `.env.example` has names only. Django refuses to start outside development without `DJANGO_SECRET_KEY`. Secrets are never printed in logs, errors, tests or reports; a leaked secret is rotated and recorded.
+- gitleaks scans staged changes in the pre-commit hook (`scripts/git-hooks/`) and the full history before any approved push.
+- New dependencies: security review, then owner approval. Lockfiles committed. `pip-audit` and `npm audit` before each phase is reported done. No automatic update tools.
+- Public API is read-only (`GET`/`HEAD`). All parameters validated by schemas (dates 1988-10-05 to today, start before end, threshold as share 0–1 or days 0–window, positive integer ids, 2–6 officials per comparison, bounded page size). Errors return 4xx without stack traces.
+- Official APIs: ≤ 2 requests/s and one at a time per API, random jitter, no batch runs at exact round times; honor `Retry-After`, otherwise exponential backoff with a retry limit; project `User-Agent` without personal email; log `Deprecation`/`Sunset` headers as data issues.
+- API text is untrusted: no `dangerouslySetInnerHTML`; URLs only if `https` on `camara.leg.br` or `senado.leg.br` (and subdomains); official photos downloaded at ingestion and served by our server.
+- Logs never contain visitor IPs, user agents, cookies or full headers. The public site sets no cookies. No analytics or tracking.
+- Outside development: `DEBUG = False`, `ALLOWED_HOSTS` set, security middleware on; CSP `default-src 'self'` without inline scripts, `nosniff`, `Referrer-Policy: no-referrer`, `frame-ancestors 'none'`.
+- ruff with security rules (`S`) on the backend; strict TypeScript and a lint ban on `dangerouslySetInnerHTML` on the frontend.
+- A security review note per phase in `docs/security/`.
