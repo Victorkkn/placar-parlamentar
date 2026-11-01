@@ -47,7 +47,10 @@ ALLOWED_HOSTS: list[str] = []
 INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "placar.legislators",
+    "placar.activity",
     "placar.sources",
+    "placar.summaries",
+    "placar.api",
 ]
 
 MIDDLEWARE = [
@@ -92,6 +95,10 @@ PLACAR = {
     "USER_AGENT": (
         "PlacarParlamentar/0.1 (projeto pessoal de transparencia; dados abertos oficiais)"
     ),
+    # Single banned-wording list for interface text and summaries (decision 0018).
+    "BANNED_WORDING_FILE": REPO_ROOT / "docs" / "wording" / "banned-pt-BR.txt",
+    # Model for generate_summaries (decision 0010). The API key is read only by summaries/llm.
+    "SUMMARY_MODEL": env("SUMMARY_MODEL", "claude-opus-5-5"),
 }
 
 # Logs never contain visitor IPs, user agents, cookies or headers (decision 0012).

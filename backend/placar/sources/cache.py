@@ -168,6 +168,7 @@ class FetchStats:
     stale_used: int = 0
     failures: list[str] = field(default_factory=list)
     deprecations: dict[str, dict[str, str]] = field(default_factory=dict)
+    latest_fetched_at: datetime | None = None  # newest fetch time among responses used
 
 
 class CachedFetcher:
@@ -226,8 +227,10 @@ class CachedFetcher:
             self.stats.deprecations[entry.api_url] = response.deprecation
         return self._result(entry, from_cache=False)
 
-    @staticmethod
-    def _result(entry: CacheEntry, *, from_cache: bool, stale: bool = False) -> FetchResult:
+    def _result(self, entry: CacheEntry, *, from_cache: bool, stale: bool = False) -> FetchResult:
+        latest = self.stats.latest_fetched_at
+        if latest is None or entry.fetched_at > latest:
+            self.stats.latest_fetched_at = entry.fetched_at
         return FetchResult(
             body=entry.body,
             source=SourceRef(api_url=entry.api_url, cache_key=entry.key),

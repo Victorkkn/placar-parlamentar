@@ -1,0 +1,495 @@
+{
+  "_fixture": {
+    "cache_file_id": "1ac1c0d27348ebc107916ea80c84a2858fbcaf1c6c72819994f89f97fb885588",
+    "case": "senado_speeches_5917_2026",
+    "recorded_at": "2026-11-01T21:31:38.693428+00:00",
+    "removed_personal_fields": [
+      "DiscursosParlamentar.Parlamentar.IdentificacaoParlamentar.EmailParlamentar",
+      "DiscursosParlamentar.Parlamentar.IdentificacaoParlamentar.SexoParlamentar"
+    ],
+    "spec": "https://legis.senado.leg.br/dadosabertos/v3/api-docs (4.1.3.108)",
+    "trimmed": "not trimmed"
+  },
+  "api_version": "5",
+  "body": {
+    "DiscursosParlamentar": {
+      "Metadados": {
+        "DataVersaoServico": "2021-06-29",
+        "DescricaoDataSet": "Discursos do Parlamentar. Se não informar o período, serão retornados os discursos dos últimos 30 dias.",
+        "Versao": "01/11/2026 13:57:43",
+        "VersaoServico": "5"
+      },
+      "Parlamentar": {
+        "IdentificacaoParlamentar": {
+          "CodigoParlamentar": "5917",
+          "CodigoPublicoNaLegAtual": "923",
+          "FormaTratamento": "Senador ",
+          "NomeCompletoParlamentar": "Fernando Antonio Caminha Dueire",
+          "NomeParlamentar": "Fernando Dueire",
+          "SiglaPartidoParlamentar": "PSD",
+          "UfParlamentar": "PE",
+          "UrlFotoParlamentar": "http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5917.jpg",
+          "UrlPaginaParlamentar": "http://www25.senado.leg.br/web/senadores/senador/-/perfil/5917"
+        },
+        "Pronunciamentos": {
+          "Pronunciamento": [
+            {
+              "CodigoPronunciamento": "524061",
+              "DataPronunciamento": "2026-09-02",
+              "Indexacao": "DISCURSO, DEFESA, PROJETO DE LEI, ALTERAÇÃO, LEI FEDERAL, CONCESSÃO, COTA DE DEPRECIAÇÃO, ADICIONAIS, DEPRECIAÇÃO ACELERADA, NAVIO, TANQUE, EMBARCAÇÃO, APOIO, ATIVIDADE MARITIMA, UTILIZAÇÃO, Biodiesel, ETANOL, MISTURA, COMBUSTIVEL, CRITERIOS, REGULAMENTO, INCLUSÃO, RENUNCIA, RECEITA, ORÇAMENTO, VIGENCIA, BENEFICIO, DESENVOLVIMENTO, INDUSTRIA, INOVAÇÃO, RENDA, EMPREGO, TRANSIÇÃO ENERGETICA, INDUSTRIA NAVAL, Biocombustível, COMENTARIO, MATERIA, REDUÇÃO, EMISSÃO, GAS, EFEITO ESTUFA, REGISTRO, MODERNIZAÇÃO, FROTA, ESTALEIRO, PESQUISA TECNOLOGICA, QUALIFICAÇÃO, MÃO DE OBRA.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2026-09-03",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "38",
+                    "NumeroPagInicioPublicacao": "36",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=03/09/2026&paginaDireta=36"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "587381",
+                "CodigoSessaoLegislativa": "874",
+                "DataSessao": "2026-09-02",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "120",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "PSD",
+              "TextoResumo": "Defesa do Projeto de Lei nº 1402/2026, de relatoria de S. Exa. na CAE, que concede incentivo fiscal a embarcações movidas a biocombustíveis. Destaque para a contribuição da proposta para modernização da indústria naval, valorização dos biocombustíveis nacionais, transição energética e geração de emprego, renda, inovação e desenvolvimento industrial.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/524061",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/524061"
+            },
+            {
+              "CodigoPronunciamento": "523996",
+              "DataPronunciamento": "2026-09-01",
+              "Indexacao": "DISCURSO, MEDIDA PROVISORIA (MPV), ALTERAÇÃO, TRIBUTAÇÃO SIMPLIFICADA, REMESSA POSTAL INTERNACIONAL, AUTORIZAÇÃO, MINISTERIO DA FAZENDA (MF), AJUSTE, ALIQUOTA, IMPOSTO DE IMPORTAÇÃO, FAIXA, VALOR, CATEGORIA, BENS, POSSIBILIDADE, ALIQUOTA PROGRESSIVA, PRODUTO IMPORTADO, ADESÃO, PROGRAMA, SECRETARIA DA RECEITA FEDERAL DO BRASIL, REGIME TRIBUTARIO, REGIME DIFERENCIADO.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2026-09-02",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "45",
+                    "NumeroPagInicioPublicacao": "43",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=02/09/2026&paginaDireta=43"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "586477",
+                "CodigoSessaoLegislativa": "874",
+                "DataSessao": "2026-09-01",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "120",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "PSD",
+              "TextoResumo": "Posicionamento favorável à aprovação das Emendas Nºs 105 e 106, de autoria de S. Exa., à Medida Provisória Nº 1357/2026, destinadas a assegurar condições equilibradas de concorrência para o setor de confecções e maior previsibilidade nas alterações do Imposto de Importação. Defesa da indústria nacional e do Polo de Confecções do Agreste, especialmente no Estado de Pernambuco, como forma de preservar empregos, renda e a atividade dos pequenos e médios empreendedores.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/523996",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/523996"
+            },
+            {
+              "CodigoPronunciamento": "523388",
+              "DataPronunciamento": "2026-07-07",
+              "Indexacao": "PEDIDO, APOIO, PROJETO DE LEI, CRIAÇÃO, LEI FEDERAL, PROGRAMA NACIONAL, INTEGRAÇÃO, GESTÃO, RESIDUO, AGROPECUARIA, INDUSTRIA, ZONA URBANA, DESTINAÇÃO, PRODUÇÃO, ENERGIA RENOVAVEL, REDUÇÃO, GAS, EFEITO ESTUFA, PROMOÇÃO, SUSTENTABILIDADE, ECONOMIA CIRCULAR, TRANSIÇÃO ENERGETICA, DEFINIÇÃO, OBJETIVO, CRITERIOS, PARTICIPAÇÃO, MATRIZ ENERGETICA, CONTRATAÇÃO, ENERGIA ELETRICA, OBRIGATORIEDADE, USINA, PLANO, RESIDUOS SOLIDOS, AUTORIZAÇÃO, EMISSÃO, CERTIFICADO, PREVISÃO, COMITE INTERMINISTERIAL, COMPETENCIA, COMPOSIÇÃO, FUNCIONAMENTO, ALTERAÇÃO, Política Nacional de Resíduos Sólidos, RESPONSABILIDADE, SERVIÇO PUBLICO, LIMPEZA PUBLICA, RECICLAGEM, AMBITO, MUNICIPIOS, PODER PUBLICO, FOMENTO, PROJETO, INCENTIVO, EMPRESA, UTILIZAÇÃO, COMBUSTIVEL.\nDESTAQUE, IMPORTANCIA, PLANO NACIONAL, TRANSIÇÃO ENERGETICA, ECONOMIA DE BAIXO CARBONO, DESENVOLVIMENTO SUSTENTAVEL.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2026-07-08",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "44",
+                    "NumeroPagInicioPublicacao": "43",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=08/07/2026&paginaDireta=43"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "569261",
+                "CodigoSessaoLegislativa": "874",
+                "DataSessao": "2026-07-07",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "98",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "PSD",
+              "TextoResumo": "Pedido de apoio ao Projeto de Lei nº 3311/2025, de autoria de S. Exa., que institui o Programa Nacional do Metano Zero. Destaque para a inclusão da proposta no Plano Nacional de Transição Energética (Plante) do Governo Federal, como medida estratégica para a transição energética, para a economia de baixo carbono e para o desenvolvimento sustentável do País.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/523388",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/523388"
+            },
+            {
+              "CodigoPronunciamento": "522642",
+              "DataPronunciamento": "2026-06-10",
+              "Indexacao": "DEFESA, EMENDA PARLAMENTAR, MEDIDA PROVISORIA (MPV), ALTERAÇÃO, TRIBUTAÇÃO SIMPLIFICADA, REMESSA POSTAL INTERNACIONAL, AUTORIZAÇÃO, MINISTERIO DA FAZENDA (MF), AJUSTE, ALIQUOTA, IMPOSTO DE IMPORTAÇÃO, FAIXA, VALOR, CATEGORIA, BENS, POSSIBILIDADE, ALIQUOTA PROGRESSIVA, PRODUTO IMPORTADO, ADESÃO, PROGRAMA, SECRETARIA DA RECEITA FEDERAL DO BRASIL, REGIME TRIBUTARIO, REGIME DIFERENCIADO.\nDEFESA, MANUTENÇÃO, IMPOSTO DE IMPORTAÇÃO, VESTUARIO, PROTEÇÃO, INDUSTRIA NACIONAL.\nDEFESA, PRAZO, VIGENCIA, ALTERAÇÃO, ALIQUOTA, IMPOSTO DE IMPORTAÇÃO.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2026-06-11",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "31",
+                    "NumeroPagInicioPublicacao": "29",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=11/06/2026&paginaDireta=29"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "564648",
+                "CodigoSessaoLegislativa": "874",
+                "DataSessao": "2026-06-10",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "77",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "PSD",
+              "TextoResumo": "Apelo em favor das Emendas n°s 105 e 106, apresentadas por S. Exa à Medida Provisória nº 1357/2026, que dispõe sobre a tributação simplificada das remessas postais internacionais, destacando os efeitos das alterações propostas na garantia da segurança jurídica e das condições de competitividade para o setor de confecções e vestuário nacional.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/522642",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/522642"
+            },
+            {
+              "CodigoPronunciamento": "522187",
+              "DataPronunciamento": "2026-05-20",
+              "Indexacao": "COMEMORAÇÃO, UNANIMIDADE, APROVAÇÃO, Comissão de Assuntos Sociais (CAS), PROJETO DE LEI, ALTERAÇÃO, LEI FEDERAL, FIXAÇÃO, PISO SALARIAL, PERCENTAGEM, REMUNERAÇÃO, HORA EXTRA, TRABALHO NOTURNO, MEDICO, DENTISTA.\nDESTAQUE, DESENVOLVIMENTO REGIONAL, GARANTIA, MEDICO, DENTISTA, SAUDE PUBLICA, SISTEMA UNICO DE SAUDE (SUS), INTERIOR, POPULAÇÃO CARENTE.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2026-05-21",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "52",
+                    "NumeroPagInicioPublicacao": "52",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=21/05/2026&paginaDireta=52"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "558997",
+                "CodigoSessaoLegislativa": "874",
+                "DataSessao": "2026-05-20",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "59",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "PSD",
+              "TextoResumo": "Satisfação com a aprovação, no âmbito da CAS, do Projeto de Lei nº 1365/2022, relatado por S. Exa., que modifica o salário-mínimo dos médicos e cirurgiões dentistas, e majora os valores da hora extra e do adicional noturno dos referidos profissionais. Defesa de que a garantia de um piso digno ajudará a mitigar a dificuldade de fixação e a alta rotatividade de médicos e dentistas em municípios do interior e regiões mais vulneráveis.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/522187",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/522187"
+            },
+            {
+              "CodigoPronunciamento": "521092",
+              "DataPronunciamento": "2026-03-31",
+              "Indexacao": "HOMENAGEM, Mês Internacional da Mulher, MELHORIA, SAUDE PUBLICA, DIAGNOSTICO, CANCER, APOIO, MÃE, GESTANTE, IGUALDADE, GENERO, REMUNERAÇÃO, EQUIPARAÇÃO SALARIAL, COMBATE, MISOGINIA, VIOLENCIA, MULHER, MEDIDA PROTETIVA, MIDIA SOCIAL.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2026-04-01",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "72",
+                    "NumeroPagInicioPublicacao": "71",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=01/04/2026&paginaDireta=71"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "550989",
+                "CodigoSessaoLegislativa": "874",
+                "DataSessao": "2026-03-31",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "25",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Valorização do Mês da Mulher, com destaque para avanços do Senado Federal nas áreas de saúde, igualdade salarial e proteção social. Ênfase no enfrentamento da violência e da misoginia, com ampliação de medidas protetivas. Compromisso com a efetividade das políticas públicas em favor dos direitos das mulheres.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/521092",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/521092"
+            },
+            {
+              "CodigoPronunciamento": "520826",
+              "DataPronunciamento": "2026-03-24",
+              "Indexacao": "HOMENAGEM, ANIVERSARIO DE MORTE, EX-PRESIDENTE DA REPUBLICA, JUSCELINO KUBITSCHEK, COMENTARIO, GESTÃO, ENERGIA, TRANSPORTE, ALIMENTAÇÃO, INDUSTRIA, EDUCAÇÃO, REGISTRO, CONSTRUÇÃO, BRASILIA (DF), DESENVOLVIMENTO, INTEGRAÇÃO, AMBITO NACIONAL.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2026-03-25",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "26",
+                    "NumeroPagInicioPublicacao": "25",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=25/03/2026&paginaDireta=25"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "550535",
+                "CodigoSessaoLegislativa": "874",
+                "DataSessao": "2026-03-24",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "20",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Breve homenagem ao ex-Presidente da República Juscelino Kubitschek.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/520826",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/520826"
+            },
+            {
+              "CodigoPronunciamento": "520489",
+              "DataPronunciamento": "2026-03-10",
+              "Indexacao": "DEFESA, COMBATE, CORRUPÇÃO, REFORÇO, DEMOCRACIA, TRANSPARENCIA, NECESSIDADE, IMPEDIMENTO, AMPLIAÇÃO, TRAFICO DE INFLUENCIA, NATUREZA FINANCEIRA, AUTORIDADE PUBLICA, COMPROMETIMENTO, CREDIBILIDADE, INSTITUIÇÕES.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2026-03-11",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "28",
+                    "NumeroPagInicioPublicacao": "26",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=11/03/2026&paginaDireta=26"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "550525",
+                "CodigoSessaoLegislativa": "874",
+                "DataSessao": "2026-03-10",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "10",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Breve relato sobre a consolidação do sistema democrático brasileiro até a atualidade, com destaque para as crises institucionais recentes. Defesa do avanço de reformas voltadas ao fortalecimento da transparência, dos órgãos de controle, da integridade do setor público e da efetiva punição de agentes que atentem contra os princípios legais e republicanos.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/520489",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/520489"
+            },
+            {
+              "CodigoPronunciamento": "520441",
+              "DataPronunciamento": "2026-03-04",
+              "Indexacao": "DISCURSO, PEDIDO, APOIO, APROVAÇÃO, PROJETO DE LEI, CRIAÇÃO, LEI FEDERAL, PLANO NACIONAL, CONSTRUÇÃO, MELHORIA, ESTRADA, TERRAS, DIRETRIZ, RECUPERAÇÃO, ADAPTAÇÃO, MANUTENÇÃO, AUSENCIA, PAVIMENTAÇÃO, COMPETENCIA, OBJETIVO, CONEXÃO, AREA, PRODUÇÃO AGROPECUARIA, COMUNIDADE RURAL, DISTRITO, SEDE, PRIORIDADE, RELEVANCIA, ORDEM ECONOMICA E SOCIAL, CRITERIOS, AMBITO, COOPERAÇÃO, UNIÃO, ESTADOS, DISTRITO FEDERAL (DF), MUNICIPIOS, PREVISÃO, RECURSOS PUBLICOS, FINANCIAMENTO, LINHA DE CREDITO.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2026-03-05",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "22",
+                    "NumeroPagInicioPublicacao": "21",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=05/03/2026&paginaDireta=21"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "550521",
+                "CodigoSessaoLegislativa": "874",
+                "DataSessao": "2026-03-04",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "8",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Pedido de apoio para o Projeto de Lei nº 740/2026, de autoria de S. Exa., que institui o Plano Nacional de Construção e Melhorias de Estradas Vicinais de Terra.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/520441",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/520441"
+            },
+            {
+              "CodigoPronunciamento": "520220",
+              "DataPronunciamento": "2026-02-24",
+              "Indexacao": "HOMENAGEM, PESQUISADOR, MULHER, PESQUISA CIENTIFICA, TRATAMENTO MEDICO, PARALISIA, PARAPLEGICO.\nSOLICITAÇÃO, APOIO, PROJETO DE LEI, CRIAÇÃO, LEI FEDERAL, AUXILIO, REDUÇÃO, EFEITO, POBREZA, AUSENCIA, ACESSO, AGUA POTAVEL, FAMILIA, BAIXA RENDA, REGIÃO SEMI ARIDA, REGIÃO, FREQUENCIA, SECA, COMPETENCIA, EXECUTIVO, DEFINIÇÃO, AREA, ABRANGENCIA, BENEFICIARIO, PAGAMENTO, DISPONIBILIDADE, RESERVATORIO.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2026-02-25",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "61",
+                    "NumeroPagInicioPublicacao": "59",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=25/02/2026&paginaDireta=59"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "550469",
+                "CodigoSessaoLegislativa": "874",
+                "DataSessao": "2026-02-24",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "4",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Elogios à Dra. Tatiana Sampaio, Professora da Universidade Federal do Rio de Janeiro (UFRJ), responsável pelos estudos sobre a polilaminina no tratamento de lesões medulares.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/520220",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/520220"
+            },
+            {
+              "CodigoPronunciamento": "520130",
+              "DataPronunciamento": "2026-02-03",
+              "Indexacao": "DISCUSSÃO, MEDIDA PROVISORIA (MPV), ALTERAÇÃO, LEI FEDERAL, DENOMINAÇÃO, PROGRAMA DE GOVERNO, Auxílio Gás dos Brasileiros, Auxílio Gás do Povo, AUXILIO, GAS LIQUEFEITO DE PETROLEO (GLP), FAMILIA, BAIXA RENDA, CATEGORIA, OPERAÇÃO, PAGAMENTO, BENEFICIARIO, VALOR MONETARIO, PRIORIDADE, MULHER, VITIMA, VIOLENCIA DOMESTICA, GRATUIDADE, REQUISITOS, INSCRIÇÃO, CADASTRO UNICO PARA PROGRAMAS SOCIAIS (CADUNICO), DISTRIBUIÇÃO, REVENDA, EMPRESA DE COMERCIO VAREJISTA, AUTORIZAÇÃO, AGENCIA NACIONAL DO PETROLEO GAS NATURAL E BIOCOMBUSTIVEIS (ANP), ASSINATURA, TERMO DE COMPROMISSO, AMBITO, MINISTERIO DE MINAS E ENERGIA (MME), COMPETENCIA, CRIAÇÃO, COMITE GESTOR, GOVERNANÇA PUBLICA.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2026-02-04",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "48",
+                    "NumeroPagInicioPublicacao": "47",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=04/02/2026&paginaDireta=47"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "549835",
+                "CodigoSessaoLegislativa": "874",
+                "DataSessao": "2026-02-03",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "1",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Discussão sobre a Medida Provisória (MPV) n° 1313, de 2025, que \"Altera a Lei nº 14.237, de 19 de novembro de 2021, para modificar a denominação do Auxílio Gás dos Brasileiros para Auxílio Gás do Povo e criar nova modalidade de operacionalização do auxílio\".",
+              "TipoUsoPalavra": {
+                "Codigo": "11336",
+                "Descricao": "Discussão",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "PDI"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/520130",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/520130"
+            }
+          ]
+        },
+        "UrlGlossario": "http://legis.senado.leg.br/dadosabertos/senador/"
+      },
+      "noNamespaceSchemaLocation": "https://legis.senado.leg.br/dadosabertos/dados/DiscursosParlamentarv5.xsd"
+    }
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T16:57:43.511978+00:00",
+  "method": "GET",
+  "params": {
+    "dataFim": "20261101",
+    "dataInicio": "20260101"
+  },
+  "schema": 1,
+  "source": "senado",
+  "status": 200,
+  "url": "https://legis.senado.leg.br/dadosabertos/senador/5917/discursos"
+}

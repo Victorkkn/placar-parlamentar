@@ -221,3 +221,16 @@ class OfficialEvent(SourcedModel):
 
     class Meta:
         ordering = ["official", "date", "natural_key"]
+
+
+class DataLoad(models.Model):
+    """When a snapshot of official data was loaded (decision 0015: the date is shown in the app)."""
+
+    house = models.CharField(max_length=6, choices=House.choices)
+    kind = models.CharField(max_length=20)  # "people" or "activity"
+    reference_date = models.DateField()
+    data_fetched_until = models.DateTimeField(null=True, blank=True)
+    loaded_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-loaded_at"]

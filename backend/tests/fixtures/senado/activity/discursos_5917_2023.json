@@ -1,0 +1,467 @@
+{
+  "_fixture": {
+    "cache_file_id": "e391fe442bfb0bedaa22ba79bdfe760b8368d104a8ca9712ed8223620a814eb3",
+    "case": "senado_speeches_5917_2023",
+    "recorded_at": "2026-11-01T21:31:38.684012+00:00",
+    "removed_personal_fields": [
+      "DiscursosParlamentar.Parlamentar.IdentificacaoParlamentar.EmailParlamentar",
+      "DiscursosParlamentar.Parlamentar.IdentificacaoParlamentar.SexoParlamentar"
+    ],
+    "spec": "https://legis.senado.leg.br/dadosabertos/v3/api-docs (4.1.3.108)",
+    "trimmed": "not trimmed"
+  },
+  "api_version": "5",
+  "body": {
+    "DiscursosParlamentar": {
+      "Metadados": {
+        "DataVersaoServico": "2021-06-29",
+        "DescricaoDataSet": "Discursos do Parlamentar. Se não informar o período, serão retornados os discursos dos últimos 30 dias.",
+        "Versao": "01/11/2026 13:57:41",
+        "VersaoServico": "5"
+      },
+      "Parlamentar": {
+        "IdentificacaoParlamentar": {
+          "CodigoParlamentar": "5917",
+          "CodigoPublicoNaLegAtual": "923",
+          "FormaTratamento": "Senador ",
+          "NomeCompletoParlamentar": "Fernando Antonio Caminha Dueire",
+          "NomeParlamentar": "Fernando Dueire",
+          "SiglaPartidoParlamentar": "PSD",
+          "UfParlamentar": "PE",
+          "UrlFotoParlamentar": "http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5917.jpg",
+          "UrlPaginaParlamentar": "http://www25.senado.leg.br/web/senadores/senador/-/perfil/5917"
+        },
+        "Pronunciamentos": {
+          "Pronunciamento": [
+            {
+              "CodigoPronunciamento": "501897",
+              "DataPronunciamento": "2023-11-06",
+              "Indexacao": "VOTO DE CONGRATULAÇÕES, HOMENAGEM, DIARIO DE PERNAMBUCO.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2023-11-07",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "32",
+                    "NumeroPagInicioPublicacao": "30",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=07/11/2023&paginaDireta=30"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "368077",
+                "CodigoSessaoLegislativa": "868",
+                "DataSessao": "2023-11-06",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "167",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "NDL"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Voto de congratuações em homenagem aos 198 anos do Diário de Pernambuco, periódico mais antigo em circulação do Brasil.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/501897",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/501897"
+            },
+            {
+              "Aparteantes": {
+                "Aparteante": {
+                  "CodigoParlamentar": "6338",
+                  "NomeAparteante": "Teresa Leitão"
+                }
+              },
+              "CodigoPronunciamento": "501321",
+              "DataPronunciamento": "2023-10-18",
+              "Indexacao": "CONGRATULAÇÕES, ELEIÇÃO, MULHER, MEDICO, ESTADO DE PERNAMBUCO (PE), PRESIDENTE, ORGANIZAÇÃO CIVIL, MEDICINA.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2023-10-19",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "74",
+                    "NumeroPagInicioPublicacao": "72",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=19/10/2023&paginaDireta=72"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "364600",
+                "CodigoSessaoLegislativa": "868",
+                "DataSessao": "2023-10-18",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "154",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Congratulações pela eleição da médica pernambucana Dra. Leila Maria Moreira Beltrão Pereira para Presidente da Sociedade Brasileira de Hepatologia (SBH) na gestão 2026/2027.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/501321",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/501321"
+            },
+            {
+              "CodigoPronunciamento": "501133",
+              "DataPronunciamento": "2023-10-03",
+              "Indexacao": "PROJETO DE RESOLUÇÃO DO SENADO (PRS), AUTORIZAÇÃO, SOCIEDADE DE ECONOMIA MISTA, ESTADO DE PERNAMBUCO (PE), CONTRATAÇÃO, OPERAÇÃO FINANCEIRA, INSTITUIÇÃO FINANCEIRA, NOVO BANCO DE DESENVOLVIMENTO (NBD), GARANTIA, UNIÃO FEDERAL, CREDITO EXTERNO, DESTINAÇÃO, FINANCIAMENTO, PROGRAMA, MELHORIA, SANEAMENTO BASICO.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2023-10-04",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "64",
+                    "NumeroPagInicioPublicacao": "64",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=04/10/2023&paginaDireta=64"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "360868",
+                "CodigoSessaoLegislativa": "868",
+                "DataSessao": "2023-10-03",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "144",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Pela ordem sobre o Projeto de Resolução do Senado (PRS) n° 95, de 2023, que \"Autoriza a Companhia Pernambucana de Saneamento a contratar operação de crédito externo, com garantia da República Federativa do Brasil, no valor de até US$ 202.000.000,00 (duzentos e dois milhões de dólares dos Estados Unidos da América).\"",
+              "TipoUsoPalavra": {
+                "Codigo": "4823",
+                "Descricao": "Pela ordem",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "POR"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/501133",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/501133"
+            },
+            {
+              "CodigoPronunciamento": "500664",
+              "DataPronunciamento": "2023-09-20",
+              "Indexacao": "DEFESA, PROJETO DE LEI, CRIAÇÃO, LEI FEDERAL, INSCRIÇÃO, NOME, DOM HELDER CAMARA, LIVRO DE HEROIS E HEROINAS DA PATRIA, ALTERAÇÃO, DEFINIÇÃO, CRITERIOS, LIVRO, VULTO HISTORICO, REGISTRO HISTORICO, HOMENAGEM, COMEMORAÇÃO.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2023-09-21",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "88",
+                    "NumeroPagInicioPublicacao": "85",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=21/09/2023&paginaDireta=85"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "358674",
+                "CodigoSessaoLegislativa": "868",
+                "DataSessao": "2023-09-20",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "135",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Defesa do Projeto de Lei nº 3716/2023, de autoria de S. Exa, que inscreve o nome de Dom Hélder Câmara no Livro dos Heróis e Heroínas da Pátria.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/500664",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/500664"
+            },
+            {
+              "CodigoPronunciamento": "499763",
+              "DataPronunciamento": "2023-08-15",
+              "Indexacao": "EXPOSIÇÃO, TRABALHO, Comissão Especial para Debate de Políticas Públicas sobre Hidrogênio Verde (CEHV), IMPORTANCIA, COMBUSTIVEL, ENERGIA RENOVAVEL, DESENVOLVIMENTO ECONOMICO, SUSTENTABILIDADE, PAIS.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2023-08-16",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "78",
+                    "NumeroPagInicioPublicacao": "76",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=16/08/2023&paginaDireta=76"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "350637",
+                "CodigoSessaoLegislativa": "868",
+                "DataSessao": "2023-08-15",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "105",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Exposição dos trabalhos realizados pela Comissão Especial para o debate de políticas públicas sobre hidrogênio verde e a importância do combustível renovável para o desenvolvimento econômico sustentável do País.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/499763",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/499763"
+            },
+            {
+              "CodigoPronunciamento": "499336",
+              "DataPronunciamento": "2023-08-03",
+              "Indexacao": "ELOGIO, INDICAÇÃO, PREFEITO, VITORIA DE SANTO ANTÃO (PE), MEDALHA, CONCESSÃO, CAMARA DOS DEPUTADOS, MOTIVO, TRABALHO, PROTEÇÃO, INFANCIA.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2023-08-04",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "30",
+                    "NumeroPagInicioPublicacao": "29",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=04/08/2023&paginaDireta=29"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "348919",
+                "CodigoSessaoLegislativa": "868",
+                "DataSessao": "2023-08-03",
+                "HoraInicioSessao": "11:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "93",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DEX"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Satisfação com a indicação do Prefeito Paulo Roberto Leite de Arruda, do Município de Vitória de Santo Antão-PE, pelo recebimento da honraria \"Medalha da Primeira Infância\" pela Câmara dos Deputados e exposição do trabalho realizado pelo homenageado sobre proteção à infância.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/499336",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/499336"
+            },
+            {
+              "Aparteantes": {
+                "Aparteante": {
+                  "CodigoParlamentar": "5895",
+                  "NomeAparteante": "Jorge Kajuru"
+                }
+              },
+              "CodigoPronunciamento": "498047",
+              "DataPronunciamento": "2023-05-31",
+              "Indexacao": "QUESTIONAMENTO, PAPEL, FUNÇÃO, MINISTRO, SUPREMO TRIBUNAL FEDERAL (STF), INDICAÇÃO, GOVERNO FEDERAL, PRESIDENTE DA REPUBLICA.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2023-06-01",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "30",
+                    "NumeroPagInicioPublicacao": "28",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=01/06/2023&paginaDireta=28"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "338716",
+                "CodigoSessaoLegislativa": "868",
+                "DataSessao": "2023-05-31",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "57",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Reflexão sobre o papel dos ministros do STF na sociedade brasileira.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/498047",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/498047"
+            },
+            {
+              "CodigoPronunciamento": "496931",
+              "DataPronunciamento": "2023-04-19",
+              "Indexacao": "RELATOR, PROJETO DE RESOLUÇÃO DO SENADO (PRS), AUTORIZAÇÃO, MUNICIPIO, RECIFE (PE), CONTRATAÇÃO, OPERAÇÃO FINANCEIRA, INSTITUIÇÃO FINANCEIRA, BANCO INTERAMERICANO DE DESENVOLVIMENTO (BID), GARANTIA, UNIÃO FEDERAL, CREDITO EXTERNO, DESTINAÇÃO, FINANCIAMENTO, PROGRAMA, SUSTENTABILIDADE, RECONSTRUÇÃO, URBANIZAÇÃO, COMUNIDADE, VULNERAVEL.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2023-04-20",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "52",
+                    "NumeroPagInicioPublicacao": "52",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=20/04/2023&paginaDireta=52"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "329137",
+                "CodigoSessaoLegislativa": "868",
+                "DataSessao": "2023-04-19",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "33",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Como Relator sobre o Projeto de Resolução do Senado (PRS) n° 46, de 2023, que \"Autoriza o Município de Recife, no Estado de Pernambuco, a contratar operação de crédito externo, com garantia da República Federativa do Brasil, no valor de até US$ 260.000.000,00 (duzentos e sessenta milhões de dólares dos Estados Unidos da América)\".",
+              "TipoUsoPalavra": {
+                "Codigo": "11341",
+                "Descricao": "Como Relator",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "CRE"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/496931",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/496931"
+            },
+            {
+              "CodigoPronunciamento": "496848",
+              "DataPronunciamento": "2023-04-19",
+              "Indexacao": "RELATOR, PROJETO DE RESOLUÇÃO DO SENADO (PRS), AUTORIZAÇÃO, MUNICIPIO, RECIFE (PE), CONTRATAÇÃO, OPERAÇÃO FINANCEIRA, INSTITUIÇÃO FINANCEIRA, BANCO INTERAMERICANO DE DESENVOLVIMENTO (BID), GARANTIA, UNIÃO FEDERAL, CREDITO EXTERNO, DESTINAÇÃO, FINANCIAMENTO, PROGRAMA, SUSTENTABILIDADE, RECONSTRUÇÃO, URBANIZAÇÃO, COMUNIDADE, VULNERAVEL.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2023-04-20",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "33",
+                    "NumeroPagInicioPublicacao": "32",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=20/04/2023&paginaDireta=32"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "329137",
+                "CodigoSessaoLegislativa": "868",
+                "DataSessao": "2023-04-19",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "33",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Como Relator sobre o Projeto de Resolução do Senado (PRS) n° 46, de 2023, que \"Autoriza o Município de Recife, no Estado de Pernambuco, a contratar operação de crédito externo, com garantia da República Federativa do Brasil, no valor de até US$ 260.000.000,00 (duzentos e sessenta milhões de dólares dos Estados Unidos da América)\".",
+              "TipoUsoPalavra": {
+                "Codigo": "11341",
+                "Descricao": "Como Relator",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "CRE"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/496848",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/496848"
+            },
+            {
+              "CodigoPronunciamento": "496669",
+              "DataPronunciamento": "2023-04-12",
+              "Indexacao": "SAUDAÇÃO, SELEÇÃO, ESTADO DE PERNAMBUCO (PE), SEDE, ESCOLA MILITAR, FORMAÇÃO, GRADUAÇÃO, SARGENTO, EXERCITO, LOCALIDADE, REGIÃO METROPOLITANA, CAPITAL DE ESTADO, RECIFE (PE).",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2023-04-13",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "27",
+                    "NumeroPagInicioPublicacao": "26",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=13/04/2023&paginaDireta=26"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "327699",
+                "CodigoSessaoLegislativa": "868",
+                "DataSessao": "2023-04-12",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "26",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Comemoração pela futura instalação de escola de formação e graduação de sargentos de carreira do Exército, no Estado de Pernambuco.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/496669",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/496669"
+            }
+          ]
+        },
+        "UrlGlossario": "http://legis.senado.leg.br/dadosabertos/senador/"
+      },
+      "noNamespaceSchemaLocation": "https://legis.senado.leg.br/dadosabertos/dados/DiscursosParlamentarv5.xsd"
+    }
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T16:57:41.561925+00:00",
+  "method": "GET",
+  "params": {
+    "dataFim": "20231231",
+    "dataInicio": "20230201"
+  },
+  "schema": 1,
+  "source": "senado",
+  "status": 200,
+  "url": "https://legis.senado.leg.br/dadosabertos/senador/5917/discursos"
+}

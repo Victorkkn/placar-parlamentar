@@ -8,16 +8,31 @@
       "name": "camara_legislature_on_2026_11_01",
       "source": "camara",
       "url": "https://dadosabertos.camara.leg.br/api/v2/legislaturas",
-      "params": {"data": "2026-11-01"},
+      "params": {
+        "data": "2026-11-01"
+      },
       "file": "camara/legislaturas_2026-11-01.json"
     },
     {
       "name": "camara_deputies_legislature_57_page_1",
       "source": "camara",
       "url": "https://dadosabertos.camara.leg.br/api/v2/deputados",
-      "params": {"idLegislatura": "57", "itens": "100", "pagina": "1", "ordem": "ASC", "ordenarPor": "nome"},
+      "params": {
+        "idLegislatura": "57",
+        "itens": "100",
+        "pagina": "1",
+        "ordem": "ASC",
+        "ordenarPor": "nome"
+      },
       "file": "camara/deputados_57_page1_sample.json",
-      "trim": {"list_path": "dados", "keep_key": "id", "keep_values": [220593, 220714]}
+      "trim": {
+        "list_path": "dados",
+        "keep_key": "id",
+        "keep_values": [
+          220593,
+          220714
+        ]
+      }
     },
     {
       "name": "camara_history_220593_vacancy",
@@ -45,19 +60,28 @@
       "trim": {
         "list_path": "ListaParlamentarLegislatura.Parlamentares.Parlamentar",
         "keep_key": "IdentificacaoParlamentar.CodigoParlamentar",
-        "keep_values": [4545, 5917, 5918]
+        "keep_values": [
+          4545,
+          5917,
+          5918
+        ]
       }
     },
     {
       "name": "senado_list_legislature_57_took_office_mandate_526",
       "source": "senado",
       "url": "https://legis.senado.leg.br/dadosabertos/senador/lista/legislatura/57",
-      "params": {"exercicio": "S"},
+      "params": {
+        "exercicio": "S"
+      },
       "file": "senado/lista_legislatura_57_exercicio_sample.json",
       "trim": {
         "list_path": "ListaParlamentarLegislatura.Parlamentares.Parlamentar",
         "keep_key": "IdentificacaoParlamentar.CodigoParlamentar",
-        "keep_values": [4545, 5917]
+        "keep_values": [
+          4545,
+          5917
+        ]
       }
     },
     {
@@ -68,17 +92,363 @@
       "trim": {
         "list_path": "ListaParlamentarEmExercicio.Parlamentares.Parlamentar",
         "keep_key": "IdentificacaoParlamentar.CodigoParlamentar",
-        "keep_values": [5917]
+        "keep_values": [
+          5917
+        ]
       }
     },
-    {"name": "senado_mandates_4545", "source": "senado", "url": "https://legis.senado.leg.br/dadosabertos/senador/4545/mandatos", "file": "senado/mandatos_4545.json"},
-    {"name": "senado_mandates_5917", "source": "senado", "url": "https://legis.senado.leg.br/dadosabertos/senador/5917/mandatos", "file": "senado/mandatos_5917.json"},
-    {"name": "senado_mandates_5918", "source": "senado", "url": "https://legis.senado.leg.br/dadosabertos/senador/5918/mandatos", "file": "senado/mandatos_5918.json"},
-    {"name": "senado_leaves_4545", "source": "senado", "url": "https://legis.senado.leg.br/dadosabertos/senador/4545/licencas", "file": "senado/licencas_4545.json"},
-    {"name": "senado_leaves_5917", "source": "senado", "url": "https://legis.senado.leg.br/dadosabertos/senador/5917/licencas", "file": "senado/licencas_5917.json"},
-    {"name": "senado_leaves_5918", "source": "senado", "url": "https://legis.senado.leg.br/dadosabertos/senador/5918/licencas", "file": "senado/licencas_5918.json"},
-    {"name": "senado_affiliations_4545", "source": "senado", "url": "https://legis.senado.leg.br/dadosabertos/senador/4545/filiacoes", "file": "senado/filiacoes_4545.json"},
-    {"name": "senado_affiliations_5917", "source": "senado", "url": "https://legis.senado.leg.br/dadosabertos/senador/5917/filiacoes", "file": "senado/filiacoes_5917.json"},
-    {"name": "senado_affiliations_5918", "source": "senado", "url": "https://legis.senado.leg.br/dadosabertos/senador/5918/filiacoes", "file": "senado/filiacoes_5918.json"}
+    {
+      "name": "senado_mandates_4545",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/senador/4545/mandatos",
+      "file": "senado/mandatos_4545.json"
+    },
+    {
+      "name": "senado_mandates_5917",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/senador/5917/mandatos",
+      "file": "senado/mandatos_5917.json"
+    },
+    {
+      "name": "senado_mandates_5918",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/senador/5918/mandatos",
+      "file": "senado/mandatos_5918.json"
+    },
+    {
+      "name": "senado_leaves_4545",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/senador/4545/licencas",
+      "file": "senado/licencas_4545.json"
+    },
+    {
+      "name": "senado_leaves_5917",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/senador/5917/licencas",
+      "file": "senado/licencas_5917.json"
+    },
+    {
+      "name": "senado_leaves_5918",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/senador/5918/licencas",
+      "file": "senado/licencas_5918.json"
+    },
+    {
+      "name": "senado_affiliations_4545",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/senador/4545/filiacoes",
+      "file": "senado/filiacoes_4545.json"
+    },
+    {
+      "name": "senado_affiliations_5917",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/senador/5917/filiacoes",
+      "file": "senado/filiacoes_5917.json"
+    },
+    {
+      "name": "senado_affiliations_5918",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/senador/5918/filiacoes",
+      "file": "senado/filiacoes_5918.json"
+    },
+    {
+      "name": "camara_bills_220593",
+      "source": "camara",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/proposicoes",
+      "params": {
+        "ano": "2023,2024,2025,2026",
+        "idDeputadoAutor": "220593",
+        "itens": "100",
+        "ordem": "ASC",
+        "ordenarPor": "id",
+        "siglaTipo": "PL,PLP,PEC,PDL"
+      },
+      "file": "camara/activity/proposicoes_220593.json"
+    },
+    {
+      "name": "camara_speeches_220593_page_1",
+      "source": "camara",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/deputados/220593/discursos",
+      "params": {
+        "idLegislatura": "57",
+        "itens": "100",
+        "ordem": "ASC",
+        "ordenarPor": "dataHoraInicio"
+      },
+      "file": "camara/activity/discursos_220593_p1.json"
+    },
+    {
+      "name": "camara_speeches_220593_page_2",
+      "source": "camara",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/deputados/220593/discursos",
+      "params": {
+        "idLegislatura": "57",
+        "itens": "100",
+        "ordem": "ASC",
+        "ordenarPor": "dataHoraInicio",
+        "pagina": "2"
+      },
+      "file": "camara/activity/discursos_220593_p2.json"
+    },
+    {
+      "name": "camara_speeches_220593_page_3",
+      "source": "camara",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/deputados/220593/discursos",
+      "params": {
+        "idLegislatura": "57",
+        "itens": "100",
+        "ordem": "ASC",
+        "ordenarPor": "dataHoraInicio",
+        "pagina": "3"
+      },
+      "file": "camara/activity/discursos_220593_p3.json"
+    },
+    {
+      "name": "camara_sessions_2023_page_2_in_office_absent",
+      "source": "camara",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos",
+      "params": {
+        "codTipoEvento": "110",
+        "idOrgao": "180",
+        "itens": "100",
+        "ordem": "ASC",
+        "ordenarPor": "dataHoraInicio",
+        "dataInicio": "2023-02-01",
+        "dataFim": "2023-12-31",
+        "pagina": "2"
+      },
+      "file": "camara/activity/eventos_2023_p2_sample.json",
+      "trim": {
+        "list_path": "dados",
+        "keep_key": "id",
+        "keep_values": [
+          71463
+        ]
+      }
+    },
+    {
+      "name": "camara_sessions_2024_in_office_present",
+      "source": "camara",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos",
+      "params": {
+        "codTipoEvento": "110",
+        "idOrgao": "180",
+        "itens": "100",
+        "ordem": "ASC",
+        "ordenarPor": "dataHoraInicio",
+        "dataInicio": "2024-01-01",
+        "dataFim": "2024-12-31"
+      },
+      "file": "camara/activity/eventos_2024_sample.json",
+      "trim": {
+        "list_path": "dados",
+        "keep_key": "id",
+        "keep_values": [
+          71957
+        ]
+      }
+    },
+    {
+      "name": "camara_sessions_2025_out_of_office",
+      "source": "camara",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos",
+      "params": {
+        "codTipoEvento": "110",
+        "idOrgao": "180",
+        "itens": "100",
+        "ordem": "ASC",
+        "ordenarPor": "dataHoraInicio",
+        "dataInicio": "2025-01-01",
+        "dataFim": "2025-12-31"
+      },
+      "file": "camara/activity/eventos_2025_sample.json",
+      "trim": {
+        "list_path": "dados",
+        "keep_key": "id",
+        "keep_values": [
+          75466
+        ]
+      }
+    },
+    {
+      "name": "camara_presence_71957",
+      "source": "camara",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/71957/deputados",
+      "file": "camara/activity/presenca_71957_sample.json",
+      "trim": {
+        "list_path": "dados",
+        "keep_key": "id",
+        "keep_values": [
+          220593,
+          220714
+        ]
+      }
+    },
+    {
+      "name": "camara_presence_71463",
+      "source": "camara",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/71463/deputados",
+      "file": "camara/activity/presenca_71463_sample.json",
+      "trim": {
+        "list_path": "dados",
+        "keep_key": "id",
+        "keep_values": [
+          220714
+        ]
+      }
+    },
+    {
+      "name": "camara_presence_75466",
+      "source": "camara",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/75466/deputados",
+      "file": "camara/activity/presenca_75466_sample.json",
+      "trim": {
+        "list_path": "dados",
+        "keep_key": "id",
+        "keep_values": [
+          220714
+        ]
+      }
+    },
+    {
+      "name": "camara_votings_2024_q1_page_2",
+      "source": "camara",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes",
+      "params": {
+        "dataInicio": "2024-01-01",
+        "dataFim": "2024-03-31",
+        "idOrgao": "180",
+        "itens": "100",
+        "ordem": "ASC",
+        "ordenarPor": "dataHoraRegistro",
+        "pagina": "2"
+      },
+      "file": "camara/activity/votacoes_2024q1_p2_sample.json",
+      "trim": {
+        "list_path": "dados",
+        "keep_key": "id",
+        "keep_values": [
+          "2417025-55",
+          "2420014-8"
+        ]
+      }
+    },
+    {
+      "name": "camara_ballots_2417025_55_voted",
+      "source": "camara",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2417025-55/votos",
+      "file": "camara/activity/votos_2417025-55_sample.json",
+      "trim": {
+        "list_path": "dados",
+        "keep_key": "deputado_.id",
+        "keep_values": [
+          220593,
+          160592
+        ]
+      }
+    },
+    {
+      "name": "camara_ballots_2420014_8_no_vote",
+      "source": "camara",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2420014-8/votos",
+      "file": "camara/activity/votos_2420014-8_sample.json",
+      "trim": {
+        "list_path": "dados",
+        "keep_key": "deputado_.id",
+        "keep_values": [
+          220714
+        ]
+      }
+    },
+    {
+      "name": "senado_bills_5917",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/processo",
+      "params": {
+        "codigoParlamentarAutor": "5917"
+      },
+      "file": "senado/activity/processo_5917.json"
+    },
+    {
+      "name": "senado_speeches_5917_2023",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/senador/5917/discursos",
+      "params": {
+        "dataInicio": "20230201",
+        "dataFim": "20231231"
+      },
+      "file": "senado/activity/discursos_5917_2023.json"
+    },
+    {
+      "name": "senado_speeches_5917_2024",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/senador/5917/discursos",
+      "params": {
+        "dataInicio": "20240101",
+        "dataFim": "20241231"
+      },
+      "file": "senado/activity/discursos_5917_2024.json"
+    },
+    {
+      "name": "senado_speeches_5917_2025",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/senador/5917/discursos",
+      "params": {
+        "dataInicio": "20250101",
+        "dataFim": "20251231"
+      },
+      "file": "senado/activity/discursos_5917_2025.json"
+    },
+    {
+      "name": "senado_speeches_5917_2026",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/senador/5917/discursos",
+      "params": {
+        "dataInicio": "20260101",
+        "dataFim": "20261101"
+      },
+      "file": "senado/activity/discursos_5917_2026.json"
+    },
+    {
+      "name": "senado_votings_2023_sample",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/votacao",
+      "params": {
+        "dataInicio": "2023-02-01",
+        "dataFim": "2023-12-31"
+      },
+      "file": "senado/activity/votacao_2023_sample.json",
+      "trim": {
+        "list_path": "$",
+        "keep_key": "codigoSessaoVotacao",
+        "keep_values": [
+          6675,
+          6744
+        ]
+      }
+    },
+    {
+      "name": "senado_votings_2024_secret_sample",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/votacao",
+      "params": {
+        "dataInicio": "2024-01-01",
+        "dataFim": "2024-12-31"
+      },
+      "file": "senado/activity/votacao_2024_sample.json",
+      "trim": {
+        "list_path": "$",
+        "keep_key": "codigoSessaoVotacao",
+        "keep_values": [
+          6894
+        ]
+      }
+    },
+    {
+      "name": "senado_vote_codes",
+      "source": "senado",
+      "url": "https://legis.senado.leg.br/dadosabertos/plenario/lista/tiposComparecimento",
+      "file": "senado/activity/tipos_comparecimento.json"
+    }
   ]
 }

@@ -1,0 +1,695 @@
+{
+  "_fixture": {
+    "cache_file_id": "b40c2c202527667fb7f674d48f4b1784b4c0d3a30c452f819e1474059557c31c",
+    "case": "senado_speeches_5917_2025",
+    "recorded_at": "2026-11-01T21:31:38.689276+00:00",
+    "removed_personal_fields": [
+      "DiscursosParlamentar.Parlamentar.IdentificacaoParlamentar.EmailParlamentar",
+      "DiscursosParlamentar.Parlamentar.IdentificacaoParlamentar.SexoParlamentar"
+    ],
+    "spec": "https://legis.senado.leg.br/dadosabertos/v3/api-docs (4.1.3.108)",
+    "trimmed": "not trimmed"
+  },
+  "api_version": "5",
+  "body": {
+    "DiscursosParlamentar": {
+      "Metadados": {
+        "DataVersaoServico": "2021-06-29",
+        "DescricaoDataSet": "Discursos do Parlamentar. Se não informar o período, serão retornados os discursos dos últimos 30 dias.",
+        "Versao": "01/11/2026 13:57:42",
+        "VersaoServico": "5"
+      },
+      "Parlamentar": {
+        "IdentificacaoParlamentar": {
+          "CodigoParlamentar": "5917",
+          "CodigoPublicoNaLegAtual": "923",
+          "FormaTratamento": "Senador ",
+          "NomeCompletoParlamentar": "Fernando Antonio Caminha Dueire",
+          "NomeParlamentar": "Fernando Dueire",
+          "SiglaPartidoParlamentar": "PSD",
+          "UfParlamentar": "PE",
+          "UrlFotoParlamentar": "http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5917.jpg",
+          "UrlPaginaParlamentar": "http://www25.senado.leg.br/web/senadores/senador/-/perfil/5917"
+        },
+        "Pronunciamentos": {
+          "Pronunciamento": [
+            {
+              "CodigoPronunciamento": "517968",
+              "DataPronunciamento": "2025-11-04",
+              "Indexacao": "RELATOR, PROJETO DE RESOLUÇÃO DO SENADO (PRS), AUTORIZAÇÃO, ESTADO DE PERNAMBUCO (PE), CONTRATAÇÃO, OPERAÇÃO FINANCEIRA, INSTITUIÇÃO FINANCEIRA, BANCO INTERNACIONAL DE RECONSTRUÇÃO E DESENVOLVIMENTO (BIRD), GARANTIA, UNIÃO FEDERAL, CREDITO EXTERNO, DESTINAÇÃO, REESTRUTURAÇÃO, DIVIDA PUBLICA, AMBITO, PROGRAMA, SUSTENTABILIDADE, GESTÃO FISCAL, ECONOMIA, MEIO AMBIENTE.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2025-11-05",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "81",
+                    "NumeroPagInicioPublicacao": "81",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=05/11/2025&paginaDireta=81"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "520506",
+                "CodigoSessaoLegislativa": "873",
+                "DataSessao": "2025-11-04",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "161",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Como Relator sobre o Projeto de Resolução do Senado (PRS) n° 47, de 2025, que \"Autoriza a contratação de operação de crédito externo, com a garantia da República Federativa do Brasil, no valor de até US$ 275.000.000,00 (duzentos e setenta e cinco milhões de dólares dos Estados Unidos da América), de principal, entre o Governo do Estado de Pernambuco e o Banco Internacional para Reconstrução e Desenvolvimento - BIRD, cujos recursos destinam-se à reestruturação e recomposição do principal de dívidas do Estado, no âmbito do Programa de Sustentabilidade Fiscal, Econômica e Ambiental do Estado de Pernambuco”.",
+              "TipoUsoPalavra": {
+                "Codigo": "11341",
+                "Descricao": "Como Relator",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "CRE"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/517968",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/517968"
+            },
+            {
+              "CodigoPronunciamento": "517691",
+              "DataPronunciamento": "2025-10-21",
+              "Indexacao": "HOMENAGEM, AGENTE COMUNITARIO DE SAUDE, AGENTE DE COMBATE AS ENDEMIAS, IMPORTANCIA, SAUDE PUBLICA, FUNCIONAMENTO, PREVENÇÃO, SISTEMA UNICO DE SAUDE (SUS), ACOMPANHAMENTO, FAMILIA, COMBATE, DOENÇA, DENGUE, CHIKUNGUNYA, ZIKA, BRASIL, ESPECIFICAÇÃO, ESTADO DE PERNAMBUCO (PE).",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2025-10-22",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "41",
+                    "NumeroPagInicioPublicacao": "40",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=22/10/2025&paginaDireta=40"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "513336",
+                "CodigoSessaoLegislativa": "873",
+                "DataSessao": "2025-10-21",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "149",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Homenagem aos agentes comunitários de saúde e aos agentes de combate às endemias pelo papel essencial na atenção primária e na prevenção de doenças, especialmente no Estado de Pernambuco. Defesa de melhores condições de trabalho, capacitação e valorização desses profissionais.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/517691",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/517691"
+            },
+            {
+              "CodigoPronunciamento": "517349",
+              "DataPronunciamento": "2025-10-13",
+              "Indexacao": "CELEBRAÇÃO, Comenda Governadores pela Alfabetização das Crianças na Idade Certa, GOVERNADOR, DESTAQUE, IMPORTANCIA, EDUCAÇÃO BASICA, ALFABETIZAÇÃO, CIDADANIA, CRISE, APRENDIZAGEM, PANDEMIA, NOVO CORONAVIRUS (COVID-19), NECESSIDADE, POLITICAS PUBLICAS, EDUCAÇÃO.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2025-10-14",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "47",
+                    "NumeroPagInicioPublicacao": "46",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=14/10/2025&paginaDireta=46"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "513330",
+                "CodigoSessaoLegislativa": "873",
+                "DataSessao": "2025-10-13",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "140",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "NDL"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Satisfação com a Comenda Governadores pela Alfabetização das Crianças na Idade Certa, concedida pelo Senado Federal, com destaque à atuação da Governadora do Estado de Pernambuco, Raquel Lyra. Alerta para os impactos da pandemia na alfabetização infantil e defesa de políticas públicas integradas para garantir o aprendizado na faixa etária adequada.",
+              "TipoUsoPalavra": {
+                "Codigo": "4818",
+                "Descricao": "Comunicação inadiável",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "CIN"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/517349",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/517349"
+            },
+            {
+              "CodigoPronunciamento": "517134",
+              "DataPronunciamento": "2025-10-08",
+              "Indexacao": "DEFESA, APROVAÇÃO, PROJETO DE LEI, CRIAÇÃO, LEI FEDERAL, IMPLEMENTAÇÃO, INSTRUMENTO, DESENVOLVIMENTO ECONOMICO, DESENVOLVIMENTO SUSTENTAVEL, MAR TERRITORIAL, OCEANO, ZONA COSTEIRA, SISTEMA NACIONAL, UNIFICAÇÃO, PADRONIZAÇÃO, DISPONIBILIDADE, DADOS, INFORMAÇÕES, INTEGRAÇÃO, PLANO NACIONAL DE GERENCIAMENTO COSTEIRO (PNGC), SELO, CERTIFICADO, EMPREENDIMENTO, INVESTIMENTO, DESENVOLVIMENTO SOCIAL, PROTEÇÃO, PRESERVAÇÃO, MEIO AMBIENTE, CRITERIOS, ADESÃO, ENTE FEDERADO, MUNICIPIOS, COOPERAÇÃO, GOVERNANÇA PUBLICA, ESTADOS, ACOMPANHAMENTO, POLITICA PUBLICA, EXECUÇÃO.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2025-10-09",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "37",
+                    "NumeroPagInicioPublicacao": "35",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=09/10/2025&paginaDireta=35"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "513327",
+                "CodigoSessaoLegislativa": "873",
+                "DataSessao": "2025-10-08",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "137",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Apresentação do Projeto de Lei no. 4.759/2025, que institui o Sistema Nacional de Informações para a Economia Azul (Sinmea), estabelece as Contas Econômicas do Oceano e da Zona Costeira e cria o Selo Azul e o Programa de Cooperação Federativa para Adaptação Costeira (Procosta-N). Destaque para a relevância estratégica dos oceanos para o desenvolvimento sustentável e apelo à aprovação da proposta como medida de Estado para o fortalecimento da governança ambiental e da economia azul.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/517134",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/517134"
+            },
+            {
+              "CodigoPronunciamento": "517110",
+              "DataPronunciamento": "2025-10-08",
+              "Indexacao": "HOMENAGEM, DIA NACIONAL, POVO, REGIÃO NORDESTE.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2025-10-09",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "17",
+                    "NumeroPagInicioPublicacao": "17",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=09/10/2025&paginaDireta=17"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "513327",
+                "CodigoSessaoLegislativa": "873",
+                "DataSessao": "2025-10-08",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "137",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Homenagem ao Dia do Nordestino e exaltação do povo da região.",
+              "TipoUsoPalavra": {
+                "Codigo": "4823",
+                "Descricao": "Pela ordem",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "POR"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/517110",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/517110"
+            },
+            {
+              "CodigoPronunciamento": "517028",
+              "DataPronunciamento": "2025-10-01",
+              "Indexacao": "DEFESA, APROVAÇÃO, PROJETO DE LEI COMPLEMENTAR (PLP), CRIAÇÃO, LEI COMPLEMENTAR, REGULAMENTAÇÃO, DISPOSITIVO, CONSTITUIÇÃO FEDERAL, CONCESSÃO, APOSENTADORIA ESPECIAL, PARIDADE, INTEGRALIDADE, AGENTE COMUNITARIO DE SAUDE, AGENTE DE COMBATE AS ENDEMIAS.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2025-10-02",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "27",
+                    "NumeroPagInicioPublicacao": "27",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=02/10/2025&paginaDireta=27"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "513323",
+                "CodigoSessaoLegislativa": "873",
+                "DataSessao": "2025-10-01",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "131",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Manifestação de apoio ao Projeto de Lei Complementar nº 185/2024, que regulamenta a aposentadoria especial dos Agentes Comunitários de Saúde e dos Agentes de Combate às Endemias. Enaltecimento da atuação desses profissionais na linha de frente da saúde básica e reconhecimento da importância do projeto para garantir justiça e valorização à categoria.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/517028",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/517028"
+            },
+            {
+              "CodigoPronunciamento": "516742",
+              "DataPronunciamento": "2025-09-17",
+              "Indexacao": "DEFESA, APROVAÇÃO, PROJETO DE LEI, CRIAÇÃO, LEI FEDERAL, OBRIGATORIEDADE, COMUNICAÇÕES, PESSOA FISICA, PESSOA JURIDICA, INFORMAÇÕES, DEVOLUÇÃO, VALOR, INSTITUIÇÃO FINANCEIRA, AUTORIZAÇÃO, BANCO CENTRAL DO BRASIL (BACEN), RESGATE, SISTEMA, IDENTIFICAÇÃO, LOCALIZAÇÃO, TITULAR, ATIVO FINANCEIRO, PUBLICAÇÃO, SITE, ATENDIMENTO, CENTRAL TELEFONICA.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2025-09-18",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "23",
+                    "NumeroPagInicioPublicacao": "22",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=18/09/2025&paginaDireta=22"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "480051",
+                "CodigoSessaoLegislativa": "873",
+                "DataSessao": "2025-09-17",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "119",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Considerações sobre o Projeto de Lei no. 3992/2025, de autoria de S. Exa., que dispõe sobre a obrigatoriedade de comunicação às pessoas físicas e jurídicas de informações relativas a valores a serem devolvidos pelas instituições financeiras e demais instituições autorizadas a funcionar pelo Banco Central do Brasil.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/516742",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/516742"
+            },
+            {
+              "CodigoPronunciamento": "516238",
+              "DataPronunciamento": "2025-08-27",
+              "Indexacao": "SOLICITAÇÃO, APROVAÇÃO, PROJETO DE LEI, CRIAÇÃO, LEI FEDERAL, PROGRAMA NACIONAL, INTEGRAÇÃO, GESTÃO, RESIDUO, AGROPECUARIA, INDUSTRIA, ZONA URBANA, DESTINAÇÃO, PRODUÇÃO, ENERGIA RENOVAVEL, REDUÇÃO, GAS, EFEITO ESTUFA, PROMOÇÃO, SUSTENTABILIDADE, ECONOMIA CIRCULAR, TRANSIÇÃO ENERGETICA, DEFINIÇÃO, OBJETIVO, CRITERIOS, PARTICIPAÇÃO, MATRIZ ENERGETICA, CONTRATAÇÃO, ENERGIA ELETRICA, OBRIGATORIEDADE, USINA, PLANO, RESIDUOS SOLIDOS, AUTORIZAÇÃO, EMISSÃO, CERTIFICADO, PREVISÃO, COMITE INTERMINISTERIAL, COMPETENCIA, COMPOSIÇÃO, FUNCIONAMENTO, ALTERAÇÃO, Política Nacional de Resíduos Sólidos, RESPONSABILIDADE, SERVIÇO PUBLICO, LIMPEZA PUBLICA, RECICLAGEM, AMBITO, MUNICIPIOS, PODER PUBLICO, FOMENTO, PROJETO, INCENTIVO, EMPRESA, UTILIZAÇÃO, COMBUSTIVEL.\nRESPOSTA, BRASIL, COP30, COMPROMISSO, SUSTENTABILIDADE, DESENVOLVIMENTO SUSTENTAVEL.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2025-08-28",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "25",
+                    "NumeroPagInicioPublicacao": "24",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=28/08/2025&paginaDireta=24"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "473499",
+                "CodigoSessaoLegislativa": "873",
+                "DataSessao": "2025-08-27",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "100",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Apelo à aprovação do Projeto de Lei nº 3311/2025, de autoria de S. Exa., que institui o Programa Nacional Metano Zero, com o objetivo de integrar a gestão de resíduos à produção de energia renovável, como resposta concreta do Brasil à COP 30 e compromisso com um futuro sustentável.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/516238",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/516238"
+            },
+            {
+              "CodigoPronunciamento": "515745",
+              "DataPronunciamento": "2025-08-19",
+              "Indexacao": "DISCURSO, DEFESA, APROVAÇÃO, PROJETO DE LEI, CRIAÇÃO, LEI FEDERAL, PROGRAMA NACIONAL, MODERNIZAÇÃO, INFRAESTRUTURA, SETOR, ENERGIA ELETRICA, TELECOMUNICAÇÃO, OBJETIVO, PROMOÇÃO, SEGURANÇA, ORGANIZAÇÃO, AREA PUBLICA, PRESERVAÇÃO, CIDADE, SUBSTITUIÇÃO, FIO, SUBSOLO, REQUISITOS, MUNICIPIOS, ORIGEM, RECURSOS FINANCEIROS, COORDENAÇÃO, UNIÃO FEDERAL.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2025-08-20",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "50",
+                    "NumeroPagInicioPublicacao": "49",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=20/08/2025&paginaDireta=49"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "473484",
+                "CodigoSessaoLegislativa": "873",
+                "DataSessao": "2025-08-19",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "94",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Defesa do Projeto de Lei nº 3801/2025, de autoria de S. Exa., que institui o Programa Nacional de Modernização da Infraestrutura dos Setores de Energia Elétrica e de Telecomunicações.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/515745",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/515745"
+            },
+            {
+              "CodigoPronunciamento": "515622",
+              "DataPronunciamento": "2025-08-12",
+              "Indexacao": "SESSÃO DE PREMIAÇÕES E CONDECORAÇÕES, ENTREGA, COMENDA, IRMÃ DULCE, HOMENAGEM, INSTITUIÇÃO BENEFICENTE, RECIFE (PE), ATENDIMENTO, OFTALMOLOGIA, REABILITAÇÃO, REDUÇÃO, CEGUEIRA, ATUAÇÃO, FORMAÇÃO PROFISSIONAL, SAUDE, LEITURA, CARTA, APOIO, CARDEAL, ARCEBISPO, IGREJA CATOLICA, SALVADOR (BA).",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2025-08-13",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "26",
+                    "NumeroPagInicioPublicacao": "24",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=13/08/2025&paginaDireta=24"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "465189",
+                "CodigoSessaoLegislativa": "873",
+                "DataSessao": "2025-08-12",
+                "HoraInicioSessao": "10:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "88",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "PRE"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Sessão de premiações e condecorações destinada à entrega da Comenda Santa Dulce dos Pobres. Homenagem à Fundação Altino Ventura, referência em oftalmologia, que realiza 400 mil atendimentos anuais e 30 mil cirurgias. Destaque para o acolhimento como parte do processo de cura. Leitura de carta de apoio do Cardeal Sérgio da Rocha, Arcebispo de Salvador (BA), que parabenizou a criação da Comenda Santa Dulce dos Pobres.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/515622",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/515622"
+            },
+            {
+              "CodigoPronunciamento": "515043",
+              "DataPronunciamento": "2025-07-09",
+              "Indexacao": "APOIO, PROJETO, ESTRATEGIA, DESENVOLVIMENTO, FORÇA AEREA BRASILEIRA (FAB), EMPRESA BRASILEIRA DE AERONAUTICA (EMBRAER), MUNICIPIO, GAVIÃO PEIXOTO (SP), BASE AEREA, BASE AEREA DE ANAPOLIS (BAAN).",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2025-07-10",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "16",
+                    "NumeroPagInicioPublicacao": "15",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=10/07/2025&paginaDireta=15"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "468765",
+                "CodigoSessaoLegislativa": "873",
+                "DataSessao": "2025-07-09",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "77",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Apoio a projetos estratégicos desenvolvidos pela Força Aérea Brasileira na unidade da Embraer na cidade de Gavião Peixoto-SP e na Base Aérea de Anápolis-GO.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/515043",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/515043"
+            },
+            {
+              "CodigoPronunciamento": "513494",
+              "DataPronunciamento": "2025-05-07",
+              "Indexacao": "RELATOR, PARECER, PROJETO DE RESOLUÇÃO DO SENADO (PRS), CRIAÇÃO, RESOLUÇÃO, SENADO, CRITERIOS, CONCESSÃO, COMENDA, HOMENAGEM, GOVERNADOR, ESTADOS, DISTRITO FEDERAL (DF), IMPLEMENTAÇÃO, POLITICA PUBLICA, ALFABETIZAÇÃO, CRIANÇA.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2025-05-08",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "51",
+                    "NumeroPagInicioPublicacao": "50",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=08/05/2025&paginaDireta=50"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "457101",
+                "CodigoSessaoLegislativa": "873",
+                "DataSessao": "2025-05-07",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "34",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Como Relator - Para proferir parecer sobre o Projeto de Resolução do Senado (PRS) n° 10, de 2025, que \"Institui, no âmbito do Senado Federal, a Comenda Governadores pela Alfabetização das Crianças na Idade Certa, destinada a homenagear governadoras e governadores que tenham se destacado na implementação de políticas públicas em prol da alfabetização.\"",
+              "TipoUsoPalavra": {
+                "Codigo": "11339",
+                "Descricao": "Como Relator - Para proferir parecer",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "PPP"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/513494",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/513494"
+            },
+            {
+              "CodigoPronunciamento": "513303",
+              "DataPronunciamento": "2025-04-29",
+              "Indexacao": "PEDIDO, INCLUSÃO, PAUTA, MENSAGEM (MSG), AUTORIZAÇÃO, ESTADO DE PERNAMBUCO (PE), CONTRATAÇÃO, OPERAÇÃO FINANCEIRA, INSTITUIÇÃO FINANCEIRA, BANCO INTERNACIONAL DE RECONSTRUÇÃO E DESENVOLVIMENTO (BIRD), GARANTIA, UNIÃO FEDERAL, CREDITO EXTERNO, DESTINAÇÃO, FINANCIAMENTO, PROJETO, SANEAMENTO, ZONA RURAL.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2025-04-30",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "29",
+                    "NumeroPagInicioPublicacao": "29",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=30/04/2025&paginaDireta=29"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "452318",
+                "CodigoSessaoLegislativa": "873",
+                "DataSessao": "2025-04-29",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "28",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Pedido de inclusão em pauta da Mensagem (SF) (MSF) n° 13, de 2025, que \"Submete à apreciação do Senado Federal, nos termos do art. 52, da Constituição Federal, autorização para contratação de operação de crédito externo no valor de USD$ 90,000,000.00 entre o Governo do Estado de Pernambuco e o Banco Internacional para Reconstrução e Desenvolvimento - BIRD\".",
+              "TipoUsoPalavra": {
+                "Codigo": "4823",
+                "Descricao": "Pela ordem",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "POR"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/513303",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/513303"
+            },
+            {
+              "CodigoPronunciamento": "512715",
+              "DataPronunciamento": "2025-04-01",
+              "Indexacao": "DEFESA, APROVAÇÃO, PROJETO DE LEI, AUTORIA, ORADOR, REGULAMENTAÇÃO, TRANSFORMAÇÃO, TITULO, ATIVO FINANCEIRO, MEIO AMBIENTE, NEGOCIAÇÃO, MERCADO FINANCEIRO, MELHORIA, INVESTIMENTO, PROJETO, IMPACTO AMBIENTAL, COMPROMISSO, MUDANÇA CLIMATICA, SUSTENTABILIDADE.",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2025-04-02",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "30",
+                    "NumeroPagInicioPublicacao": "29",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=02/04/2025&paginaDireta=29"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "452175",
+                "CodigoSessaoLegislativa": "873",
+                "DataSessao": "2025-04-01",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "16",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Defesa do Projeto de Lei no. 3.433/2024, de autoria de S.Exa., que regula a securitização de ativos ambientais, destinada à conversão de créditos ambientais em recursos monetários.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/512715",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/512715"
+            },
+            {
+              "CodigoPronunciamento": "512344",
+              "DataPronunciamento": "2025-03-18",
+              "Indexacao": "DEFESA, APROVAÇÃO, PROJETO DE LEI, AUTORIA, ORADOR, PREVISÃO ANUAL, DESTINAÇÃO, RENDA, LOTERIA, FUNDO ESPECIAL PARA CALAMIDADE PUBLICA (FUNCAP).",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2025-03-19",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "53",
+                    "NumeroPagInicioPublicacao": "52",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=19/03/2025&paginaDireta=52"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "452147",
+                "CodigoSessaoLegislativa": "873",
+                "DataSessao": "2025-03-18",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "9",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Reflexão sobre a necessidade de pacificação no Brasil, tomando como referência a liderança do ex-Presidente da República Juscelino Kubitschek. Defesa do Projeto de Lei no. 2688/2024, de autoria de S. Exa., que destina recursos da loteria ao Fundo Nacional para Calamidades Públicas (Funcap), e apelo ao apoio dos Parlamentares para sua aprovação na CAE.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/512344",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/512344"
+            },
+            {
+              "CodigoPronunciamento": "512255",
+              "DataPronunciamento": "2025-03-12",
+              "Indexacao": "DEFESA, APROVAÇÃO, PROJETO DE LEI, AUTORIA, ORADOR, ALTERAÇÃO, NORMAS, FUNDO DE GARANTIA POR TEMPO DE SERVIÇO (FGTS), AUTORIZAÇÃO, SAQUE, CONDICIONAMENTO, COMPROVAÇÃO, ESCLEROSE MULTIPLA, ESCLEROSE LATERAL AMIOTROFICA (ELA).",
+              "NomeCasaPronunciamento": "Senado Federal",
+              "Publicacoes": {
+                "Publicacao": [
+                  {
+                    "DataPublicacao": "2025-03-13",
+                    "DescricaoVeiculoPublicacao": "DSF",
+                    "IndicadorRepublicacao": "Não",
+                    "NumeroPagFimPublicacao": "31",
+                    "NumeroPagInicioPublicacao": "30",
+                    "UrlDiario": "http://legis.senado.leg.br/diarios/BuscaDiario?tipDiario=1&datDiario=13/03/2025&paginaDireta=30"
+                  }
+                ]
+              },
+              "SessaoPlenaria": {
+                "CodigoSessao": "451478",
+                "CodigoSessaoLegislativa": "873",
+                "DataSessao": "2025-03-12",
+                "HoraInicioSessao": "14:00:00",
+                "NomeCasaSessao": "Senado Federal",
+                "NumeroSessao": "5",
+                "SiglaCasaSessao": "SF",
+                "SiglaTipoSessao": "DOR"
+              },
+              "SiglaCasaPronunciamento": "SF",
+              "SiglaPartidoParlamentarNaData": "MDB",
+              "TextoResumo": "Defesa da aprovação do Projeto de Lei nº 2360/2024, de autoria de S. Exa., que dispõe sobre o Fundo de Garantia do Tempo de Serviço (FGTS), para incluir, entre as hipóteses de movimentação da conta vinculada, o acometimento de trabalhador ou de dependente por esclerose múltipla ou esclerose lateral amiotrófica.",
+              "TipoUsoPalavra": {
+                "Codigo": "4819",
+                "Descricao": "Discurso",
+                "IndicadorAtivo": "Sim",
+                "Sigla": "DIS"
+              },
+              "UfParlamentarNaData": "PE",
+              "UrlTexto": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/texto/512255",
+              "UrlTextoBinario": "https://legis.senado.gov.br/disse/dadosabertos/arquivoTextoPronunciamento/512255"
+            }
+          ]
+        },
+        "UrlGlossario": "http://legis.senado.leg.br/dadosabertos/senador/"
+      },
+      "noNamespaceSchemaLocation": "https://legis.senado.leg.br/dadosabertos/dados/DiscursosParlamentarv5.xsd"
+    }
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T16:57:42.883214+00:00",
+  "method": "GET",
+  "params": {
+    "dataFim": "20251231",
+    "dataInicio": "20250101"
+  },
+  "schema": 1,
+  "source": "senado",
+  "status": 200,
+  "url": "https://legis.senado.leg.br/dadosabertos/senador/5917/discursos"
+}

@@ -1,0 +1,62 @@
+# Judgmental words and phrases that must not appear in user-facing text or summaries
+# (non-negotiable rule 4; decisions 0010 and 0011). One per line, lower case; matched as whole
+# words, ignoring accents and case. Owned by the technical writer; changes reviewed by the owner.
+melhor
+melhores
+pior
+piores
+preguiçoso
+preguiçosa
+preguiçosos
+preguiçosas
+corrupto
+corrupta
+corruptos
+corruptas
+vagabundo
+vagabunda
+incompetente
+incompetentes
+exemplar
+vergonha
+vergonhoso
+vergonhosa
+fraco
+fraca
+fracos
+fracas
+excelente
+excelentes
+ótimo
+ótima
+péssimo
+péssima
+herói
+heroína
+vilão
+vilã
+ranking dos melhores
+ranking dos piores
+campeão
+campeã
+faltoso
+faltosa
+gazeteiro
+gazeteira
+assíduo
+assídua
+assíduos
+assíduas
+omisso
+omissa
+omissos
+omissas
+improdutivo
+improdutiva
+improdutivos
+improdutivas
+produtivo
+produtiva
+produtivos
+produtivas
+preguiça

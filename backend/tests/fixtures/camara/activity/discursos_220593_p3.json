@@ -1,0 +1,82 @@
+{
+  "_fixture": {
+    "cache_file_id": "725a1327a446e49070d2e8cfaf5e7a21e469f1c3980809f1d63253c89020f132",
+    "case": "camara_speeches_220593_page_3",
+    "recorded_at": "2026-11-01T21:31:38.617417+00:00",
+    "removed_personal_fields": [],
+    "spec": "https://dadosabertos.camara.leg.br/api/v2/api-docs (0.4.347, 2026-10-26)",
+    "trimmed": "not trimmed"
+  },
+  "api_version": null,
+  "body": {
+    "dados": [
+      {
+        "dataHoraFim": null,
+        "dataHoraInicio": "2024-10-30T17:08",
+        "faseEvento": {
+          "dataHoraFim": null,
+          "dataHoraInicio": null,
+          "titulo": "Ordem do Dia"
+        },
+        "keywords": "Deputado federal,Candidato eleito,Prefeito,Cuiabá (MT),Direita política,Eleição municipal,Resultado eleitoral,Partido dos Trabalhadores (PT)",
+        "sumario": "O Deputado agradeceu ao povo cuiabano pela expressiva votação de 53%, ressaltando o desejo de mudança e melhorias em Cuiabá (MT), cidade que enfrenta problemas na saúde e infraestrutura. Destacou o apoio ao ex-Presidente Jair Bolsonaro como decisivo nas eleições municipais, mencionando que candidatos buscaram associar-se à imagem de Bolsonaro, mesmo em regiões adversas. Também enfatizou que, em Mato Grosso, o Partido dos Trabalhadores (PT) não elegeu prefeitos nem vereadores. Prometeu uma gestão voltada para todos, independente de posicionamento político, e afirmou que o objetivo é mostrar o desenvolvimento da cidade sob seu Governo. Projetou otimismo para 2024, mencionando vitórias de direita em todo o País.",
+        "tipoDiscurso": "COMO LÍDER",
+        "transcricao": "O SR. ABILIO BRUNINI (PL - MT. Como Líder. Sem revisão do orador.) - Muito obrigado a todos. Muito obrigado ao povo cuiabano. Foram mais de 171 mil votos. O povo cuiabano escolheu um futuro melhor para a nossa cidade, que já passa por 23 operações da polícia no combate à corrupção. Cuiabá é uma cidade com caos na saúde, uma cidade com diversos problemas de infraestrutura, uma cidade que parou no tempo. Eu agradeço ao povo cuiabano a confiança depositada em mim. A votação expressiva que nós alcançamos, de 53%, representa um desejo de mudança, um desejo de que Cuiabá volte a ser um símbolo de prosperidade, um símbolo de desenvolvimento, um símbolo de saúde de qualidade. Quero agradecer, em especial, ao Presidente Bolsonaro, o grande vencedor das eleições municipais neste País. Quem não estava no PL queria estar no PL, e quem não podia estar no PL não falava mal do Bolsonaro. No meu Estado, na minha cidade, um candidato adversário, do PT, chegou a colocar nas suas redes sociais e no seu programa eleitoral um suposto eleitor dizendo que era bolsonarista e que votava no fulano, para tentar conseguir ter o voto dos bolsonaristas. Na minha cidade, o candidato do PT trocou a cor do partido. Deixou de usar vermelho e começou a usar roxo. Deixou de usar a estrela e começou a usar outro número quase escondido. Na minha cidade de Cuiabá, chegaram a fazer um adesivo azul, dizendo que eram cristãos e que votavam no nome do candidato, escondendo o número do partido e o seu símbolo. O Lula nem sequer foi utilizado na campanha eleitoral do meu adversário. O Bolsonaro nós deixamos claro em todo momento. Chegou ao ponto de uma jornalista da Globo News questionar: \"Esse candidato do Partido dos Trabalhadores é de esquerda ou de direita?\" Chegou ao ponto de se expressar que em Mato Grosso o PT não se cria. Nenhuma cidade do Estado de Mato Grosso elegeu um Prefeito do PT. Não há nenhum Prefeito do PT no Estado de Mato Grosso. Na cidade de Cuiabá, não há nenhum Vereador ou Vereadora do PT. No nosso Estado, o PT não se cria. Quero deixar bem claro que, nessas eleições municipais, o grande vencedor em todo o Brasil foi Jair Bolsonaro. Os partidos de centro queriam o apoio de Jair Bolsonaro. O MDB, que tem Ministério no Governo Lula, queria, na cidade de São Paulo, o apoio ligado ao Presidente Bolsonaro, e teve. Das três principais candidaturas em São Paulo  Boulos, Nunes e Marçal , Nunes teve o apoio do partido do Presidente Bolsonaro, e o Marçal queria ter o apoio do Presidente Bolsonaro. O Boulos não atacou diretamente o Presidente Bolsonaro durante o período eleitoral. Nós deixamos muito claro quão terrível é um país ser governado pelo PT, como tem sido agora. No Estado de Mato Grosso, na cidade de Cuiabá, o Lula não representa o nosso povo. Esse recado foi deixado de forma clara e objetiva. Agora temos uma nova missão: governar para todos. Governar para a Direita, para a Esquerda, para o Centro, governar para todos. A partir do momento que chegamos à Prefeitura, vamos fazer a melhor gestão possível, mostrar que Cuiabá vai se desenvolver e crescer muito mais do que os lugares governados pelo PT. Quero parabenizar todos que foram candidatos a Prefeito, em especial o meu amigo Deputado André Fernandes, que, no Ceará, mostrou um novo modo de fazer campanha eleitoral. André Fernandes perdeu por 0,5% numa cidade contra a máquina do Governo do Estado, contra a máquina do PT, contra a máquina do Governo Federal. Meio por cento foi a diferença de votos entre o Deputado André Fernandes e o outro candidato. Como o Deputado Nikolas Ferreira diz, pode até ser que o presente esteja na mão do PT, mas o futuro é nosso. Nós vamos reconquistar o Brasil. Nós vamos tirar o PT do poder. A melhor forma de fazer isso começou agora em 2024. Elegemos um número significativo de Vereadores de direita. Esses Vereadores estão não só no PL, mas também em todas as Câmaras Municipais do País. Elegemos um número significativo de Prefeitos, que estão não só no PL, mas também em quase todas as Prefeituras do País. No Rio Grande do Sul, Deputado Osmar Terra, salvamos Porto Alegre. E todos os Deputados da Esquerda que tentaram se sobressair perderam. Isto serve de recado para eles: vocês não voltarão em 2024. Nós vamos resgatar o nosso País e continuar a ser maioria na Câmara e no Senado. Muito obrigado. Obrigado, povo cuiabano! Obrigado, população do Brasil!",
+        "uriEvento": "",
+        "urlAudio": null,
+        "urlTexto": "https://imagem.camara.gov.br/dc_20b.asp?largura=&altura=&tipoForm=diarios&selCodColecaoCsv=D&Datain=31%2F10%2F2024&txPagina=102&txSuplemento=&enviar=Pesquisar",
+        "urlVideo": null
+      },
+      {
+        "dataHoraFim": null,
+        "dataHoraInicio": "2024-12-17T17:48",
+        "faseEvento": {
+          "dataHoraFim": null,
+          "dataHoraInicio": null,
+          "titulo": "Ordem do Dia"
+        },
+        "keywords": "Prefeito,Cuiabá (MT),Candidato eleito,Deputado federal eleito\r\nCorrupção,General de exército,Ditadura militar,Prisão\r\nCarga tributária,Dólar,Política econômica,Esquerda política\r\nMato Grosso,Direita política,Resultado eleitoral,Eleição municipal",
+        "sumario": "O Deputado pronunciou seu discurso de despedida, uma vez que assumirá o cargo de Prefeito de Cuiabá (MT). Expressou confiança no retorno da Direita ao poder nas próximas eleições e criticou o Governo Lula. Condenou o apoio da Esquerda à corrupção e à prisão de inocentes, lamentando a prisão do General Braga Netto. Afirmou que a Esquerda comete os mesmos desmandos da ditadura militar como a perseguição de opositores. Censurou o aumento da carga tributária e a alta do dólar. Agradeceu e saudou todos os Deputados da Direita e da Oposição. Por fim, celebrou a derrota nas eleições municipais da Esquerda em todo o Estado do Mato Grosso e a conquista pela Direita do maior número de Prefeituras do País.",
+        "tipoDiscurso": "COMO LÍDER",
+        "transcricao": "O SR. ABILIO BRUNINI (PL - MT. Como Líder. Sem revisão do orador.) - Sr. Presidente, colegas Parlamentares, faço hoje provavelmente o meu último discurso como Deputado Federal aqui nesta Casa. Ocupará o meu lugar, sucedendo-me, o Deputado Federal Rodrigo da Zaeli. Ele estará na nossa bancada juntamente com a Deputada Coronel Fernanda, com o Deputado José Medeiros, o Deputado Nelson Barbudo, que é suplente da Deputada Amália Barros, de quem temos saudades, o Deputado Coronel Assis, a Deputada Gisela Simona e outros Parlamentares. Durante esses 2 anos que passei por aqui, pude perceber que nós vamos voltar. E vamos voltar para representar o povo contra todo esse desmando, todas essas ações, todos esses risos que vocês dão diante da desgraça do povo. O dólar está a 6 reais e 15 centavos. Vocês estão loteando a Amazônia para os chineses. Vocês estão vendendo o Brasil e estão vendendo o futuro do povo brasileiro. Vocês, da Esquerda, do Governo, sorriem quando um inocente é preso e condenado a 16 anos ou 17 anos. Vocês comemoram a soltura de corruptos e a anulação de processos, como o caso do mensalão e de todos os outros casos de corrupção. Vocês riem do povo brasileiro achando que a corrupção está de volta e o tempo do reinado está de volta. Quero dizer a vocês: não adianta vocês comemorarem a prisão de Braga Netto. É mais um herói, é mais um líder que está sendo perseguido por vocês. O tempo está a nosso favor. Vocês acusam o golpe de 1964, mas praticam, da mesma forma, os mesmos atos. A mesma ditadura que vocês acusam, hoje vocês fazem novamente, usando outros Poderes. Acusam os abusos ocorridos durante o período do mensalão, de Sergio Moro e tudo o mais, e praticam os mesmos abusos. Perseguem opositores, destroem a imagem de pessoas de bem e ainda tentam defender e promover corruptos confessos, libertando-os e dando a eles o poder de empresas no nosso País. Vocês riem do povo, mas esquecem que o tempo está a nosso favor. O Deputado Nikolas diz: \"O presente é seu, e o futuro é nosso\". Eu posso dizer a vocês: quanto mais perseguirem, mais forte ficará no coração da população brasileira o desejo de retornar a recuperação do nosso País. Vocês apresentam o maior imposto do mundo, e isso é o começo da derrota de vocês. O dólar está a 6 reais e 15 centavos. Não adianta perseguir, não adianta aumentar imposto, não adianta distribuir Ministérios para continuar se mantendo no poder. O tempo do líder de vocês está acabando. Após Lula, não haverá outra liderança. O tempo está acabando. Em 2026, sairão líderes desta Casa, da Câmara Federal, sairão Deputados que serão Senadores. O Senado será modificado em 2026. Vocês podem se preparar. Nós vamos retomar o nosso Brasil. E à população brasileira que nos assiste digo que não fique triste, não chore. A cada líder perseguido, sorria, alegre-se: é uma faísca que está se incendiando em cada canto do nosso País. Eu vejo a Deputada Jandira, a Deputada Gleisi, a Deputada Maria do Rosário, eu vejo o pessoal da cueca, eu vejo o pessoal de tantas e tantas outras propinas e escândalos, às vezes circulando por aqui, sorridentes neste plenário. Esse tempo vai chegar. O tempo de a Polícia Federal ser comandada com dignidade e respeito vai chegar. O tempo de o Judiciário agir com justiça vai chegar. O tempo de o povo brasileiro sorrir e comemorar, de voltar a usar a camisa verde e amarela, vai chegar. O tempo de o povo brasileiro sorrir vai chegar. Eu quero dizer a todos vocês: foi com orgulho que eu servi dentro desta Casa. Em cada batalha, em cada momento, em cada desafio, foi com muita alegria, muita alegria e muito orgulho, que eu servi nesta Casa. E quero dizer algo a todos que estão conduzindo a Direita aqui. Quero agradecer a cada um dos Deputados de oposição, cada um dos Deputados de direita, aos nossos Líderes. Muito obrigado. Com todas as dificuldades que é ser oposição neste País, vocês têm conduzido a Direita e a Oposição no caminho da retomada do nosso Brasil. No Estado de Mato Grosso, nenhum Prefeito do PT se elegeu. Em Cuiabá, nenhum Vereador do PT se elegeu  nem do PT, nem do PSOL, nem do PCdoB. Em Mato Grosso, a Esquerda não se cria. Em Mato Grosso, não aceitamos essas ideologias. Agora, como Prefeito da Capital, nós vamos trabalhar para que as nossas crianças tenham um futuro digno e possam ser futuros Vereadores, Deputados Estaduais, Deputados Federais e Senadores, para continuar resgatando o Brasil. O futuro é nosso! E, mesmo que achem que o presente seja de vocês, o presente é nosso. Assim como vocês estão tentando tomar conta aí, o presente também é nosso, porque fizemos o maior número de Prefeituras. O maior número de Prefeituras do País está na Direita, e não é só no PL, não. O maior número de Prefeituras está na Direita. Muito obrigado, Presidente. Meu nome é Abilio.",
+        "uriEvento": "",
+        "urlAudio": null,
+        "urlTexto": "https://imagem.camara.gov.br/dc_20b.asp?largura=&altura=&tipoForm=diarios&selCodColecaoCsv=D&Datain=18%2F12%2F2024&txPagina=119&txSuplemento=&enviar=Pesquisar",
+        "urlVideo": null
+      }
+    ],
+    "links": [
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/deputados/220593/discursos?idLegislatura=57&ordem=ASC&ordenarPor=dataHoraInicio&pagina=3&itens=100",
+        "rel": "self"
+      },
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/deputados/220593/discursos?idLegislatura=57&ordem=ASC&ordenarPor=dataHoraInicio&pagina=1&itens=100",
+        "rel": "first"
+      },
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/deputados/220593/discursos?idLegislatura=57&ordem=ASC&ordenarPor=dataHoraInicio&pagina=3&itens=100",
+        "rel": "last"
+      },
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/deputados/220593/discursos?idLegislatura=57&ordem=ASC&ordenarPor=dataHoraInicio&pagina=2&itens=100",
+        "rel": "previous"
+      }
+    ]
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T20:36:02.762769+00:00",
+  "method": "GET",
+  "params": {
+    "idLegislatura": "57",
+    "itens": "100",
+    "ordem": "ASC",
+    "ordenarPor": "dataHoraInicio",
+    "pagina": "3"
+  },
+  "schema": 1,
+  "source": "camara",
+  "status": 200,
+  "url": "https://dadosabertos.camara.leg.br/api/v2/deputados/220593/discursos"
+}

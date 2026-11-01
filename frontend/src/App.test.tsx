@@ -1,27 +1,18 @@
-import { render, screen } from "@testing-library/react";
-import { MemoryRouter } from "react-router";
+import { screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import { AppRoutes } from "./App";
+import { renderAt } from "./test/render";
 import { text } from "./text/pt-BR";
 
-function renderAt(path: string) {
-  return render(
-    <MemoryRouter initialEntries={[path]}>
-      <AppRoutes />
-    </MemoryRouter>,
-  );
-}
-
 describe("routes", () => {
-  it("renders the home page in Portuguese", () => {
-    renderAt("/");
-    expect(screen.getByRole("heading", { level: 1, name: text.appName })).toBeInTheDocument();
+  it("renders a not-found page for unknown paths", async () => {
+    renderAt("/nao-existe");
+    expect(await screen.findByRole("heading", { name: text.notFoundTitle })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: text.backHome })).toHaveAttribute("href", "/");
   });
 
-  it("renders a not-found page for unknown paths", () => {
-    renderAt("/nao-existe");
-    expect(screen.getByRole("heading", { name: text.notFoundTitle })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: text.backHome })).toHaveAttribute("href", "/");
+  it("shows the snapshot date in pt-BR", async () => {
+    renderAt("/metodologia");
+    expect(await screen.findByText(text.snapshot("01/11/2026"))).toBeInTheDocument();
   });
 });

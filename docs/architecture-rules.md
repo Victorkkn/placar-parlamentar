@@ -122,14 +122,14 @@ Small, descriptive local commits are allowed.
 - Every number is rendered through the shared source-link component. External links use `rel="noopener noreferrer"`.
 - Accessibility: semantic HTML, keyboard use, labels, contrast; tables as the base form of comparisons and leaderboards.
 
-## 12. Summaries (decision 0010)
+## 12. Summaries (decisions 0010, 0018)
 
 - All summary code is in `backend/placar/summaries/`. Only `summaries/llm/` may import the model provider's SDK (`anthropic`).
 - Model set by `SUMMARY_MODEL` (default `claude-opus-5-5`); key only in `ANTHROPIC_API_KEY` in `.env`. Without a key, template summaries only.
 - Only public official data goes to the model. Never visitor data or visitor-typed text.
 - Input is a fact sheet of structured facts with ids and `SourceRef`s. No free text from the APIs in the MVP.
 - Output is structured JSON: pt-BR sentences, each with the fact ids it relies on.
-- A plain-Python validator rejects the whole draft unless: every sentence cites existing fact ids; every number, date and name appears in its cited facts; no banned wording (`summaries/wording/`); count and length limits hold.
+- A plain-Python validator rejects the whole draft unless: every sentence cites existing fact ids; every number, date and name appears in its cited facts; no banned wording (`docs/wording/banned-pt-BR.txt`, the single list for app and summaries, decision 0018); count and length limits hold.
 - On rejection, refusal, error or timeout: one retry, then the template summary. Templates are the only summaries for custom windows.
 - Model summaries are generated ahead of time by a management command for preset windows only, never during a visitor request. Each stores model id, prompt version, fact-sheet hash, creation time and validation result.
 - Each sentence is shown with its source links; the page states the text is automatic and whether it is a model or template summary.
@@ -174,12 +174,13 @@ Small, descriptive local commits are allowed.
 - No Senado attendance metric in the MVP; the app states it is not available in the official sources. Nominal-vote participation is a separate metric for both houses and is never labeled attendance.
 - Câmara committee attendance is deferred until after the MVP; committee memberships are included.
 
-## 17. MVP data snapshot (decision 0015)
+## 17. MVP data snapshot and scope (decisions 0015, 0020)
 
 - The MVP serves pages only from the official data already in the raw cache and database; it never calls the official APIs while serving pages.
 - The interface shows the snapshot date; every number keeps its official source link.
 - Features or data not built yet show "Ainda não disponível". No made-up or sample numbers are ever shown.
 - Refreshing the snapshot is manual, run by or approved by the owner. Data sources left out of the MVP are listed in the README.
+- The MVP is phases A–D. Rankings (Phase E) come after the MVP; the app shows no rankings page until then.
 
 ## 18. Git workflow and CI (decision 0016)
 

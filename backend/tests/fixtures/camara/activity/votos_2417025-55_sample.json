@@ -1,0 +1,61 @@
+{
+  "_fixture": {
+    "cache_file_id": "3bef39695d0c79c69690695ec4decc0de67951c5c5e4b487519d3d28e4865fd0",
+    "case": "camara_ballots_2417025_55_voted",
+    "recorded_at": "2026-11-01T21:31:38.670973+00:00",
+    "removed_personal_fields": [
+      "dados[0].deputado_.email",
+      "dados[1].deputado_.email"
+    ],
+    "spec": "https://dadosabertos.camara.leg.br/api/v2/api-docs (0.4.347, 2026-10-26)",
+    "trimmed": "dados: kept items with deputado_.id in ['160592', '220593'] of 434"
+  },
+  "api_version": null,
+  "body": {
+    "dados": [
+      {
+        "dataRegistroVoto": "2024-03-12T20:16:43",
+        "deputado_": {
+          "id": 160592,
+          "idLegislatura": 57,
+          "nome": "Zeca Dirceu",
+          "siglaPartido": "PT",
+          "siglaUf": "PR",
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/160592",
+          "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/160592.jpg"
+        },
+        "tipoVoto": "Não"
+      },
+      {
+        "dataRegistroVoto": "2024-03-12T20:10:26",
+        "deputado_": {
+          "id": 220593,
+          "idLegislatura": 57,
+          "nome": "Abilio Brunini",
+          "siglaPartido": "PL",
+          "siglaUf": "MT",
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220593",
+          "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37906",
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220593.jpg"
+        },
+        "tipoVoto": "Sim"
+      }
+    ],
+    "links": [
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2417025-55/votos",
+        "rel": "self"
+      }
+    ]
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T17:37:44.481480+00:00",
+  "method": "GET",
+  "params": {},
+  "schema": 1,
+  "source": "camara",
+  "status": 200,
+  "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2417025-55/votos"
+}

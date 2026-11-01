@@ -7,7 +7,7 @@ from pathlib import Path
 from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 
-from placar.legislators.services import replace_house
+from placar.legislators.services import record_load, replace_house
 from placar.sources.cache import CachedFetcher, CacheMissError, Freshness, RawCache
 from placar.sources.clients.camara import CamaraClient
 from placar.sources.clients.senado import SenadoClient
@@ -56,6 +56,11 @@ class Command(BaseCommand):
                 self.stdout.write(f"  {label}: {len(items)}")
                 for item in items:
                     self.stdout.write(f"    - {item}")
+        # Officials are replaced, and their activity rows go with them (database cascade).
+        self.stdout.write(
+            "Note: activity data for these houses was removed with the old records. "
+            "Run normalize_activity with the same --date to load it again."
+        )
 
     def _camara(self, day):
         client = CamaraClient(offline_fetcher("camara"))
@@ -65,7 +70,9 @@ class Command(BaseCommand):
         histories = {i: client.history(i, freshness) for i in sorted({r.deputy_id for r in rows})}
         bundle, notes = camara_norm.normalize(leg, rows, histories)
         notes.unknown += client.notes.items
-        return "camara", replace_house(bundle), notes
+        counts = replace_house(bundle)
+        record_load("CAMARA", "people", day, client.fetcher.stats.latest_fetched_at)
+        return "camara", counts, notes
 
     def _senado(self, day):
         client = SenadoClient(offline_fetcher("senado"))
@@ -90,4 +97,6 @@ class Command(BaseCommand):
         )
         bundle, notes = senado_norm.normalize(data)
         notes.unknown += client.notes.items
-        return "senado", replace_house(bundle), notes
+        counts = replace_house(bundle)
+        record_load("SENADO", "people", day, client.fetcher.stats.latest_fetched_at)
+        return "senado", counts, notes

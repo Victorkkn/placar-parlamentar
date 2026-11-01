@@ -1,6 +1,5 @@
 """normalize_current end to end: a temporary cache built from the REAL fixtures, offline."""
 
-import copy
 import io
 from pathlib import Path
 
@@ -10,22 +9,15 @@ from django.core.management.base import CommandError
 
 from placar.legislators.models import Official, ServicePeriod
 from placar.sources.cache import RawCache
-from placar.sources.fixtures import load_fixture
-from placar.sources.http import HttpResponse
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
 pytestmark = pytest.mark.django_db
 
 
 def cache_from_fixtures(root: Path) -> None:
-    cache = RawCache(root)
-    for path in sorted(FIXTURES.rglob("*.json")):
-        data = load_fixture(path)
-        body = copy.deepcopy(data["body"])
-        if path.name == "deputados_57_page1_sample.json":
-            body["links"] = []  # the sample has one page; drop the link to page 2 (test copy only)
-        response = HttpResponse(data["url"], data["status"], data["content_type"], body)
-        cache.write(data["source"], data["url"], data["params"], response)
+    from placar.sources.fixtures import cache_from_fixtures as load
+
+    load(FIXTURES, RawCache(root))
 
 
 def run(settings, tmp_path) -> str:
@@ -40,6 +32,7 @@ def test_normalize_current_offline_from_fixture_cache(settings, tmp_path):
     out = run(settings, tmp_path)
     assert "== camara" in out and "== senado" in out
     assert "unknown values: 0" in out
+    assert "Run normalize_activity" in out  # reloading people removes their activity
     assert Official.objects.filter(house="CAMARA").count() == 2
     assert Official.objects.filter(house="SENADO").count() == 3
     assert ServicePeriod.objects.filter(official__house_id=5917).count() == 2
@@ -52,3 +45,8 @@ def test_normalize_current_offline_from_fixture_cache(settings, tmp_path):
 def test_normalize_current_fails_clearly_without_cache(settings, tmp_path):
     with pytest.raises(CommandError, match="Run fetch_current first"):
         run(settings, tmp_path)
+
+
+def test_fixture_snapshot_refuses_non_e2e_database():
+    with pytest.raises(CommandError, match="must end with _e2e"):
+        call_command("load_fixture_snapshot", stdout=io.StringIO())

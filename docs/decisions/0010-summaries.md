@@ -1,6 +1,6 @@
 # 0010 — Isolating the summary feature and enforcing source links
 
-- **Status:** accepted (2026-11-01)
+- **Status:** accepted (2026-11-01); the location of the banned-wording list (item 7) is superseded by decision 0018
 - **Date:** 2026-11-01
 - **Stage:** 2 (topic 7 of 10)
 

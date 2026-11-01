@@ -1,0 +1,46 @@
+{
+  "_fixture": {
+    "cache_file_id": "5681b82efb62d5b749c06be0b37893b0fc927da7dc148d670d644f1b62162606",
+    "case": "camara_ballots_2420014_8_no_vote",
+    "recorded_at": "2026-11-01T21:31:38.676100+00:00",
+    "removed_personal_fields": [
+      "dados[0].deputado_.email"
+    ],
+    "spec": "https://dadosabertos.camara.leg.br/api/v2/api-docs (0.4.347, 2026-10-26)",
+    "trimmed": "dados: kept items with deputado_.id in ['220714'] of 359"
+  },
+  "api_version": null,
+  "body": {
+    "dados": [
+      {
+        "dataRegistroVoto": "2024-03-12T17:46:13",
+        "deputado_": {
+          "id": 220714,
+          "idLegislatura": 57,
+          "nome": "Adail Filho",
+          "siglaPartido": "REPUBLICANOS",
+          "siglaUf": "AM",
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220714",
+          "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37908",
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220714.jpg"
+        },
+        "tipoVoto": "Sim"
+      }
+    ],
+    "links": [
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2420014-8/votos",
+        "rel": "self"
+      }
+    ]
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T17:37:38.033040+00:00",
+  "method": "GET",
+  "params": {},
+  "schema": 1,
+  "source": "camara",
+  "status": 200,
+  "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2420014-8/votos"
+}

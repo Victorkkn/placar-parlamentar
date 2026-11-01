@@ -9,14 +9,18 @@ cd backend
 echo "== lint"
 uv run ruff check .
 uv run ruff format --check .
-echo "== tests"
-uv run pytest -q
+echo "== migrations"
+uv run python manage.py makemigrations --check --dry-run
+echo "== tests and coverage"
+uv run coverage run -m pytest -q
+uv run coverage report --include="placar/metrics/*" --fail-under=90
 echo "== dependency audit"
 uv run pip-audit --progress-spinner off
 cd "$root"
 if [ -f frontend/package.json ]; then
   echo "== frontend"
-  (cd frontend && npm run -s lint && npm run -s typecheck && npm test --silent && npm run -s build >/dev/null \
+  (cd frontend && npm run -s lint && npm run -s typecheck && mkdir -p node_modules/.cache && npm run -s check:api >/dev/null \
+    && npm test --silent && npm run -s build >/dev/null \
     && npm audit --omit=dev --audit-level=moderate)
 fi
 echo "== secrets (commits on this branch not yet in main)"

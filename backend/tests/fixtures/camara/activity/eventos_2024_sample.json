@@ -1,0 +1,76 @@
+{
+  "_fixture": {
+    "cache_file_id": "594e979f9f254460e2d0a96cad4f41b3e5d3e758b2c3380b7d2aaa696721963e",
+    "case": "camara_sessions_2024_in_office_present",
+    "recorded_at": "2026-11-01T21:31:38.621901+00:00",
+    "removed_personal_fields": [],
+    "spec": "https://dadosabertos.camara.leg.br/api/v2/api-docs (0.4.347, 2026-10-26)",
+    "trimmed": "dados: kept items with id in ['71957'] of 86"
+  },
+  "api_version": null,
+  "body": {
+    "dados": [
+      {
+        "dataHoraFim": "2024-03-05T22:20",
+        "dataHoraInicio": "2024-03-05T17:04",
+        "descricao": "Sessão Deliberativa Extraordinária (semipresencial)",
+        "descricaoTipo": "Sessão Deliberativa",
+        "id": 71957,
+        "localCamara": {
+          "andar": null,
+          "nome": "Plenário da Câmara dos Deputados",
+          "predio": null,
+          "sala": null
+        },
+        "localExterno": null,
+        "orgaos": [
+          {
+            "apelido": "Plenário",
+            "codTipoOrgao": 26,
+            "id": 180,
+            "nome": "Plenário",
+            "nomePublicacao": "Plenário",
+            "nomeResumido": "Plenário",
+            "sigla": "PLEN",
+            "tipoOrgao": "Plenário Virtual",
+            "uri": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180"
+          }
+        ],
+        "situacao": "Encerrada",
+        "uri": "https://dadosabertos.camara.leg.br/api/v2/eventos/71957",
+        "urlRegistro": "https://www.youtube.com/watch?v=esptqJF4NwA"
+      }
+    ],
+    "links": [
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/eventos?idOrgao=180&codTipoEvento=110&dataInicio=2024-01-01&dataFim=2024-12-31&itens=100&ordem=ASC&ordenarPor=dataHoraInicio",
+        "rel": "self"
+      },
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/eventos?idOrgao=180&codTipoEvento=110&dataInicio=2024-01-01&dataFim=2024-12-31&ordem=ASC&ordenarPor=dataHoraInicio&pagina=1&itens=100",
+        "rel": "first"
+      },
+      {
+        "href": "https://dadosabertos.camara.leg.br/api/v2/eventos?idOrgao=180&codTipoEvento=110&dataInicio=2024-01-01&dataFim=2024-12-31&ordem=ASC&ordenarPor=dataHoraInicio&pagina=1&itens=100",
+        "rel": "last"
+      }
+    ]
+  },
+  "content_type": "application/json",
+  "deprecation": {},
+  "fetched_at": "2026-11-01T17:01:48.665199+00:00",
+  "method": "GET",
+  "params": {
+    "codTipoEvento": "110",
+    "dataFim": "2024-12-31",
+    "dataInicio": "2024-01-01",
+    "idOrgao": "180",
+    "itens": "100",
+    "ordem": "ASC",
+    "ordenarPor": "dataHoraInicio"
+  },
+  "schema": 1,
+  "source": "camara",
+  "status": 200,
+  "url": "https://dadosabertos.camara.leg.br/api/v2/eventos"
+}

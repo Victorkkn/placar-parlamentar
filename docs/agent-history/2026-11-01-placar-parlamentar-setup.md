@@ -411,3 +411,240 @@
   - Local Node 24.12 is below one test dependency's declared minimum (24.15); tests pass anyway.
 - **Validation (actually run):** `npm run lint`, `npm run typecheck`, `npm test` (4 passed), `npm run build`, `npm audit --omit=dev` (0 vulnerabilities), full `npm audit` (one dev-only advisory, documented), workflow YAML parsed, `scripts/check.sh` all passed.
 - **Remaining work:** owner approval to merge C0; C1 (API) next; B2 download still running.
+
+## 2026-11-01 — B2.2: activity models, normalizers and metrics (branch feat/b2-activity)
+
+- **Agent:** Main Claude Code session (backend, data and technical writer roles)
+- **Task:** Phase B2 as approved: store activity and compute the first metrics.
+- **Analysis:** `/proposicoes` and `/votacoes` reject date ranges over 3 months, which the spec does not say (data issue 16). The first live `fetch_activity` run stopped on it.
+- **Changes made:**
+  - Câmara votes are fetched by quarter and bills by `ano`. A failed list request is now reported instead of stopping the run.
+  - `activity` app with models Bill, Session, Presence, Voting, Ballot, Membership and Speech.
+  - `normalize/activity.py` classifies vote options. `normalize_activity` command added.
+  - Metrics in `metrics/activity.py`: plenary attendance (Câmara), bills authored, nominal-vote participation and speeches, counted only on days in office, plus leave days.
+  - pt-BR methodology drafts in `docs/methodology/`.
+- **Validation:** backend tests passed on the branch (fixtures and synthetic activity, offline).
+- **Remaining work:** live download still running; the B2 outcome is to be written after `normalize_activity` runs on real data.
+
+## 2026-11-01 — C1: read-only API (branch feat/c1-api)
+
+- **Agent:** Main Claude Code session (backend role)
+- **Changes made:**
+  - Django Ninja API under `/api/`: `meta`, `officials`, `officials/{id}`, `compare`, `parties`. GET only, inputs validated, rate per 365 days in office for count metrics, `not_loaded_yet` instead of zeros.
+  - `export_openapi` writes `docs/api/openapi.json`; a test fails when the file is stale.
+- **Problems met:**
+  - The boundary test caught `sources` importing `api`; the command was moved to the `api` app.
+  - The generic "every number has a source" test caught detail values without sources; leave sources are now joined into attendance.
+- **Validation:** backend tests passed, including the generic source check.
+
+## 2026-11-01 — C2–C3: typed client and pages (branch feat/c3-pages)
+
+- **Agent:** Main Claude Code session (frontend role)
+- **Changes made:**
+  - Types generated from the contract (`npm run check:api`) and calls through `openapi-fetch`.
+  - Pages: officials list with filters in the URL, official page, comparison, parties, methodology, not found. A `SourceValue` component is used for every number.
+- **Problems met:** MSW 3 renamed `onUnhandledRequest`, and `openapi-fetch` captured `fetch` at load time; fetch is now looked up at call time.
+- **Validation:** lint, type check, component tests and build passed.
+
+## 2026-11-01 — CI and tests; C5 end-to-end (branch chore/ci-and-tests)
+
+- **Agent:** Main Claude Code session (QA and security roles)
+- **Task:** Owner asked what could run in parallel: improve tests and CI.
+- **Changes made:**
+  - CI and `scripts/check.sh`: migrations check, `metrics/` coverage floor of 90%, contract check, uv cache. A pipe through `tail` that hid coverage failures in `check.sh` was removed.
+  - Hypothesis property tests for the metrics; a test that bulk and single-official metrics are equal; frontend helper tests.
+  - C5: `load_fixture_snapshot` (refuses databases not ending in `_e2e`); Playwright tests with axe and a check that no request leaves `127.0.0.1`; CI `e2e` job on `main` and pull requests.
+- **Validation (actually run):** 279 backend tests, 18 frontend tests and 4 end-to-end tests passed; `metrics/` coverage 98% (was 89% before the new test); `scripts/check.sh` passed. The CI `e2e` job has not run on GitHub yet.
+
+## 2026-11-01 — Documentation review and MVP status (branch docs/mvp-readiness)
+
+- **Agent:** Main Claude Code session (technical writer, QA, security and project manager roles)
+- **Task:** Owner asked to check that everything is documented, list what the MVP still needs, and apply it to the project.
+- **Analysis:**
+  - This history stopped at C0.
+  - The README still said "FastAPI is the default candidate" and "Phase A in progress", and its "Getting started" described the project bootstrap.
+  - There were no test or security notes for Phase C and no single MVP checklist.
+  - The Phase D and E plans had not been written.
+- **Changes made:**
+  - `docs/mvp-status.md`: done, left and left-out items.
+  - `docs/testing/phase-c.md` and `docs/security/phase-c.md` (C6 notes).
+  - README: stack as decided, how to run the app on the real snapshot, status, and pre-commit scope. The bootstrap "Getting started" section was replaced. The owner's "What it does", principles and license are kept.
+  - Draft plans `docs/plans/phase-d-summaries.md` and `docs/plans/phase-e-rankings.md`, both **proposed** with choices for the owner. Nothing in them is implemented.
+  - This history entry and the four above.
+- **Validation:**
+  - `uv run pip-audit`: no known vulnerabilities.
+  - `npm audit --omit=dev`: 0 vulnerabilities.
+  - Full `npm audit`: the same single dev-only `minimatch` advisory as in C0.
+  - Command flags in the README checked against the code.
+  - No session or cookie middleware (checked in settings).
+- **Decisions:** none new. Plan D proposes a decision 0018 (one banned-wording file) for approval.
+- **Remaining work:**
+  - The B2 data load.
+  - Owner approval of the merges, the C4 wording review, and the D and E plans.
+
+## 2026-11-01 — Phase D and E plans approved; decision 0018; Phase D built (branch feat/d-summaries)
+
+- **Agent:** Main Claude Code session (backend, frontend, QA, security and technical writer roles)
+- **Task:** Owner replied "approved" to the Phase D and E plans with the recommended choices.
+  - Read as approval of both plans and of decision 0018.
+  - **Not** read as approval to merge branches; that is still to be asked.
+- **Changes made:**
+  - Decision 0018: one banned-wording file. Index, 0010 status and rules section 12 updated; plan statuses recorded.
+  - `backend/placar/summaries/`:
+    - pt-BR formatter;
+    - fact sheet;
+    - wording loader;
+    - validator;
+    - template;
+    - `Summary` model and migration;
+    - `llm/` adapter (Claude API, structured outputs, effort low);
+    - selectors (read path re-validates stored summaries);
+    - services (one retry, then template);
+    - `generate_summaries` command (needs a key and `--yes`).
+  - Settings: `BANNED_WORDING_FILE` and `SUMMARY_MODEL`; app registered.
+  - Dependency: `anthropic==2.3.0`.
+  - API: `summary` on `/officials/{id}`; contract regenerated.
+  - Frontend:
+    - `SummarySection` with the kind label and a methodology link;
+    - "Resumos" section on the methodology page;
+    - per-365-days text added to the methodology (for C4 review);
+    - test data, unit test and e2e check.
+  - Docs:
+    - `docs/methodology/resumos.md`;
+    - `docs/testing/phase-d.md` and `docs/security/phase-d.md`;
+    - plan outcome;
+    - MVP status;
+    - README.
+- **Problems met:** reading the real template output showed that allowing "PL" anywhere would let a model name a wrong party "PL". Bill types are now allowed only with the bills fact, and a test covers it.
+- **Validation (actually run):**
+  - backend: 332 tests passed;
+  - frontend: lint, type check, 18 tests, contract check and build passed;
+  - e2e: 4 passed (after migrating `placar_e2e`);
+  - `scripts/check.sh`: all passed;
+  - `pip-audit`: clean.
+  - No real model call was made.
+- **Decisions:** 0018 accepted. Two deviations from the plan are flagged for the owner: the 1–6 sentence count, and bill types tied to the bills fact.
+- **Remaining work:**
+  - owner review of the deviations and of the summary wording;
+  - Phase E next;
+  - B2 data load still running;
+  - merges still need approval.
+
+## 2026-11-01 — Documentation and data review against an external program's eligibility terms (branch docs/data-and-backlog)
+
+- **Agent:** Main Claude Code session (technical writer, security and project manager roles)
+- **Task:** Owner asked to check that nothing is missing in the documentation and plans, and that the project fits the terms of a remote "build your own project with an AI assistant" contract program.
+- **Analysis (verified):**
+  - The README says MIT, but there was no `LICENSE` file.
+  - Commits are authored only by the owner's personal GitHub no-reply address; the repo is private.
+  - The only employer or university mentions are the project's own "personal project" statements.
+  - Raw cache scan (9,433 files): no CPF, birth data or education. It does contain office email, office phones and gender.
+  - The database stores the civil name (Senado) and the photo URL, which are not shown.
+  - Official photos are not shown, and the local photo serving required by decision 0012 is not built.
+  - The Claude permissions in `.claude/settings.json` do not block reading `.env`.
+- **Changes made:**
+  - `LICENSE` (MIT, owner's name).
+  - `docs/data-inventory.md`.
+  - `docs/backlog.md`.
+  - Proposed decision `0019-data-minimization.md`, added to the index as **proposed**; no code changed.
+  - Phase C plan outcome.
+  - CLAUDE.md "Where things are".
+  - README: data-held section and license link.
+  - MVP status: photos left out, related links.
+- **Validation:** the claims in the data inventory were checked against the models, `PERSONAL_KEYS` and the cache scan.
+- **Remaining work:**
+  - Owner decision on 0019.
+  - Optional deny rule for reading `.env` in the Claude settings.
+  - The owner should confirm with the program whether data about public officials is eligible.
+
+## 2026-11-01 — Decision 0020: MVP without rankings
+
+- **Agent:** Main Claude Code session (project manager role)
+- **Task:** Owner said Phase E will not be built now, but an MVP is needed to show.
+- **Changes made:**
+  - Decision 0020 (accepted): the MVP is phases A–D, and Phase E stays approved for after the MVP.
+  - Updated the index, rules section 17, Phase E plan status, MVP status, backlog and README.
+- **Decisions:** 0019 (data minimization) stays proposed. The owner considers open data acceptable and has not approved or rejected 0019.
+- **Remaining work:**
+  - B2 data load (download still running).
+  - Merge approval.
+  - C4 wording review.
+  - MVP sign-off.
+
+## 2026-11-01 — `.env` deny rule; C4 Portuguese wording review
+
+- **Agent:** Main Claude Code session (technical writer and security roles)
+- **Task:** The owner approved the `.env` deny rule, asked which branches are waiting, and asked for the Portuguese review (MVP step 3).
+- **Changes made:**
+  - `.claude/settings.json`: deny `Read`, `Edit` and `Write` on `./.env`. This is a safety net only: shell commands are not covered.
+  - Interface text (`frontend/src/text/pt-BR.ts`):
+    - "Dados insuficientes" note made descriptive instead of prescriptive;
+    - "Nenhum registro nos dias no cargo";
+    - "Votações presididas (não contadas)";
+    - agreement fixed ("divididas");
+    - leave-days item added to the methodology list.
+  - Methodology pages:
+    - fixed a wrong statement that Senado leave days appear next to attendance (they are not shown);
+    - fixed a reference to a "table" that does not exist;
+    - added the "por 365 dias no cargo" explanation;
+    - status changed to "reviewed, waiting for the owner's approval".
+  - Summary template: attendance and vote sentences rephrased as "label: number" to avoid wrong plurals ("1 de 1 sessões"). "Sessões" added to the validator's vocabulary.
+  - Banned-wording list: added assíduo/a/os/as, omisso/a/os/as, produtivo and improdutivo (all forms), and preguiça.
+- **Validation:** `scripts/check.sh` passed (332 backend and 18 frontend tests); e2e 4 passed.
+- **Remaining work:**
+  - Owner approval of the reviewed wording.
+  - B2 data load.
+  - Merge approval.
+
+## 2026-11-01 — C4 wording approved
+
+- **Agent:** Main Claude Code session
+- **Task:** The owner approved the reviewed pt-BR wording: interface text, methodology pages and summary template.
+- **Changes made:** Status lines updated in `docs/methodology/README.md`, `docs/mvp-status.md`, `docs/backlog.md` and the header of `pt-BR.ts`.
+- **Remaining work:**
+  - Merge approval for the 7 branches (not yet given).
+  - Confirmation of the two Phase D deviations.
+  - B2 data load (download still running).
+
+## 2026-11-01 — Phase D deviations confirmed
+
+- **Agent:** Main Claude Code session
+- **Task:** The owner confirmed both Phase D deviations:
+  - summaries have 1–6 sentences;
+  - bill-type acronyms are allowed only with the bills fact.
+- **Changes made:** Status lines in the Phase D plan, `docs/mvp-status.md` and `docs/backlog.md`.
+- **Remaining work:**
+  - B2 data load (download running).
+  - Merge approval.
+  - Final MVP check and sign-off.
+
+## 2026-11-01 — B2 real data loaded and checked (branch fix/b2-real-data)
+
+- **Agent:** Main Claude Code session (data, backend, QA and security roles)
+- **Task:** Finish B2 after the download: load the real data, check it, add real-case fixtures, write the outcome.
+- **Analysis:**
+  - Download: 3 h 50 min with 92 failures. 9 speech lists were recovered on a retry; 83 votings return 404 for their votes (data issue 20).
+  - Loading stopped on a 573-character committee name (data issue 18).
+  - Unclassified options turned out to be secret ballots: Senado `Votou` (data issue 21) and Câmara all-empty votings (data issue 19).
+  - The development database had no people-load record, so the API answered 503. Reloading people cascades and deletes activity.
+  - The Câmara party view took 77 s. Profiling showed model-object creation for 450,000 ballots and per-member output building.
+  - B2 acceptance item 3 (a real case for each metric) was still open.
+- **Changes made:**
+  - `Membership.body_name` changed to a text field (migration `activity` 0002).
+  - Secret-ballot handling in `normalize/activity.py`.
+  - `values_list` bulk reads with shared `SourceRef`s in `activity/selectors.py`.
+  - Party aggregate values and a per-snapshot process cache in `api/api.py`.
+  - Reload reminder in `normalize_current`.
+  - Fixture tooling: root-list trim; next-page links kept on untrimmed pages.
+  - 21 activity fixture cases, recorded from the cache without new requests, and `tests/test_activity_real_cases.py`.
+  - Methodology and app text: secret votings are left out.
+  - Data issues 18–21, B2 outcome, `docs/testing/phase-b2.md`, `docs/security/phase-b2.md`, README, MVP status and backlog.
+- **Validation (actually run):**
+  - `normalize_activity` on the real cache: no unknown options left.
+  - API checked on the real snapshot (timings in the test notes).
+  - `scripts/check.sh` passed: 359 backend tests, 18 frontend tests, metrics coverage 98%.
+  - e2e: 4 passed.
+- **Decisions:** none new. The secret-ballot rule follows the approved definition ("nominal and not secret"). The two wording lines describing it are flagged for the owner.
+- **Remaining work:**
+  - Owner approval to merge the 8 branches into `main`.
+  - Final MVP check and sign-off.

@@ -232,3 +232,44 @@ Done with the downloaded specs and about 25 small live requests.
    - **Justified absences** (official codes such as AP, L1–L7) are shown separately with their official description. They are not counted as taking part.
    - Every option is stored as given; any option not in the table is reported, not guessed.
 2. **Committee memberships** are fetched and stored with the official body ids and names. The *committee count* metric waits until official body types are loaded (Câmara `/orgaos` types; Senado committee lists); until then it is not shown. This replaces "committee memberships" in the first-metrics list.
+
+## B2 outcome (2026-11-01)
+
+**Download:** `fetch_activity --date 2026-11-01` took 3 h 50 min (9,235 Câmara requests at no more than 2 per second, plus the Senado). Of the 92 failures:
+- 9 deputies' speech lists that timed out (HTTP 504) were fetched on a second run;
+- 83 Câmara votings have no individual votes (HTTP 404 twice, data issue 20).
+
+**Loaded (legislature 57, 2023-02-01 to 2026-11-01):**
+
+| | Câmara | Senado |
+| --- | --- | --- |
+| Officials | 648 | 245 |
+| Plenary sessions held / presence records | 393 / 185,708 | not published |
+| Votings / ballots | 6,551 / 456,837 | 426 / 34,506 |
+| Bills (PL, PLP, PEC, PDL) / authorships | 23,165 / 42,604 | 7,157 / 18,171 |
+| Committee memberships | 14,034 | 8,244 |
+| Speeches | 52,006 | 14,586 |
+| Unknown vote options after loading | none | none |
+
+**Problems found with the real data and fixed:**
+- **Committee names** reach 573 characters. The column is now unlimited text (data issue 18).
+- **Secret ballots.** The Câmara has no secret-ballot flag; a voting where every recorded option is empty is now treated as secret and left out (data issue 19, 887 ballots in 2 votings). The Senado's `Votou` appears only in secret votings and is mapped to "takes part" (data issue 21; no number changes).
+- **Slow party view.** It took 77 s on the full Câmara. Two fixes:
+  - bulk reads now use plain rows instead of model objects;
+  - party aggregates no longer build each member's full output.
+
+  The result is cached per house, window and snapshot. The first load now takes about 9 s; later loads, including threshold changes, take 0.2 s.
+- **Reload order.** Reloading people (`normalize_current`) removes their activity. The command now prints a reminder to run `normalize_activity` again.
+
+**Checks on the real data:**
+- Câmara sessions average 472 recorded presences out of 513 seats (92%); 8 of 647 deputies have full attendance.
+- Senators have 186 open nominal votings in the window; the other 240 were secret.
+
+**Acceptance:**
+1. `fetch_activity`: done.
+2. Activity normalized with `SourceRef`s: done.
+3. Metric tests:
+   - The synthetic cases were already done.
+   - The **real cases** are now in `tests/test_activity_real_cases.py`, using 21 new recorded fixtures (`tests/fixtures/*/activity/`): deputy 220593 (sessions and votes in and out of office) and senator 5917 (open vote, justified absence, secret vote).
+   - Bill and speech totals equal the full load.
+4. Decision 0014: done.
