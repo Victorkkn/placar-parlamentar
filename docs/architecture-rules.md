@@ -107,3 +107,17 @@ Small, descriptive local commits are allowed.
 - No linking of the same person across houses, and no inferred party renames or mergers, without an official source.
 - Personal fields allowlist: house id, parliamentary name, civil name, state, party, official photo URL, institutional page URL. Never CPF, birth date or place, social media, personal email or address.
 - Source links show the official public page when one exists, otherwise the API URL.
+
+## 11. Frontend (decision 0009)
+
+- React 19 + TypeScript + Vite single-page app in `frontend/`. Node 24 LTS and npm, lockfile committed, Node version pinned.
+- TypeScript: latest version supported by the chosen lint and test tools (7.x, else 6.x).
+- React Router for pages; TanStack Query for server data.
+- Filters live in the URL. No cookies, `localStorage` or other storage of visitor choices.
+- API contract: `docs/api/openapi.json`, exported by the backend (a backend test fails if it is stale). Frontend types are generated from it with `openapi-typescript`; calls use `openapi-fetch`. A frontend check fails if types and contract differ.
+- Dev: Vite proxies `/api` to Django on `127.0.0.1:8000`.
+- pt-BR text lives in `frontend/src/text/pt-BR.ts` (technical writer). Numbers and dates are formatted with `Intl` `pt-BR`.
+- CSS Modules and own components; no UI library in the MVP.
+- No third-party requests at runtime: no analytics, trackers, external fonts or CDNs.
+- Every number is rendered through the shared source-link component. External links use `rel="noopener noreferrer"`.
+- Accessibility: semantic HTML, keyboard use, labels, contrast; tables as the base form of comparisons and leaderboards.

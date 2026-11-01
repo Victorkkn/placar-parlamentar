@@ -206,3 +206,8 @@
 - **Analysis:** Local Node 24.12 / npm 11.6; checked latest npm versions of react, vite, typescript, react-router, TanStack Query, openapi-typescript, openapi-fetch; Node release lines from endoflife.date.
 - **Changes made:** `docs/decisions/0009-frontend.md` (proposed); index updated.
 - **Remaining work:** owner approval of 0009.
+
+## 2026-11-01 — Decision 0009 accepted
+
+- **Agent:** Main Claude Code session
+- **Changes made:** 0009 accepted; index updated; rules section 11 added.

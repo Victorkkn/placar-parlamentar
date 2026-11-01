@@ -1,6 +1,6 @@
 # 0009 — Frontend framework, tooling and link to the backend
 
-- **Status:** proposed
+- **Status:** accepted (2026-11-01)
 - **Date:** 2026-11-01
 - **Stage:** 2 (topic 6 of 10)
 

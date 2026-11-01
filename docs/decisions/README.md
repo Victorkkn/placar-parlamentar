@@ -13,7 +13,7 @@ An accepted decision is changed only by a new decision that supersedes it, after
 | [0006](0006-database-and-raw-cache.md) | PostgreSQL 18 in Docker; raw API responses cached as files | accepted | 2026-11-01 |
 | [0007](0007-module-boundaries.md) | Backend module boundaries, allowed imports, `core` app | accepted | 2026-11-01 |
 | [0008](0008-source-normalization.md) | Normalizing Câmara and Senado into one model (service periods, leaves, affiliations) | accepted | 2026-11-01 |
-| [0009](0009-frontend.md) | Frontend: React + TypeScript + Vite SPA, OpenAPI contract file, no third-party requests | proposed | 2026-11-01 |
+| [0009](0009-frontend.md) | Frontend: React + TypeScript + Vite SPA, OpenAPI contract file, no third-party requests | accepted | 2026-11-01 |
 
 ## Stage 2 topics
 
@@ -24,7 +24,7 @@ An accepted decision is changed only by a new decision that supersedes it, after
 | 3. Database and raw response cache | 0006 | accepted |
 | 4. Module boundaries | 0007 | accepted |
 | 5. Normalizing Câmara and Senado data | 0008 | accepted |
-| 6. Frontend framework, build tooling, link to backend | 0009 | proposed |
+| 6. Frontend framework, build tooling, link to backend | 0009 | accepted |
 | 7. Isolating the summary feature, enforcing source links | — | not started |
 | 8. Testing strategy and offline fixtures | — | not started |
 | 9. Security baseline | — | not started |
