@@ -172,7 +172,7 @@ cd backend && DATABASE_NAME=placar_e2e uv run python manage.py load_fixture_snap
 cd frontend && npm run e2e
 ```
 
-GitHub Actions (`.github/workflows/ci.yml`) runs the same checks on every push and pull request, without any secrets.
+GitHub Actions (`.github/workflows/ci.yml`) runs the same checks once on every pull request and again on `main` after each merge, without any secrets.
 
 ## Project layout
 
@@ -231,14 +231,14 @@ Only public records of elected officials in their public role, and nothing about
 
 ## Contributing workflow
 
-Decision 0016 defines the workflow:
+Decisions 0016 and 0021 define the workflow:
 
 - `main` always passes all checks. Work happens on short branches: `feat/<phase>-<topic>`, `fix/<topic>`, `docs/<topic>`, `chore/<topic>`.
 - Turn on the pre-commit hook once: `git config core.hooksPath scripts/git-hooks`. It runs on every commit:
   - a secret scan (gitleaks);
   - the backend lint (ruff);
   - the frontend lint and type check, when frontend files change.
-- Before merging into `main`, run `scripts/check.sh`, and merge with `git merge --no-ff`.
+- `main` is protected: nobody can push to it directly. Every change goes through a pull request, which can be merged only when the CI checks (`backend`, `frontend`, `e2e`, `secrets`) pass (decision 0021). Run `scripts/check.sh` before opening it.
 - Each finished phase is tagged on `main` (`phase-a`, `phase-b1`, …).
 
 ## License

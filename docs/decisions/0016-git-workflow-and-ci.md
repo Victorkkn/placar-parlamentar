@@ -1,6 +1,6 @@
 # 0016 — Git workflow, local checks and GitHub Actions CI
 
-- **Status:** accepted (2026-11-01)
+- **Status:** accepted (2026-11-01); local merges into `main`, the standing push approval and the branch-protection note superseded by decision 0021
 - **Date:** 2026-11-01
 - **Stage:** 3
 - **Supersedes:** decision 0013, item 2, for the parts "no remote repositories" and "no CI services". Everything else in 0013 stays: no deployment in the MVP.

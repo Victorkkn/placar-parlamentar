@@ -182,13 +182,17 @@ Small, descriptive local commits are allowed.
 - Refreshing the snapshot is manual, run by or approved by the owner. Data sources left out of the MVP are listed in the README.
 - The MVP is phases A–D. Rankings (Phase E) come after the MVP; the app shows no rankings page until then.
 
-## 18. Git workflow and CI (decision 0016)
+## 18. Git workflow and CI (decisions 0016, 0021)
 
-- `main` always passes all checks; no direct commits to it. Work on `feat/<phase>-<topic>`, `fix/…`, `docs/…`, `chore/…` branches.
-- Merge with `git merge --no-ff` only after `scripts/check.sh` passes and the owner approves; delete the branch after merging.
+- `main` always passes all checks and is **protected on GitHub**: no direct pushes, even for administrators; no force pushes or deletion. Work on `feat/<phase>-<topic>`, `fix/…`, `docs/…`, `chore/…` branches.
+- Every change reaches `main` through a **pull request**:
+  1. `scripts/check.sh` passes locally;
+  2. the branch is pushed and a PR opened;
+  3. the CI checks `backend`, `frontend`, `e2e` and `secrets` pass on an up-to-date branch;
+  4. the owner approves;
+  5. the PR is merged with a merge commit and the branch is deleted.
 - Annotated tag on `main` when the owner signs off a phase (`phase-a`, `phase-b1`, …).
 - Commit messages: short imperative summary with the phase or area first, blank line, what and why.
 - Pre-commit hook: gitleaks on staged changes, `ruff check`, `ruff format --check`. `scripts/check.sh` before merges: lint, full tests, `pip-audit`, gitleaks on the branch.
-- One private GitHub repository. Standing approval (2026-11-01): after a merge the owner approved, push `main` and phase tags to `origin`. Every other push, force push, remote change, pull request or repository setting still needs the owner's approval (decision 0002).
-- Branch protection is unavailable on the current GitHub plan; local checks plus owner approval guard `main`.
-- GitHub Actions CI on every push and pull request: lint, offline tests with a PostgreSQL service, `pip-audit`, gitleaks over the full history. No secrets in CI; actions pinned to commit SHAs; read-only `contents` permission.
+- One public GitHub repository. Standing approval (decision 0021): once the owner has approved a change, push its branch, open the PR, merge it after CI passes, delete the branch, and push the phase tag the owner signed off. Any other push, force push, remote change or repository setting still needs the owner's approval (decision 0002).
+- GitHub Actions CI on every pull request and on `main` after each merge (once per pull request, decision 0021): lint, offline tests with a PostgreSQL service, `pip-audit`, gitleaks over the full history. No secrets in CI; actions pinned to commit SHAs; read-only `contents` permission.
