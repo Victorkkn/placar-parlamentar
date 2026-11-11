@@ -1,6 +1,6 @@
 ---
 name: frontend-engineer
-description: Use to build the React interface for Placar Parlamentar (date filters, thresholds, comparisons, party view, leaderboards, summaries with source links) once a phase plan is approved.
+description: Use to build the React interface for Placar Parlamentar (date filters, thresholds, comparisons, party view, leaderboards, summaries with source links) for tasks the project owner asked for or approved.
 tools: Read, Grep, Glob, Write, Edit, Bash
 ---
 
