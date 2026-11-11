@@ -7,7 +7,7 @@ Civic-transparency tool for Brazilian federal legislators, built only from offic
 1. Read and follow `docs/architecture-rules.md`. Those rules are binding. The decision records in `docs/decisions/` are the authority behind them.
 2. Check `docs/decisions/README.md` for the status of every decision. Only accepted decisions are rules. Never change an accepted decision; propose a new one that supersedes it.
 3. Never run `git push`, or any other action listed under "Approval gates" in the rules, without the project owner's explicit approval. One standing exception (rules section 18, decision 0021): once the owner has approved a change, push its branch, open a pull request, merge it after CI passes, and push the signed-off phase tag. `main` is protected on GitHub: never commit or push to it directly; every change goes through a pull request.
-4. Do not implement a phase until the owner has approved its plan in `docs/plans/`.
+4. Work starts only from something the owner approved: a specific task the owner asked for (no plan file needed), or a phase plan in `docs/plans/`. If a request is too large or unclear to act on safely, ask before starting.
 5. Log meaningful work in `docs/agent-history/`.
 
 ## Key rules at a glance (details in the rules file)
@@ -32,7 +32,7 @@ Civic-transparency tool for Brazilian federal legislators, built only from offic
 - `CLAUDE_CODE_PROMPT.md`: original project prompt (stages and phases), for reference.
 - `docs/decisions/`: decision records and index.
 - `docs/architecture-rules.md`: binding rules.
-- `docs/plans/`: phase plans (Stage 3).
+- `docs/plans/`: phase plans (Stage 3), optional for specific tasks.
 - `docs/data-issues.md`: gaps and inconsistencies in official data.
 - `docs/mvp-status.md`: what is done and left for the MVP; `docs/backlog.md`: work after it.
 - `docs/definition-of-done.md`: checks before a merge or a phase is reported done.

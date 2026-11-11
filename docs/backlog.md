@@ -1,6 +1,6 @@
 # Backlog
 
-Work after the current MVP steps (`docs/mvp-status.md`). Each item needs an approved plan or decision before it starts.
+Work after the current MVP steps (`docs/mvp-status.md`). Each item starts once the owner asks for it as a task, or approves a plan or decision for it.
 
 ## Waiting for the owner
 
