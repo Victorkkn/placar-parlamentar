@@ -8,7 +8,7 @@ Work after the current MVP steps (`docs/mvp-status.md`). Each item needs an appr
 
 ## After the MVP
 
-- Phase E: rankings (plan approved; deferred by decision 0020).
+- Phase E: rankings (plan approved; deferred by decision 0020). Its plan file `docs/plans/phase-e-rankings.md` is kept only in the owner's local copy, not in git (owner request, 2026-11-11).
 - Câmara committee attendance (deferred by decision 0014).
 - Official photos, if wanted: needs a new decision (0019 removed them), with local serving as decision 0012 requires.
 - Earlier legislatures (only legislature 57 is in the snapshot).

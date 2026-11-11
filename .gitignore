@@ -29,3 +29,6 @@ build/
 # Playwright
 frontend/playwright-report/
 frontend/test-results/
+
+# Unbuilt phase plans stay local (owner request, 2026-11-11)
+docs/plans/phase-e-rankings.md
