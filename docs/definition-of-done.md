@@ -21,9 +21,8 @@ A task or phase is done only when every item below is true. Owned by the scrum m
 
 ## Before a phase is reported done
 
-- If it has a plan in `docs/plans/`, the plan has an outcome section with what was built, deviations and what is left. Without a plan, `docs/agent-history/` records this.
+- If it has a plan in `docs/plans/`, the plan has an outcome section with what was built, deviations and what is left. Without a plan, the pull request description records this.
 - Test and security notes are in `docs/testing/` and `docs/security/`; `pip-audit` and `npm audit` are clean or explained.
 - Data problems found are in `docs/data-issues.md`.
-- `docs/agent-history/` records the work actually done and the checks actually run.
 - `docs/mvp-status.md` and the README are up to date.
 - The owner signed off; the phase is tagged on `main` (`phase-a`, `phase-b1`, …) and pushed.

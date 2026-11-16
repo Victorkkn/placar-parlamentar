@@ -1,0 +1,169 @@
+# CI for Placar Parlamentar (decision 0016). No secrets are used; tests run offline.
+name: CI
+
+on:
+  # Decision 0021: once per pull request, and once on main after a merge. Branch pushes
+  # without a pull request do not run CI; every change reaches main through a pull request.
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    services:
+      db:
+        image: postgres:18.6
+        env:
+          # CI-only throwaway database; not a secret.
+          POSTGRES_DB: placar
+          POSTGRES_USER: placar
+          POSTGRES_PASSWORD: ci-only-throwaway
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U placar"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_NAME: placar
+      DATABASE_USER: placar
+      DATABASE_PASSWORD: ci-only-throwaway
+      DATABASE_HOST: 127.0.0.1
+      DATABASE_PORT: "5432"
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          python-version: "3.14"
+          enable-cache: true
+          cache-dependency-glob: backend/uv.lock
+      - name: Install
+        run: uv sync --locked
+      - name: Lint
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
+      - name: Migrations are complete
+        run: uv run python manage.py makemigrations --check --dry-run
+        env:
+          DJANGO_SECRET_KEY: ci-only-not-a-secret
+      - name: Tests (offline) with coverage
+        run: uv run coverage run -m pytest -q
+      - name: Coverage minimum for metrics (decision 0011)
+        run: uv run coverage report --include="placar/metrics/*" --fail-under=90
+      - name: Coverage summary
+        run: uv run coverage report --skip-covered --sort=cover | tail -15
+      - name: Dependency audit
+        run: uv run pip-audit --progress-spinner off
+
+  frontend:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: frontend/.nvmrc
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install
+        run: npm ci --no-audit
+      - name: Lint
+        run: npm run lint
+      - name: Type check
+        run: npm run typecheck
+      - name: API types match the contract (decision 0009)
+        run: mkdir -p node_modules/.cache && npm run check:api
+      - name: Tests
+        run: npm test
+      - name: Build
+        run: npm run build
+      - name: Dependency audit (production dependencies)
+        run: npm audit --omit=dev --audit-level=moderate
+
+  e2e:
+    # Decision 0011 item 17: end-to-end tests run on main and on pull requests, not on every push.
+    if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    services:
+      db:
+        image: postgres:18.6
+        env:
+          POSTGRES_DB: placar_e2e
+          POSTGRES_USER: placar
+          POSTGRES_PASSWORD: ci-only-throwaway
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U placar"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_NAME: placar_e2e
+      DATABASE_USER: placar
+      DATABASE_PASSWORD: ci-only-throwaway
+      DATABASE_HOST: 127.0.0.1
+      DATABASE_PORT: "5432"
+      DJANGO_SECRET_KEY: ci-only-not-a-secret
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          python-version: "3.14"
+          enable-cache: true
+          cache-dependency-glob: backend/uv.lock
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: frontend/.nvmrc
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install backend
+        working-directory: backend
+        run: uv sync --locked
+      - name: Load fixture snapshot into placar_e2e
+        working-directory: backend
+        run: uv run python manage.py load_fixture_snapshot
+      - name: Install frontend and Chromium
+        working-directory: frontend
+        run: |
+          npm ci --no-audit
+          npx playwright install --with-deps chromium
+      - name: End-to-end tests (offline, with axe)
+        working-directory: frontend
+        run: npm run e2e
+
+  secrets:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install gitleaks 8.30.1 (checksum verified)
+        run: |
+          curl -sSL -o gitleaks.tar.gz https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz
+          echo "551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb  gitleaks.tar.gz" | sha256sum -c -
+          tar -xzf gitleaks.tar.gz gitleaks
+      - name: Scan full history
+        run: ./gitleaks git --redact --no-banner .

@@ -2,7 +2,7 @@
 
 What the MVP includes, what is left, and what is out of scope. Updated 2026-11-01.
 
-The MVP is phases A–D of `CLAUDE_CODE_PROMPT.md`. Phase E (rankings) comes after it (decision 0020). It runs locally on a snapshot of official data (decisions 0013 and 0015). Every number links to its official record, and parts not built yet show "Ainda não disponível".
+The MVP is phases A–D: data access, data model and metrics, filters and comparison, and summaries (plans in `docs/plans/`). Phase E (rankings) comes after it (decision 0020). It runs locally on a snapshot of official data (decisions 0013 and 0015). Every number links to its official record, and parts not built yet show "Ainda não disponível".
 
 ## What the MVP includes
 
