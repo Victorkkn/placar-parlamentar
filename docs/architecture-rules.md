@@ -40,9 +40,9 @@ Small, descriptive local commits are allowed.
 ## 4. Team (decision 0001)
 
 - The project owner is the project manager and the only approver.
-- Agents: scrum master, architect, backend engineer, frontend engineer, data engineer, QA engineer, security engineer, technical writer. Definitions are in `.claude/agents/` (approved by the project owner on 2026-11-01). Changing an agent's rules, tools or owned files needs the owner's approval.
+- Agents: scrum master, architect, backend engineer, frontend engineer, data engineer, QA engineer, security engineer, technical writer. Their roles and outputs are in decision 0001. Changing an agent's role or owned files needs the owner's approval.
 - The main session coordinates. Agents do not start other agents.
-- Each agent changes only the files its definition says it owns. It reports changes needed elsewhere instead of making them.
+- Each agent changes only the files decision 0001 gives it. It reports changes needed elsewhere instead of making them.
 
 ## 5. Languages (decision 0003)
 
@@ -52,7 +52,7 @@ Small, descriptive local commits are allowed.
 
 ## 6. Repository layout (decision 0004)
 
-- One repository. Top-level folders: `backend/` (Python), `frontend/` (React), `docs/`, `scripts/`, `.claude/`.
+- One repository. Top-level folders: `backend/` (Python), `frontend/` (React), `docs/`, `scripts/`.
 - `backend/` and `frontend/` are self-contained: each has its own dependencies, tests and run commands, and neither imports code from the other.
 - They connect only through the HTTP API contract.
 - Local data (API cache, database files) is never committed to git.
